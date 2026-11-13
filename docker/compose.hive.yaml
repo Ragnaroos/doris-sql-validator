@@ -1,0 +1,99 @@
+name: doris-sql-validator-hive
+
+services:
+  postgres:
+    image: postgres:17.2-bookworm
+    container_name: dsv-hive-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: metastore_db
+      POSTGRES_USER: hive
+      POSTGRES_PASSWORD: hive-local-only
+      TZ: UTC
+    ports:
+      - "127.0.0.1:15432:5432"
+    volumes:
+      - hive-metastore-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hive -d metastore_db"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+  metastore:
+    image: apache/hive:4.2.1
+    container_name: dsv-hive-metastore
+    hostname: metastore
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DB_DRIVER: postgres
+      SERVICE_NAME: metastore
+      HIVE_WAREHOUSE_PATH: /opt/hive/data/warehouse
+      SERVICE_OPTS: >-
+        -Xmx1G
+        -Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver
+        -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://postgres:5432/metastore_db
+        -Djavax.jdo.option.ConnectionUserName=hive
+        -Djavax.jdo.option.ConnectionPassword=hive-local-only
+        -Dhive.metastore.warehouse.dir=/opt/hive/data/warehouse
+        -Dhive.local.time.zone=UTC
+    ports:
+      - "127.0.0.1:19083:9083"
+    volumes:
+      - hive-warehouse:/opt/hive/data/warehouse
+      - ./hive/jars/postgresql-42.7.5.jar:/opt/hive/lib/postgres.jar:ro
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/127.0.0.1/9083'"]
+      interval: 5s
+      timeout: 5s
+      retries: 40
+      start_period: 30s
+
+  hiveserver2:
+    image: apache/hive:4.2.1
+    container_name: dsv-hiveserver2
+    hostname: hiveserver2
+    restart: unless-stopped
+    depends_on:
+      metastore:
+        condition: service_healthy
+    environment:
+      USER: hive
+      SERVICE_NAME: hiveserver2
+      IS_RESUME: "true"
+      DB_DRIVER: postgres
+      HIVE_WAREHOUSE_PATH: /opt/hive/data/warehouse
+      HIVE_SERVER2_THRIFT_PORT: "10000"
+      SERVICE_OPTS: >-
+        -Xmx1G
+        -Dhive.metastore.uris=thrift://metastore:9083
+        -Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver
+        -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://postgres:5432/metastore_db
+        -Djavax.jdo.option.ConnectionUserName=hive
+        -Djavax.jdo.option.ConnectionPassword=hive-local-only
+        -Dhive.metastore.warehouse.dir=/opt/hive/data/warehouse
+        -Dhive.local.time.zone=UTC
+        -Dhive.execution.engine=mr
+    ports:
+      - "127.0.0.1:10000:10000"
+      - "127.0.0.1:10002:10002"
+    volumes:
+      - hive-warehouse:/opt/hive/data/warehouse
+      - hive-scratch:/opt/hive/scratch
+      - ./hive/jars/postgresql-42.7.5.jar:/opt/hive/lib/postgres.jar:ro
+      - ../fixtures:/opt/validator/fixtures:ro
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/127.0.0.1/10000'"]
+      interval: 10s
+      timeout: 10s
+      retries: 40
+      start_period: 45s
+
+volumes:
+  hive-metastore-db:
+  hive-warehouse:
+  hive-scratch:
+

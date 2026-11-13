@@ -1,0 +1,1 @@
+SELECT t1.a, t2.e FROM (SELECT i AS a, j AS b, t AS c FROM J1_TBL) AS t1 CROSS JOIN (SELECT i AS d, k AS e FROM J2_TBL) AS t2 WHERE t1.a=t2.d;

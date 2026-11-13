@@ -1,0 +1,287 @@
+source:
+  dialect: postgres
+  engine: postgres
+  connection_profile: postgres-local
+  database: dsv_pg_manual_20261111
+target:
+  connection_profile: doris-local
+  database: dsv_pg_manual_20261111
+input:
+  format: pg-regress
+  file: assets/time.sql
+  sha256: 89f74ddb5ec458c8f9ff219eab06f48f6ea13767c563782f80569ce364d0960c
+recorded_output:
+  format: pg-regress
+  file: assets/time.out
+  sha256: df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08
+import_summary:
+  accepted: 15
+  skipped: 29
+  ambiguous: 0
+  errors: 0
+import_diagnostics:
+- statement_index: 1
+  line_start: 1
+  line_end: 5
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 2
+  line_start: 7
+  line_end: 7
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 3
+  line_start: 8
+  line_end: 8
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 4
+  line_start: 9
+  line_end: 10
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 5
+  line_start: 11
+  line_end: 11
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 6
+  line_start: 12
+  line_end: 12
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 7
+  line_start: 13
+  line_end: 13
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 8
+  line_start: 14
+  line_end: 14
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 9
+  line_start: 15
+  line_end: 15
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 10
+  line_start: 17
+  line_end: 17
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 11
+  line_start: 18
+  line_end: 18
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 12
+  line_start: 19
+  line_end: 20
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 13
+  line_start: 23
+  line_end: 23
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+- statement_index: 14
+  line_start: 25
+  line_end: 25
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+- statement_index: 15
+  line_start: 27
+  line_end: 27
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+- statement_index: 16
+  line_start: 29
+  line_end: 29
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+- statement_index: 17
+  line_start: 31
+  line_end: 31
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+- statement_index: 19
+  line_start: 35
+  line_end: 35
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+- statement_index: 20
+  line_start: 35
+  line_end: 36
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+- statement_index: 21
+  line_start: 36
+  line_end: 37
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+- statement_index: 26
+  line_start: 41
+  line_end: 44
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+- statement_index: 27
+  line_start: 45
+  line_end: 45
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+- statement_index: 28
+  line_start: 46
+  line_end: 46
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+- statement_index: 29
+  line_start: 47
+  line_end: 47
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+- statement_index: 30
+  line_start: 48
+  line_end: 48
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+- statement_index: 31
+  line_start: 50
+  line_end: 59
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+- statement_index: 42
+  line_start: 77
+  line_end: 77
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+- statement_index: 43
+  line_start: 78
+  line_end: 78
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+- statement_index: 44
+  line_start: 79
+  line_end: 79
+  disposition: skipped
+  statement_type: out_of_scope_query
+  reason: 本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败
+cases:
+- id: pg-time-0018-df2485c4
+  statement_index: 18
+  line_start: 33
+  line_end: 34
+  output_occurrence: 1
+  sql: SELECT '23:59:59.999999'::time;
+- id: pg-time-0022-333b380a
+  statement_index: 22
+  line_start: 37
+  line_end: 38
+  output_occurrence: 1
+  sql: SELECT '24:00:00.01'::time;
+- id: pg-time-0023-aab2582a
+  statement_index: 23
+  line_start: 38
+  line_end: 39
+  output_occurrence: 1
+  sql: SELECT '23:59:60.01'::time;
+- id: pg-time-0024-3f651a00
+  statement_index: 24
+  line_start: 39
+  line_end: 40
+  output_occurrence: 1
+  sql: SELECT '24:01:00'::time;
+- id: pg-time-0025-df167988
+  statement_index: 25
+  line_start: 40
+  line_end: 41
+  output_occurrence: 1
+  sql: SELECT '25:00:00'::time;
+- id: pg-time-0032-ce54a135
+  statement_index: 32
+  line_start: 61
+  line_end: 64
+  output_occurrence: 1
+  sql: SELECT EXTRACT(MICROSECOND FROM TIME '2020-05-26 13:30:25.575401');
+- id: pg-time-0033-c230bada
+  statement_index: 33
+  line_start: 65
+  line_end: 65
+  output_occurrence: 1
+  sql: SELECT EXTRACT(MILLISECOND FROM TIME '2020-05-26 13:30:25.575401');
+- id: pg-time-0034-c3c729bb
+  statement_index: 34
+  line_start: 66
+  line_end: 66
+  output_occurrence: 1
+  sql: SELECT EXTRACT(SECOND      FROM TIME '2020-05-26 13:30:25.575401');
+- id: pg-time-0035-71c4492f
+  statement_index: 35
+  line_start: 67
+  line_end: 67
+  output_occurrence: 1
+  sql: SELECT EXTRACT(MINUTE      FROM TIME '2020-05-26 13:30:25.575401');
+- id: pg-time-0036-42ebd4b8
+  statement_index: 36
+  line_start: 68
+  line_end: 68
+  output_occurrence: 1
+  sql: SELECT EXTRACT(HOUR        FROM TIME '2020-05-26 13:30:25.575401');
+- id: pg-time-0037-3411a8d0
+  statement_index: 37
+  line_start: 69
+  line_end: 69
+  output_occurrence: 1
+  sql: SELECT EXTRACT(DAY         FROM TIME '2020-05-26 13:30:25.575401');
+- id: pg-time-0038-cc79ba84
+  statement_index: 38
+  line_start: 69
+  line_end: 70
+  output_occurrence: 1
+  sql: SELECT EXTRACT(FORTNIGHT   FROM TIME '2020-05-26 13:30:25.575401');
+- id: pg-time-0039-98f3ca62
+  statement_index: 39
+  line_start: 70
+  line_end: 71
+  output_occurrence: 1
+  sql: SELECT EXTRACT(TIMEZONE    FROM TIME '2020-05-26 13:30:25.575401');
+- id: pg-time-0040-341de9e7
+  statement_index: 40
+  line_start: 71
+  line_end: 72
+  output_occurrence: 1
+  sql: SELECT EXTRACT(EPOCH       FROM TIME '2020-05-26 13:30:25.575401');
+- id: pg-time-0041-ce54a135
+  statement_index: 41
+  line_start: 74
+  line_end: 76
+  output_occurrence: 1
+  sql: SELECT date_part('microsecond', TIME '2020-05-26 13:30:25.575401');

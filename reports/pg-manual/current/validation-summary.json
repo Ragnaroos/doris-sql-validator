@@ -1,0 +1,1196 @@
+{
+  "database": "dsv_pg_manual_20261111",
+  "total": 1725,
+  "distinct_sql_texts": 1714,
+  "successful_matches": 241,
+  "outcomes": {
+    "EXECUTION_STATUS_MISMATCH": 976,
+    "MATCH": 371,
+    "ROW_VALUE_MISMATCH": 173,
+    "TRANSLATION_FAILED": 136,
+    "ERROR_BEHAVIOR_MISMATCH": 51,
+    "ROW_COUNT_MISMATCH": 5,
+    "RESULT_SCHEMA_MISMATCH": 13
+  },
+  "archive": "reports/pg-manual/archive/first-round-before-expansion-20261111T094004282439Z",
+  "runs": [
+    {
+      "name": "aggregates",
+      "yaml": "cases/postgres/manual/current/aggregates.yaml",
+      "queries": 55,
+      "import_errors": 0,
+      "summary": {
+        "total": 55,
+        "matched": 15,
+        "non_matching": 40,
+        "successful_matches": 15,
+        "negative_source_cases": 0,
+        "needs_review": 40,
+        "known_source_success": 54,
+        "successful_match_rate_all": 0.2727272727272727,
+        "successful_match_rate_source_success": 0.2777777777777778,
+        "translation_failed": 1,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 6,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 33,
+        "inconclusive": 13,
+        "outcomes": {
+          "EXECUTION_STATUS_MISMATCH": 6,
+          "MATCH": 15,
+          "ROW_VALUE_MISMATCH": 33,
+          "TRANSLATION_FAILED": 1
+        },
+        "run_statuses": {
+          "COMPLETED": 54,
+          "TRANSLATION_FAILED": 1
+        }
+      },
+      "report": "reports/pg-manual/current/validation/aggregates/validation.json"
+    },
+    {
+      "name": "arrays",
+      "yaml": "cases/postgres/manual/current/arrays.yaml",
+      "queries": 65,
+      "import_errors": 0,
+      "summary": {
+        "total": 65,
+        "matched": 0,
+        "non_matching": 65,
+        "successful_matches": 0,
+        "negative_source_cases": 7,
+        "needs_review": 65,
+        "known_source_success": 17,
+        "successful_match_rate_all": 0.0,
+        "successful_match_rate_source_success": 0.0,
+        "translation_failed": 41,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 7,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 10,
+        "inconclusive": 0,
+        "outcomes": {
+          "EXECUTION_STATUS_MISMATCH": 14,
+          "ROW_VALUE_MISMATCH": 10,
+          "TRANSLATION_FAILED": 41
+        },
+        "run_statuses": {
+          "COMPLETED": 24,
+          "TRANSLATION_FAILED": 41
+        }
+      },
+      "report": "reports/pg-manual/current/validation/arrays/validation.json"
+    },
+    {
+      "name": "case",
+      "yaml": "cases/postgres/manual/current/case.yaml",
+      "queries": 8,
+      "import_errors": 0,
+      "summary": {
+        "total": 8,
+        "matched": 6,
+        "non_matching": 2,
+        "successful_matches": 6,
+        "negative_source_cases": 0,
+        "needs_review": 2,
+        "known_source_success": 8,
+        "successful_match_rate_all": 0.75,
+        "successful_match_rate_source_success": 0.75,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 0,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 2,
+        "inconclusive": 0,
+        "outcomes": {
+          "MATCH": 6,
+          "ROW_VALUE_MISMATCH": 2
+        },
+        "run_statuses": {
+          "COMPLETED": 8
+        }
+      },
+      "report": "reports/pg-manual/current/validation/case/validation.json"
+    },
+    {
+      "name": "date",
+      "yaml": "cases/postgres/manual/current/date.yaml",
+      "queries": 64,
+      "import_errors": 0,
+      "summary": {
+        "total": 64,
+        "matched": 17,
+        "non_matching": 47,
+        "successful_matches": 11,
+        "negative_source_cases": 17,
+        "needs_review": 53,
+        "known_source_success": 47,
+        "successful_match_rate_all": 0.171875,
+        "successful_match_rate_source_success": 0.23404255319148937,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 36,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 11,
+        "inconclusive": 0,
+        "outcomes": {
+          "ERROR_BEHAVIOR_MISMATCH": 5,
+          "EXECUTION_STATUS_MISMATCH": 31,
+          "MATCH": 17,
+          "ROW_VALUE_MISMATCH": 11
+        },
+        "run_statuses": {
+          "COMPLETED": 64
+        }
+      },
+      "report": "reports/pg-manual/current/validation/date/validation.json"
+    },
+    {
+      "name": "groupingsets",
+      "yaml": "cases/postgres/manual/current/groupingsets.yaml",
+      "queries": 17,
+      "import_errors": 0,
+      "summary": {
+        "total": 17,
+        "matched": 0,
+        "non_matching": 17,
+        "successful_matches": 0,
+        "negative_source_cases": 0,
+        "needs_review": 17,
+        "known_source_success": 15,
+        "successful_match_rate_all": 0.0,
+        "successful_match_rate_source_success": 0.0,
+        "translation_failed": 2,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 11,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 4,
+        "row_value_mismatch": 0,
+        "inconclusive": 13,
+        "outcomes": {
+          "EXECUTION_STATUS_MISMATCH": 11,
+          "ROW_COUNT_MISMATCH": 4,
+          "TRANSLATION_FAILED": 2
+        },
+        "run_statuses": {
+          "COMPLETED": 15,
+          "TRANSLATION_FAILED": 2
+        }
+      },
+      "report": "reports/pg-manual/current/validation/groupingsets/validation.json"
+    },
+    {
+      "name": "int4",
+      "yaml": "cases/postgres/manual/current/int4.yaml",
+      "queries": 40,
+      "import_errors": 0,
+      "summary": {
+        "total": 40,
+        "matched": 30,
+        "non_matching": 10,
+        "successful_matches": 30,
+        "negative_source_cases": 6,
+        "needs_review": 10,
+        "known_source_success": 34,
+        "successful_match_rate_all": 0.75,
+        "successful_match_rate_source_success": 0.8823529411764706,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 0,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 4,
+        "inconclusive": 8,
+        "outcomes": {
+          "EXECUTION_STATUS_MISMATCH": 6,
+          "MATCH": 30,
+          "ROW_VALUE_MISMATCH": 4
+        },
+        "run_statuses": {
+          "COMPLETED": 40
+        }
+      },
+      "report": "reports/pg-manual/current/validation/int4/validation.json"
+    },
+    {
+      "name": "interval",
+      "yaml": "cases/postgres/manual/current/interval.yaml",
+      "queries": 20,
+      "import_errors": 0,
+      "summary": {
+        "total": 20,
+        "matched": 9,
+        "non_matching": 11,
+        "successful_matches": 0,
+        "negative_source_cases": 9,
+        "needs_review": 20,
+        "known_source_success": 11,
+        "successful_match_rate_all": 0.0,
+        "successful_match_rate_source_success": 0.0,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 20,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 0,
+        "inconclusive": 0,
+        "outcomes": {
+          "EXECUTION_STATUS_MISMATCH": 11,
+          "MATCH": 9
+        },
+        "run_statuses": {
+          "COMPLETED": 20
+        }
+      },
+      "report": "reports/pg-manual/current/validation/interval/validation.json"
+    },
+    {
+      "name": "join",
+      "yaml": "cases/postgres/manual/current/join.yaml",
+      "queries": 58,
+      "import_errors": 0,
+      "summary": {
+        "total": 58,
+        "matched": 30,
+        "non_matching": 28,
+        "successful_matches": 28,
+        "negative_source_cases": 2,
+        "needs_review": 30,
+        "known_source_success": 53,
+        "successful_match_rate_all": 0.4827586206896552,
+        "successful_match_rate_source_success": 0.5283018867924528,
+        "translation_failed": 3,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 25,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 1,
+        "row_value_mismatch": 1,
+        "inconclusive": 25,
+        "outcomes": {
+          "EXECUTION_STATUS_MISMATCH": 23,
+          "MATCH": 30,
+          "ROW_COUNT_MISMATCH": 1,
+          "ROW_VALUE_MISMATCH": 1,
+          "TRANSLATION_FAILED": 3
+        },
+        "run_statuses": {
+          "COMPLETED": 55,
+          "TRANSLATION_FAILED": 3
+        }
+      },
+      "report": "reports/pg-manual/current/validation/join/validation.json"
+    },
+    {
+      "name": "json",
+      "yaml": "cases/postgres/manual/current/json.yaml",
+      "queries": 100,
+      "import_errors": 0,
+      "summary": {
+        "total": 100,
+        "matched": 23,
+        "non_matching": 77,
+        "successful_matches": 12,
+        "negative_source_cases": 23,
+        "needs_review": 88,
+        "known_source_success": 62,
+        "successful_match_rate_all": 0.12,
+        "successful_match_rate_source_success": 0.1935483870967742,
+        "translation_failed": 15,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 58,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 12,
+        "inconclusive": 0,
+        "outcomes": {
+          "ERROR_BEHAVIOR_MISMATCH": 9,
+          "EXECUTION_STATUS_MISMATCH": 41,
+          "MATCH": 23,
+          "ROW_VALUE_MISMATCH": 12,
+          "TRANSLATION_FAILED": 15
+        },
+        "run_statuses": {
+          "COMPLETED": 85,
+          "TRANSLATION_FAILED": 15
+        }
+      },
+      "report": "reports/pg-manual/current/validation/json/validation.json"
+    },
+    {
+      "name": "jsonb",
+      "yaml": "cases/postgres/manual/current/jsonb.yaml",
+      "queries": 90,
+      "import_errors": 0,
+      "summary": {
+        "total": 90,
+        "matched": 4,
+        "non_matching": 86,
+        "successful_matches": 4,
+        "negative_source_cases": 5,
+        "needs_review": 86,
+        "known_source_success": 66,
+        "successful_match_rate_all": 0.044444444444444446,
+        "successful_match_rate_source_success": 0.06060606060606061,
+        "translation_failed": 19,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 62,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 2,
+        "inconclusive": 0,
+        "outcomes": {
+          "ERROR_BEHAVIOR_MISMATCH": 2,
+          "EXECUTION_STATUS_MISMATCH": 63,
+          "MATCH": 4,
+          "ROW_VALUE_MISMATCH": 2,
+          "TRANSLATION_FAILED": 19
+        },
+        "run_statuses": {
+          "COMPLETED": 71,
+          "TRANSLATION_FAILED": 19
+        }
+      },
+      "report": "reports/pg-manual/current/validation/jsonb/validation.json"
+    },
+    {
+      "name": "numeric",
+      "yaml": "cases/postgres/manual/current/numeric.yaml",
+      "queries": 25,
+      "import_errors": 0,
+      "summary": {
+        "total": 25,
+        "matched": 0,
+        "non_matching": 25,
+        "successful_matches": 0,
+        "negative_source_cases": 14,
+        "needs_review": 25,
+        "known_source_success": 11,
+        "successful_match_rate_all": 0.0,
+        "successful_match_rate_source_success": 0.0,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 4,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 7,
+        "inconclusive": 0,
+        "outcomes": {
+          "EXECUTION_STATUS_MISMATCH": 18,
+          "ROW_VALUE_MISMATCH": 7
+        },
+        "run_statuses": {
+          "COMPLETED": 25
+        }
+      },
+      "report": "reports/pg-manual/current/validation/numeric/validation.json"
+    },
+    {
+      "name": "strings",
+      "yaml": "cases/postgres/manual/current/strings.yaml",
+      "queries": 25,
+      "import_errors": 0,
+      "summary": {
+        "total": 25,
+        "matched": 5,
+        "non_matching": 20,
+        "successful_matches": 5,
+        "negative_source_cases": 10,
+        "needs_review": 20,
+        "known_source_success": 15,
+        "successful_match_rate_all": 0.2,
+        "successful_match_rate_source_success": 0.3333333333333333,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 1,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 9,
+        "inconclusive": 0,
+        "outcomes": {
+          "EXECUTION_STATUS_MISMATCH": 11,
+          "MATCH": 5,
+          "ROW_VALUE_MISMATCH": 9
+        },
+        "run_statuses": {
+          "COMPLETED": 25
+        }
+      },
+      "report": "reports/pg-manual/current/validation/strings/validation.json"
+    },
+    {
+      "name": "subselect",
+      "yaml": "cases/postgres/manual/current/subselect.yaml",
+      "queries": 32,
+      "import_errors": 0,
+      "summary": {
+        "total": 32,
+        "matched": 19,
+        "non_matching": 13,
+        "successful_matches": 19,
+        "negative_source_cases": 1,
+        "needs_review": 13,
+        "known_source_success": 28,
+        "successful_match_rate_all": 0.59375,
+        "successful_match_rate_source_success": 0.6785714285714286,
+        "translation_failed": 3,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 7,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 3,
+        "inconclusive": 9,
+        "outcomes": {
+          "ERROR_BEHAVIOR_MISMATCH": 1,
+          "EXECUTION_STATUS_MISMATCH": 6,
+          "MATCH": 19,
+          "ROW_VALUE_MISMATCH": 3,
+          "TRANSLATION_FAILED": 3
+        },
+        "run_statuses": {
+          "COMPLETED": 29,
+          "TRANSLATION_FAILED": 3
+        }
+      },
+      "report": "reports/pg-manual/current/validation/subselect/validation.json"
+    },
+    {
+      "name": "time",
+      "yaml": "cases/postgres/manual/current/time.yaml",
+      "queries": 15,
+      "import_errors": 0,
+      "summary": {
+        "total": 15,
+        "matched": 2,
+        "non_matching": 13,
+        "successful_matches": 0,
+        "negative_source_cases": 7,
+        "needs_review": 15,
+        "known_source_success": 8,
+        "successful_match_rate_all": 0.0,
+        "successful_match_rate_source_success": 0.0,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 3,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 7,
+        "inconclusive": 0,
+        "outcomes": {
+          "EXECUTION_STATUS_MISMATCH": 6,
+          "MATCH": 2,
+          "ROW_VALUE_MISMATCH": 7
+        },
+        "run_statuses": {
+          "COMPLETED": 15
+        }
+      },
+      "report": "reports/pg-manual/current/validation/time/validation.json"
+    },
+    {
+      "name": "timestamp",
+      "yaml": "cases/postgres/manual/current/timestamp.yaml",
+      "queries": 25,
+      "import_errors": 0,
+      "summary": {
+        "total": 25,
+        "matched": 11,
+        "non_matching": 14,
+        "successful_matches": 0,
+        "negative_source_cases": 15,
+        "needs_review": 25,
+        "known_source_success": 10,
+        "successful_match_rate_all": 0.0,
+        "successful_match_rate_source_success": 0.0,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 17,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 5,
+        "inconclusive": 0,
+        "outcomes": {
+          "ERROR_BEHAVIOR_MISMATCH": 1,
+          "EXECUTION_STATUS_MISMATCH": 8,
+          "MATCH": 11,
+          "ROW_VALUE_MISMATCH": 5
+        },
+        "run_statuses": {
+          "COMPLETED": 25
+        }
+      },
+      "report": "reports/pg-manual/current/validation/timestamp/validation.json"
+    },
+    {
+      "name": "timestamptz",
+      "yaml": "cases/postgres/manual/current/timestamptz.yaml",
+      "queries": 15,
+      "import_errors": 0,
+      "summary": {
+        "total": 15,
+        "matched": 8,
+        "non_matching": 7,
+        "successful_matches": 0,
+        "negative_source_cases": 12,
+        "needs_review": 15,
+        "known_source_success": 2,
+        "successful_match_rate_all": 0.0,
+        "successful_match_rate_source_success": 0.0,
+        "translation_failed": 1,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 9,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 1,
+        "inconclusive": 0,
+        "outcomes": {
+          "EXECUTION_STATUS_MISMATCH": 5,
+          "MATCH": 8,
+          "ROW_VALUE_MISMATCH": 1,
+          "TRANSLATION_FAILED": 1
+        },
+        "run_statuses": {
+          "COMPLETED": 14,
+          "TRANSLATION_FAILED": 1
+        }
+      },
+      "report": "reports/pg-manual/current/validation/timestamptz/validation.json"
+    },
+    {
+      "name": "union",
+      "yaml": "cases/postgres/manual/current/union.yaml",
+      "queries": 20,
+      "import_errors": 0,
+      "summary": {
+        "total": 20,
+        "matched": 2,
+        "non_matching": 18,
+        "successful_matches": 2,
+        "negative_source_cases": 0,
+        "needs_review": 18,
+        "known_source_success": 2,
+        "successful_match_rate_all": 0.1,
+        "successful_match_rate_source_success": 1.0,
+        "translation_failed": 18,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 0,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 0,
+        "inconclusive": 0,
+        "outcomes": {
+          "MATCH": 2,
+          "TRANSLATION_FAILED": 18
+        },
+        "run_statuses": {
+          "COMPLETED": 2,
+          "TRANSLATION_FAILED": 18
+        }
+      },
+      "report": "reports/pg-manual/current/validation/union/validation.json"
+    },
+    {
+      "name": "window",
+      "yaml": "cases/postgres/manual/current/window.yaml",
+      "queries": 65,
+      "import_errors": 0,
+      "summary": {
+        "total": 65,
+        "matched": 23,
+        "non_matching": 42,
+        "successful_matches": 23,
+        "negative_source_cases": 0,
+        "needs_review": 42,
+        "known_source_success": 46,
+        "successful_match_rate_all": 0.35384615384615387,
+        "successful_match_rate_source_success": 0.5,
+        "translation_failed": 19,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 18,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 5,
+        "inconclusive": 22,
+        "outcomes": {
+          "EXECUTION_STATUS_MISMATCH": 18,
+          "MATCH": 23,
+          "ROW_VALUE_MISMATCH": 5,
+          "TRANSLATION_FAILED": 19
+        },
+        "run_statuses": {
+          "COMPLETED": 46,
+          "TRANSLATION_FAILED": 19
+        }
+      },
+      "report": "reports/pg-manual/current/validation/window/validation.json"
+    },
+    {
+      "name": "with",
+      "yaml": "cases/postgres/manual/current/with.yaml",
+      "queries": 11,
+      "import_errors": 0,
+      "summary": {
+        "total": 11,
+        "matched": 5,
+        "non_matching": 6,
+        "successful_matches": 5,
+        "negative_source_cases": 1,
+        "needs_review": 6,
+        "known_source_success": 10,
+        "successful_match_rate_all": 0.45454545454545453,
+        "successful_match_rate_source_success": 0.5,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 6,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 0,
+        "inconclusive": 2,
+        "outcomes": {
+          "ERROR_BEHAVIOR_MISMATCH": 1,
+          "EXECUTION_STATUS_MISMATCH": 5,
+          "MATCH": 5
+        },
+        "run_statuses": {
+          "COMPLETED": 11
+        }
+      },
+      "report": "reports/pg-manual/current/validation/with/validation.json"
+    },
+    {
+      "name": "bit",
+      "available_readable_queries": 95,
+      "queries": 66,
+      "deferred": 29,
+      "import_errors": 1,
+      "yaml": "cases/postgres/manual/current/expanded/bit.yaml",
+      "summary": {
+        "total": 66,
+        "matched": 8,
+        "non_matching": 58,
+        "successful_matches": 0,
+        "negative_source_cases": 9,
+        "needs_review": 66,
+        "known_source_success": 57,
+        "successful_match_rate_all": 0.0,
+        "successful_match_rate_source_success": 0.0,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 66,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 0,
+        "inconclusive": 0,
+        "outcomes": {
+          "ERROR_BEHAVIOR_MISMATCH": 1,
+          "EXECUTION_STATUS_MISMATCH": 57,
+          "MATCH": 8
+        },
+        "run_statuses": {
+          "COMPLETED": 66
+        }
+      },
+      "report": "reports/pg-manual/current/validation/bit/validation.json"
+    },
+    {
+      "name": "collate",
+      "available_readable_queries": 68,
+      "queries": 4,
+      "deferred": 64,
+      "import_errors": 4,
+      "yaml": "cases/postgres/manual/current/expanded/collate.yaml",
+      "summary": {
+        "total": 4,
+        "matched": 3,
+        "non_matching": 1,
+        "successful_matches": 3,
+        "negative_source_cases": 1,
+        "needs_review": 1,
+        "known_source_success": 3,
+        "successful_match_rate_all": 0.75,
+        "successful_match_rate_source_success": 1.0,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 1,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 0,
+        "inconclusive": 0,
+        "outcomes": {
+          "ERROR_BEHAVIOR_MISMATCH": 1,
+          "MATCH": 3
+        },
+        "run_statuses": {
+          "COMPLETED": 4
+        }
+      },
+      "report": "reports/pg-manual/current/validation/collate/validation.json"
+    },
+    {
+      "name": "multirangetypes",
+      "available_readable_queries": 510,
+      "queries": 266,
+      "deferred": 244,
+      "import_errors": 7,
+      "yaml": "cases/postgres/manual/current/expanded/multirangetypes.yaml",
+      "summary": {
+        "total": 266,
+        "matched": 0,
+        "non_matching": 266,
+        "successful_matches": 0,
+        "negative_source_cases": 1,
+        "needs_review": 266,
+        "known_source_success": 264,
+        "successful_match_rate_all": 0.0,
+        "successful_match_rate_source_success": 0.0,
+        "translation_failed": 1,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 265,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 0,
+        "inconclusive": 0,
+        "outcomes": {
+          "ERROR_BEHAVIOR_MISMATCH": 1,
+          "EXECUTION_STATUS_MISMATCH": 264,
+          "TRANSLATION_FAILED": 1
+        },
+        "run_statuses": {
+          "COMPLETED": 265,
+          "TRANSLATION_FAILED": 1
+        }
+      },
+      "report": "reports/pg-manual/current/validation/multirangetypes/validation.json"
+    },
+    {
+      "name": "numerology",
+      "available_readable_queries": 62,
+      "queries": 54,
+      "deferred": 8,
+      "import_errors": 11,
+      "yaml": "cases/postgres/manual/current/expanded/numerology.yaml",
+      "summary": {
+        "total": 54,
+        "matched": 8,
+        "non_matching": 46,
+        "successful_matches": 0,
+        "negative_source_cases": 21,
+        "needs_review": 54,
+        "known_source_success": 33,
+        "successful_match_rate_all": 0.0,
+        "successful_match_rate_source_success": 0.0,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 24,
+        "schema_mismatch": 13,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 5,
+        "inconclusive": 0,
+        "outcomes": {
+          "ERROR_BEHAVIOR_MISMATCH": 1,
+          "EXECUTION_STATUS_MISMATCH": 27,
+          "MATCH": 8,
+          "RESULT_SCHEMA_MISMATCH": 13,
+          "ROW_VALUE_MISMATCH": 5
+        },
+        "run_statuses": {
+          "COMPLETED": 54
+        }
+      },
+      "report": "reports/pg-manual/current/validation/numerology/validation.json"
+    },
+    {
+      "name": "rangetypes",
+      "available_readable_queries": 263,
+      "queries": 56,
+      "deferred": 207,
+      "import_errors": 4,
+      "yaml": "cases/postgres/manual/current/expanded/rangetypes.yaml",
+      "summary": {
+        "total": 56,
+        "matched": 1,
+        "non_matching": 55,
+        "successful_matches": 0,
+        "negative_source_cases": 3,
+        "needs_review": 56,
+        "known_source_success": 52,
+        "successful_match_rate_all": 0.0,
+        "successful_match_rate_source_success": 0.0,
+        "translation_failed": 1,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 55,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 0,
+        "inconclusive": 0,
+        "outcomes": {
+          "ERROR_BEHAVIOR_MISMATCH": 2,
+          "EXECUTION_STATUS_MISMATCH": 52,
+          "MATCH": 1,
+          "TRANSLATION_FAILED": 1
+        },
+        "run_statuses": {
+          "COMPLETED": 55,
+          "TRANSLATION_FAILED": 1
+        }
+      },
+      "report": "reports/pg-manual/current/validation/rangetypes/validation.json"
+    },
+    {
+      "name": "sqljson",
+      "available_readable_queries": 138,
+      "queries": 87,
+      "deferred": 51,
+      "import_errors": 55,
+      "yaml": "cases/postgres/manual/current/expanded/sqljson.yaml",
+      "summary": {
+        "total": 87,
+        "matched": 28,
+        "non_matching": 59,
+        "successful_matches": 1,
+        "negative_source_cases": 30,
+        "needs_review": 86,
+        "known_source_success": 55,
+        "successful_match_rate_all": 0.011494252873563218,
+        "successful_match_rate_source_success": 0.01818181818181818,
+        "translation_failed": 2,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 74,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 10,
+        "inconclusive": 0,
+        "outcomes": {
+          "ERROR_BEHAVIOR_MISMATCH": 3,
+          "EXECUTION_STATUS_MISMATCH": 44,
+          "MATCH": 28,
+          "ROW_VALUE_MISMATCH": 10,
+          "TRANSLATION_FAILED": 2
+        },
+        "run_statuses": {
+          "COMPLETED": 85,
+          "TRANSLATION_FAILED": 2
+        }
+      },
+      "report": "reports/pg-manual/current/validation/sqljson/validation.json"
+    },
+    {
+      "name": "sqljson_queryfuncs",
+      "available_readable_queries": 129,
+      "queries": 74,
+      "deferred": 55,
+      "import_errors": 145,
+      "yaml": "cases/postgres/manual/current/expanded/sqljson_queryfuncs.yaml",
+      "summary": {
+        "total": 74,
+        "matched": 13,
+        "non_matching": 61,
+        "successful_matches": 0,
+        "negative_source_cases": 19,
+        "needs_review": 74,
+        "known_source_success": 55,
+        "successful_match_rate_all": 0.0,
+        "successful_match_rate_source_success": 0.0,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 74,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 0,
+        "inconclusive": 0,
+        "outcomes": {
+          "ERROR_BEHAVIOR_MISMATCH": 6,
+          "EXECUTION_STATUS_MISMATCH": 55,
+          "MATCH": 13
+        },
+        "run_statuses": {
+          "COMPLETED": 74
+        }
+      },
+      "report": "reports/pg-manual/current/validation/sqljson_queryfuncs/validation.json"
+    },
+    {
+      "name": "xml",
+      "available_readable_queries": 132,
+      "queries": 70,
+      "deferred": 62,
+      "import_errors": 97,
+      "yaml": "cases/postgres/manual/current/expanded/xml.yaml",
+      "summary": {
+        "total": 70,
+        "matched": 1,
+        "non_matching": 69,
+        "successful_matches": 0,
+        "negative_source_cases": 6,
+        "needs_review": 70,
+        "known_source_success": 60,
+        "successful_match_rate_all": 0.0,
+        "successful_match_rate_source_success": 0.0,
+        "translation_failed": 4,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 66,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 0,
+        "inconclusive": 0,
+        "outcomes": {
+          "ERROR_BEHAVIOR_MISMATCH": 5,
+          "EXECUTION_STATUS_MISMATCH": 60,
+          "MATCH": 1,
+          "TRANSLATION_FAILED": 4
+        },
+        "run_statuses": {
+          "COMPLETED": 66,
+          "TRANSLATION_FAILED": 4
+        }
+      },
+      "report": "reports/pg-manual/current/validation/xml/validation.json"
+    },
+    {
+      "name": "boolean",
+      "available_readable_queries": 77,
+      "queries": 45,
+      "deferred": 32,
+      "import_errors": 0,
+      "yaml": "cases/postgres/manual/current/expanded/boolean.yaml",
+      "summary": {
+        "total": 45,
+        "matched": 27,
+        "non_matching": 18,
+        "successful_matches": 27,
+        "negative_source_cases": 12,
+        "needs_review": 18,
+        "known_source_success": 33,
+        "successful_match_rate_all": 0.6,
+        "successful_match_rate_source_success": 0.8181818181818182,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 2,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 4,
+        "inconclusive": 0,
+        "outcomes": {
+          "EXECUTION_STATUS_MISMATCH": 14,
+          "MATCH": 27,
+          "ROW_VALUE_MISMATCH": 4
+        },
+        "run_statuses": {
+          "COMPLETED": 45
+        }
+      },
+      "report": "reports/pg-manual/current/validation/boolean/validation.json"
+    },
+    {
+      "name": "char",
+      "available_readable_queries": 21,
+      "queries": 3,
+      "deferred": 18,
+      "import_errors": 0,
+      "yaml": "cases/postgres/manual/current/expanded/char.yaml",
+      "summary": {
+        "total": 3,
+        "matched": 1,
+        "non_matching": 2,
+        "successful_matches": 1,
+        "negative_source_cases": 0,
+        "needs_review": 2,
+        "known_source_success": 3,
+        "successful_match_rate_all": 0.3333333333333333,
+        "successful_match_rate_source_success": 0.3333333333333333,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 2,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 0,
+        "inconclusive": 0,
+        "outcomes": {
+          "EXECUTION_STATUS_MISMATCH": 2,
+          "MATCH": 1
+        },
+        "run_statuses": {
+          "COMPLETED": 3
+        }
+      },
+      "report": "reports/pg-manual/current/validation/char/validation.json"
+    },
+    {
+      "name": "float4",
+      "available_readable_queries": 64,
+      "queries": 46,
+      "deferred": 18,
+      "import_errors": 0,
+      "yaml": "cases/postgres/manual/current/expanded/float4.yaml",
+      "summary": {
+        "total": 46,
+        "matched": 11,
+        "non_matching": 35,
+        "successful_matches": 11,
+        "negative_source_cases": 9,
+        "needs_review": 35,
+        "known_source_success": 37,
+        "successful_match_rate_all": 0.2391304347826087,
+        "successful_match_rate_source_success": 0.2972972972972973,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 20,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 6,
+        "inconclusive": 0,
+        "outcomes": {
+          "EXECUTION_STATUS_MISMATCH": 29,
+          "MATCH": 11,
+          "ROW_VALUE_MISMATCH": 6
+        },
+        "run_statuses": {
+          "COMPLETED": 46
+        }
+      },
+      "report": "reports/pg-manual/current/validation/float4/validation.json"
+    },
+    {
+      "name": "float8",
+      "available_readable_queries": 149,
+      "queries": 114,
+      "deferred": 35,
+      "import_errors": 0,
+      "yaml": "cases/postgres/manual/current/expanded/float8.yaml",
+      "summary": {
+        "total": 114,
+        "matched": 38,
+        "non_matching": 76,
+        "successful_matches": 38,
+        "negative_source_cases": 26,
+        "needs_review": 76,
+        "known_source_success": 88,
+        "successful_match_rate_all": 0.3333333333333333,
+        "successful_match_rate_source_success": 0.4318181818181818,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 22,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 36,
+        "inconclusive": 0,
+        "outcomes": {
+          "ERROR_BEHAVIOR_MISMATCH": 8,
+          "EXECUTION_STATUS_MISMATCH": 32,
+          "MATCH": 38,
+          "ROW_VALUE_MISMATCH": 36
+        },
+        "run_statuses": {
+          "COMPLETED": 114
+        }
+      },
+      "report": "reports/pg-manual/current/validation/float8/validation.json"
+    },
+    {
+      "name": "money",
+      "available_readable_queries": 99,
+      "queries": 55,
+      "deferred": 44,
+      "import_errors": 0,
+      "yaml": "cases/postgres/manual/current/expanded/money.yaml",
+      "summary": {
+        "total": 55,
+        "matched": 21,
+        "non_matching": 34,
+        "successful_matches": 0,
+        "negative_source_cases": 21,
+        "needs_review": 55,
+        "known_source_success": 34,
+        "successful_match_rate_all": 0.0,
+        "successful_match_rate_source_success": 0.0,
+        "translation_failed": 0,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 55,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 0,
+        "inconclusive": 0,
+        "outcomes": {
+          "EXECUTION_STATUS_MISMATCH": 34,
+          "MATCH": 21
+        },
+        "run_statuses": {
+          "COMPLETED": 55
+        }
+      },
+      "report": "reports/pg-manual/current/validation/money/validation.json"
+    },
+    {
+      "name": "rowtypes",
+      "available_readable_queries": 123,
+      "queries": 32,
+      "deferred": 91,
+      "import_errors": 34,
+      "yaml": "cases/postgres/manual/current/expanded/rowtypes.yaml",
+      "summary": {
+        "total": 32,
+        "matched": 2,
+        "non_matching": 30,
+        "successful_matches": 0,
+        "negative_source_cases": 6,
+        "needs_review": 32,
+        "known_source_success": 23,
+        "successful_match_rate_all": 0.0,
+        "successful_match_rate_source_success": 0.0,
+        "translation_failed": 3,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 29,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 0,
+        "inconclusive": 0,
+        "outcomes": {
+          "ERROR_BEHAVIOR_MISMATCH": 4,
+          "EXECUTION_STATUS_MISMATCH": 23,
+          "MATCH": 2,
+          "TRANSLATION_FAILED": 3
+        },
+        "run_statuses": {
+          "COMPLETED": 29,
+          "TRANSLATION_FAILED": 3
+        }
+      },
+      "report": "reports/pg-manual/current/validation/rowtypes/validation.json"
+    },
+    {
+      "name": "select_distinct_on",
+      "yaml": "cases/postgres/manual/current/select_distinct_on.yaml",
+      "queries": 3,
+      "import_errors": 0,
+      "summary": {
+        "total": 3,
+        "matched": 0,
+        "non_matching": 3,
+        "successful_matches": 0,
+        "negative_source_cases": 0,
+        "needs_review": 3,
+        "known_source_success": 0,
+        "successful_match_rate_all": 0.0,
+        "successful_match_rate_source_success": null,
+        "translation_failed": 3,
+        "source_evidence_failed": 0,
+        "doris_execution_failed": 0,
+        "schema_mismatch": 0,
+        "row_count_mismatch": 0,
+        "row_value_mismatch": 0,
+        "inconclusive": 0,
+        "outcomes": {
+          "TRANSLATION_FAILED": 3
+        },
+        "run_statuses": {
+          "TRANSLATION_FAILED": 3
+        }
+      },
+      "report": "reports/pg-manual/current/validation/select_distinct_on/validation.json"
+    }
+  ],
+  "report_update_note": "2026-11-13 仅将 select_distinct_on 的 3 条查询通过普通 run 重新验证，均在 SQLGlot Parser 阶段失败；其余 1,722 条沿用各组已有执行证据，本次未连接数据库、未重跑全批，也未重新归因。"
+}

@@ -1,0 +1,1 @@
+SELECT CAST(JSON_CONTAINS('[1,2]','[1,1]') AS BOOLEAN) AS value;

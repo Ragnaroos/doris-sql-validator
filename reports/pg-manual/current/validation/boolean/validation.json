@@ -1,0 +1,4238 @@
+{
+  "started_at": "2026-11-11T09:40:37.194820+00:00",
+  "finished_at": "2026-11-11T09:40:37.910149+00:00",
+  "sqlglot_version": "30.25.1.dev6",
+  "sqlglot_commit": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+  "source": {
+    "dialect": "postgres",
+    "engine": "postgres",
+    "connection_profile": null,
+    "database": "dsv_pg_manual_20261111"
+  },
+  "target": {
+    "dialect": "doris",
+    "engine": "doris",
+    "connection_profile": "doris-local",
+    "database": "dsv_pg_manual_20261111"
+  },
+  "input": {
+    "format": "pg-regress",
+    "file": "assets/boolean.sql",
+    "sha256": "d87b3e67963421c4a3867c6dbdda83ad209a412515a6a0e304b60b38aff59a9b"
+  },
+  "validation_mode": "recorded_output",
+  "import_summary": {
+    "accepted": 45,
+    "skipped": 53,
+    "ambiguous": 0,
+    "errors": 0
+  },
+  "import_diagnostics": [
+    {
+      "statement_index": 44,
+      "line_start": 97,
+      "line_end": 99,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 45,
+      "line_start": 101,
+      "line_end": 101,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 46,
+      "line_start": 103,
+      "line_end": 103,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 47,
+      "line_start": 105,
+      "line_end": 105,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 52,
+      "line_start": 125,
+      "line_end": 125,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 54,
+      "line_start": 132,
+      "line_end": 132,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 55,
+      "line_start": 134,
+      "line_end": 134,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 56,
+      "line_start": 136,
+      "line_end": 136,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 57,
+      "line_start": 138,
+      "line_end": 138,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 58,
+      "line_start": 140,
+      "line_end": 140,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 59,
+      "line_start": 142,
+      "line_end": 145,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 73,
+      "line_start": 209,
+      "line_end": 212,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 74,
+      "line_start": 213,
+      "line_end": 213,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 75,
+      "line_start": 214,
+      "line_end": 214,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 76,
+      "line_start": 215,
+      "line_end": 215,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 78,
+      "line_start": 228,
+      "line_end": 231,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 79,
+      "line_start": 232,
+      "line_end": 232,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 95,
+      "line_start": 259,
+      "line_end": 266,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 96,
+      "line_start": 268,
+      "line_end": 268,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 97,
+      "line_start": 270,
+      "line_end": 270,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 98,
+      "line_start": 272,
+      "line_end": 272,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 29,
+      "line_start": 68,
+      "line_end": 68,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 48,
+      "line_start": 108,
+      "line_end": 109,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 49,
+      "line_start": 112,
+      "line_end": 114,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 50,
+      "line_start": 117,
+      "line_end": 119,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 51,
+      "line_start": 121,
+      "line_end": 123,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 53,
+      "line_start": 127,
+      "line_end": 129,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 60,
+      "line_start": 147,
+      "line_end": 148,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 61,
+      "line_start": 151,
+      "line_end": 153,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 62,
+      "line_start": 156,
+      "line_end": 158,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 63,
+      "line_start": 161,
+      "line_end": 163,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 64,
+      "line_start": 166,
+      "line_end": 169,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 65,
+      "line_start": 171,
+      "line_end": 179,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 66,
+      "line_start": 181,
+      "line_end": 183,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 67,
+      "line_start": 185,
+      "line_end": 187,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 68,
+      "line_start": 189,
+      "line_end": 191,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 69,
+      "line_start": 193,
+      "line_end": 195,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 70,
+      "line_start": 197,
+      "line_end": 199,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 71,
+      "line_start": 201,
+      "line_end": 203,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 72,
+      "line_start": 205,
+      "line_end": 207,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 77,
+      "line_start": 217,
+      "line_end": 225,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 80,
+      "line_start": 233,
+      "line_end": 237,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 81,
+      "line_start": 238,
+      "line_end": 238,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 82,
+      "line_start": 239,
+      "line_end": 239,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 83,
+      "line_start": 240,
+      "line_end": 240,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 84,
+      "line_start": 241,
+      "line_end": 241,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 85,
+      "line_start": 242,
+      "line_end": 242,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 86,
+      "line_start": 244,
+      "line_end": 246,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 87,
+      "line_start": 247,
+      "line_end": 247,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 88,
+      "line_start": 248,
+      "line_end": 248,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 89,
+      "line_start": 249,
+      "line_end": 249,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 90,
+      "line_start": 250,
+      "line_end": 250,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 91,
+      "line_start": 251,
+      "line_end": 251,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    }
+  ],
+  "recorded_output": {
+    "format": "pg-regress",
+    "file": "assets/boolean.out",
+    "sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+    "driver": null
+  },
+  "cases": [
+    {
+      "id": "pg-boolean-0001-70d501bd",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 1 AS one;",
+      "target_sql": "SELECT 1 AS one",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "one",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "1"
+            ]
+          ],
+          "result_digest": "8ef9fc24093322acce11a5335df997ff0960dabcce3733690efb0a4cc738f0ab",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 1
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "one",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 22.366249933838844,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=8ef9fc24093322acce11a5335df997ff0960dabcce3733690efb0a4cc738f0ab",
+          "doris_digest=8ef9fc24093322acce11a5335df997ff0960dabcce3733690efb0a4cc738f0ab"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0002-cd7e4191",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT true AS true;",
+      "target_sql": "SELECT TRUE AS `true`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 2
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 15.912500210106373,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "doris_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0003-c5856e9a",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT false AS false;",
+      "target_sql": "SELECT FALSE AS `false`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "false",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "f"
+            ]
+          ],
+          "result_digest": "5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 3
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "false",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 11.246999725699425,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "doris_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0004-3bf7e474",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 't' AS true;",
+      "target_sql": "SELECT CAST('t' AS BOOLEAN) AS `true`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 4
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 13.354083523154259,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "doris_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0005-97c5885a",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool '   f           ' AS false;",
+      "target_sql": "SELECT CAST('   f           ' AS BOOLEAN) AS `false`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "false",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "f"
+            ]
+          ],
+          "result_digest": "5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 5
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "false",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 15.799625776708126,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "doris_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0006-2b4f6271",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'true' AS true;",
+      "target_sql": "SELECT CAST('true' AS BOOLEAN) AS `true`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 6
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 25.98104253411293,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "doris_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0007-e1b1ef89",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'test' AS error;",
+      "target_sql": "SELECT CAST('test' AS BOOLEAN) AS error",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "PARSE_ERROR",
+            "message": "invalid input syntax for type boolean: \"test\"",
+            "code": "invalid input syntax for type boolean: \"test\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 7
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "error",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 16.389125026762486,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=PARSE_ERROR",
+          "source_error_message=invalid input syntax for type boolean: \"test\"",
+          "source_error_code=invalid input syntax for type boolean: \"test\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-boolean-0008-7393cacc",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'false' AS false;",
+      "target_sql": "SELECT CAST('false' AS BOOLEAN) AS `false`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "false",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "f"
+            ]
+          ],
+          "result_digest": "5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 8
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "false",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 15.492208302021027,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "doris_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0009-38386ada",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'foo' AS error;",
+      "target_sql": "SELECT CAST('foo' AS BOOLEAN) AS error",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "PARSE_ERROR",
+            "message": "invalid input syntax for type boolean: \"foo\"",
+            "code": "invalid input syntax for type boolean: \"foo\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 9
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "error",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 16.499750316143036,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=PARSE_ERROR",
+          "source_error_message=invalid input syntax for type boolean: \"foo\"",
+          "source_error_code=invalid input syntax for type boolean: \"foo\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-boolean-0010-222849e6",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'y' AS true;",
+      "target_sql": "SELECT CAST('y' AS BOOLEAN) AS `true`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 10
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 18.541249446570873,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "doris_digest=c6bb4cfd0414fb9422955049899642caafb6bada2194f68145f385cf34bb4daf",
+          "source_sample=[['t']]",
+          "doris_sample=[['']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-boolean-0011-8724fe67",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'yes' AS true;",
+      "target_sql": "SELECT CAST('yes' AS BOOLEAN) AS `true`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 11
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 13.548249378800392,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "doris_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0012-81dee7f4",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'yeah' AS error;",
+      "target_sql": "SELECT CAST('yeah' AS BOOLEAN) AS error",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "PARSE_ERROR",
+            "message": "invalid input syntax for type boolean: \"yeah\"",
+            "code": "invalid input syntax for type boolean: \"yeah\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 12
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "error",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 13.052250258624554,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=PARSE_ERROR",
+          "source_error_message=invalid input syntax for type boolean: \"yeah\"",
+          "source_error_code=invalid input syntax for type boolean: \"yeah\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-boolean-0013-41441aee",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'n' AS false;",
+      "target_sql": "SELECT CAST('n' AS BOOLEAN) AS `false`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "false",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "f"
+            ]
+          ],
+          "result_digest": "5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 13
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "false",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 11.65908295661211,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "doris_digest=c6bb4cfd0414fb9422955049899642caafb6bada2194f68145f385cf34bb4daf",
+          "source_sample=[['f']]",
+          "doris_sample=[['']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-boolean-0014-820ec7d1",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'no' AS false;",
+      "target_sql": "SELECT CAST('no' AS BOOLEAN) AS `false`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "false",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "f"
+            ]
+          ],
+          "result_digest": "5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 14
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "false",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 11.486999690532684,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "doris_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0015-9a4316f3",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'nay' AS error;",
+      "target_sql": "SELECT CAST('nay' AS BOOLEAN) AS error",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "PARSE_ERROR",
+            "message": "invalid input syntax for type boolean: \"nay\"",
+            "code": "invalid input syntax for type boolean: \"nay\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 15
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "error",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 11.750999838113785,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=PARSE_ERROR",
+          "source_error_message=invalid input syntax for type boolean: \"nay\"",
+          "source_error_code=invalid input syntax for type boolean: \"nay\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-boolean-0016-a26417ca",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'on' AS true;",
+      "target_sql": "SELECT CAST('on' AS BOOLEAN) AS `true`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 16
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 16.48258324712515,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "doris_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0017-bb8e4812",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'off' AS false;",
+      "target_sql": "SELECT CAST('off' AS BOOLEAN) AS `false`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "false",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "f"
+            ]
+          ],
+          "result_digest": "5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 17
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "false",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 11.82512566447258,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "doris_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0018-0e6e96f9",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'of' AS false;",
+      "target_sql": "SELECT CAST('of' AS BOOLEAN) AS `false`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "false",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "f"
+            ]
+          ],
+          "result_digest": "5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 18
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "false",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 11.27704232931137,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "doris_digest=c6bb4cfd0414fb9422955049899642caafb6bada2194f68145f385cf34bb4daf",
+          "source_sample=[['f']]",
+          "doris_sample=[['']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-boolean-0019-75c89fd3",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'o' AS error;",
+      "target_sql": "SELECT CAST('o' AS BOOLEAN) AS error",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "PARSE_ERROR",
+            "message": "invalid input syntax for type boolean: \"o\"",
+            "code": "invalid input syntax for type boolean: \"o\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 19
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "error",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 10.9291672706604,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=PARSE_ERROR",
+          "source_error_message=invalid input syntax for type boolean: \"o\"",
+          "source_error_code=invalid input syntax for type boolean: \"o\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-boolean-0020-c50756c3",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'on_' AS error;",
+      "target_sql": "SELECT CAST('on_' AS BOOLEAN) AS error",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "PARSE_ERROR",
+            "message": "invalid input syntax for type boolean: \"on_\"",
+            "code": "invalid input syntax for type boolean: \"on_\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 20
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "error",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 11.45699992775917,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=PARSE_ERROR",
+          "source_error_message=invalid input syntax for type boolean: \"on_\"",
+          "source_error_code=invalid input syntax for type boolean: \"on_\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-boolean-0021-7dfc6ac1",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'off_' AS error;",
+      "target_sql": "SELECT CAST('off_' AS BOOLEAN) AS error",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "PARSE_ERROR",
+            "message": "invalid input syntax for type boolean: \"off_\"",
+            "code": "invalid input syntax for type boolean: \"off_\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 21
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "error",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 11.486208066344261,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=PARSE_ERROR",
+          "source_error_message=invalid input syntax for type boolean: \"off_\"",
+          "source_error_code=invalid input syntax for type boolean: \"off_\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-boolean-0022-e5ab58c0",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool '1' AS true;",
+      "target_sql": "SELECT CAST('1' AS BOOLEAN) AS `true`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 22
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 11.020999401807785,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "doris_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0023-f8e04b2d",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool '11' AS error;",
+      "target_sql": "SELECT CAST('11' AS BOOLEAN) AS error",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "PARSE_ERROR",
+            "message": "invalid input syntax for type boolean: \"11\"",
+            "code": "invalid input syntax for type boolean: \"11\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 23
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "error",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 11.436209082603455,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=PARSE_ERROR",
+          "source_error_message=invalid input syntax for type boolean: \"11\"",
+          "source_error_code=invalid input syntax for type boolean: \"11\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-boolean-0024-107f4ce0",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool '0' AS false;",
+      "target_sql": "SELECT CAST('0' AS BOOLEAN) AS `false`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "false",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "f"
+            ]
+          ],
+          "result_digest": "5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 24
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "false",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 21.082541905343533,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "doris_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0025-2c6fc490",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool '000' AS error;",
+      "target_sql": "SELECT CAST('000' AS BOOLEAN) AS error",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "PARSE_ERROR",
+            "message": "invalid input syntax for type boolean: \"000\"",
+            "code": "invalid input syntax for type boolean: \"000\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 25
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "error",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 14.557834714651108,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=PARSE_ERROR",
+          "source_error_message=invalid input syntax for type boolean: \"000\"",
+          "source_error_code=invalid input syntax for type boolean: \"000\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-boolean-0026-2c8a99f3",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool '' AS error;",
+      "target_sql": "SELECT CAST('' AS BOOLEAN) AS error",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "PARSE_ERROR",
+            "message": "invalid input syntax for type boolean: \"\"",
+            "code": "invalid input syntax for type boolean: \"\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 26
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "error",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 13.64483404904604,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=PARSE_ERROR",
+          "source_error_message=invalid input syntax for type boolean: \"\"",
+          "source_error_code=invalid input syntax for type boolean: \"\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-boolean-0027-1e7243be",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT pg_input_is_valid('true', 'bool');",
+      "target_sql": "SELECT PG_INPUT_IS_VALID('true', 'bool')",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "pg_input_is_valid",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 27
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'PG_INPUT_IS_VALID'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 12.298624962568283,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'PG_INPUT_IS_VALID'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-boolean-0028-50f4807b",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT pg_input_is_valid('asdf', 'bool');",
+      "target_sql": "SELECT PG_INPUT_IS_VALID('asdf', 'bool')",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "pg_input_is_valid",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "f"
+            ]
+          ],
+          "result_digest": "5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 28
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'PG_INPUT_IS_VALID'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.578207835555077,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'PG_INPUT_IS_VALID'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-boolean-0030-926c4ad4",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 't' or bool 'f' AS true;",
+      "target_sql": "SELECT CAST('t' AS BOOLEAN) OR CAST('f' AS BOOLEAN) AS `true`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 30
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 12.130707502365112,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "doris_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0031-8355bac8",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 't' and bool 'f' AS false;",
+      "target_sql": "SELECT CAST('t' AS BOOLEAN) AND CAST('f' AS BOOLEAN) AS `false`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "false",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "f"
+            ]
+          ],
+          "result_digest": "5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 31
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "false",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 11.48283388465643,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "doris_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0032-9502db2a",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT not bool 'f' AS true;",
+      "target_sql": "SELECT NOT CAST('f' AS BOOLEAN) AS `true`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 32
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 14.534958638250828,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "doris_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0033-f3dc7c01",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 't' = bool 'f' AS false;",
+      "target_sql": "SELECT CAST('t' AS BOOLEAN) = CAST('f' AS BOOLEAN) AS `false`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "false",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "f"
+            ]
+          ],
+          "result_digest": "5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 33
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "false",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 12.124540284276009,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "doris_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0034-beb69ffd",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 't' <> bool 'f' AS true;",
+      "target_sql": "SELECT CAST('t' AS BOOLEAN) <> CAST('f' AS BOOLEAN) AS `true`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 34
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 11.916416697204113,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "doris_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0035-88080971",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 't' > bool 'f' AS true;",
+      "target_sql": "SELECT CAST('t' AS BOOLEAN) > CAST('f' AS BOOLEAN) AS `true`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 35
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 11.728749610483646,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "doris_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0036-126950bd",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 't' >= bool 'f' AS true;",
+      "target_sql": "SELECT CAST('t' AS BOOLEAN) >= CAST('f' AS BOOLEAN) AS `true`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 36
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 11.6242915391922,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "doris_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0037-1424908a",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'f' < bool 't' AS true;",
+      "target_sql": "SELECT CAST('f' AS BOOLEAN) < CAST('t' AS BOOLEAN) AS `true`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 37
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 11.675332672894001,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "doris_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0038-de0b0e95",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT bool 'f' <= bool 't' AS true;",
+      "target_sql": "SELECT CAST('f' AS BOOLEAN) <= CAST('t' AS BOOLEAN) AS `true`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 38
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 11.392041109502316,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "doris_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0039-06126331",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 'TrUe'::text::boolean AS true, 'fAlse'::text::boolean AS false;",
+      "target_sql": "SELECT CAST(CAST('TrUe' AS STRING) AS BOOLEAN) AS `true`, CAST(CAST('fAlse' AS STRING) AS BOOLEAN) AS `false`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            },
+            {
+              "name": "false",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t",
+              "f"
+            ]
+          ],
+          "result_digest": "694816f0bc24610c00a815e34bc7eb28b6c881f968bb8f42cb3ea1fd2660a468",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 39
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          },
+          {
+            "name": "false",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1,
+            0
+          ]
+        ],
+        "result_digest": "763bfb0ef868b093dafeecad5ed00151c126de19646a2c37fa722af5958573a3",
+        "error": null,
+        "elapsed_ms": 11.171749792993069,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=694816f0bc24610c00a815e34bc7eb28b6c881f968bb8f42cb3ea1fd2660a468",
+          "doris_digest=694816f0bc24610c00a815e34bc7eb28b6c881f968bb8f42cb3ea1fd2660a468"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0040-5c5709be",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '    true   '::text::boolean AS true,\n       '     FALSE'::text::boolean AS false;",
+      "target_sql": "SELECT CAST(CAST('    true   ' AS STRING) AS BOOLEAN) AS `true`, CAST(CAST('     FALSE' AS STRING) AS BOOLEAN) AS `false`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            },
+            {
+              "name": "false",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t",
+              "f"
+            ]
+          ],
+          "result_digest": "694816f0bc24610c00a815e34bc7eb28b6c881f968bb8f42cb3ea1fd2660a468",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 40
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          },
+          {
+            "name": "false",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1,
+            0
+          ]
+        ],
+        "result_digest": "763bfb0ef868b093dafeecad5ed00151c126de19646a2c37fa722af5958573a3",
+        "error": null,
+        "elapsed_ms": 11.202207766473293,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=694816f0bc24610c00a815e34bc7eb28b6c881f968bb8f42cb3ea1fd2660a468",
+          "doris_digest=694816f0bc24610c00a815e34bc7eb28b6c881f968bb8f42cb3ea1fd2660a468"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0041-8fceef7a",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT true::boolean::text AS true, false::boolean::text AS false;",
+      "target_sql": "SELECT CAST(CAST(TRUE AS BOOLEAN) AS STRING) AS `true`, CAST(CAST(FALSE AS BOOLEAN) AS STRING) AS `false`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "true",
+              "database_type": null,
+              "canonical_type": "unknown"
+            },
+            {
+              "name": "false",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "true",
+              "false"
+            ]
+          ],
+          "result_digest": "e26a2d12e831af8fea74c1032574d5cc1eac371e75a7e693c6b67d3f3dbf1c99",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 41
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "true",
+            "database_type": "STRING",
+            "canonical_type": "string"
+          },
+          {
+            "name": "false",
+            "database_type": "STRING",
+            "canonical_type": "string"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            "1",
+            "0"
+          ]
+        ],
+        "result_digest": "0c201122eb164bc60949d10732db6e1e6bd44fe00942ba58683e8687ddbbbd72",
+        "error": null,
+        "elapsed_ms": 11.491416022181511,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=e26a2d12e831af8fea74c1032574d5cc1eac371e75a7e693c6b67d3f3dbf1c99",
+          "doris_digest=0c201122eb164bc60949d10732db6e1e6bd44fe00942ba58683e8687ddbbbd72",
+          "source_sample=[['true', 'false']]",
+          "doris_sample=[['1', '0']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-boolean-0042-5862abf0",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '  tru e '::text::boolean AS invalid;",
+      "target_sql": "SELECT CAST(CAST('  tru e ' AS STRING) AS BOOLEAN) AS invalid",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "PARSE_ERROR",
+            "message": "invalid input syntax for type boolean: \"  tru e \"",
+            "code": "invalid input syntax for type boolean: \"  tru e \""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 42
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "invalid",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 11.849584057927132,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=PARSE_ERROR",
+          "source_error_message=invalid input syntax for type boolean: \"  tru e \"",
+          "source_error_code=invalid input syntax for type boolean: \"  tru e \""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-boolean-0043-f35e4f2d",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT ''::text::boolean AS invalid;",
+      "target_sql": "SELECT CAST(CAST('' AS STRING) AS BOOLEAN) AS invalid",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "PARSE_ERROR",
+            "message": "invalid input syntax for type boolean: \"\"",
+            "code": "invalid input syntax for type boolean: \"\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 43
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "invalid",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 11.568457819521427,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=PARSE_ERROR",
+          "source_error_message=invalid input syntax for type boolean: \"\"",
+          "source_error_code=invalid input syntax for type boolean: \"\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-boolean-0092-bf6ced1a",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0::boolean;",
+      "target_sql": "SELECT CAST(0 AS BOOLEAN)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "bool",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "f"
+            ]
+          ],
+          "result_digest": "5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 92
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(0 AS BOOLEAN)",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 11.275582946836948,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "doris_digest=5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0093-b8e9145c",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 1::boolean;",
+      "target_sql": "SELECT CAST(1 AS BOOLEAN)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "bool",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 93
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(1 AS BOOLEAN)",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 17.933834344148636,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "doris_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-boolean-0094-35e4dc2f",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 2::boolean;",
+      "target_sql": "SELECT CAST(2 AS BOOLEAN)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "bool",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/boolean.out",
+        "artifact_sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307",
+        "statement_index": 94
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(2 AS BOOLEAN)",
+            "database_type": "BOOLEAN",
+            "canonical_type": "boolean"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 14.574750326573849,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "doris_digest=c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    }
+  ],
+  "summary": {
+    "total": 45,
+    "matched": 27,
+    "non_matching": 18,
+    "successful_matches": 27,
+    "negative_source_cases": 12,
+    "needs_review": 18,
+    "known_source_success": 33,
+    "successful_match_rate_all": 0.6,
+    "successful_match_rate_source_success": 0.8181818181818182,
+    "translation_failed": 0,
+    "source_evidence_failed": 0,
+    "doris_execution_failed": 2,
+    "schema_mismatch": 0,
+    "row_count_mismatch": 0,
+    "row_value_mismatch": 4,
+    "inconclusive": 0,
+    "outcomes": {
+      "EXECUTION_STATUS_MISMATCH": 14,
+      "MATCH": 27,
+      "ROW_VALUE_MISMATCH": 4
+    },
+    "run_statuses": {
+      "COMPLETED": 45
+    }
+  },
+  "中文字段说明": {
+    "summary": "统计。successful_matches 只统计两端成功且匹配；matched 保留旧比较器代码计数，可能包含两端同类报错，不是通过数。",
+    "cases": "逐条源 SQL、社区输出、比较结果及有限结果样本。",
+    "source_evidence": "参考结果来源；recorded_output 表示读取 .out，没有执行源数据库。",
+    "data_assurance": "unverified 表示验证器不负责核验基表；外部数据准备报告须另外提供，不是本轮失败原因判定。",
+    "comparison": "自动观察到的差异，不是 SQLGlot 缺陷归因。equivalent 仅是已有证据下旧比较器的判断，不证明完整类型、所有输入或负向错误原因等价。",
+    "result_digest": "完整结果归一化后的摘要指纹，不代表类型和顺序均通过。",
+    "row_sample": "最多前五行，仅供定位；不是完整结果，也不能用于宣称全量值相同。",
+    "internal_codes": "稳定程序字段保留英文；含义见结果代码中文说明。"
+  },
+  "结果代码中文说明": {
+    "MATCH": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+    "TRANSLATION_FAILED": "SQLGlot 解析或生成失败",
+    "SOURCE_EVIDENCE_UNAVAILABLE": "无法取得或解析源端参考结果",
+    "TARGET_EXECUTION_FAILED": "Doris 执行流程失败",
+    "EXECUTION_STATUS_MISMATCH": "两端执行状态不同：一端成功、一端失败",
+    "ERROR_BEHAVIOR_MISMATCH": "两端均报错，但错误类别不同",
+    "RESULT_SCHEMA_MISMATCH": "返回字段数量、名称或类型不同",
+    "ROW_COUNT_MISMATCH": "返回记录行数不同",
+    "ROW_VALUE_MISMATCH": "返回记录值、重复次数或要求的顺序不同",
+    "SOURCE_ENVIRONMENT_ERROR": "源数据库环境不可用",
+    "TARGET_ENVIRONMENT_ERROR": "Doris 环境不可用，例如数据库、表或权限缺失",
+    "ENVIRONMENT_ERROR": "至少一端环境不可用",
+    "UNKNOWN": "没有形成比较结论"
+  },
+  "case_file": {
+    "path": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/boolean.yaml",
+    "sha256": "7eb74ca2e43980a38ce8927a5a6008066be0a6da8df1b9980275424e8322ffd1"
+  }
+}

@@ -1,0 +1,1 @@
+SELECT depname, empno, salary, RANK() OVER (PARTITION BY depname ORDER BY salary NULLS LAST) FROM empsalary ORDER BY RANK() OVER (PARTITION BY depname ORDER BY salary NULLS LAST) NULLS LAST;

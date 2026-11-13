@@ -1,0 +1,1 @@
+SELECT four FROM tenk1 WHERE FALSE;

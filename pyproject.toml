@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "doris-sql-validator"
+version = "0.1.0"
+description = "Execute Hive SQL and SQLGlot-generated Doris SQL, then compare observable results."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "jinja2>=3.1.6,<4",
+  "pydantic>=2.11,<3",
+  "pymysql>=1.1.2,<2",
+  "psycopg[binary]>=3.2,<4",
+  "pyhive>=0.7.0,<0.8",
+  "python-dotenv>=1.1,<2",
+  "pyyaml>=6.0.2,<7",
+  "sqlglot>=30.25.0,<31",
+  "thrift>=0.20,<1",
+  "thrift-sasl>=0.4.3,<1",
+  "typer>=0.16,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.4,<9",
+  "pytest-cov>=6.2,<7",
+]
+
+[project.scripts]
+doris-sql-validator = "doris_sql_validator.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/doris_sql_validator"]
+
+[tool.uv.sources]
+sqlglot = { path = "../sqlglot", editable = true }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+

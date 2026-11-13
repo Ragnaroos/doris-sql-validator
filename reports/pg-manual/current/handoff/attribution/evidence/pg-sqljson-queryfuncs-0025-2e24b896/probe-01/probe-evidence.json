@@ -1,0 +1,220 @@
+{
+  "查询编号": "pg-sqljson-queryfuncs-0025-2e24b896",
+  "执行时间": "2026-11-13T08:28:29.400338+00:00",
+  "源SQL": "SELECT JSON_VALUE(NULL::jsonb, '$');",
+  "首次源SQL": "SELECT JSON_VALUE(NULL::jsonb, '$');",
+  "是否边界变体": false,
+  "首轮报告SHA256": "deb919c7e618e65d3f1b577a996bff58339b84069ce48c8b71196a6076f3f278",
+  "首轮SQLGlot版本": "30.25.1.dev6",
+  "首轮SQLGlot提交": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+  "本次工具SQLGlot版本": "30.25.1.dev6",
+  "对照工具代码SHA256": "618d1d4bfc040e981ded04c230a50b437036ebdab195c86bc8a1fb86d57cc97e",
+  "独立DorisSQL": "SELECT JSON_VALUE(CAST(NULL AS JSONB), '$');\n",
+  "候选与社区输出相同": true,
+  "说明": "只读对照工具，不生成 AI 改写、不修改数据库数据、不判定最终根因；边界变体需由调用者明确提供，未执行不算通过",
+  "历史输出参考": {
+    "mode": "recorded_output",
+    "result": {
+      "engine": "postgres-recorded",
+      "success": true,
+      "columns": [
+        {
+          "name": "json_value",
+          "database_type": null,
+          "canonical_type": "unknown"
+        }
+      ],
+      "rows": [
+        [
+          ""
+        ]
+      ],
+      "error": null,
+      "elapsed_ms": 0.0,
+      "query_id": null,
+      "result_digest": null
+    },
+    "capabilities": {
+      "execution_status": true,
+      "error_category": true,
+      "column_count": true,
+      "column_names": true,
+      "column_types": false,
+      "row_count": true,
+      "row_values": "display_text",
+      "complex_types": false
+    },
+    "value_encoding": "postgres_psql_text",
+    "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/sqljson_queryfuncs.out",
+    "artifact_sha256": "525356edfadbd9ebf14fe4f06c172440dc060b0090fb4d605495b034cd26d7f4",
+    "statement_index": 25
+  },
+  "历史输出限制": "仅保留原 .out 的显示文本证据；未自动证明它与本次实时 PG 的类型、错误细节和格式完全一致，需结合会话和数据阶段核对",
+  "PostgreSQL实际结果": {
+    "引擎": "postgres",
+    "SQL": "SELECT JSON_VALUE(NULL::jsonb, '$');",
+    "成功": true,
+    "字段": [
+      {
+        "名称": "json_value",
+        "PostgreSQL类型编号": 25,
+        "原生类型": "text",
+        "精度": null,
+        "小数位数": null
+      }
+    ],
+    "记录": [
+      [
+        null
+      ]
+    ],
+    "错误": null,
+    "版本与会话": {
+      "实际数据库": "dsv_pg_manual_20261111",
+      "数据库版本": "PostgreSQL 18.1 (Debian 18.1-1.pgdg12+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+      "时区": "UTC",
+      "日期格式": "ISO, MDY",
+      "浮点显示额外位数": "0"
+    }
+  },
+  "社区Doris实际结果": {
+    "引擎": "doris",
+    "SQL": "SELECT JSON_VALUE(CAST(NULL AS JSONB), '$')",
+    "成功": false,
+    "字段": [],
+    "记录": [],
+    "错误": {
+      "类别": "函数不存在或调用形式不受支持",
+      "程序错误代码": "FUNCTION_NOT_FOUND",
+      "异常类": "OperationalError",
+      "PostgreSQL标准错误状态码": "HY000",
+      "原文": "(1105, \"errCode = 2, detailMessage = Can not found function 'JSON_VALUE'\")"
+    },
+    "数据库与版本函数返回值": {
+      "实际数据库": "dsv_pg_manual_20261111",
+      "版本函数返回值": "5.7.99"
+    },
+    "类型转换会话设置": [
+      [
+        "enable_strict_cast",
+        "false",
+        "false",
+        "0"
+      ]
+    ]
+  },
+  "社区输出比较": {
+    "执行状态": "不同",
+    "错误原因": "一端成功一端失败",
+    "结果字段和记录": "至少一端没有完整成功结果，未比较"
+  },
+  "独立Doris实际结果": {
+    "引擎": "doris",
+    "SQL": "SELECT JSON_VALUE(CAST(NULL AS JSONB), '$');\n",
+    "成功": false,
+    "字段": [],
+    "记录": [],
+    "错误": {
+      "类别": "函数不存在或调用形式不受支持",
+      "程序错误代码": "FUNCTION_NOT_FOUND",
+      "异常类": "OperationalError",
+      "PostgreSQL标准错误状态码": "HY000",
+      "原文": "(1105, \"errCode = 2, detailMessage = Can not found function 'JSON_VALUE'\")"
+    },
+    "数据库与版本函数返回值": {
+      "实际数据库": "dsv_pg_manual_20261111",
+      "版本函数返回值": "5.7.99"
+    },
+    "类型转换会话设置": [
+      [
+        "enable_strict_cast",
+        "false",
+        "false",
+        "0"
+      ]
+    ]
+  },
+  "独立候选比较": {
+    "执行状态": "不同",
+    "错误原因": "一端成功一端失败",
+    "结果字段和记录": "至少一端没有完整成功结果，未比较"
+  },
+  "源端重复执行结果": {
+    "引擎": "postgres",
+    "SQL": "SELECT JSON_VALUE(NULL::jsonb, '$');",
+    "成功": true,
+    "字段": [
+      {
+        "名称": "json_value",
+        "PostgreSQL类型编号": 25,
+        "原生类型": "text",
+        "精度": null,
+        "小数位数": null
+      }
+    ],
+    "记录": [
+      [
+        null
+      ]
+    ],
+    "错误": null,
+    "版本与会话": {
+      "实际数据库": "dsv_pg_manual_20261111",
+      "数据库版本": "PostgreSQL 18.1 (Debian 18.1-1.pgdg12+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+      "时区": "UTC",
+      "日期格式": "ISO, MDY",
+      "浮点显示额外位数": "0"
+    }
+  },
+  "目标重复执行结果": {
+    "引擎": "doris",
+    "SQL": "SELECT JSON_VALUE(CAST(NULL AS JSONB), '$');\n",
+    "成功": false,
+    "字段": [],
+    "记录": [],
+    "错误": {
+      "类别": "函数不存在或调用形式不受支持",
+      "程序错误代码": "FUNCTION_NOT_FOUND",
+      "异常类": "OperationalError",
+      "PostgreSQL标准错误状态码": "HY000",
+      "原文": "(1105, \"errCode = 2, detailMessage = Can not found function 'JSON_VALUE'\")"
+    },
+    "数据库与版本函数返回值": {
+      "实际数据库": "dsv_pg_manual_20261111",
+      "版本函数返回值": "5.7.99"
+    },
+    "类型转换会话设置": [
+      [
+        "enable_strict_cast",
+        "false",
+        "false",
+        "0"
+      ]
+    ]
+  },
+  "源端重复稳定性": {
+    "执行状态": "一致",
+    "字段数量": "一致",
+    "显式别名": "未发现需检查的显式别名",
+    "字段类型": [
+      {
+        "字段位置": 1,
+        "源原生类型": "text",
+        "Doris原生类型": "text",
+        "逻辑类型": "一致",
+        "类型声明": "一致",
+        "精度与小数位": "不适用"
+      }
+    ],
+    "记录行数": "一致",
+    "记录值及重复次数": "一致",
+    "最终行顺序": "无最终 ORDER BY，忽略结果行顺序但保留重复次数",
+    "浮点容差": "未自动放宽精确比较；有浮点差异时须另存误差与明确容差策略",
+    "证据范围": "仅本次输入；未自动验证所有边界、数组下界、排序唯一性及全部类型契约"
+  },
+  "重复执行独立候选比较": {
+    "执行状态": "不同",
+    "错误原因": "一端成功一端失败",
+    "结果字段和记录": "至少一端没有完整成功结果，未比较"
+  }
+}

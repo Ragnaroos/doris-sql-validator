@@ -1,0 +1,1 @@
+SELECT ROW_TO_JSON(ROW(1, 'foo'));

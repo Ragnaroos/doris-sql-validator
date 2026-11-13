@@ -1,0 +1,4334 @@
+{
+  "started_at": "2026-11-11T09:40:38.462746+00:00",
+  "finished_at": "2026-11-11T09:40:39.127573+00:00",
+  "sqlglot_version": "30.25.1.dev6",
+  "sqlglot_commit": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+  "source": {
+    "dialect": "postgres",
+    "engine": "postgres",
+    "connection_profile": null,
+    "database": "dsv_pg_manual_20261111"
+  },
+  "target": {
+    "dialect": "doris",
+    "engine": "doris",
+    "connection_profile": "doris-local",
+    "database": "dsv_pg_manual_20261111"
+  },
+  "input": {
+    "format": "pg-regress",
+    "file": "assets/float4.sql",
+    "sha256": "94e1c3a91ac5220e8759810845380ba93d5c2f904c86357ddc0743a586ed1351"
+  },
+  "validation_mode": "recorded_output",
+  "import_summary": {
+    "accepted": 46,
+    "skipped": 54,
+    "ambiguous": 0,
+    "errors": 0
+  },
+  "import_diagnostics": [
+    {
+      "statement_index": 1,
+      "line_start": 1,
+      "line_end": 5,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 2,
+      "line_start": 7,
+      "line_end": 7,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 3,
+      "line_start": 8,
+      "line_end": 8,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 4,
+      "line_start": 9,
+      "line_end": 9,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 5,
+      "line_start": 10,
+      "line_end": 10,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 6,
+      "line_start": 11,
+      "line_end": 11,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 7,
+      "line_start": 13,
+      "line_end": 14,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 8,
+      "line_start": 15,
+      "line_end": 15,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 9,
+      "line_start": 16,
+      "line_end": 16,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 10,
+      "line_start": 17,
+      "line_end": 17,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 11,
+      "line_start": 19,
+      "line_end": 19,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 12,
+      "line_start": 20,
+      "line_end": 20,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 13,
+      "line_start": 21,
+      "line_end": 21,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 14,
+      "line_start": 22,
+      "line_end": 22,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 15,
+      "line_start": 24,
+      "line_end": 24,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 16,
+      "line_start": 25,
+      "line_end": 25,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 17,
+      "line_start": 26,
+      "line_end": 26,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 18,
+      "line_start": 27,
+      "line_end": 27,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 19,
+      "line_start": 29,
+      "line_end": 30,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 20,
+      "line_start": 31,
+      "line_end": 31,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 21,
+      "line_start": 32,
+      "line_end": 32,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 22,
+      "line_start": 33,
+      "line_end": 33,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 23,
+      "line_start": 34,
+      "line_end": 34,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 24,
+      "line_start": 35,
+      "line_end": 35,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 25,
+      "line_start": 36,
+      "line_end": 36,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 26,
+      "line_start": 37,
+      "line_end": 37,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 59,
+      "line_start": 97,
+      "line_end": 99,
+      "disposition": "skipped",
+      "statement_type": "update",
+      "reason": "Expected one read-only Query, got Update"
+    },
+    {
+      "statement_index": 90,
+      "line_start": 149,
+      "line_end": 154,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 91,
+      "line_start": 155,
+      "line_end": 156,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 92,
+      "line_start": 157,
+      "line_end": 158,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 93,
+      "line_start": 159,
+      "line_end": 159,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 94,
+      "line_start": 160,
+      "line_end": 160,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 95,
+      "line_start": 161,
+      "line_end": 161,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 96,
+      "line_start": 162,
+      "line_end": 162,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 97,
+      "line_start": 163,
+      "line_end": 163,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 100,
+      "line_start": 359,
+      "line_end": 360,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 30,
+      "line_start": 43,
+      "line_end": 43,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 45,
+      "line_start": 63,
+      "line_end": 63,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 46,
+      "line_start": 65,
+      "line_end": 65,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 47,
+      "line_start": 67,
+      "line_end": 67,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 48,
+      "line_start": 69,
+      "line_end": 69,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 49,
+      "line_start": 71,
+      "line_end": 71,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 50,
+      "line_start": 73,
+      "line_end": 73,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 51,
+      "line_start": 75,
+      "line_end": 75,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 52,
+      "line_start": 77,
+      "line_end": 78,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 53,
+      "line_start": 80,
+      "line_end": 81,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 54,
+      "line_start": 83,
+      "line_end": 84,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 55,
+      "line_start": 86,
+      "line_end": 87,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 56,
+      "line_start": 89,
+      "line_end": 90,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 57,
+      "line_start": 92,
+      "line_end": 92,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 58,
+      "line_start": 94,
+      "line_end": 95,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 60,
+      "line_start": 101,
+      "line_end": 101,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 98,
+      "line_start": 165,
+      "line_end": 191,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 99,
+      "line_start": 193,
+      "line_end": 357,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    }
+  ],
+  "recorded_output": {
+    "format": "pg-regress",
+    "file": "assets/float4.out",
+    "sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+    "driver": null
+  },
+  "cases": [
+    {
+      "id": "pg-float4-0027-9d7f4076",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT pg_input_is_valid('34.5', 'float4');",
+      "target_sql": "SELECT PG_INPUT_IS_VALID('34.5', 'float4')",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "pg_input_is_valid",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "t"
+            ]
+          ],
+          "result_digest": "c1fc917cb0eae91bab50aa5654d09e17cec3656dd19d850587d575060c14665b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 27
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'PG_INPUT_IS_VALID'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 15.860083512961864,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'PG_INPUT_IS_VALID'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0028-1a832cc8",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT pg_input_is_valid('xyz', 'float4');",
+      "target_sql": "SELECT PG_INPUT_IS_VALID('xyz', 'float4')",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "pg_input_is_valid",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "f"
+            ]
+          ],
+          "result_digest": "5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 28
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'PG_INPUT_IS_VALID'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 13.893499970436096,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'PG_INPUT_IS_VALID'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0029-f6cc5990",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT pg_input_is_valid('1e400', 'float4');",
+      "target_sql": "SELECT PG_INPUT_IS_VALID('1e400', 'float4')",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "pg_input_is_valid",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "f"
+            ]
+          ],
+          "result_digest": "5654a7c216fea9e9ad62a75c66621161751e267d6681767f1c7819530a35dee8",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 29
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'PG_INPUT_IS_VALID'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 12.920833192765713,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'PG_INPUT_IS_VALID'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0031-8c6d7076",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 'NaN'::float4;",
+      "target_sql": "SELECT CAST('NaN' AS FLOAT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "NaN"
+            ]
+          ],
+          "result_digest": "c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 31
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('NaN' AS FLOAT)",
+            "database_type": "FLOAT",
+            "canonical_type": "float"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$float": "nan"
+            }
+          ]
+        ],
+        "result_digest": "beaa76b0a311c8ec1cb1e4765153408656afdda47f327ea5cba4d26e6a7dbd52",
+        "error": null,
+        "elapsed_ms": 12.406250461935997,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc",
+          "doris_digest=c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-float4-0032-982df9d8",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 'nan'::float4;",
+      "target_sql": "SELECT CAST('nan' AS FLOAT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "NaN"
+            ]
+          ],
+          "result_digest": "c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 32
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('nan' AS FLOAT)",
+            "database_type": "FLOAT",
+            "canonical_type": "float"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$float": "nan"
+            }
+          ]
+        ],
+        "result_digest": "beaa76b0a311c8ec1cb1e4765153408656afdda47f327ea5cba4d26e6a7dbd52",
+        "error": null,
+        "elapsed_ms": 13.787999749183655,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc",
+          "doris_digest=c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-float4-0033-9fb6cf51",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '   NAN  '::float4;",
+      "target_sql": "SELECT CAST('   NAN  ' AS FLOAT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "NaN"
+            ]
+          ],
+          "result_digest": "c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 33
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('   NAN  ' AS FLOAT)",
+            "database_type": "FLOAT",
+            "canonical_type": "float"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$float": "nan"
+            }
+          ]
+        ],
+        "result_digest": "beaa76b0a311c8ec1cb1e4765153408656afdda47f327ea5cba4d26e6a7dbd52",
+        "error": null,
+        "elapsed_ms": 11.70154195278883,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc",
+          "doris_digest=c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-float4-0034-2e101523",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 'infinity'::float4;",
+      "target_sql": "SELECT CAST('infinity' AS FLOAT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "Infinity"
+            ]
+          ],
+          "result_digest": "ead584c5e0013c95b9b50108ed341725c4182d31f3c06b97822307814ecc755d",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 34
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('infinity' AS FLOAT)",
+            "database_type": "FLOAT",
+            "canonical_type": "float"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$float": "infinity"
+            }
+          ]
+        ],
+        "result_digest": "891c95238aeb057cf09ef28395c465ac7422a4d9a0fc9ac54ea316951f27b07d",
+        "error": null,
+        "elapsed_ms": 11.456958949565887,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=ead584c5e0013c95b9b50108ed341725c4182d31f3c06b97822307814ecc755d",
+          "doris_digest=ead584c5e0013c95b9b50108ed341725c4182d31f3c06b97822307814ecc755d"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-float4-0035-bd624b7e",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '          -INFINiTY   '::float4;",
+      "target_sql": "SELECT CAST('          -INFINiTY   ' AS FLOAT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "-Infinity"
+            ]
+          ],
+          "result_digest": "3cf63f9d0a88280835de6dbef8a5c7773c491c05c21e78e783187a703665e627",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 35
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('          -INFINiTY   ' AS FLOAT)",
+            "database_type": "FLOAT",
+            "canonical_type": "float"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$float": "-infinity"
+            }
+          ]
+        ],
+        "result_digest": "3013bbb02a93f18b8fd6f8cd85d0b7be97597596a00b574b7787313298133455",
+        "error": null,
+        "elapsed_ms": 11.48970890790224,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=3cf63f9d0a88280835de6dbef8a5c7773c491c05c21e78e783187a703665e627",
+          "doris_digest=3cf63f9d0a88280835de6dbef8a5c7773c491c05c21e78e783187a703665e627"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-float4-0036-37bab7aa",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 'N A N'::float4;",
+      "target_sql": "SELECT CAST('N A N' AS FLOAT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "PARSE_ERROR",
+            "message": "invalid input syntax for type real: \"N A N\"",
+            "code": "invalid input syntax for type real: \"N A N\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 36
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('N A N' AS FLOAT)",
+            "database_type": "FLOAT",
+            "canonical_type": "float"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 11.255083605647087,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=PARSE_ERROR",
+          "source_error_message=invalid input syntax for type real: \"N A N\"",
+          "source_error_code=invalid input syntax for type real: \"N A N\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0037-2365fbf0",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 'NaN x'::float4;",
+      "target_sql": "SELECT CAST('NaN x' AS FLOAT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "PARSE_ERROR",
+            "message": "invalid input syntax for type real: \"NaN x\"",
+            "code": "invalid input syntax for type real: \"NaN x\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 37
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('NaN x' AS FLOAT)",
+            "database_type": "FLOAT",
+            "canonical_type": "float"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 11.49370800703764,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=PARSE_ERROR",
+          "source_error_message=invalid input syntax for type real: \"NaN x\"",
+          "source_error_code=invalid input syntax for type real: \"NaN x\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0038-5fca1d84",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT ' INFINITY    x'::float4;",
+      "target_sql": "SELECT CAST(' INFINITY    x' AS FLOAT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "PARSE_ERROR",
+            "message": "invalid input syntax for type real: \" INFINITY    x\"",
+            "code": "invalid input syntax for type real: \" INFINITY    x\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 38
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(' INFINITY    x' AS FLOAT)",
+            "database_type": "FLOAT",
+            "canonical_type": "float"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 10.50783321261406,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=PARSE_ERROR",
+          "source_error_message=invalid input syntax for type real: \" INFINITY    x\"",
+          "source_error_code=invalid input syntax for type real: \" INFINITY    x\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0039-14d91d69",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 'Infinity'::float4 + 100.0;",
+      "target_sql": "SELECT CAST('Infinity' AS FLOAT) + 100.0",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "Infinity"
+            ]
+          ],
+          "result_digest": "ead584c5e0013c95b9b50108ed341725c4182d31f3c06b97822307814ecc755d",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 39
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('Infinity' AS FLOAT) + 100.0",
+            "database_type": "DOUBLE",
+            "canonical_type": "float"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$float": "infinity"
+            }
+          ]
+        ],
+        "result_digest": "891c95238aeb057cf09ef28395c465ac7422a4d9a0fc9ac54ea316951f27b07d",
+        "error": null,
+        "elapsed_ms": 10.42091753333807,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=ead584c5e0013c95b9b50108ed341725c4182d31f3c06b97822307814ecc755d",
+          "doris_digest=ead584c5e0013c95b9b50108ed341725c4182d31f3c06b97822307814ecc755d"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-float4-0040-0df8893f",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 'Infinity'::float4 / 'Infinity'::float4;",
+      "target_sql": "SELECT CAST('Infinity' AS FLOAT) / CAST('Infinity' AS FLOAT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "NaN"
+            ]
+          ],
+          "result_digest": "c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 40
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('Infinity' AS FLOAT) / CAST('Infinity' AS FLOAT)",
+            "database_type": "DOUBLE",
+            "canonical_type": "float"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$float": "nan"
+            }
+          ]
+        ],
+        "result_digest": "beaa76b0a311c8ec1cb1e4765153408656afdda47f327ea5cba4d26e6a7dbd52",
+        "error": null,
+        "elapsed_ms": 11.127416975796223,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc",
+          "doris_digest=c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-float4-0041-0785fb35",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '42'::float4 / 'Infinity'::float4;",
+      "target_sql": "SELECT CAST('42' AS FLOAT) / CAST('Infinity' AS FLOAT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "0"
+            ]
+          ],
+          "result_digest": "04b6a59fbf68bdb99a609ce26f90526600cde3f4e715563e583741d378434735",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 41
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('42' AS FLOAT) / CAST('Infinity' AS FLOAT)",
+            "database_type": "DOUBLE",
+            "canonical_type": "float"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0.0
+          ]
+        ],
+        "result_digest": "45f505746ac2a5b1b4a1f31a771ca9bcaba433439bd3776960314ac08f633d41",
+        "error": null,
+        "elapsed_ms": 11.745999567210674,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=04b6a59fbf68bdb99a609ce26f90526600cde3f4e715563e583741d378434735",
+          "doris_digest=5dcdd7513229483c5ca11f2855a4b30137be52487c0b21491c3801d1cf31f037",
+          "source_sample=[['0']]",
+          "doris_sample=[['0.0']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-float4-0042-78e546a5",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 'nan'::float4 / 'nan'::float4;",
+      "target_sql": "SELECT CAST('nan' AS FLOAT) / CAST('nan' AS FLOAT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "NaN"
+            ]
+          ],
+          "result_digest": "c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 42
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('nan' AS FLOAT) / CAST('nan' AS FLOAT)",
+            "database_type": "DOUBLE",
+            "canonical_type": "float"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$float": "nan"
+            }
+          ]
+        ],
+        "result_digest": "beaa76b0a311c8ec1cb1e4765153408656afdda47f327ea5cba4d26e6a7dbd52",
+        "error": null,
+        "elapsed_ms": 11.386125348508358,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc",
+          "doris_digest=c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-float4-0043-b1829e7e",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 'nan'::float4 / '0'::float4;",
+      "target_sql": "SELECT CAST('nan' AS FLOAT) / CAST('0' AS FLOAT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "NaN"
+            ]
+          ],
+          "result_digest": "c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 43
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('nan' AS FLOAT) / CAST('0' AS FLOAT)",
+            "database_type": "DOUBLE",
+            "canonical_type": "float"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 10.950084775686264,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc",
+          "doris_digest=c6bb4cfd0414fb9422955049899642caafb6bada2194f68145f385cf34bb4daf",
+          "source_sample=[['NaN']]",
+          "doris_sample=[['']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-float4-0044-48facef7",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 'nan'::numeric::float4;",
+      "target_sql": "SELECT CAST(CAST('nan' AS DECIMAL) AS FLOAT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "NaN"
+            ]
+          ],
+          "result_digest": "c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 44
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(CAST('nan' AS DECIMAL) AS FLOAT)",
+            "database_type": "FLOAT",
+            "canonical_type": "float"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 18.83054058998823,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=c46fdfbd4b447ef3fb87f13d68cb7001336c6ff0bd8a77afc8fb1dad5b570dbc",
+          "doris_digest=c6bb4cfd0414fb9422955049899642caafb6bada2194f68145f385cf34bb4daf",
+          "source_sample=[['NaN']]",
+          "doris_sample=[['']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-float4-0061-8dd21096",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '32767.4'::float4::int2;",
+      "target_sql": "SELECT CAST(CAST('32767.4' AS FLOAT) AS SMALLINT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "int2",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "32767"
+            ]
+          ],
+          "result_digest": "44b7997db1e2876dac16e02abec8f0d4e26f6b3ca74177b44c94e8077ee4e45f",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 61
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(CAST('32767.4' AS FLOAT) AS SMALLINT)",
+            "database_type": "SMALLINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            32767
+          ]
+        ],
+        "result_digest": "9b16acfba357c0151323f36f616dd659d32864c50fa626fb9d97542a4041f105",
+        "error": null,
+        "elapsed_ms": 17.050874419510365,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=44b7997db1e2876dac16e02abec8f0d4e26f6b3ca74177b44c94e8077ee4e45f",
+          "doris_digest=44b7997db1e2876dac16e02abec8f0d4e26f6b3ca74177b44c94e8077ee4e45f"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-float4-0062-7542c795",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '32767.6'::float4::int2;",
+      "target_sql": "SELECT CAST(CAST('32767.6' AS FLOAT) AS SMALLINT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "smallint out of range",
+            "code": "smallint out of range"
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 62
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(CAST('32767.6' AS FLOAT) AS SMALLINT)",
+            "database_type": "SMALLINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            32767
+          ]
+        ],
+        "result_digest": "9b16acfba357c0151323f36f616dd659d32864c50fa626fb9d97542a4041f105",
+        "error": null,
+        "elapsed_ms": 12.096375226974487,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=smallint out of range",
+          "source_error_code=smallint out of range"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0063-8cbd3d41",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '-32768.4'::float4::int2;",
+      "target_sql": "SELECT CAST(CAST('-32768.4' AS FLOAT) AS SMALLINT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "int2",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "-32768"
+            ]
+          ],
+          "result_digest": "dbe27a82af315b37ce1078cd0402d8e1ab93d50e45a8d8275c4b7cc75d6ba7ed",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 63
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(CAST('-32768.4' AS FLOAT) AS SMALLINT)",
+            "database_type": "SMALLINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            -32768
+          ]
+        ],
+        "result_digest": "1e5240d8726eabbf0700a5b4bb358273bd3d086f19fe7b8e80045c73fbffb65a",
+        "error": null,
+        "elapsed_ms": 12.29812577366829,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=dbe27a82af315b37ce1078cd0402d8e1ab93d50e45a8d8275c4b7cc75d6ba7ed",
+          "doris_digest=dbe27a82af315b37ce1078cd0402d8e1ab93d50e45a8d8275c4b7cc75d6ba7ed"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-float4-0064-4f61b554",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '-32768.6'::float4::int2;",
+      "target_sql": "SELECT CAST(CAST('-32768.6' AS FLOAT) AS SMALLINT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "smallint out of range",
+            "code": "smallint out of range"
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 64
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(CAST('-32768.6' AS FLOAT) AS SMALLINT)",
+            "database_type": "SMALLINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            -32768
+          ]
+        ],
+        "result_digest": "1e5240d8726eabbf0700a5b4bb358273bd3d086f19fe7b8e80045c73fbffb65a",
+        "error": null,
+        "elapsed_ms": 11.666291393339634,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=smallint out of range",
+          "source_error_code=smallint out of range"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0065-b794ca3a",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '2147483520'::float4::int4;",
+      "target_sql": "SELECT CAST(CAST('2147483520' AS FLOAT) AS INT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "int4",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "2147483520"
+            ]
+          ],
+          "result_digest": "462dba7650d1f29bc0b7a0397a2a8020ca11d4a826c93fca4f133ea8b71cdc6c",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 65
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(CAST('2147483520' AS FLOAT) AS INT)",
+            "database_type": "INT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            2147483520
+          ]
+        ],
+        "result_digest": "3f378f7191359e76356c6975d993d11596d0dac052632419ba0506ada8a96700",
+        "error": null,
+        "elapsed_ms": 12.03562505543232,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=462dba7650d1f29bc0b7a0397a2a8020ca11d4a826c93fca4f133ea8b71cdc6c",
+          "doris_digest=462dba7650d1f29bc0b7a0397a2a8020ca11d4a826c93fca4f133ea8b71cdc6c"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-float4-0066-07fa63e5",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '2147483647'::float4::int4;",
+      "target_sql": "SELECT CAST(CAST('2147483647' AS FLOAT) AS INT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "integer out of range",
+            "code": "integer out of range"
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 66
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(CAST('2147483647' AS FLOAT) AS INT)",
+            "database_type": "INT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 11.924332939088345,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=integer out of range",
+          "source_error_code=integer out of range"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0067-27fcec9b",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '-2147483648.5'::float4::int4;",
+      "target_sql": "SELECT CAST(CAST('-2147483648.5' AS FLOAT) AS INT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "int4",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "-2147483648"
+            ]
+          ],
+          "result_digest": "2de1cd545afd58bfc3d93d9d3517eb5a2c8c25f69332785628c74ab646e72928",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 67
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(CAST('-2147483648.5' AS FLOAT) AS INT)",
+            "database_type": "INT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 11.84991654008627,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=2de1cd545afd58bfc3d93d9d3517eb5a2c8c25f69332785628c74ab646e72928",
+          "doris_digest=c6bb4cfd0414fb9422955049899642caafb6bada2194f68145f385cf34bb4daf",
+          "source_sample=[['-2147483648']]",
+          "doris_sample=[['']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-float4-0068-dc44032a",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '-2147483900'::float4::int4;",
+      "target_sql": "SELECT CAST(CAST('-2147483900' AS FLOAT) AS INT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "integer out of range",
+            "code": "integer out of range"
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 68
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(CAST('-2147483900' AS FLOAT) AS INT)",
+            "database_type": "INT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 12.591750361025333,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=integer out of range",
+          "source_error_code=integer out of range"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0069-908a1692",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '9223369837831520256'::float4::int8;",
+      "target_sql": "SELECT CAST(CAST('9223369837831520256' AS FLOAT) AS BIGINT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "int8",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "9223369837831520256"
+            ]
+          ],
+          "result_digest": "193ec0d6f61fcd24e79c23779c14f0f2ba3841a7c57bca791d2b06b82f78bab5",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 69
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(CAST('9223369837831520256' AS FLOAT) AS BIGINT)",
+            "database_type": "BIGINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            9223369800000000000
+          ]
+        ],
+        "result_digest": "ca25c5c0dfde4dd53f9c890b38e75afe043ca81adacaecf30b7792096d249854",
+        "error": null,
+        "elapsed_ms": 13.529499992728233,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=193ec0d6f61fcd24e79c23779c14f0f2ba3841a7c57bca791d2b06b82f78bab5",
+          "doris_digest=838892ec5617b51bbda93fb6310fbc3a729a5054dd8242648e6a6a5632f95a52",
+          "source_sample=[['9223369837831520256']]",
+          "doris_sample=[['9223369800000000000']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-float4-0070-512ed2f2",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '9223372036854775807'::float4::int8;",
+      "target_sql": "SELECT CAST(CAST('9223372036854775807' AS FLOAT) AS BIGINT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "bigint out of range",
+            "code": "bigint out of range"
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 70
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(CAST('9223372036854775807' AS FLOAT) AS BIGINT)",
+            "database_type": "BIGINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            9223372000000000000
+          ]
+        ],
+        "result_digest": "0016c7e7f6e444e283c43a2d5053c96f35c77dc289a6addebb97224027a1c322",
+        "error": null,
+        "elapsed_ms": 11.640124954283237,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=bigint out of range",
+          "source_error_code=bigint out of range"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0071-63715b27",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '-9223372036854775808.5'::float4::int8;",
+      "target_sql": "SELECT CAST(CAST('-9223372036854775808.5' AS FLOAT) AS BIGINT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "int8",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "-9223372036854775808"
+            ]
+          ],
+          "result_digest": "d37f1303dc98b751907a0195235fec31b7c06857fb89850f6e1e73b547812f62",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 71
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(CAST('-9223372036854775808.5' AS FLOAT) AS BIGINT)",
+            "database_type": "BIGINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            -9223372000000000000
+          ]
+        ],
+        "result_digest": "1ed0dd256903f81ca3a162d39a39ef75a58c20d1d5a0a9ab066e06da2266ee6e",
+        "error": null,
+        "elapsed_ms": 11.947709135711193,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=d37f1303dc98b751907a0195235fec31b7c06857fb89850f6e1e73b547812f62",
+          "doris_digest=731965f29101acd6789ac23da8d13b5aeb617efa6f832b7852b12dc66a4bf9ad",
+          "source_sample=[['-9223372036854775808']]",
+          "doris_sample=[['-9223372000000000000']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-float4-0072-0ae71c32",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '-9223380000000000000'::float4::int8;",
+      "target_sql": "SELECT CAST(CAST('-9223380000000000000' AS FLOAT) AS BIGINT)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "bigint out of range",
+            "code": "bigint out of range"
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 72
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST(CAST('-9223380000000000000' AS FLOAT) AS BIGINT)",
+            "database_type": "BIGINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 12.367375195026398,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=bigint out of range",
+          "source_error_code=bigint out of range"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0073-8a7309ae",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('5e-20'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('5e-20' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x1f6c1e4a"
+            ]
+          ],
+          "result_digest": "056f3a831021369eba7a1e56fc0a9de30e24b09314b170d1e5c28376f16fa90f",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 73
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 12.216458097100258,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0074-5c131f33",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('67e14'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('67e14' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x59be6cea"
+            ]
+          ],
+          "result_digest": "54f2fa98275b64281b49dce3c21bdec9f8cea86699640a0a8702420d99ce44eb",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 74
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.91495731472969,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0075-caaebf0f",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('985e15'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('985e15' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x5d5ab6c4"
+            ]
+          ],
+          "result_digest": "57a5a116916b3b62242a380d48aea4d1222a873942a80dc0cc769262af7de488",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 75
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.370332911610603,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0076-17fb2046",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('55895e-16'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('55895e-16' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x2cc4a9bd"
+            ]
+          ],
+          "result_digest": "b60eccc3e332a6c91ed8f32b35434242d6aeb269eff8d6677eb63f5cda5396e1",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 76
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.556833051145077,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0077-3fbe6777",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('7038531e-32'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('7038531e-32' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x15ae43fd"
+            ]
+          ],
+          "result_digest": "3bbcbf4c35fbe881877a3fab1c57ef64c2f56ff25a1b3d57ba797de56056f29e",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 77
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.067583225667477,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0078-ee9f57cc",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('702990899e-20'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('702990899e-20' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x2cf757ca"
+            ]
+          ],
+          "result_digest": "58d3f441981e0d921b7ce6db29de0a463f436340e71726a99c9580de51bd5d88",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 78
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.064874939620495,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0079-56d41e15",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('3e-23'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('3e-23' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x1a111234"
+            ]
+          ],
+          "result_digest": "348e0760cdf57e5f87205413139447048a12b7845ef1f772b0e2b1b905a5764c",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 79
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.513249948620796,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0080-ff3d84bc",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('57e18'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('57e18' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x6045c22c"
+            ]
+          ],
+          "result_digest": "cd993a871940c134ec0db7dd38d35b7d0271fb20c07bd6255aae859d5fb34e12",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 80
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.36641576886177,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0081-3fd9b918",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('789e-35'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('789e-35' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x0a23de70"
+            ]
+          ],
+          "result_digest": "c057417d5b180e0d30608e787349ab673db4677c1460ce0e226f5de37268ebbb",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 81
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 16.674207523465157,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0082-dfb57bdf",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('2539e-18'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('2539e-18' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x2736f449"
+            ]
+          ],
+          "result_digest": "009669f5966a30e45e41f7ec64392b22481be738b68f4d2bb9e9102f6506870e",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 82
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 15.157791785895824,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0083-ee6ca093",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('76173e28'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('76173e28' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x7616398a"
+            ]
+          ],
+          "result_digest": "e409b819b0247c8d420d1a0c12c49026e919547755fa3e7ae69e1ba667978729",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 83
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 14.983292669057846,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0084-559dcf23",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('887745e-11'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('887745e-11' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x3714f05c"
+            ]
+          ],
+          "result_digest": "fefeddd7d928b7cac483e656e4210283a7f745026d1cbd763bd67353da3445ad",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 84
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.7872916162014,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0085-f6047f04",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('5382571e-37'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('5382571e-37' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x0d2eaca7"
+            ]
+          ],
+          "result_digest": "981ec3ce723dc697a6896e67fc51f1453a66049ba7617a58bb029c1406766093",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 85
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.514208279550076,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0086-727d8ecc",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('82381273e-35'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('82381273e-35' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x128289d1"
+            ]
+          ],
+          "result_digest": "8a15ca2495b05a219958da58ac1f205436aa882d679c02e6a1f8848d82a532d4",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 86
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.316832154989243,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0087-95285bae",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('750486563e-38'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('750486563e-38' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x0f18377e"
+            ]
+          ],
+          "result_digest": "023beab6aa263df109de1476d00a3051e94d9e9685f8720e48b575f168ebee6c",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 87
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.396415531635284,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0088-b066bdff",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('1.17549435e-38'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('1.17549435e-38' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x00800000"
+            ]
+          ],
+          "result_digest": "5b4557aa57369bdb68b36f53572f7a454b846a5d2ac5bc5acf98e49220f22d28",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 88
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.166416108608246,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-float4-0089-2d9923cc",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT float4send('1.1754944e-38'::float4);",
+      "target_sql": "SELECT FLOAT4SEND(CAST('1.1754944e-38' AS FLOAT))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "float4send",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "\\x00800000"
+            ]
+          ],
+          "result_digest": "5b4557aa57369bdb68b36f53572f7a454b846a5d2ac5bc5acf98e49220f22d28",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/float4.out",
+        "artifact_sha256": "9bd7c4709d61fa1cfa38d8ea80e136d139ecf6a32b2fb4e4d87de670004ef5e8",
+        "statement_index": 89
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "FUNCTION_NOT_FOUND",
+          "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.030582711100578,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=FUNCTION_NOT_FOUND",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT4SEND'\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    }
+  ],
+  "summary": {
+    "total": 46,
+    "matched": 11,
+    "non_matching": 35,
+    "successful_matches": 11,
+    "negative_source_cases": 9,
+    "needs_review": 35,
+    "known_source_success": 37,
+    "successful_match_rate_all": 0.2391304347826087,
+    "successful_match_rate_source_success": 0.2972972972972973,
+    "translation_failed": 0,
+    "source_evidence_failed": 0,
+    "doris_execution_failed": 20,
+    "schema_mismatch": 0,
+    "row_count_mismatch": 0,
+    "row_value_mismatch": 6,
+    "inconclusive": 0,
+    "outcomes": {
+      "EXECUTION_STATUS_MISMATCH": 29,
+      "MATCH": 11,
+      "ROW_VALUE_MISMATCH": 6
+    },
+    "run_statuses": {
+      "COMPLETED": 46
+    }
+  },
+  "中文字段说明": {
+    "summary": "统计。successful_matches 只统计两端成功且匹配；matched 保留旧比较器代码计数，可能包含两端同类报错，不是通过数。",
+    "cases": "逐条源 SQL、社区输出、比较结果及有限结果样本。",
+    "source_evidence": "参考结果来源；recorded_output 表示读取 .out，没有执行源数据库。",
+    "data_assurance": "unverified 表示验证器不负责核验基表；外部数据准备报告须另外提供，不是本轮失败原因判定。",
+    "comparison": "自动观察到的差异，不是 SQLGlot 缺陷归因。equivalent 仅是已有证据下旧比较器的判断，不证明完整类型、所有输入或负向错误原因等价。",
+    "result_digest": "完整结果归一化后的摘要指纹，不代表类型和顺序均通过。",
+    "row_sample": "最多前五行，仅供定位；不是完整结果，也不能用于宣称全量值相同。",
+    "internal_codes": "稳定程序字段保留英文；含义见结果代码中文说明。"
+  },
+  "结果代码中文说明": {
+    "MATCH": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+    "TRANSLATION_FAILED": "SQLGlot 解析或生成失败",
+    "SOURCE_EVIDENCE_UNAVAILABLE": "无法取得或解析源端参考结果",
+    "TARGET_EXECUTION_FAILED": "Doris 执行流程失败",
+    "EXECUTION_STATUS_MISMATCH": "两端执行状态不同：一端成功、一端失败",
+    "ERROR_BEHAVIOR_MISMATCH": "两端均报错，但错误类别不同",
+    "RESULT_SCHEMA_MISMATCH": "返回字段数量、名称或类型不同",
+    "ROW_COUNT_MISMATCH": "返回记录行数不同",
+    "ROW_VALUE_MISMATCH": "返回记录值、重复次数或要求的顺序不同",
+    "SOURCE_ENVIRONMENT_ERROR": "源数据库环境不可用",
+    "TARGET_ENVIRONMENT_ERROR": "Doris 环境不可用，例如数据库、表或权限缺失",
+    "ENVIRONMENT_ERROR": "至少一端环境不可用",
+    "UNKNOWN": "没有形成比较结论"
+  },
+  "case_file": {
+    "path": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/float4.yaml",
+    "sha256": "f1bcf14d11aa9499b88260240fe7206b53c2be24d7c0807b7b6d5a58b15c661b"
+  }
+}

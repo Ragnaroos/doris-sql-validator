@@ -1,0 +1,1 @@
+SELECT SUM(salary) OVER (ORDER BY salary NULLS LAST), COUNT(*) OVER (ORDER BY salary NULLS LAST) FROM empsalary;

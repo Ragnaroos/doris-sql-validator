@@ -1,0 +1,1214 @@
+{
+  "started_at": "2026-11-11T09:40:07.180742+00:00",
+  "finished_at": "2026-11-11T09:40:07.309037+00:00",
+  "sqlglot_version": "30.25.1.dev6",
+  "sqlglot_commit": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+  "source": {
+    "dialect": "postgres",
+    "engine": "postgres",
+    "connection_profile": "postgres-local",
+    "database": "dsv_pg_manual_20261111"
+  },
+  "target": {
+    "dialect": "doris",
+    "engine": "doris",
+    "connection_profile": "doris-local",
+    "database": "dsv_pg_manual_20261111"
+  },
+  "input": {
+    "format": "pg-regress",
+    "file": "assets/case.sql",
+    "sha256": "1979a7667d5632a0c7d5a164533f604688d9eecac98521749e0d332e6f82482b"
+  },
+  "validation_mode": "recorded_output",
+  "import_summary": {
+    "accepted": 8,
+    "skipped": 50,
+    "ambiguous": 0,
+    "errors": 0
+  },
+  "import_diagnostics": [
+    {
+      "statement_index": 1,
+      "line_start": 1,
+      "line_end": 9,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 2,
+      "line_start": 11,
+      "line_end": 14,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 3,
+      "line_start": 16,
+      "line_end": 16,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 4,
+      "line_start": 17,
+      "line_end": 17,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 5,
+      "line_start": 18,
+      "line_end": 18,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 6,
+      "line_start": 19,
+      "line_end": 19,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 7,
+      "line_start": 21,
+      "line_end": 21,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 8,
+      "line_start": 22,
+      "line_end": 22,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 9,
+      "line_start": 23,
+      "line_end": 23,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 10,
+      "line_start": 24,
+      "line_end": 24,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 11,
+      "line_start": 25,
+      "line_end": 25,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 12,
+      "line_start": 26,
+      "line_end": 26,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 33,
+      "line_start": 140,
+      "line_end": 143,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 34,
+      "line_start": 145,
+      "line_end": 146,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 35,
+      "line_start": 148,
+      "line_end": 149,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 36,
+      "line_start": 151,
+      "line_end": 157,
+      "disposition": "skipped",
+      "statement_type": "update",
+      "reason": "Expected one read-only Query, got Update"
+    },
+    {
+      "statement_index": 38,
+      "line_start": 161,
+      "line_end": 163,
+      "disposition": "skipped",
+      "statement_type": "update",
+      "reason": "Expected one read-only Query, got Update"
+    },
+    {
+      "statement_index": 40,
+      "line_start": 167,
+      "line_end": 171,
+      "disposition": "skipped",
+      "statement_type": "update",
+      "reason": "Expected one read-only Query, got Update"
+    },
+    {
+      "statement_index": 43,
+      "line_start": 190,
+      "line_end": 191,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 45,
+      "line_start": 203,
+      "line_end": 204,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 46,
+      "line_start": 206,
+      "line_end": 207,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 47,
+      "line_start": 209,
+      "line_end": 210,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 48,
+      "line_start": 212,
+      "line_end": 213,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 52,
+      "line_start": 224,
+      "line_end": 224,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 53,
+      "line_start": 226,
+      "line_end": 231,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 54,
+      "line_start": 233,
+      "line_end": 234,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 55,
+      "line_start": 236,
+      "line_end": 237,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 60,
+      "line_start": 255,
+      "line_end": 255,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 63,
+      "line_start": 265,
+      "line_end": 269,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 64,
+      "line_start": 270,
+      "line_end": 270,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 18,
+      "line_start": 62,
+      "line_end": 64,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 21,
+      "line_start": 70,
+      "line_end": 72,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 23,
+      "line_start": 77,
+      "line_end": 85,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 24,
+      "line_start": 87,
+      "line_end": 91,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 25,
+      "line_start": 93,
+      "line_end": 100,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 26,
+      "line_start": 102,
+      "line_end": 109,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 27,
+      "line_start": 111,
+      "line_end": 121,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 28,
+      "line_start": 123,
+      "line_end": 123,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 29,
+      "line_start": 125,
+      "line_end": 126,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 30,
+      "line_start": 128,
+      "line_end": 130,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 31,
+      "line_start": 132,
+      "line_end": 134,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 32,
+      "line_start": 136,
+      "line_end": 138,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 37,
+      "line_start": 159,
+      "line_end": 159,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 39,
+      "line_start": 165,
+      "line_end": 165,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 41,
+      "line_start": 173,
+      "line_end": 173,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 44,
+      "line_start": 193,
+      "line_end": 201,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 49,
+      "line_start": 215,
+      "line_end": 215,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 56,
+      "line_start": 239,
+      "line_end": 243,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 57,
+      "line_start": 245,
+      "line_end": 248,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 61,
+      "line_start": 257,
+      "line_end": 261,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    }
+  ],
+  "recorded_output": {
+    "format": "pg-regress",
+    "file": "assets/case.out",
+    "sha256": "0140fcf76eb375bee96bb6ab9419e47701f01627f59230504c6eef23e4463d22",
+    "driver": null
+  },
+  "cases": [
+    {
+      "id": "pg-case-0013-00d1dea8",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '3' AS \"One\",\n  CASE\n    WHEN 1 < 2 THEN 3\n  END AS \"Simple WHEN\";",
+      "target_sql": "SELECT '3' AS `One`, CASE WHEN 1 < 2 THEN 3 END AS `Simple WHEN`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "One",
+              "database_type": null,
+              "canonical_type": "unknown"
+            },
+            {
+              "name": "Simple WHEN",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "3",
+              "3"
+            ]
+          ],
+          "result_digest": "a6db0212b0114d35329d25b83ad15cb49d4fdae07051c552110bfeb490da6c6b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/case.out",
+        "artifact_sha256": "0140fcf76eb375bee96bb6ab9419e47701f01627f59230504c6eef23e4463d22",
+        "statement_index": 13
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "One",
+            "database_type": "STRING",
+            "canonical_type": "string"
+          },
+          {
+            "name": "Simple WHEN",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            "3",
+            3
+          ]
+        ],
+        "result_digest": "bbd93e658875cfe699f299d2f1843ded2449afc23bb0bf845d0369ba776ab0c8",
+        "error": null,
+        "elapsed_ms": 16.407417133450508,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=a6db0212b0114d35329d25b83ad15cb49d4fdae07051c552110bfeb490da6c6b",
+          "doris_digest=a6db0212b0114d35329d25b83ad15cb49d4fdae07051c552110bfeb490da6c6b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-case-0014-068371ac",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '<NULL>' AS \"One\",\n  CASE\n    WHEN 1 > 2 THEN 3\n  END AS \"Simple default\";",
+      "target_sql": "SELECT '<NULL>' AS `One`, CASE WHEN 1 > 2 THEN 3 END AS `Simple default`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "One",
+              "database_type": null,
+              "canonical_type": "unknown"
+            },
+            {
+              "name": "Simple default",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "<NULL>",
+              ""
+            ]
+          ],
+          "result_digest": "d392b2728be2d8d6c87645c694436241251967bf449103fb7121ce8711277999",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/case.out",
+        "artifact_sha256": "0140fcf76eb375bee96bb6ab9419e47701f01627f59230504c6eef23e4463d22",
+        "statement_index": 14
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "One",
+            "database_type": "STRING",
+            "canonical_type": "string"
+          },
+          {
+            "name": "Simple default",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            "<NULL>",
+            null
+          ]
+        ],
+        "result_digest": "137d1213ef43781859259aabe8a499a53411bf0aed06e621398e2505fd19b948",
+        "error": null,
+        "elapsed_ms": 12.270582839846611,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=d392b2728be2d8d6c87645c694436241251967bf449103fb7121ce8711277999",
+          "doris_digest=d392b2728be2d8d6c87645c694436241251967bf449103fb7121ce8711277999"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-case-0015-06669704",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '3' AS \"One\",\n  CASE\n    WHEN 1 < 2 THEN 3\n    ELSE 4\n  END AS \"Simple ELSE\";",
+      "target_sql": "SELECT '3' AS `One`, CASE WHEN 1 < 2 THEN 3 ELSE 4 END AS `Simple ELSE`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "One",
+              "database_type": null,
+              "canonical_type": "unknown"
+            },
+            {
+              "name": "Simple ELSE",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "3",
+              "3"
+            ]
+          ],
+          "result_digest": "a6db0212b0114d35329d25b83ad15cb49d4fdae07051c552110bfeb490da6c6b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/case.out",
+        "artifact_sha256": "0140fcf76eb375bee96bb6ab9419e47701f01627f59230504c6eef23e4463d22",
+        "statement_index": 15
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "One",
+            "database_type": "STRING",
+            "canonical_type": "string"
+          },
+          {
+            "name": "Simple ELSE",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            "3",
+            3
+          ]
+        ],
+        "result_digest": "bbd93e658875cfe699f299d2f1843ded2449afc23bb0bf845d0369ba776ab0c8",
+        "error": null,
+        "elapsed_ms": 12.074875645339489,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=a6db0212b0114d35329d25b83ad15cb49d4fdae07051c552110bfeb490da6c6b",
+          "doris_digest=a6db0212b0114d35329d25b83ad15cb49d4fdae07051c552110bfeb490da6c6b"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-case-0016-2c1e1463",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '4' AS \"One\",\n  CASE\n    WHEN 1 > 2 THEN 3\n    ELSE 4\n  END AS \"ELSE default\";",
+      "target_sql": "SELECT '4' AS `One`, CASE WHEN 1 > 2 THEN 3 ELSE 4 END AS `ELSE default`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "One",
+              "database_type": null,
+              "canonical_type": "unknown"
+            },
+            {
+              "name": "ELSE default",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "4",
+              "4"
+            ]
+          ],
+          "result_digest": "fe4b9fb30496406059f8a492ae60d025e7e87a65c6038f21691e871d38d3c9b1",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/case.out",
+        "artifact_sha256": "0140fcf76eb375bee96bb6ab9419e47701f01627f59230504c6eef23e4463d22",
+        "statement_index": 16
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "One",
+            "database_type": "STRING",
+            "canonical_type": "string"
+          },
+          {
+            "name": "ELSE default",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            "4",
+            4
+          ]
+        ],
+        "result_digest": "1c207d9d551729a8cd960d7cf778a853a8a0a44918d4d6838347a75a48fabcda",
+        "error": null,
+        "elapsed_ms": 14.688542112708092,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=fe4b9fb30496406059f8a492ae60d025e7e87a65c6038f21691e871d38d3c9b1",
+          "doris_digest=fe4b9fb30496406059f8a492ae60d025e7e87a65c6038f21691e871d38d3c9b1"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-case-0017-47ffe574",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '6' AS \"One\",\n  CASE\n    WHEN 1 > 2 THEN 3\n    WHEN 4 < 5 THEN 6\n    ELSE 7\n  END AS \"Two WHEN with default\";",
+      "target_sql": "SELECT '6' AS `One`, CASE WHEN 1 > 2 THEN 3 WHEN 4 < 5 THEN 6 ELSE 7 END AS `Two WHEN with default`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "One",
+              "database_type": null,
+              "canonical_type": "unknown"
+            },
+            {
+              "name": "Two WHEN with default",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "6",
+              "6"
+            ]
+          ],
+          "result_digest": "f7c0f6b9c8f4ef942c790b1489836ca47b64919c16e81a9ef17b32610462ecc4",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/case.out",
+        "artifact_sha256": "0140fcf76eb375bee96bb6ab9419e47701f01627f59230504c6eef23e4463d22",
+        "statement_index": 17
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "One",
+            "database_type": "STRING",
+            "canonical_type": "string"
+          },
+          {
+            "name": "Two WHEN with default",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            "6",
+            6
+          ]
+        ],
+        "result_digest": "c43ad041d154eea185e3a8f6bea1c0f57cfeb4d290adac01846a486f877569b9",
+        "error": null,
+        "elapsed_ms": 11.706667020916939,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=f7c0f6b9c8f4ef942c790b1489836ca47b64919c16e81a9ef17b32610462ecc4",
+          "doris_digest=f7c0f6b9c8f4ef942c790b1489836ca47b64919c16e81a9ef17b32610462ecc4"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    },
+    {
+      "id": "pg-case-0019-fe72fa57",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT CASE WHEN 1=0 THEN 1/0 WHEN 1=1 THEN 1 ELSE 2/0 END;",
+      "target_sql": "SELECT CASE WHEN 1 = 0 THEN 1 / 0 WHEN 1 = 1 THEN 1 ELSE 2 / 0 END",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "case",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "1"
+            ]
+          ],
+          "result_digest": "8ef9fc24093322acce11a5335df997ff0960dabcce3733690efb0a4cc738f0ab",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/case.out",
+        "artifact_sha256": "0140fcf76eb375bee96bb6ab9419e47701f01627f59230504c6eef23e4463d22",
+        "statement_index": 19
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CASE WHEN 1 = 0 THEN 1 / 0 WHEN 1 = 1 THEN 1 ELSE 2 / 0 END",
+            "database_type": "DOUBLE",
+            "canonical_type": "float"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1.0
+          ]
+        ],
+        "result_digest": "a16e664cb1cb7d515205e837b482042677edce138c6529df439782f1da8d49a6",
+        "error": null,
+        "elapsed_ms": 11.659292504191399,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=8ef9fc24093322acce11a5335df997ff0960dabcce3733690efb0a4cc738f0ab",
+          "doris_digest=61c7ad9b0d0ce9461f0af1d3abbb2a879c90a16bb9b313dc2279773d1fdab390",
+          "source_sample=[['1']]",
+          "doris_sample=[['1.0']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-case-0020-eef1e7fd",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT CASE 1 WHEN 0 THEN 1/0 WHEN 1 THEN 1 ELSE 2/0 END;",
+      "target_sql": "SELECT CASE 1 WHEN 0 THEN 1 / 0 WHEN 1 THEN 1 ELSE 2 / 0 END",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "case",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "1"
+            ]
+          ],
+          "result_digest": "8ef9fc24093322acce11a5335df997ff0960dabcce3733690efb0a4cc738f0ab",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/case.out",
+        "artifact_sha256": "0140fcf76eb375bee96bb6ab9419e47701f01627f59230504c6eef23e4463d22",
+        "statement_index": 20
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CASE 1 WHEN 0 THEN 1 / 0 WHEN 1 THEN 1 ELSE 2 / 0 END",
+            "database_type": "DOUBLE",
+            "canonical_type": "float"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1.0
+          ]
+        ],
+        "result_digest": "a16e664cb1cb7d515205e837b482042677edce138c6529df439782f1da8d49a6",
+        "error": null,
+        "elapsed_ms": 10.965082794427872,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=8ef9fc24093322acce11a5335df997ff0960dabcce3733690efb0a4cc738f0ab",
+          "doris_digest=61c7ad9b0d0ce9461f0af1d3abbb2a879c90a16bb9b313dc2279773d1fdab390",
+          "source_sample=[['1']]",
+          "doris_sample=[['1.0']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-case-0022-83be6299",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT CASE 'a' WHEN 'a' THEN 1 ELSE 2 END;",
+      "target_sql": "SELECT CASE 'a' WHEN 'a' THEN 1 ELSE 2 END",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "case",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "1"
+            ]
+          ],
+          "result_digest": "8ef9fc24093322acce11a5335df997ff0960dabcce3733690efb0a4cc738f0ab",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/case.out",
+        "artifact_sha256": "0140fcf76eb375bee96bb6ab9419e47701f01627f59230504c6eef23e4463d22",
+        "statement_index": 22
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CASE 'a' WHEN 'a' THEN 1 ELSE 2 END",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 11.921624653041363,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Execution status, available schema evidence, and rows match",
+        "details": [
+          "source_digest=8ef9fc24093322acce11a5335df997ff0960dabcce3733690efb0a4cc738f0ab",
+          "doris_digest=8ef9fc24093322acce11a5335df997ff0960dabcce3733690efb0a4cc738f0ab"
+        ],
+        "possible_causes": []
+      },
+      "中文结论": "已有证据未发现差异（不代表所有类型和输入均已验证）"
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "matched": 6,
+    "non_matching": 2,
+    "successful_matches": 6,
+    "negative_source_cases": 0,
+    "needs_review": 2,
+    "known_source_success": 8,
+    "successful_match_rate_all": 0.75,
+    "successful_match_rate_source_success": 0.75,
+    "translation_failed": 0,
+    "source_evidence_failed": 0,
+    "doris_execution_failed": 0,
+    "schema_mismatch": 0,
+    "row_count_mismatch": 0,
+    "row_value_mismatch": 2,
+    "inconclusive": 0,
+    "outcomes": {
+      "MATCH": 6,
+      "ROW_VALUE_MISMATCH": 2
+    },
+    "run_statuses": {
+      "COMPLETED": 8
+    }
+  },
+  "中文字段说明": {
+    "summary": "统计。successful_matches 只统计两端成功且匹配；matched 保留旧比较器代码计数，可能包含两端同类报错，不是通过数。",
+    "cases": "逐条源 SQL、社区输出、比较结果及有限结果样本。",
+    "source_evidence": "参考结果来源；recorded_output 表示读取 .out，没有执行源数据库。",
+    "data_assurance": "unverified 表示验证器不负责核验基表；外部数据准备报告须另外提供，不是本轮失败原因判定。",
+    "comparison": "自动观察到的差异，不是 SQLGlot 缺陷归因。equivalent 仅是已有证据下旧比较器的判断，不证明完整类型、所有输入或负向错误原因等价。",
+    "result_digest": "完整结果归一化后的摘要指纹，不代表类型和顺序均通过。",
+    "row_sample": "最多前五行，仅供定位；不是完整结果，也不能用于宣称全量值相同。",
+    "internal_codes": "稳定程序字段保留英文；含义见结果代码中文说明。"
+  },
+  "结果代码中文说明": {
+    "MATCH": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+    "TRANSLATION_FAILED": "SQLGlot 解析或生成失败",
+    "SOURCE_EVIDENCE_UNAVAILABLE": "无法取得或解析源端参考结果",
+    "TARGET_EXECUTION_FAILED": "Doris 执行流程失败",
+    "EXECUTION_STATUS_MISMATCH": "两端执行状态不同：一端成功、一端失败",
+    "ERROR_BEHAVIOR_MISMATCH": "两端均报错，但错误类别不同",
+    "RESULT_SCHEMA_MISMATCH": "返回字段数量、名称或类型不同",
+    "ROW_COUNT_MISMATCH": "返回记录行数不同",
+    "ROW_VALUE_MISMATCH": "返回记录值、重复次数或要求的顺序不同",
+    "SOURCE_ENVIRONMENT_ERROR": "源数据库环境不可用",
+    "TARGET_ENVIRONMENT_ERROR": "Doris 环境不可用，例如数据库、表或权限缺失",
+    "ENVIRONMENT_ERROR": "至少一端环境不可用",
+    "UNKNOWN": "没有形成比较结论"
+  },
+  "case_file": {
+    "path": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/case.yaml",
+    "sha256": "2826e2577ceabef1fd9102a90e1ec1a92b5d4d18c967097856daa308d57f5d32"
+  }
+}

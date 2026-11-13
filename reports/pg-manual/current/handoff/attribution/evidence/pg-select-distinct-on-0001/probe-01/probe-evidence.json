@@ -1,0 +1,368 @@
+{
+  "查询编号": "pg-select-distinct-on-0001",
+  "执行时间": "2026-11-13T08:28:26.588684+00:00",
+  "源SQL": "SELECT DISTINCT ON (string4) string4, two, ten\n   FROM onek\n   ORDER BY string4 ASC, two DESC, ten ASC;\n",
+  "首次源SQL": "SELECT DISTINCT ON (string4) string4, two, ten\n   FROM onek\n   ORDER BY string4 using <, two using >, ten using <;",
+  "是否边界变体": true,
+  "首轮报告SHA256": "aff07ab2b07409f26cd48695045cd2033ba1c96141ab25d8f30dbf1899aea23e",
+  "首轮SQLGlot版本": "30.25.1.dev6",
+  "首轮SQLGlot提交": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+  "本次工具SQLGlot版本": "30.25.1.dev6",
+  "对照工具代码SHA256": "618d1d4bfc040e981ded04c230a50b437036ebdab195c86bc8a1fb86d57cc97e",
+  "独立DorisSQL": "SELECT string4, two, ten FROM (SELECT string4 AS string4, two AS two, ten AS ten, ROW_NUMBER() OVER (PARTITION BY string4 ORDER BY string4 ASC NULLS LAST, two DESC NULLS FIRST, ten ASC NULLS LAST) AS _row_number FROM onek) AS _t WHERE _row_number = 1;\n",
+  "候选与社区输出相同": false,
+  "说明": "只读对照工具，不生成 AI 改写、不修改数据库数据、不判定最终根因；边界变体需由调用者明确提供，未执行不算通过",
+  "PostgreSQL实际结果": {
+    "引擎": "postgres",
+    "SQL": "SELECT DISTINCT ON (string4) string4, two, ten\n   FROM onek\n   ORDER BY string4 ASC, two DESC, ten ASC;\n",
+    "成功": true,
+    "字段": [
+      {
+        "名称": "string4",
+        "PostgreSQL类型编号": 19,
+        "原生类型": "name",
+        "精度": null,
+        "小数位数": null
+      },
+      {
+        "名称": "two",
+        "PostgreSQL类型编号": 23,
+        "原生类型": "int4",
+        "精度": null,
+        "小数位数": null
+      },
+      {
+        "名称": "ten",
+        "PostgreSQL类型编号": 23,
+        "原生类型": "int4",
+        "精度": null,
+        "小数位数": null
+      }
+    ],
+    "记录": [
+      [
+        "AAAAxx",
+        1,
+        1
+      ],
+      [
+        "HHHHxx",
+        1,
+        1
+      ],
+      [
+        "OOOOxx",
+        1,
+        1
+      ],
+      [
+        "VVVVxx",
+        1,
+        1
+      ]
+    ],
+    "错误": null,
+    "版本与会话": {
+      "实际数据库": "dsv_pg_manual_20261111",
+      "数据库版本": "PostgreSQL 18.1 (Debian 18.1-1.pgdg12+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+      "时区": "UTC",
+      "日期格式": "ISO, MDY",
+      "浮点显示额外位数": "0"
+    }
+  },
+  "社区输出未重放原因": "这是显式边界变体，没有对应首轮生成 SQL",
+  "独立Doris实际结果": {
+    "引擎": "doris",
+    "SQL": "SELECT string4, two, ten FROM (SELECT string4 AS string4, two AS two, ten AS ten, ROW_NUMBER() OVER (PARTITION BY string4 ORDER BY string4 ASC NULLS LAST, two DESC NULLS FIRST, ten ASC NULLS LAST) AS _row_number FROM onek) AS _t WHERE _row_number = 1;\n",
+    "成功": true,
+    "字段": [
+      {
+        "名称": "string4",
+        "协议类型": "STRING",
+        "原生类型": "varchar(512)",
+        "精度": 255,
+        "小数位数": 0
+      },
+      {
+        "名称": "two",
+        "协议类型": "INT",
+        "原生类型": "int",
+        "精度": 11,
+        "小数位数": 0
+      },
+      {
+        "名称": "ten",
+        "协议类型": "INT",
+        "原生类型": "int",
+        "精度": 11,
+        "小数位数": 0
+      }
+    ],
+    "记录": [
+      [
+        "AAAAxx",
+        1,
+        1
+      ],
+      [
+        "OOOOxx",
+        1,
+        1
+      ],
+      [
+        "VVVVxx",
+        1,
+        1
+      ],
+      [
+        "HHHHxx",
+        1,
+        1
+      ]
+    ],
+    "错误": null,
+    "数据库与版本函数返回值": {
+      "实际数据库": "dsv_pg_manual_20261111",
+      "版本函数返回值": "5.7.99"
+    },
+    "类型转换会话设置": [
+      [
+        "enable_strict_cast",
+        "false",
+        "false",
+        "0"
+      ]
+    ],
+    "类型证据说明": "原生类型来自 EXPLAIN VERBOSE；未解析到的位置保留未知，不用协议 STRING 猜 JSON/数组类型"
+  },
+  "独立候选比较": {
+    "执行状态": "一致",
+    "字段数量": "一致",
+    "显式别名": "未发现需检查的显式别名",
+    "字段类型": [
+      {
+        "字段位置": 1,
+        "源原生类型": "name",
+        "Doris原生类型": "varchar(512)",
+        "逻辑类型": "一致",
+        "类型声明": "不同",
+        "精度与小数位": "不适用"
+      },
+      {
+        "字段位置": 2,
+        "源原生类型": "int4",
+        "Doris原生类型": "int",
+        "逻辑类型": "一致",
+        "类型声明": "一致",
+        "精度与小数位": "不适用"
+      },
+      {
+        "字段位置": 3,
+        "源原生类型": "int4",
+        "Doris原生类型": "int",
+        "逻辑类型": "一致",
+        "类型声明": "一致",
+        "精度与小数位": "不适用"
+      }
+    ],
+    "记录行数": "一致",
+    "记录值及重复次数": "一致",
+    "最终行顺序": "不同，需检查并列排序",
+    "浮点容差": "未自动放宽精确比较；有浮点差异时须另存误差与明确容差策略",
+    "证据范围": "仅本次输入；未自动验证所有边界、数组下界、排序唯一性及全部类型契约"
+  },
+  "源端重复执行结果": {
+    "引擎": "postgres",
+    "SQL": "SELECT DISTINCT ON (string4) string4, two, ten\n   FROM onek\n   ORDER BY string4 ASC, two DESC, ten ASC;\n",
+    "成功": true,
+    "字段": [
+      {
+        "名称": "string4",
+        "PostgreSQL类型编号": 19,
+        "原生类型": "name",
+        "精度": null,
+        "小数位数": null
+      },
+      {
+        "名称": "two",
+        "PostgreSQL类型编号": 23,
+        "原生类型": "int4",
+        "精度": null,
+        "小数位数": null
+      },
+      {
+        "名称": "ten",
+        "PostgreSQL类型编号": 23,
+        "原生类型": "int4",
+        "精度": null,
+        "小数位数": null
+      }
+    ],
+    "记录": [
+      [
+        "AAAAxx",
+        1,
+        1
+      ],
+      [
+        "HHHHxx",
+        1,
+        1
+      ],
+      [
+        "OOOOxx",
+        1,
+        1
+      ],
+      [
+        "VVVVxx",
+        1,
+        1
+      ]
+    ],
+    "错误": null,
+    "版本与会话": {
+      "实际数据库": "dsv_pg_manual_20261111",
+      "数据库版本": "PostgreSQL 18.1 (Debian 18.1-1.pgdg12+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+      "时区": "UTC",
+      "日期格式": "ISO, MDY",
+      "浮点显示额外位数": "0"
+    }
+  },
+  "目标重复执行结果": {
+    "引擎": "doris",
+    "SQL": "SELECT string4, two, ten FROM (SELECT string4 AS string4, two AS two, ten AS ten, ROW_NUMBER() OVER (PARTITION BY string4 ORDER BY string4 ASC NULLS LAST, two DESC NULLS FIRST, ten ASC NULLS LAST) AS _row_number FROM onek) AS _t WHERE _row_number = 1;\n",
+    "成功": true,
+    "字段": [
+      {
+        "名称": "string4",
+        "协议类型": "STRING",
+        "原生类型": "varchar(512)",
+        "精度": 255,
+        "小数位数": 0
+      },
+      {
+        "名称": "two",
+        "协议类型": "INT",
+        "原生类型": "int",
+        "精度": 11,
+        "小数位数": 0
+      },
+      {
+        "名称": "ten",
+        "协议类型": "INT",
+        "原生类型": "int",
+        "精度": 11,
+        "小数位数": 0
+      }
+    ],
+    "记录": [
+      [
+        "AAAAxx",
+        1,
+        1
+      ],
+      [
+        "OOOOxx",
+        1,
+        1
+      ],
+      [
+        "VVVVxx",
+        1,
+        1
+      ],
+      [
+        "HHHHxx",
+        1,
+        1
+      ]
+    ],
+    "错误": null,
+    "数据库与版本函数返回值": {
+      "实际数据库": "dsv_pg_manual_20261111",
+      "版本函数返回值": "5.7.99"
+    },
+    "类型转换会话设置": [
+      [
+        "enable_strict_cast",
+        "false",
+        "false",
+        "0"
+      ]
+    ],
+    "类型证据说明": "原生类型来自 EXPLAIN VERBOSE；未解析到的位置保留未知，不用协议 STRING 猜 JSON/数组类型"
+  },
+  "源端重复稳定性": {
+    "执行状态": "一致",
+    "字段数量": "一致",
+    "显式别名": "未发现需检查的显式别名",
+    "字段类型": [
+      {
+        "字段位置": 1,
+        "源原生类型": "name",
+        "Doris原生类型": "name",
+        "逻辑类型": "一致",
+        "类型声明": "一致",
+        "精度与小数位": "不适用"
+      },
+      {
+        "字段位置": 2,
+        "源原生类型": "int4",
+        "Doris原生类型": "int4",
+        "逻辑类型": "一致",
+        "类型声明": "一致",
+        "精度与小数位": "不适用"
+      },
+      {
+        "字段位置": 3,
+        "源原生类型": "int4",
+        "Doris原生类型": "int4",
+        "逻辑类型": "一致",
+        "类型声明": "一致",
+        "精度与小数位": "不适用"
+      }
+    ],
+    "记录行数": "一致",
+    "记录值及重复次数": "一致",
+    "最终行顺序": "本次顺序一致，排序键唯一性未证明",
+    "浮点容差": "未自动放宽精确比较；有浮点差异时须另存误差与明确容差策略",
+    "证据范围": "仅本次输入；未自动验证所有边界、数组下界、排序唯一性及全部类型契约"
+  },
+  "重复执行独立候选比较": {
+    "执行状态": "一致",
+    "字段数量": "一致",
+    "显式别名": "未发现需检查的显式别名",
+    "字段类型": [
+      {
+        "字段位置": 1,
+        "源原生类型": "name",
+        "Doris原生类型": "varchar(512)",
+        "逻辑类型": "一致",
+        "类型声明": "不同",
+        "精度与小数位": "不适用"
+      },
+      {
+        "字段位置": 2,
+        "源原生类型": "int4",
+        "Doris原生类型": "int",
+        "逻辑类型": "一致",
+        "类型声明": "一致",
+        "精度与小数位": "不适用"
+      },
+      {
+        "字段位置": 3,
+        "源原生类型": "int4",
+        "Doris原生类型": "int",
+        "逻辑类型": "一致",
+        "类型声明": "一致",
+        "精度与小数位": "不适用"
+      }
+    ],
+    "记录行数": "一致",
+    "记录值及重复次数": "一致",
+    "最终行顺序": "不同，需检查并列排序",
+    "浮点容差": "未自动放宽精确比较；有浮点差异时须另存误差与明确容差策略",
+    "证据范围": "仅本次输入；未自动验证所有边界、数组下界、排序唯一性及全部类型契约"
+  }
+}

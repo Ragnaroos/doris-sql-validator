@@ -1,0 +1,50 @@
+source:
+  dialect: postgres
+  engine: postgres
+  connection_profile: postgres-local
+  database: dsv_pg_manual_20261111
+target:
+  connection_profile: doris-local
+  database: dsv_pg_manual_20261111
+input:
+  format: pg-regress
+  file: assets/select_distinct_on.sql
+  sha256: 75853787148494b3a47bad833f31e952b2abbfcf70875efb89b67d4c143b1dd5
+recorded_output:
+  format: pg-regress
+  file: assets/select_distinct_on.out
+  sha256: b5254efae56908b5537674959ce2eb3dfe29a6207ce7557d5660cbbe9a023421
+import_summary:
+  accepted: 3
+  skipped: 0
+  ambiguous: 0
+  errors: 0
+import_diagnostics: []
+cases:
+- id: pg-select-distinct-on-0001
+  statement_index: 1
+  line_start: 1
+  line_end: 7
+  output_occurrence: 1
+  sql: |-
+    SELECT DISTINCT ON (string4) string4, two, ten
+       FROM onek
+       ORDER BY string4 using <, two using >, ten using <;
+- id: pg-select-distinct-on-0002
+  statement_index: 2
+  line_start: 9
+  line_end: 12
+  output_occurrence: 1
+  sql: |-
+    SELECT DISTINCT ON (string4, ten) string4, two, ten
+       FROM onek
+       ORDER BY string4 using <, two using <, ten using <;
+- id: pg-select-distinct-on-0003
+  statement_index: 3
+  line_start: 14
+  line_end: 16
+  output_occurrence: 1
+  sql: |-
+    SELECT DISTINCT ON (string4, ten) string4, ten, two
+       FROM onek
+       ORDER BY string4 using <, ten using >, two using <;

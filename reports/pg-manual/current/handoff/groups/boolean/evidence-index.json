@@ -1,0 +1,596 @@
+{
+  "用途": "人工调用归因 Skill 的原文件引用索引；不复制、不调用 AI、不连接数据库",
+  "引用方式": "文件路径相对于本索引目录；始终使用原文件，不创建备份或改写 YAML",
+  "入口": {
+    "case_file": "../../../../../../cases/postgres/manual/current/expanded/boolean.yaml",
+    "report_file": "../../../validation/boolean/validation.json",
+    "source_file": "../../../../../../cases/postgres/manual/current/expanded/assets/boolean.sql",
+    "recorded_output_file": "../../../../../../cases/postgres/manual/current/expanded/assets/boolean.out",
+    "setup_files": [
+      "../../../data-preparation/postgres-setup.sql",
+      "../../../data-preparation/doris-setup.sql"
+    ],
+    "preparation_report": "../../../data-preparation/data-preparation.md"
+  },
+  "首轮运行查询数": 45,
+  "未在本轮运行的查询编号": [],
+  "待分析查询": [
+    {
+      "查询编号": "pg-boolean-0007-e1b1ef89",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-boolean-0009-38386ada",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-boolean-0010-222849e6",
+      "自动结果": "ROW_VALUE_MISMATCH",
+      "中文解释": "返回记录值、重复次数或要求的顺序不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-boolean-0012-81dee7f4",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-boolean-0013-41441aee",
+      "自动结果": "ROW_VALUE_MISMATCH",
+      "中文解释": "返回记录值、重复次数或要求的顺序不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-boolean-0015-9a4316f3",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-boolean-0018-0e6e96f9",
+      "自动结果": "ROW_VALUE_MISMATCH",
+      "中文解释": "返回记录值、重复次数或要求的顺序不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-boolean-0019-75c89fd3",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-boolean-0020-c50756c3",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-boolean-0021-7dfc6ac1",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-boolean-0023-f8e04b2d",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-boolean-0025-2c6fc490",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-boolean-0026-2c8a99f3",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-boolean-0027-1e7243be",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-boolean-0028-50f4807b",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-boolean-0041-8fceef7a",
+      "自动结果": "ROW_VALUE_MISMATCH",
+      "中文解释": "返回记录值、重复次数或要求的顺序不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-boolean-0042-5862abf0",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-boolean-0043-f35e4f2d",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    }
+  ],
+  "导入阶段诊断": [
+    {
+      "statement_index": 44,
+      "line_start": 97,
+      "line_end": 99,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 45,
+      "line_start": 101,
+      "line_end": 101,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 46,
+      "line_start": 103,
+      "line_end": 103,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 47,
+      "line_start": 105,
+      "line_end": 105,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 52,
+      "line_start": 125,
+      "line_end": 125,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 54,
+      "line_start": 132,
+      "line_end": 132,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 55,
+      "line_start": 134,
+      "line_end": 134,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 56,
+      "line_start": 136,
+      "line_end": 136,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 57,
+      "line_start": 138,
+      "line_end": 138,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 58,
+      "line_start": 140,
+      "line_end": 140,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 59,
+      "line_start": 142,
+      "line_end": 145,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 73,
+      "line_start": 209,
+      "line_end": 212,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 74,
+      "line_start": 213,
+      "line_end": 213,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 75,
+      "line_start": 214,
+      "line_end": 214,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 76,
+      "line_start": 215,
+      "line_end": 215,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 78,
+      "line_start": 228,
+      "line_end": 231,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 79,
+      "line_start": 232,
+      "line_end": 232,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 95,
+      "line_start": 259,
+      "line_end": 266,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 96,
+      "line_start": 268,
+      "line_end": 268,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 97,
+      "line_start": 270,
+      "line_end": 270,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 98,
+      "line_start": 272,
+      "line_end": 272,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 29,
+      "line_start": 68,
+      "line_end": 68,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 48,
+      "line_start": 108,
+      "line_end": 109,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 49,
+      "line_start": 112,
+      "line_end": 114,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 50,
+      "line_start": 117,
+      "line_end": 119,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 51,
+      "line_start": 121,
+      "line_end": 123,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 53,
+      "line_start": 127,
+      "line_end": 129,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 60,
+      "line_start": 147,
+      "line_end": 148,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 61,
+      "line_start": 151,
+      "line_end": 153,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 62,
+      "line_start": 156,
+      "line_end": 158,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 63,
+      "line_start": 161,
+      "line_end": 163,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 64,
+      "line_start": 166,
+      "line_end": 169,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 65,
+      "line_start": 171,
+      "line_end": 179,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 66,
+      "line_start": 181,
+      "line_end": 183,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 67,
+      "line_start": 185,
+      "line_end": 187,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 68,
+      "line_start": 189,
+      "line_end": 191,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 69,
+      "line_start": 193,
+      "line_end": 195,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 70,
+      "line_start": 197,
+      "line_end": 199,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 71,
+      "line_start": 201,
+      "line_end": 203,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 72,
+      "line_start": 205,
+      "line_end": 207,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 77,
+      "line_start": 217,
+      "line_end": 225,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 80,
+      "line_start": 233,
+      "line_end": 237,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 81,
+      "line_start": 238,
+      "line_end": 238,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 82,
+      "line_start": 239,
+      "line_end": 239,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 83,
+      "line_start": 240,
+      "line_end": 240,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 84,
+      "line_start": 241,
+      "line_end": 241,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 85,
+      "line_start": 242,
+      "line_end": 242,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 86,
+      "line_start": 244,
+      "line_end": 246,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 87,
+      "line_start": 247,
+      "line_end": 247,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 88,
+      "line_start": 248,
+      "line_end": 248,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 89,
+      "line_start": 249,
+      "line_end": 249,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 90,
+      "line_start": 250,
+      "line_end": 250,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 91,
+      "line_start": 251,
+      "line_end": 251,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    }
+  ],
+  "数据准备报告已提供": true,
+  "文件": [
+    {
+      "文件": "../../../../../../cases/postgres/manual/current/expanded/assets/boolean.sql",
+      "用途": "原始 PostgreSQL 完整脚本，不执行其中 DDL/DML",
+      "sha256": "d87b3e67963421c4a3867c6dbdda83ad209a412515a6a0e304b60b38aff59a9b"
+    },
+    {
+      "文件": "../../../../../../cases/postgres/manual/current/expanded/assets/boolean.out",
+      "用途": "原始参考输出，不改写答案",
+      "sha256": "d26265fe1695de91e102b575dd88806078568f2c42b39fc9bd2defb472250307"
+    },
+    {
+      "文件": "../../../../../../cases/postgres/manual/current/expanded/boolean.yaml",
+      "用途": "首轮使用的源查询 YAML，直接使用原件",
+      "sha256": "7eb74ca2e43980a38ce8927a5a6008066be0a6da8df1b9980275424e8322ffd1"
+    },
+    {
+      "文件": "../../../validation/boolean/validation.json",
+      "用途": "首轮结构化结果，值样本最多五行",
+      "sha256": "7e80f0bfbd655e8c0d93275c059b402eca6125b5c53f655dbd470dc04cbee69b"
+    },
+    {
+      "文件": "../../../validation/boolean/validation.md",
+      "用途": "首轮可读报告原件",
+      "sha256": "3de7163c304beff532444cb760f751fc19b8cb44bedbd7a230802792ce980d4d"
+    },
+    {
+      "文件": "../../../data-preparation/postgres-setup.sql",
+      "用途": "用户指定的准备脚本或数据依赖，仅引用不执行",
+      "sha256": "920645ec3722d8702493a9b9a089fc9acbb0c5e7cc458e3a4e6cc754bcf2f428"
+    },
+    {
+      "文件": "../../../data-preparation/doris-setup.sql",
+      "用途": "用户指定的准备脚本或数据依赖，仅引用不执行",
+      "sha256": "3b96e9598a8b538335281223b9d6a44bb4168572b94a9e7ef97eef99f0555d00"
+    },
+    {
+      "文件": "../../../data-preparation/data-preparation.md",
+      "用途": "外部数据准备报告原件；本工具不重新核验数据库",
+      "sha256": "9b43557e8dfd7981d6727d1554b39ea2098990053c8809143f0a87b4ce3b55e6"
+    }
+  ]
+}

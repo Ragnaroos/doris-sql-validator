@@ -1,0 +1,1 @@
+SELECT CAST('  YeS  ' AS BOOLEAN) AS value;

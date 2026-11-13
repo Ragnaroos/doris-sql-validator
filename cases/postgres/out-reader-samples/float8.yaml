@@ -1,0 +1,1273 @@
+source:
+  dialect: postgres
+  engine: postgres
+target:
+  connection_profile: doris-local
+input:
+  format: pg-regress
+  file: assets/float8.sql
+  sha256: 23d1b5a8b26a24c282c8f26c076ed4ef19ac2538fefa8f184ad2784e84aeea2e
+recorded_output:
+  format: pg-regress
+  file: assets/float8.out
+  sha256: 08e9bf36f99413d3c86541bacf552ad4d867e34ad61a68a885da0eac5836a5e1
+import_summary:
+  accepted: 149
+  skipped: 35
+  ambiguous: 0
+  errors: 0
+import_diagnostics:
+- statement_index: 1
+  line_start: 1
+  line_end: 10
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 2
+  line_start: 12
+  line_end: 12
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 3
+  line_start: 13
+  line_end: 13
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 4
+  line_start: 14
+  line_end: 14
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 5
+  line_start: 15
+  line_end: 15
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 6
+  line_start: 16
+  line_end: 16
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 12
+  line_start: 27
+  line_end: 28
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 13
+  line_start: 29
+  line_end: 29
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 14
+  line_start: 30
+  line_end: 30
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 15
+  line_start: 31
+  line_end: 31
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 16
+  line_start: 32
+  line_end: 32
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 17
+  line_start: 33
+  line_end: 33
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 18
+  line_start: 34
+  line_end: 34
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 19
+  line_start: 35
+  line_end: 35
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 57
+  line_start: 116
+  line_end: 117
+  disposition: skipped
+  statement_type: set
+  reason: Expected one read-only Query, got Set
+- statement_index: 100
+  line_start: 182
+  line_end: 184
+  disposition: skipped
+  statement_type: update
+  reason: Expected one read-only Query, got Update
+- statement_index: 132
+  line_start: 232
+  line_end: 235
+  disposition: skipped
+  statement_type: set
+  reason: Expected one read-only Query, got Set
+- statement_index: 134
+  line_start: 246
+  line_end: 246
+  disposition: skipped
+  statement_type: reset
+  reason: Expected one read-only Query, got Command
+- statement_index: 135
+  line_start: 248
+  line_end: 251
+  disposition: skipped
+  statement_type: set
+  reason: Expected one read-only Query, got Set
+- statement_index: 148
+  line_start: 269
+  line_end: 269
+  disposition: skipped
+  statement_type: reset
+  reason: Expected one read-only Query, got Command
+- statement_index: 149
+  line_start: 271
+  line_end: 272
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 150
+  line_start: 274
+  line_end: 274
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 151
+  line_start: 276
+  line_end: 276
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 152
+  line_start: 278
+  line_end: 278
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 153
+  line_start: 280
+  line_end: 280
+  disposition: skipped
+  statement_type: drop
+  reason: Expected one read-only Query, got Drop
+- statement_index: 173
+  line_start: 343
+  line_end: 349
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 174
+  line_start: 350
+  line_end: 351
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 175
+  line_start: 352
+  line_end: 353
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 176
+  line_start: 354
+  line_end: 354
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 177
+  line_start: 355
+  line_end: 355
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 178
+  line_start: 356
+  line_end: 356
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 179
+  line_start: 357
+  line_end: 357
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 180
+  line_start: 358
+  line_end: 358
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 181
+  line_start: 359
+  line_end: 359
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 184
+  line_start: 537
+  line_end: 538
+  disposition: skipped
+  statement_type: drop
+  reason: Expected one read-only Query, got Drop
+cases:
+- id: pg-float8-0007-88440e0e
+  statement_index: 7
+  line_start: 18
+  line_end: 19
+  output_occurrence: 1
+  sql: SELECT '10e400'::float8;
+- id: pg-float8-0008-cd413fb2
+  statement_index: 8
+  line_start: 20
+  line_end: 20
+  output_occurrence: 1
+  sql: SELECT '-10e400'::float8;
+- id: pg-float8-0009-c9fe8398
+  statement_index: 9
+  line_start: 21
+  line_end: 21
+  output_occurrence: 1
+  sql: SELECT '10e-400'::float8;
+- id: pg-float8-0010-7b8ae6f8
+  statement_index: 10
+  line_start: 22
+  line_end: 22
+  output_occurrence: 1
+  sql: SELECT '-10e-400'::float8;
+- id: pg-float8-0011-6ab989be
+  statement_index: 11
+  line_start: 24
+  line_end: 25
+  output_occurrence: 1
+  sql: SELECT float8send('2.2250738585072014E-308'::float8);
+- id: pg-float8-0020-309c7b69
+  statement_index: 20
+  line_start: 37
+  line_end: 38
+  output_occurrence: 1
+  sql: SELECT pg_input_is_valid('34.5', 'float8');
+- id: pg-float8-0021-537262c3
+  statement_index: 21
+  line_start: 39
+  line_end: 39
+  output_occurrence: 1
+  sql: SELECT pg_input_is_valid('xyz', 'float8');
+- id: pg-float8-0022-eb12c7c1
+  statement_index: 22
+  line_start: 40
+  line_end: 40
+  output_occurrence: 1
+  sql: SELECT pg_input_is_valid('1e4000', 'float8');
+- id: pg-float8-0023-de385488
+  statement_index: 23
+  line_start: 41
+  line_end: 41
+  output_occurrence: 1
+  sql: SELECT * FROM pg_input_error_info('1e4000', 'float8');
+- id: pg-float8-0024-c1a914ec
+  statement_index: 24
+  line_start: 43
+  line_end: 44
+  output_occurrence: 1
+  sql: SELECT 'NaN'::float8;
+- id: pg-float8-0025-6616e5ff
+  statement_index: 25
+  line_start: 45
+  line_end: 45
+  output_occurrence: 1
+  sql: SELECT 'nan'::float8;
+- id: pg-float8-0026-e24d20f0
+  statement_index: 26
+  line_start: 46
+  line_end: 46
+  output_occurrence: 1
+  sql: SELECT '   NAN  '::float8;
+- id: pg-float8-0027-5327a329
+  statement_index: 27
+  line_start: 47
+  line_end: 47
+  output_occurrence: 1
+  sql: SELECT 'infinity'::float8;
+- id: pg-float8-0028-dbdcc7e0
+  statement_index: 28
+  line_start: 48
+  line_end: 48
+  output_occurrence: 1
+  sql: SELECT '          -INFINiTY   '::float8;
+- id: pg-float8-0029-7bf74ce8
+  statement_index: 29
+  line_start: 49
+  line_end: 50
+  output_occurrence: 1
+  sql: SELECT 'N A N'::float8;
+- id: pg-float8-0030-cb4f1143
+  statement_index: 30
+  line_start: 51
+  line_end: 51
+  output_occurrence: 1
+  sql: SELECT 'NaN x'::float8;
+- id: pg-float8-0031-f4d72ba1
+  statement_index: 31
+  line_start: 52
+  line_end: 52
+  output_occurrence: 1
+  sql: SELECT ' INFINITY    x'::float8;
+- id: pg-float8-0032-2ed2fe36
+  statement_index: 32
+  line_start: 54
+  line_end: 54
+  output_occurrence: 1
+  sql: SELECT 'Infinity'::float8 + 100.0;
+- id: pg-float8-0033-fab0f874
+  statement_index: 33
+  line_start: 55
+  line_end: 55
+  output_occurrence: 1
+  sql: SELECT 'Infinity'::float8 / 'Infinity'::float8;
+- id: pg-float8-0034-b19cea1b
+  statement_index: 34
+  line_start: 56
+  line_end: 56
+  output_occurrence: 1
+  sql: SELECT '42'::float8 / 'Infinity'::float8;
+- id: pg-float8-0035-98f3140d
+  statement_index: 35
+  line_start: 57
+  line_end: 57
+  output_occurrence: 1
+  sql: SELECT 'nan'::float8 / 'nan'::float8;
+- id: pg-float8-0036-2499e7b1
+  statement_index: 36
+  line_start: 58
+  line_end: 58
+  output_occurrence: 1
+  sql: SELECT 'nan'::float8 / '0'::float8;
+- id: pg-float8-0037-78ceabd8
+  statement_index: 37
+  line_start: 59
+  line_end: 59
+  output_occurrence: 1
+  sql: SELECT 'nan'::numeric::float8;
+- id: pg-float8-0038-86e20767
+  statement_index: 38
+  line_start: 61
+  line_end: 61
+  output_occurrence: 1
+  sql: SELECT * FROM FLOAT8_TBL;
+- id: pg-float8-0039-232feffd
+  statement_index: 39
+  line_start: 63
+  line_end: 63
+  output_occurrence: 1
+  sql: SELECT f.* FROM FLOAT8_TBL f WHERE f.f1 <> '1004.3';
+- id: pg-float8-0040-f7306901
+  statement_index: 40
+  line_start: 65
+  line_end: 65
+  output_occurrence: 1
+  sql: SELECT f.* FROM FLOAT8_TBL f WHERE f.f1 = '1004.3';
+- id: pg-float8-0041-1d68fc7f
+  statement_index: 41
+  line_start: 67
+  line_end: 67
+  output_occurrence: 1
+  sql: SELECT f.* FROM FLOAT8_TBL f WHERE '1004.3' > f.f1;
+- id: pg-float8-0042-d8c2bab7
+  statement_index: 42
+  line_start: 69
+  line_end: 69
+  output_occurrence: 1
+  sql: SELECT f.* FROM FLOAT8_TBL f WHERE  f.f1 < '1004.3';
+- id: pg-float8-0043-bac3b9a3
+  statement_index: 43
+  line_start: 71
+  line_end: 71
+  output_occurrence: 1
+  sql: SELECT f.* FROM FLOAT8_TBL f WHERE '1004.3' >= f.f1;
+- id: pg-float8-0044-322c7c55
+  statement_index: 44
+  line_start: 73
+  line_end: 73
+  output_occurrence: 1
+  sql: SELECT f.* FROM FLOAT8_TBL f WHERE  f.f1 <= '1004.3';
+- id: pg-float8-0045-3d0a408f
+  statement_index: 45
+  line_start: 75
+  line_end: 77
+  output_occurrence: 1
+  sql: |-
+    SELECT f.f1, f.f1 * '-10' AS x
+       FROM FLOAT8_TBL f
+       WHERE f.f1 > '0.0';
+- id: pg-float8-0046-281f1df9
+  statement_index: 46
+  line_start: 79
+  line_end: 81
+  output_occurrence: 1
+  sql: |-
+    SELECT f.f1, f.f1 + '-10' AS x
+       FROM FLOAT8_TBL f
+       WHERE f.f1 > '0.0';
+- id: pg-float8-0047-778cf789
+  statement_index: 47
+  line_start: 83
+  line_end: 85
+  output_occurrence: 1
+  sql: |-
+    SELECT f.f1, f.f1 / '-10' AS x
+       FROM FLOAT8_TBL f
+       WHERE f.f1 > '0.0';
+- id: pg-float8-0048-27ad4949
+  statement_index: 48
+  line_start: 87
+  line_end: 89
+  output_occurrence: 1
+  sql: |-
+    SELECT f.f1, f.f1 - '-10' AS x
+       FROM FLOAT8_TBL f
+       WHERE f.f1 > '0.0';
+- id: pg-float8-0049-249141f1
+  statement_index: 49
+  line_start: 91
+  line_end: 92
+  output_occurrence: 1
+  sql: |-
+    SELECT f.f1 ^ '2.0' AS square_f1
+       FROM FLOAT8_TBL f where f.f1 = '1004.3';
+- id: pg-float8-0050-3c3f7d76
+  statement_index: 50
+  line_start: 94
+  line_end: 96
+  output_occurrence: 1
+  sql: |-
+    SELECT f.f1, @f.f1 AS abs_f1
+       FROM FLOAT8_TBL f;
+- id: pg-float8-0051-f0de5052
+  statement_index: 51
+  line_start: 98
+  line_end: 100
+  output_occurrence: 1
+  sql: |-
+    SELECT f.f1, trunc(f.f1) AS trunc_f1
+       FROM FLOAT8_TBL f;
+- id: pg-float8-0052-7e0d9a3c
+  statement_index: 52
+  line_start: 102
+  line_end: 104
+  output_occurrence: 1
+  sql: |-
+    SELECT f.f1, round(f.f1) AS round_f1
+       FROM FLOAT8_TBL f;
+- id: pg-float8-0053-9d456d5b
+  statement_index: 53
+  line_start: 106
+  line_end: 107
+  output_occurrence: 1
+  sql: select ceil(f1) as ceil_f1 from float8_tbl f;
+- id: pg-float8-0054-fc2e8375
+  statement_index: 54
+  line_start: 108
+  line_end: 108
+  output_occurrence: 1
+  sql: select ceiling(f1) as ceiling_f1 from float8_tbl f;
+- id: pg-float8-0055-abbb4dc1
+  statement_index: 55
+  line_start: 110
+  line_end: 111
+  output_occurrence: 1
+  sql: select floor(f1) as floor_f1 from float8_tbl f;
+- id: pg-float8-0056-6cc3290f
+  statement_index: 56
+  line_start: 113
+  line_end: 114
+  output_occurrence: 1
+  sql: select sign(f1) as sign_f1 from float8_tbl f;
+- id: pg-float8-0058-93ee51d9
+  statement_index: 58
+  line_start: 119
+  line_end: 120
+  output_occurrence: 1
+  sql: SELECT sqrt(float8 '64') AS eight;
+- id: pg-float8-0059-93ee51d9
+  statement_index: 59
+  line_start: 122
+  line_end: 122
+  output_occurrence: 1
+  sql: SELECT |/ float8 '64' AS eight;
+- id: pg-float8-0060-a2233c0e
+  statement_index: 60
+  line_start: 124
+  line_end: 126
+  output_occurrence: 1
+  sql: |-
+    SELECT f.f1, |/f.f1 AS sqrt_f1
+       FROM FLOAT8_TBL f
+       WHERE f.f1 > '0.0';
+- id: pg-float8-0061-8c09f610
+  statement_index: 61
+  line_start: 128
+  line_end: 129
+  output_occurrence: 1
+  sql: SELECT power(float8 '144', float8 '0.5');
+- id: pg-float8-0062-1d0158b0
+  statement_index: 62
+  line_start: 130
+  line_end: 130
+  output_occurrence: 1
+  sql: SELECT power(float8 'NaN', float8 '0.5');
+- id: pg-float8-0063-3b58d3ae
+  statement_index: 63
+  line_start: 131
+  line_end: 131
+  output_occurrence: 1
+  sql: SELECT power(float8 '144', float8 'NaN');
+- id: pg-float8-0064-29084e2c
+  statement_index: 64
+  line_start: 132
+  line_end: 132
+  output_occurrence: 1
+  sql: SELECT power(float8 'NaN', float8 'NaN');
+- id: pg-float8-0065-3a2a1fed
+  statement_index: 65
+  line_start: 133
+  line_end: 133
+  output_occurrence: 1
+  sql: SELECT power(float8 '-1', float8 'NaN');
+- id: pg-float8-0066-32a6f72c
+  statement_index: 66
+  line_start: 134
+  line_end: 134
+  output_occurrence: 1
+  sql: SELECT power(float8 '1', float8 'NaN');
+- id: pg-float8-0067-47f22839
+  statement_index: 67
+  line_start: 135
+  line_end: 135
+  output_occurrence: 1
+  sql: SELECT power(float8 'NaN', float8 '0');
+- id: pg-float8-0068-ce75067e
+  statement_index: 68
+  line_start: 136
+  line_end: 136
+  output_occurrence: 1
+  sql: SELECT power(float8 'inf', float8 '0');
+- id: pg-float8-0069-45a0403b
+  statement_index: 69
+  line_start: 137
+  line_end: 137
+  output_occurrence: 1
+  sql: SELECT power(float8 '-inf', float8 '0');
+- id: pg-float8-0070-d81797b6
+  statement_index: 70
+  line_start: 138
+  line_end: 138
+  output_occurrence: 1
+  sql: SELECT power(float8 '0', float8 'inf');
+- id: pg-float8-0071-012234df
+  statement_index: 71
+  line_start: 139
+  line_end: 139
+  output_occurrence: 1
+  sql: SELECT power(float8 '0', float8 '-inf');
+- id: pg-float8-0072-4b7595fc
+  statement_index: 72
+  line_start: 140
+  line_end: 140
+  output_occurrence: 1
+  sql: SELECT power(float8 '1', float8 'inf');
+- id: pg-float8-0073-5fa95364
+  statement_index: 73
+  line_start: 141
+  line_end: 141
+  output_occurrence: 1
+  sql: SELECT power(float8 '1', float8 '-inf');
+- id: pg-float8-0074-dcc2fab4
+  statement_index: 74
+  line_start: 142
+  line_end: 142
+  output_occurrence: 1
+  sql: SELECT power(float8 '-1', float8 'inf');
+- id: pg-float8-0075-3211ff12
+  statement_index: 75
+  line_start: 143
+  line_end: 143
+  output_occurrence: 1
+  sql: SELECT power(float8 '-1', float8 '-inf');
+- id: pg-float8-0076-c3a3e121
+  statement_index: 76
+  line_start: 144
+  line_end: 144
+  output_occurrence: 1
+  sql: SELECT power(float8 '0.1', float8 'inf');
+- id: pg-float8-0077-97dc9f6a
+  statement_index: 77
+  line_start: 145
+  line_end: 145
+  output_occurrence: 1
+  sql: SELECT power(float8 '-0.1', float8 'inf');
+- id: pg-float8-0078-fcd3a905
+  statement_index: 78
+  line_start: 146
+  line_end: 146
+  output_occurrence: 1
+  sql: SELECT power(float8 '1.1', float8 'inf');
+- id: pg-float8-0079-3a0d29d4
+  statement_index: 79
+  line_start: 147
+  line_end: 147
+  output_occurrence: 1
+  sql: SELECT power(float8 '-1.1', float8 'inf');
+- id: pg-float8-0080-fa0c31da
+  statement_index: 80
+  line_start: 148
+  line_end: 148
+  output_occurrence: 1
+  sql: SELECT power(float8 '0.1', float8 '-inf');
+- id: pg-float8-0081-db4c6e0a
+  statement_index: 81
+  line_start: 149
+  line_end: 149
+  output_occurrence: 1
+  sql: SELECT power(float8 '-0.1', float8 '-inf');
+- id: pg-float8-0082-e2449205
+  statement_index: 82
+  line_start: 150
+  line_end: 150
+  output_occurrence: 1
+  sql: SELECT power(float8 '1.1', float8 '-inf');
+- id: pg-float8-0083-9c0182b1
+  statement_index: 83
+  line_start: 151
+  line_end: 151
+  output_occurrence: 1
+  sql: SELECT power(float8 '-1.1', float8 '-inf');
+- id: pg-float8-0084-a3c7d189
+  statement_index: 84
+  line_start: 152
+  line_end: 152
+  output_occurrence: 1
+  sql: SELECT power(float8 'inf', float8 '-2');
+- id: pg-float8-0085-1d6f83d3
+  statement_index: 85
+  line_start: 153
+  line_end: 153
+  output_occurrence: 1
+  sql: SELECT power(float8 'inf', float8 '2');
+- id: pg-float8-0086-ad3650f5
+  statement_index: 86
+  line_start: 154
+  line_end: 154
+  output_occurrence: 1
+  sql: SELECT power(float8 'inf', float8 'inf');
+- id: pg-float8-0087-16088520
+  statement_index: 87
+  line_start: 155
+  line_end: 155
+  output_occurrence: 1
+  sql: SELECT power(float8 'inf', float8 '-inf');
+- id: pg-float8-0088-086db460
+  statement_index: 88
+  line_start: 156
+  line_end: 158
+  output_occurrence: 1
+  sql: SELECT power(float8 '-inf', float8 '-2') = '0';
+- id: pg-float8-0089-f731dc20
+  statement_index: 89
+  line_start: 159
+  line_end: 159
+  output_occurrence: 1
+  sql: SELECT power(float8 '-inf', float8 '-3');
+- id: pg-float8-0090-dfe0b3d9
+  statement_index: 90
+  line_start: 160
+  line_end: 160
+  output_occurrence: 1
+  sql: SELECT power(float8 '-inf', float8 '2');
+- id: pg-float8-0091-101f01f3
+  statement_index: 91
+  line_start: 161
+  line_end: 161
+  output_occurrence: 1
+  sql: SELECT power(float8 '-inf', float8 '3');
+- id: pg-float8-0092-86201c1e
+  statement_index: 92
+  line_start: 162
+  line_end: 162
+  output_occurrence: 1
+  sql: SELECT power(float8 '-inf', float8 '3.5');
+- id: pg-float8-0093-1b9189db
+  statement_index: 93
+  line_start: 163
+  line_end: 163
+  output_occurrence: 1
+  sql: SELECT power(float8 '-inf', float8 'inf');
+- id: pg-float8-0094-e437580b
+  statement_index: 94
+  line_start: 164
+  line_end: 164
+  output_occurrence: 1
+  sql: SELECT power(float8 '-inf', float8 '-inf');
+- id: pg-float8-0095-fc63a464
+  statement_index: 95
+  line_start: 166
+  line_end: 169
+  output_occurrence: 1
+  sql: |-
+    SELECT f.f1, exp(ln(f.f1)) AS exp_ln_f1
+       FROM FLOAT8_TBL f
+       WHERE f.f1 > '0.0';
+- id: pg-float8-0096-285130b3
+  statement_index: 96
+  line_start: 171
+  line_end: 172
+  output_occurrence: 1
+  sql: SELECT exp('inf'::float8), exp('-inf'::float8), exp('nan'::float8);
+- id: pg-float8-0097-a14fc3c2
+  statement_index: 97
+  line_start: 174
+  line_end: 175
+  output_occurrence: 1
+  sql: SELECT ||/ float8 '27' AS three;
+- id: pg-float8-0098-1b12e1fb
+  statement_index: 98
+  line_start: 177
+  line_end: 177
+  output_occurrence: 1
+  sql: SELECT f.f1, ||/f.f1 AS cbrt_f1 FROM FLOAT8_TBL f;
+- id: pg-float8-0099-86e20767
+  statement_index: 99
+  line_start: 180
+  line_end: 180
+  output_occurrence: 2
+  sql: SELECT * FROM FLOAT8_TBL;
+- id: pg-float8-0101-459757b4
+  statement_index: 101
+  line_start: 186
+  line_end: 186
+  output_occurrence: 1
+  sql: SELECT f.f1 * '1e200' from FLOAT8_TBL f;
+- id: pg-float8-0102-67000b60
+  statement_index: 102
+  line_start: 188
+  line_end: 188
+  output_occurrence: 1
+  sql: SELECT f.f1 ^ '1e200' from FLOAT8_TBL f;
+- id: pg-float8-0103-c9b3ade2
+  statement_index: 103
+  line_start: 190
+  line_end: 190
+  output_occurrence: 1
+  sql: SELECT 0 ^ 0 + 0 ^ 1 + 0 ^ 0.0 + 0 ^ 0.5;
+- id: pg-float8-0104-a5b89b93
+  statement_index: 104
+  line_start: 192
+  line_end: 192
+  output_occurrence: 1
+  sql: SELECT ln(f.f1) from FLOAT8_TBL f where f.f1 = '0.0' ;
+- id: pg-float8-0105-2735ae61
+  statement_index: 105
+  line_start: 194
+  line_end: 194
+  output_occurrence: 1
+  sql: SELECT ln(f.f1) from FLOAT8_TBL f where f.f1 < '0.0' ;
+- id: pg-float8-0106-d2c6bc6f
+  statement_index: 106
+  line_start: 196
+  line_end: 196
+  output_occurrence: 1
+  sql: SELECT exp(f.f1) from FLOAT8_TBL f;
+- id: pg-float8-0107-eb1890d7
+  statement_index: 107
+  line_start: 198
+  line_end: 198
+  output_occurrence: 1
+  sql: SELECT f.f1 / '0.0' from FLOAT8_TBL f;
+- id: pg-float8-0108-2d1f63c4
+  statement_index: 108
+  line_start: 200
+  line_end: 200
+  output_occurrence: 1
+  sql: SELECT * FROM FLOAT8_TBL ORDER BY 1;
+- id: pg-float8-0109-ed5a37d8
+  statement_index: 109
+  line_start: 202
+  line_end: 205
+  output_occurrence: 1
+  sql: SELECT sinh(float8 '1');
+- id: pg-float8-0110-b7f4cc0b
+  statement_index: 110
+  line_start: 206
+  line_end: 206
+  output_occurrence: 1
+  sql: SELECT cosh(float8 '1');
+- id: pg-float8-0111-e3136b56
+  statement_index: 111
+  line_start: 207
+  line_end: 207
+  output_occurrence: 1
+  sql: SELECT tanh(float8 '1');
+- id: pg-float8-0112-793e70b9
+  statement_index: 112
+  line_start: 208
+  line_end: 208
+  output_occurrence: 1
+  sql: SELECT asinh(float8 '1');
+- id: pg-float8-0113-0f62ba6b
+  statement_index: 113
+  line_start: 209
+  line_end: 209
+  output_occurrence: 1
+  sql: SELECT acosh(float8 '2');
+- id: pg-float8-0114-5dfbae93
+  statement_index: 114
+  line_start: 210
+  line_end: 210
+  output_occurrence: 1
+  sql: SELECT atanh(float8 '0.5');
+- id: pg-float8-0115-e81acbb2
+  statement_index: 115
+  line_start: 211
+  line_end: 212
+  output_occurrence: 1
+  sql: SELECT sinh(float8 'infinity');
+- id: pg-float8-0116-a5bc31de
+  statement_index: 116
+  line_start: 213
+  line_end: 213
+  output_occurrence: 1
+  sql: SELECT sinh(float8 '-infinity');
+- id: pg-float8-0117-fdb20380
+  statement_index: 117
+  line_start: 214
+  line_end: 214
+  output_occurrence: 1
+  sql: SELECT sinh(float8 'nan');
+- id: pg-float8-0118-1a8c506f
+  statement_index: 118
+  line_start: 215
+  line_end: 215
+  output_occurrence: 1
+  sql: SELECT cosh(float8 'infinity');
+- id: pg-float8-0119-ce38a8c0
+  statement_index: 119
+  line_start: 216
+  line_end: 216
+  output_occurrence: 1
+  sql: SELECT cosh(float8 '-infinity');
+- id: pg-float8-0120-ff137ba2
+  statement_index: 120
+  line_start: 217
+  line_end: 217
+  output_occurrence: 1
+  sql: SELECT cosh(float8 'nan');
+- id: pg-float8-0121-43d168cf
+  statement_index: 121
+  line_start: 218
+  line_end: 218
+  output_occurrence: 1
+  sql: SELECT tanh(float8 'infinity');
+- id: pg-float8-0122-34c43150
+  statement_index: 122
+  line_start: 219
+  line_end: 219
+  output_occurrence: 1
+  sql: SELECT tanh(float8 '-infinity');
+- id: pg-float8-0123-7a12cdce
+  statement_index: 123
+  line_start: 220
+  line_end: 220
+  output_occurrence: 1
+  sql: SELECT tanh(float8 'nan');
+- id: pg-float8-0124-6e06598a
+  statement_index: 124
+  line_start: 221
+  line_end: 221
+  output_occurrence: 1
+  sql: SELECT asinh(float8 'infinity');
+- id: pg-float8-0125-33896df8
+  statement_index: 125
+  line_start: 222
+  line_end: 222
+  output_occurrence: 1
+  sql: SELECT asinh(float8 '-infinity');
+- id: pg-float8-0126-53f0039a
+  statement_index: 126
+  line_start: 223
+  line_end: 223
+  output_occurrence: 1
+  sql: SELECT asinh(float8 'nan');
+- id: pg-float8-0127-d9cb28b5
+  statement_index: 127
+  line_start: 224
+  line_end: 226
+  output_occurrence: 1
+  sql: SELECT acosh(float8 '-infinity');
+- id: pg-float8-0128-04142f37
+  statement_index: 128
+  line_start: 227
+  line_end: 227
+  output_occurrence: 1
+  sql: SELECT acosh(float8 'nan');
+- id: pg-float8-0129-ff445481
+  statement_index: 129
+  line_start: 228
+  line_end: 228
+  output_occurrence: 1
+  sql: SELECT atanh(float8 'infinity');
+- id: pg-float8-0130-d6edd65a
+  statement_index: 130
+  line_start: 229
+  line_end: 229
+  output_occurrence: 1
+  sql: SELECT atanh(float8 '-infinity');
+- id: pg-float8-0131-91778068
+  statement_index: 131
+  line_start: 230
+  line_end: 230
+  output_occurrence: 1
+  sql: SELECT atanh(float8 'nan');
+- id: pg-float8-0133-1686bfe4
+  statement_index: 133
+  line_start: 236
+  line_end: 244
+  output_occurrence: 1
+  sql: |-
+    SELECT x,
+           erf(x),
+           erfc(x)
+    FROM (VALUES (float8 '-infinity'),
+          (-28), (-6), (-3.4), (-2.1), (-1.1), (-0.45),
+          (-1.2e-9), (-2.3e-13), (-1.2e-17), (0),
+          (1.2e-17), (2.3e-13), (1.2e-9),
+          (0.45), (1.1), (2.1), (3.4), (6), (28),
+          (float8 'infinity'), (float8 'nan')) AS t(x);
+- id: pg-float8-0136-1407357d
+  statement_index: 136
+  line_start: 252
+  line_end: 256
+  output_occurrence: 1
+  sql: |-
+    SELECT x,
+           gamma(x),
+           lgamma(x)
+    FROM (VALUES (0.5), (1), (2), (3), (4), (5),
+                 (float8 'infinity'), (float8 'nan')) AS t(x);
+- id: pg-float8-0137-5cb14dc7
+  statement_index: 137
+  line_start: 257
+  line_end: 258
+  output_occurrence: 1
+  sql: SELECT gamma(float8 '-infinity');
+- id: pg-float8-0138-64577def
+  statement_index: 138
+  line_start: 259
+  line_end: 259
+  output_occurrence: 1
+  sql: SELECT lgamma(float8 '-infinity');
+- id: pg-float8-0139-1db07e6d
+  statement_index: 139
+  line_start: 260
+  line_end: 260
+  output_occurrence: 1
+  sql: SELECT gamma(float8 '-1000.5');
+- id: pg-float8-0140-ac1c1632
+  statement_index: 140
+  line_start: 261
+  line_end: 261
+  output_occurrence: 1
+  sql: SELECT lgamma(float8 '-1000.5');
+- id: pg-float8-0141-3bc04443
+  statement_index: 141
+  line_start: 262
+  line_end: 262
+  output_occurrence: 1
+  sql: SELECT gamma(float8 '-1');
+- id: pg-float8-0142-de3bfeba
+  statement_index: 142
+  line_start: 263
+  line_end: 263
+  output_occurrence: 1
+  sql: SELECT lgamma(float8 '-1');
+- id: pg-float8-0143-2cddd068
+  statement_index: 143
+  line_start: 264
+  line_end: 264
+  output_occurrence: 1
+  sql: SELECT gamma(float8 '0');
+- id: pg-float8-0144-bd18f753
+  statement_index: 144
+  line_start: 265
+  line_end: 265
+  output_occurrence: 1
+  sql: SELECT lgamma(float8 '0');
+- id: pg-float8-0145-08c21a50
+  statement_index: 145
+  line_start: 266
+  line_end: 266
+  output_occurrence: 1
+  sql: SELECT gamma(float8 '1000');
+- id: pg-float8-0146-6496a2bb
+  statement_index: 146
+  line_start: 267
+  line_end: 267
+  output_occurrence: 1
+  sql: SELECT lgamma(float8 '1000');
+- id: pg-float8-0147-8523fd1a
+  statement_index: 147
+  line_start: 268
+  line_end: 268
+  output_occurrence: 1
+  sql: SELECT lgamma(float8 '1e308');
+- id: pg-float8-0154-86e20767
+  statement_index: 154
+  line_start: 282
+  line_end: 284
+  output_occurrence: 3
+  sql: SELECT * FROM FLOAT8_TBL;
+- id: pg-float8-0155-f8b09ed2
+  statement_index: 155
+  line_start: 286
+  line_end: 287
+  output_occurrence: 1
+  sql: SELECT '32767.4'::float8::int2;
+- id: pg-float8-0156-dbb86232
+  statement_index: 156
+  line_start: 288
+  line_end: 288
+  output_occurrence: 1
+  sql: SELECT '32767.6'::float8::int2;
+- id: pg-float8-0157-5d91cc84
+  statement_index: 157
+  line_start: 289
+  line_end: 289
+  output_occurrence: 1
+  sql: SELECT '-32768.4'::float8::int2;
+- id: pg-float8-0158-df00ee2c
+  statement_index: 158
+  line_start: 290
+  line_end: 290
+  output_occurrence: 1
+  sql: SELECT '-32768.6'::float8::int2;
+- id: pg-float8-0159-269e8ceb
+  statement_index: 159
+  line_start: 291
+  line_end: 291
+  output_occurrence: 1
+  sql: SELECT '2147483647.4'::float8::int4;
+- id: pg-float8-0160-c5ba41f5
+  statement_index: 160
+  line_start: 292
+  line_end: 292
+  output_occurrence: 1
+  sql: SELECT '2147483647.6'::float8::int4;
+- id: pg-float8-0161-1c93a18d
+  statement_index: 161
+  line_start: 293
+  line_end: 293
+  output_occurrence: 1
+  sql: SELECT '-2147483648.4'::float8::int4;
+- id: pg-float8-0162-902a328b
+  statement_index: 162
+  line_start: 294
+  line_end: 294
+  output_occurrence: 1
+  sql: SELECT '-2147483648.6'::float8::int4;
+- id: pg-float8-0163-6ca27d28
+  statement_index: 163
+  line_start: 295
+  line_end: 295
+  output_occurrence: 1
+  sql: SELECT '9223372036854773760'::float8::int8;
+- id: pg-float8-0164-7ca4124d
+  statement_index: 164
+  line_start: 296
+  line_end: 296
+  output_occurrence: 1
+  sql: SELECT '9223372036854775807'::float8::int8;
+- id: pg-float8-0165-05c5bbe3
+  statement_index: 165
+  line_start: 297
+  line_end: 297
+  output_occurrence: 1
+  sql: SELECT '-9223372036854775808.5'::float8::int8;
+- id: pg-float8-0166-170d0b04
+  statement_index: 166
+  line_start: 298
+  line_end: 298
+  output_occurrence: 1
+  sql: SELECT '-9223372036854780000'::float8::int8;
+- id: pg-float8-0167-04b2aa54
+  statement_index: 167
+  line_start: 300
+  line_end: 306
+  output_occurrence: 1
+  sql: |-
+    SELECT x,
+           sind(x),
+           sind(x) IN (-1,-0.5,0,0.5,1) AS sind_exact
+    FROM (VALUES (0), (30), (90), (150), (180),
+          (210), (270), (330), (360)) AS t(x);
+- id: pg-float8-0168-a8fd9aee
+  statement_index: 168
+  line_start: 308
+  line_end: 312
+  output_occurrence: 1
+  sql: |-
+    SELECT x,
+           cosd(x),
+           cosd(x) IN (-1,-0.5,0,0.5,1) AS cosd_exact
+    FROM (VALUES (0), (60), (90), (120), (180),
+          (240), (270), (300), (360)) AS t(x);
+- id: pg-float8-0169-763c8507
+  statement_index: 169
+  line_start: 314
+  line_end: 322
+  output_occurrence: 1
+  sql: |-
+    SELECT x,
+           tand(x),
+           tand(x) IN ('-Infinity'::float8,-1,0,
+                       1,'Infinity'::float8) AS tand_exact,
+           cotd(x),
+           cotd(x) IN ('-Infinity'::float8,-1,0,
+                       1,'Infinity'::float8) AS cotd_exact
+    FROM (VALUES (0), (45), (90), (135), (180),
+          (225), (270), (315), (360)) AS t(x);
+- id: pg-float8-0170-b46298bf
+  statement_index: 170
+  line_start: 324
+  line_end: 329
+  output_occurrence: 1
+  sql: |-
+    SELECT x,
+           asind(x),
+           asind(x) IN (-90,-30,0,30,90) AS asind_exact,
+           acosd(x),
+           acosd(x) IN (0,60,90,120,180) AS acosd_exact
+    FROM (VALUES (-1), (-0.5), (0), (0.5), (1)) AS t(x);
+- id: pg-float8-0171-b35da73e
+  statement_index: 171
+  line_start: 331
+  line_end: 335
+  output_occurrence: 1
+  sql: |-
+    SELECT x,
+           atand(x),
+           atand(x) IN (-90,-45,0,45,90) AS atand_exact
+    FROM (VALUES ('-Infinity'::float8), (-1), (0), (1),
+          ('Infinity'::float8)) AS t(x);
+- id: pg-float8-0172-f78a18df
+  statement_index: 172
+  line_start: 337
+  line_end: 341
+  output_occurrence: 1
+  sql: |-
+    SELECT x, y,
+           atan2d(y, x),
+           atan2d(y, x) IN (-90,0,90,180) AS atan2d_exact
+    FROM (SELECT 10*cosd(a), 10*sind(a)
+          FROM generate_series(0, 360, 90) AS t(a)) AS t(x,y);
+- id: pg-float8-0182-42c79843
+  statement_index: 182
+  line_start: 361
+  line_end: 386
+  output_occurrence: 1
+  sql: "with testdata(bits) as (values\n  -- small subnormals\n  (x'0000000000000001'),\n\
+    \  (x'0000000000000002'), (x'0000000000000003'),\n  (x'0000000000001000'), (x'0000000100000000'),\n\
+    \  (x'0000010000000000'), (x'0000010100000000'),\n  (x'0000400000000000'), (x'0000400100000000'),\n\
+    \  (x'0000800000000000'), (x'0000800000000001'),\n  -- these values taken from\
+    \ upstream testsuite\n  (x'00000000000f4240'),\n  (x'00000000016e3600'),\n  (x'0000008cdcdea440'),\n\
+    \  -- borderline between subnormal and normal\n  (x'000ffffffffffff0'), (x'000ffffffffffff1'),\n\
+    \  (x'000ffffffffffffe'), (x'000fffffffffffff'))\nselect float8send(flt) as ibits,\n\
+    \       flt\n  from (select bits::bigint::xfloat8::float8 as flt\n          from\
+    \ testdata\n\toffset 0) s;"
+- id: pg-float8-0183-212aa9e5
+  statement_index: 183
+  line_start: 388
+  line_end: 535
+  output_occurrence: 1
+  sql: "with testdata(bits) as (values\n  (x'0000000000000000'),\n  -- smallest normal\
+    \ values\n  (x'0010000000000000'), (x'0010000000000001'),\n  (x'0010000000000002'),\
+    \ (x'0018000000000000'),\n  --\n  (x'3ddb7cdfd9d7bdba'), (x'3ddb7cdfd9d7bdbb'),\
+    \ (x'3ddb7cdfd9d7bdbc'),\n  (x'3e112e0be826d694'), (x'3e112e0be826d695'), (x'3e112e0be826d696'),\n\
+    \  (x'3e45798ee2308c39'), (x'3e45798ee2308c3a'), (x'3e45798ee2308c3b'),\n  (x'3e7ad7f29abcaf47'),\
+    \ (x'3e7ad7f29abcaf48'), (x'3e7ad7f29abcaf49'),\n  (x'3eb0c6f7a0b5ed8c'), (x'3eb0c6f7a0b5ed8d'),\
+    \ (x'3eb0c6f7a0b5ed8e'),\n  (x'3ee4f8b588e368ef'), (x'3ee4f8b588e368f0'), (x'3ee4f8b588e368f1'),\n\
+    \  (x'3f1a36e2eb1c432c'), (x'3f1a36e2eb1c432d'), (x'3f1a36e2eb1c432e'),\n  (x'3f50624dd2f1a9fb'),\
+    \ (x'3f50624dd2f1a9fc'), (x'3f50624dd2f1a9fd'),\n  (x'3f847ae147ae147a'), (x'3f847ae147ae147b'),\
+    \ (x'3f847ae147ae147c'),\n  (x'3fb9999999999999'), (x'3fb999999999999a'), (x'3fb999999999999b'),\n\
+    \  -- values very close to 1\n  (x'3feffffffffffff0'), (x'3feffffffffffff1'),\
+    \ (x'3feffffffffffff2'),\n  (x'3feffffffffffff3'), (x'3feffffffffffff4'), (x'3feffffffffffff5'),\n\
+    \  (x'3feffffffffffff6'), (x'3feffffffffffff7'), (x'3feffffffffffff8'),\n  (x'3feffffffffffff9'),\
+    \ (x'3feffffffffffffa'), (x'3feffffffffffffb'),\n  (x'3feffffffffffffc'), (x'3feffffffffffffd'),\
+    \ (x'3feffffffffffffe'),\n  (x'3fefffffffffffff'),\n  (x'3ff0000000000000'),\n\
+    \  (x'3ff0000000000001'), (x'3ff0000000000002'), (x'3ff0000000000003'),\n  (x'3ff0000000000004'),\
+    \ (x'3ff0000000000005'), (x'3ff0000000000006'),\n  (x'3ff0000000000007'), (x'3ff0000000000008'),\
+    \ (x'3ff0000000000009'),\n  --\n  (x'3ff921fb54442d18'),\n  (x'4005bf0a8b14576a'),\n\
+    \  (x'400921fb54442d18'),\n  --\n  (x'4023ffffffffffff'), (x'4024000000000000'),\
+    \ (x'4024000000000001'),\n  (x'4058ffffffffffff'), (x'4059000000000000'), (x'4059000000000001'),\n\
+    \  (x'408f3fffffffffff'), (x'408f400000000000'), (x'408f400000000001'),\n  (x'40c387ffffffffff'),\
+    \ (x'40c3880000000000'), (x'40c3880000000001'),\n  (x'40f869ffffffffff'), (x'40f86a0000000000'),\
+    \ (x'40f86a0000000001'),\n  (x'412e847fffffffff'), (x'412e848000000000'), (x'412e848000000001'),\n\
+    \  (x'416312cfffffffff'), (x'416312d000000000'), (x'416312d000000001'),\n  (x'4197d783ffffffff'),\
+    \ (x'4197d78400000000'), (x'4197d78400000001'),\n  (x'41cdcd64ffffffff'), (x'41cdcd6500000000'),\
+    \ (x'41cdcd6500000001'),\n  (x'4202a05f1fffffff'), (x'4202a05f20000000'), (x'4202a05f20000001'),\n\
+    \  (x'42374876e7ffffff'), (x'42374876e8000000'), (x'42374876e8000001'),\n  (x'426d1a94a1ffffff'),\
+    \ (x'426d1a94a2000000'), (x'426d1a94a2000001'),\n  (x'42a2309ce53fffff'), (x'42a2309ce5400000'),\
+    \ (x'42a2309ce5400001'),\n  (x'42d6bcc41e8fffff'), (x'42d6bcc41e900000'), (x'42d6bcc41e900001'),\n\
+    \  (x'430c6bf52633ffff'), (x'430c6bf526340000'), (x'430c6bf526340001'),\n  (x'4341c37937e07fff'),\
+    \ (x'4341c37937e08000'), (x'4341c37937e08001'),\n  (x'4376345785d89fff'), (x'4376345785d8a000'),\
+    \ (x'4376345785d8a001'),\n  (x'43abc16d674ec7ff'), (x'43abc16d674ec800'), (x'43abc16d674ec801'),\n\
+    \  (x'43e158e460913cff'), (x'43e158e460913d00'), (x'43e158e460913d01'),\n  (x'4415af1d78b58c3f'),\
+    \ (x'4415af1d78b58c40'), (x'4415af1d78b58c41'),\n  (x'444b1ae4d6e2ef4f'), (x'444b1ae4d6e2ef50'),\
+    \ (x'444b1ae4d6e2ef51'),\n  (x'4480f0cf064dd591'), (x'4480f0cf064dd592'), (x'4480f0cf064dd593'),\n\
+    \  (x'44b52d02c7e14af5'), (x'44b52d02c7e14af6'), (x'44b52d02c7e14af7'),\n  (x'44ea784379d99db3'),\
+    \ (x'44ea784379d99db4'), (x'44ea784379d99db5'),\n  (x'45208b2a2c280290'), (x'45208b2a2c280291'),\
+    \ (x'45208b2a2c280292'),\n  --\n  (x'7feffffffffffffe'), (x'7fefffffffffffff'),\n\
+    \  -- round to even tests (+ve)\n  (x'4350000000000002'),\n  (x'4350000000002e06'),\n\
+    \  (x'4352000000000003'),\n  (x'4352000000000004'),\n  (x'4358000000000003'),\n\
+    \  (x'4358000000000004'),\n  (x'435f000000000020'),\n  -- round to even tests\
+    \ (-ve)\n  (x'c350000000000002'),\n  (x'c350000000002e06'),\n  (x'c352000000000003'),\n\
+    \  (x'c352000000000004'),\n  (x'c358000000000003'),\n  (x'c358000000000004'),\n\
+    \  (x'c35f000000000020'),\n  -- exercise fixed-point memmoves\n  (x'42dc12218377de66'),\n\
+    \  (x'42a674e79c5fe51f'),\n  (x'4271f71fb04cb74c'),\n  (x'423cbe991a145879'),\n\
+    \  (x'4206fee0e1a9e061'),\n  (x'41d26580b487e6b4'),\n  (x'419d6f34540ca453'),\n\
+    \  (x'41678c29dcd6e9dc'),\n  (x'4132d687e3df217d'),\n  (x'40fe240c9fcb68c8'),\n\
+    \  (x'40c81cd6e63c53d3'),\n  (x'40934a4584fd0fdc'),\n  (x'405edd3c07fb4c93'),\n\
+    \  (x'4028b0fcd32f7076'),\n  (x'3ff3c0ca428c59f8'),\n  -- these cases come from\
+    \ the upstream's testsuite\n  -- LotsOfTrailingZeros)\n  (x'3e60000000000000'),\n\
+    \  -- Regression\n  (x'c352bd2668e077c4'),\n  (x'434018601510c000'),\n  (x'43d055dc36f24000'),\n\
+    \  (x'43e052961c6f8000'),\n  (x'3ff3c0ca2a5b1d5d'),\n  -- LooksLikePow5\n  (x'4830f0cf064dd592'),\n\
+    \  (x'4840f0cf064dd592'),\n  (x'4850f0cf064dd592'),\n  -- OutputLength\n  (x'3ff3333333333333'),\n\
+    \  (x'3ff3ae147ae147ae'),\n  (x'3ff3be76c8b43958'),\n  (x'3ff3c083126e978d'),\n\
+    \  (x'3ff3c0c1fc8f3238'),\n  (x'3ff3c0c9539b8887'),\n  (x'3ff3c0ca2a5b1d5d'),\n\
+    \  (x'3ff3c0ca4283de1b'),\n  (x'3ff3c0ca43db770a'),\n  (x'3ff3c0ca428abd53'),\n\
+    \  (x'3ff3c0ca428c1d2b'),\n  (x'3ff3c0ca428c51f2'),\n  (x'3ff3c0ca428c58fc'),\n\
+    \  (x'3ff3c0ca428c59dd'),\n  (x'3ff3c0ca428c59f8'),\n  (x'3ff3c0ca428c59fb'),\n\
+    \  -- 32-bit chunking\n  (x'40112e0be8047a7d'),\n  (x'40112e0be815a889'),\n  (x'40112e0be826d695'),\n\
+    \  (x'40112e0be83804a1'),\n  (x'40112e0be84932ad'),\n  -- MinMaxShift\n  (x'0040000000000000'),\n\
+    \  (x'007fffffffffffff'),\n  (x'0290000000000000'),\n  (x'029fffffffffffff'),\n\
+    \  (x'4350000000000000'),\n  (x'435fffffffffffff'),\n  (x'1330000000000000'),\n\
+    \  (x'133fffffffffffff'),\n  (x'3a6fa7161a4d6e0c')\n)\nselect float8send(flt)\
+    \ as ibits,\n       flt,\n       flt::text::float8 as r_flt,\n       float8send(flt::text::float8)\
+    \ as obits,\n       float8send(flt::text::float8) = float8send(flt) as correct\n\
+    \  from (select bits::bigint::xfloat8::float8 as flt\n          from testdata\n\
+    \toffset 0) s;"

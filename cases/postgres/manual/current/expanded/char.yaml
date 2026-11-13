@@ -1,0 +1,214 @@
+source:
+  dialect: postgres
+  engine: postgres
+  database: dsv_pg_manual_20261111
+target:
+  connection_profile: doris-local
+  database: dsv_pg_manual_20261111
+input:
+  format: pg-regress
+  file: assets/char.sql
+  sha256: ae674e60be46e95abf051c4e0961622f4c0ff5afff2bce641cf14f95fa2236fb
+recorded_output:
+  format: pg-regress
+  file: assets/char.out
+  sha256: 0ffccfb2ac223e03b41de6cf26ddee25e90c8ffb08b97976c76c0ead099e356f
+import_summary:
+  accepted: 3
+  skipped: 29
+  ambiguous: 0
+  errors: 0
+import_diagnostics:
+- statement_index: 2
+  line_start: 10
+  line_end: 15
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 3
+  line_start: 17
+  line_end: 17
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 4
+  line_start: 19
+  line_end: 19
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 5
+  line_start: 21
+  line_end: 22
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 6
+  line_start: 24
+  line_end: 24
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 7
+  line_start: 26
+  line_end: 26
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 8
+  line_start: 28
+  line_end: 29
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 9
+  line_start: 31
+  line_end: 32
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 10
+  line_start: 33
+  line_end: 33
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 18
+  line_start: 62
+  line_end: 62
+  disposition: skipped
+  statement_type: drop
+  reason: Expected one read-only Query, got Drop
+- statement_index: 19
+  line_start: 64
+  line_end: 71
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 11
+  line_start: 36
+  line_end: 36
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 12
+  line_start: 38
+  line_end: 40
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 13
+  line_start: 42
+  line_end: 44
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 14
+  line_start: 46
+  line_end: 48
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 15
+  line_start: 50
+  line_end: 52
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 16
+  line_start: 54
+  line_end: 56
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 17
+  line_start: 58
+  line_end: 60
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 20
+  line_start: 73
+  line_end: 73
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 23
+  line_start: 78
+  line_end: 78
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 24
+  line_start: 80
+  line_end: 86
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象
+- statement_index: 25
+  line_start: 87
+  line_end: 87
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象
+- statement_index: 26
+  line_start: 88
+  line_end: 88
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象
+- statement_index: 27
+  line_start: 89
+  line_end: 89
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象
+- statement_index: 28
+  line_start: 90
+  line_end: 90
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象
+- statement_index: 29
+  line_start: 91
+  line_end: 91
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象
+- statement_index: 30
+  line_start: 92
+  line_end: 92
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象
+- statement_index: 31
+  line_start: 93
+  line_end: 93
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象
+- statement_index: 32
+  line_start: 94
+  line_end: 94
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象
+cases:
+- id: pg-char-0001-07961456
+  statement_index: 1
+  line_start: 1
+  line_end: 8
+  output_occurrence: 1
+  sql: SELECT char 'c' = char 'c' AS true;
+- id: pg-char-0021-73e37fb1
+  statement_index: 21
+  line_start: 75
+  line_end: 76
+  output_occurrence: 1
+  sql: SELECT pg_input_is_valid('abcd  ', 'char(4)');
+- id: pg-char-0022-56bce410
+  statement_index: 22
+  line_start: 77
+  line_end: 77
+  output_occurrence: 1
+  sql: SELECT pg_input_is_valid('abcde', 'char(4)');

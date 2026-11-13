@@ -1,0 +1,137 @@
+{
+  "started_at": "2026-11-13T04:02:55.484734+00:00",
+  "finished_at": "2026-11-13T04:02:55.489194+00:00",
+  "sqlglot_version": "30.25.1.dev6",
+  "sqlglot_commit": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+  "source": {
+    "dialect": "postgres",
+    "engine": "postgres",
+    "connection_profile": "postgres-local",
+    "database": "dsv_pg_manual_20261111"
+  },
+  "target": {
+    "dialect": "doris",
+    "engine": "doris",
+    "connection_profile": "doris-local",
+    "database": "dsv_pg_manual_20261111"
+  },
+  "input": {
+    "format": "pg-regress",
+    "file": "assets/select_distinct_on.sql",
+    "sha256": "75853787148494b3a47bad833f31e952b2abbfcf70875efb89b67d4c143b1dd5"
+  },
+  "validation_mode": "recorded_output",
+  "import_summary": {
+    "accepted": 3,
+    "skipped": 0,
+    "ambiguous": 0,
+    "errors": 0
+  },
+  "import_diagnostics": [],
+  "recorded_output": {
+    "format": "pg-regress",
+    "file": "assets/select_distinct_on.out",
+    "sha256": "b5254efae56908b5537674959ce2eb3dfe29a6207ce7557d5660cbbe9a023421",
+    "driver": null
+  },
+  "cases": [
+    {
+      "id": "pg-select-distinct-on-0001",
+      "validation_mode": "recorded_output",
+      "data_assurance": "unverified",
+      "status": "TRANSLATION_FAILED",
+      "source_sql": "SELECT DISTINCT ON (string4) string4, two, ten\n   FROM onek\n   ORDER BY string4 using <, two using >, ten using <;",
+      "failure_stage": "source_parse",
+      "target_sql": null,
+      "transpilation_error": "ParseError: Invalid expression / Unexpected token. Line 3, Col: 25.\n  SELECT DISTINCT ON (string4) string4, two, ten\n   FROM onek\n   ORDER BY string4 using <, two using >, ten using <;",
+      "source_evidence_error": null,
+      "source_evidence": null,
+      "target_result": null,
+      "comparison": null,
+      "中文结论": "SQLGlot 解析或生成失败"
+    },
+    {
+      "id": "pg-select-distinct-on-0002",
+      "validation_mode": "recorded_output",
+      "data_assurance": "unverified",
+      "status": "TRANSLATION_FAILED",
+      "source_sql": "SELECT DISTINCT ON (string4, ten) string4, two, ten\n   FROM onek\n   ORDER BY string4 using <, two using <, ten using <;",
+      "failure_stage": "source_parse",
+      "target_sql": null,
+      "transpilation_error": "ParseError: Invalid expression / Unexpected token. Line 3, Col: 25.\n  SELECT DISTINCT ON (string4, ten) string4, two, ten\n   FROM onek\n   ORDER BY string4 using <, two using <, ten using <;",
+      "source_evidence_error": null,
+      "source_evidence": null,
+      "target_result": null,
+      "comparison": null,
+      "中文结论": "SQLGlot 解析或生成失败"
+    },
+    {
+      "id": "pg-select-distinct-on-0003",
+      "validation_mode": "recorded_output",
+      "data_assurance": "unverified",
+      "status": "TRANSLATION_FAILED",
+      "source_sql": "SELECT DISTINCT ON (string4, ten) string4, ten, two\n   FROM onek\n   ORDER BY string4 using <, ten using >, two using <;",
+      "failure_stage": "source_parse",
+      "target_sql": null,
+      "transpilation_error": "ParseError: Invalid expression / Unexpected token. Line 3, Col: 25.\n  SELECT DISTINCT ON (string4, ten) string4, ten, two\n   FROM onek\n   ORDER BY string4 using <, ten using >, two using <;",
+      "source_evidence_error": null,
+      "source_evidence": null,
+      "target_result": null,
+      "comparison": null,
+      "中文结论": "SQLGlot 解析或生成失败"
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "matched": 0,
+    "non_matching": 3,
+    "successful_matches": 0,
+    "negative_source_cases": 0,
+    "needs_review": 3,
+    "known_source_success": 0,
+    "successful_match_rate_all": 0.0,
+    "successful_match_rate_source_success": null,
+    "translation_failed": 3,
+    "source_evidence_failed": 0,
+    "doris_execution_failed": 0,
+    "schema_mismatch": 0,
+    "row_count_mismatch": 0,
+    "row_value_mismatch": 0,
+    "inconclusive": 0,
+    "outcomes": {
+      "TRANSLATION_FAILED": 3
+    },
+    "run_statuses": {
+      "TRANSLATION_FAILED": 3
+    }
+  },
+  "中文字段说明": {
+    "summary": "统计。successful_matches 只统计两端成功且匹配；matched 保留旧比较器代码计数，可能包含两端同类报错，不是通过数。",
+    "cases": "逐条源 SQL、社区输出、比较结果及有限结果样本。",
+    "source_evidence": "参考结果来源；recorded_output 表示读取 .out，没有执行源数据库。",
+    "data_assurance": "unverified 表示验证器不负责核验基表；外部数据准备报告须另外提供，不是本轮失败原因判定。",
+    "comparison": "自动观察到的差异，不是 SQLGlot 缺陷归因。equivalent 仅是已有证据下旧比较器的判断，不证明完整类型、所有输入或负向错误原因等价。",
+    "result_digest": "完整结果归一化后的摘要指纹，不代表类型和顺序均通过。",
+    "row_sample": "最多前五行，仅供定位；不是完整结果，也不能用于宣称全量值相同。",
+    "internal_codes": "稳定程序字段保留英文；含义见结果代码中文说明。"
+  },
+  "结果代码中文说明": {
+    "MATCH": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+    "TRANSLATION_FAILED": "SQLGlot 解析或生成失败",
+    "SOURCE_EVIDENCE_UNAVAILABLE": "无法取得或解析源端参考结果",
+    "TARGET_EXECUTION_FAILED": "Doris 执行流程失败",
+    "EXECUTION_STATUS_MISMATCH": "两端执行状态不同：一端成功、一端失败",
+    "ERROR_BEHAVIOR_MISMATCH": "两端均报错，但错误类别不同",
+    "RESULT_SCHEMA_MISMATCH": "返回字段数量、名称或类型不同",
+    "ROW_COUNT_MISMATCH": "返回记录行数不同",
+    "ROW_VALUE_MISMATCH": "返回记录值、重复次数或要求的顺序不同",
+    "SOURCE_ENVIRONMENT_ERROR": "源数据库环境不可用",
+    "TARGET_ENVIRONMENT_ERROR": "Doris 环境不可用，例如数据库、表或权限缺失",
+    "ENVIRONMENT_ERROR": "至少一端环境不可用",
+    "UNKNOWN": "没有形成比较结论"
+  },
+  "case_file": {
+    "path": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/select_distinct_on.yaml",
+    "sha256": "89fa7616703bcdf0b54c011718a70d196dfa4c01d9cd81f908034267d837f627"
+  }
+}

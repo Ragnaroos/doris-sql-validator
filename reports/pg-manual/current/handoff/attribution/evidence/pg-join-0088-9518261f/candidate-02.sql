@@ -1,0 +1,1 @@
+SELECT COALESCE(s1.name,ss2.name) AS name,s1.s1_n,ss2.s2_n,ss2.s2_2,ss2.s3_n FROM (SELECT name,n AS s1_n FROM t1) s1 FULL JOIN (SELECT COALESCE(s2.name,s3.name) AS name,s2.s2_n,s2.s2_2,s3.s3_n FROM (SELECT name,n AS s2_n,2 AS s2_2 FROM t2) s2 FULL JOIN (SELECT name,n AS s3_n FROM t3) s3 ON s2.name=s3.name) ss2 ON s1.name=ss2.name;

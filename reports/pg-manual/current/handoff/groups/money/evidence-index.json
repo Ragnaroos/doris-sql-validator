@@ -1,0 +1,858 @@
+{
+  "用途": "人工调用归因 Skill 的原文件引用索引；不复制、不调用 AI、不连接数据库",
+  "引用方式": "文件路径相对于本索引目录；始终使用原文件，不创建备份或改写 YAML",
+  "入口": {
+    "case_file": "../../../../../../cases/postgres/manual/current/expanded/money.yaml",
+    "report_file": "../../../validation/money/validation.json",
+    "source_file": "../../../../../../cases/postgres/manual/current/expanded/assets/money.sql",
+    "recorded_output_file": "../../../../../../cases/postgres/manual/current/expanded/assets/money.out",
+    "setup_files": [
+      "../../../data-preparation/postgres-setup.sql",
+      "../../../data-preparation/doris-setup.sql"
+    ],
+    "preparation_report": "../../../data-preparation/data-preparation.md"
+  },
+  "首轮运行查询数": 55,
+  "未在本轮运行的查询编号": [],
+  "待分析查询": [
+    {
+      "查询编号": "pg-money-0057-a1bdd31a",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0058-c81812a8",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0059-360d1605",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0060-b7897416",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0061-a62ee8f4",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0062-84faec3a",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0063-3e36c8c5",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0064-bc2fcb56",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0065-0a2853ed",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0066-58ef1e1f",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0067-580c4482",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0068-fd0e9cac",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0070-4a71d374",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0072-2df1df8d",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0073-bb0fe484",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0074-ffd230a3",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0075-6bec3eec",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0076-db9a71f3",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0077-49237eed",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0078-4d14abcc",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0079-1ccc9399",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0080-2d2c0e49",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0081-964c987d",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0082-97c2271f",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0083-aa62cabe",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0084-caa48d3b",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0085-17eb622a",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0086-15509935",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0087-a017ebd2",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0088-dcd8f28d",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0089-c7b13d9b",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0090-259efb04",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0091-e1d34431",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0092-3942a1c2",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0093-4666b18a",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0094-7bb53e8f",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0095-bdaddc72",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0096-f659a9a4",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0097-5909e787",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0098-2caf5321",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0099-2e3ebf79",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0100-12b0c5d4",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-money-0101-e7faa4c8",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0102-7eeb47da",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0103-206781b1",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0104-5410b754",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0105-a4212e37",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0106-17bd5064",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0107-e902a04b",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0108-43ea6cd7",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0109-56d1aea2",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0110-2dcac07b",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0111-ce18721c",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0112-55859b93",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-money-0113-0b7c50b8",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    }
+  ],
+  "导入阶段诊断": [
+    {
+      "statement_index": 1,
+      "line_start": 1,
+      "line_end": 7,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 2,
+      "line_start": 9,
+      "line_end": 9,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 39,
+      "line_start": 52,
+      "line_end": 52,
+      "disposition": "skipped",
+      "statement_type": "delete",
+      "reason": "Expected one read-only Query, got Delete"
+    },
+    {
+      "statement_index": 40,
+      "line_start": 53,
+      "line_end": 53,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 42,
+      "line_start": 56,
+      "line_end": 56,
+      "disposition": "skipped",
+      "statement_type": "delete",
+      "reason": "Expected one read-only Query, got Delete"
+    },
+    {
+      "statement_index": 43,
+      "line_start": 57,
+      "line_end": 57,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 45,
+      "line_start": 60,
+      "line_end": 60,
+      "disposition": "skipped",
+      "statement_type": "delete",
+      "reason": "Expected one read-only Query, got Delete"
+    },
+    {
+      "statement_index": 46,
+      "line_start": 61,
+      "line_end": 61,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 48,
+      "line_start": 64,
+      "line_end": 64,
+      "disposition": "skipped",
+      "statement_type": "delete",
+      "reason": "Expected one read-only Query, got Delete"
+    },
+    {
+      "statement_index": 49,
+      "line_start": 65,
+      "line_end": 65,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 51,
+      "line_start": 68,
+      "line_end": 68,
+      "disposition": "skipped",
+      "statement_type": "delete",
+      "reason": "Expected one read-only Query, got Delete"
+    },
+    {
+      "statement_index": 52,
+      "line_start": 69,
+      "line_end": 69,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 54,
+      "line_start": 72,
+      "line_end": 72,
+      "disposition": "skipped",
+      "statement_type": "delete",
+      "reason": "Expected one read-only Query, got Delete"
+    },
+    {
+      "statement_index": 55,
+      "line_start": 73,
+      "line_end": 73,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 3,
+      "line_start": 10,
+      "line_end": 10,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 4,
+      "line_start": 11,
+      "line_end": 11,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 5,
+      "line_start": 12,
+      "line_end": 12,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 6,
+      "line_start": 13,
+      "line_end": 13,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 7,
+      "line_start": 14,
+      "line_end": 14,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 8,
+      "line_start": 15,
+      "line_end": 15,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 9,
+      "line_start": 16,
+      "line_end": 16,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 10,
+      "line_start": 17,
+      "line_end": 17,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 11,
+      "line_start": 18,
+      "line_end": 18,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 12,
+      "line_start": 19,
+      "line_end": 19,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 13,
+      "line_start": 20,
+      "line_end": 20,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 14,
+      "line_start": 21,
+      "line_end": 21,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 15,
+      "line_start": 22,
+      "line_end": 22,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 16,
+      "line_start": 23,
+      "line_end": 23,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 17,
+      "line_start": 24,
+      "line_end": 24,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 18,
+      "line_start": 25,
+      "line_end": 25,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 19,
+      "line_start": 26,
+      "line_end": 26,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 20,
+      "line_start": 27,
+      "line_end": 27,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 21,
+      "line_start": 28,
+      "line_end": 28,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 22,
+      "line_start": 29,
+      "line_end": 29,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 23,
+      "line_start": 31,
+      "line_end": 32,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 24,
+      "line_start": 33,
+      "line_end": 33,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 25,
+      "line_start": 34,
+      "line_end": 34,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 26,
+      "line_start": 35,
+      "line_end": 35,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 27,
+      "line_start": 36,
+      "line_end": 36,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 28,
+      "line_start": 37,
+      "line_end": 37,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 29,
+      "line_start": 39,
+      "line_end": 40,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 30,
+      "line_start": 41,
+      "line_end": 41,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 31,
+      "line_start": 42,
+      "line_end": 42,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 32,
+      "line_start": 43,
+      "line_end": 43,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 33,
+      "line_start": 44,
+      "line_end": 44,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 34,
+      "line_start": 45,
+      "line_end": 45,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 35,
+      "line_start": 47,
+      "line_end": 47,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 36,
+      "line_start": 48,
+      "line_end": 48,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 37,
+      "line_start": 49,
+      "line_end": 49,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 38,
+      "line_start": 50,
+      "line_end": 50,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 41,
+      "line_start": 54,
+      "line_end": 54,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 44,
+      "line_start": 58,
+      "line_end": 58,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 47,
+      "line_start": 62,
+      "line_end": 62,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 50,
+      "line_start": 66,
+      "line_end": 66,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 53,
+      "line_start": 70,
+      "line_end": 70,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 56,
+      "line_start": 74,
+      "line_end": 74,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 69,
+      "line_start": 93,
+      "line_end": 93,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 71,
+      "line_start": 95,
+      "line_end": 95,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    }
+  ],
+  "数据准备报告已提供": true,
+  "文件": [
+    {
+      "文件": "../../../../../../cases/postgres/manual/current/expanded/assets/money.sql",
+      "用途": "原始 PostgreSQL 完整脚本，不执行其中 DDL/DML",
+      "sha256": "123d8a3608550968b84255b61cd1e8964f75ae38493cacd9bd13260b769c39dc"
+    },
+    {
+      "文件": "../../../../../../cases/postgres/manual/current/expanded/assets/money.out",
+      "用途": "原始参考输出，不改写答案",
+      "sha256": "5e8ce72fca5e4225b4818a7dc8990ecf97f7fd4b420ba83539f401b2f3c95870"
+    },
+    {
+      "文件": "../../../../../../cases/postgres/manual/current/expanded/money.yaml",
+      "用途": "首轮使用的源查询 YAML，直接使用原件",
+      "sha256": "bdd83508c0035f94782332d15db79386e1a684cd4eb7506c850b83738518aad3"
+    },
+    {
+      "文件": "../../../validation/money/validation.json",
+      "用途": "首轮结构化结果，值样本最多五行",
+      "sha256": "e077ec74d19e0d20fcc608f0b90bfd7076aa5475b42e45ecf565ef4f20b7f5f8"
+    },
+    {
+      "文件": "../../../validation/money/validation.md",
+      "用途": "首轮可读报告原件",
+      "sha256": "60a0e1cdcec738f4f3157270e04b408eb8f5be3bf704fa1898f7cfad524c5076"
+    },
+    {
+      "文件": "../../../data-preparation/postgres-setup.sql",
+      "用途": "用户指定的准备脚本或数据依赖，仅引用不执行",
+      "sha256": "920645ec3722d8702493a9b9a089fc9acbb0c5e7cc458e3a4e6cc754bcf2f428"
+    },
+    {
+      "文件": "../../../data-preparation/doris-setup.sql",
+      "用途": "用户指定的准备脚本或数据依赖，仅引用不执行",
+      "sha256": "3b96e9598a8b538335281223b9d6a44bb4168572b94a9e7ef97eef99f0555d00"
+    },
+    {
+      "文件": "../../../data-preparation/data-preparation.md",
+      "用途": "外部数据准备报告原件；本工具不重新核验数据库",
+      "sha256": "9b43557e8dfd7981d6727d1554b39ea2098990053c8809143f0a87b4ce3b55e6"
+    }
+  ]
+}

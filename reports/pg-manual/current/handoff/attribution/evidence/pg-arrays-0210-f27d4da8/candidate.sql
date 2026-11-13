@@ -1,0 +1,1 @@
+SELECT 33.4 = ANY(ARRAY(1, 2, 3));

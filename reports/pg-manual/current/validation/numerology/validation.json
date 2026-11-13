@@ -1,0 +1,4743 @@
+{
+  "started_at": "2026-11-11T09:40:30.658825+00:00",
+  "finished_at": "2026-11-11T09:40:31.589779+00:00",
+  "sqlglot_version": "30.25.1.dev6",
+  "sqlglot_commit": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+  "source": {
+    "dialect": "postgres",
+    "engine": "postgres",
+    "connection_profile": null,
+    "database": "dsv_pg_manual_20261111"
+  },
+  "target": {
+    "dialect": "doris",
+    "engine": "doris",
+    "connection_profile": "doris-local",
+    "database": "dsv_pg_manual_20261111"
+  },
+  "input": {
+    "format": "pg-regress",
+    "file": "assets/numerology.sql",
+    "sha256": "c7e4c9cb9dd5670c077cc25f011839aa010bbe271c50103e68687dbdb3be925f"
+  },
+  "validation_mode": "recorded_output",
+  "import_summary": {
+    "accepted": 54,
+    "skipped": 24,
+    "ambiguous": 0,
+    "errors": 11
+  },
+  "import_diagnostics": [
+    {
+      "statement_index": 36,
+      "line_start": 54,
+      "line_end": 54,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 37,
+      "line_start": 55,
+      "line_end": 55,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 52,
+      "line_start": 76,
+      "line_end": 76,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Invalid expression / Unexpected token. Line 1, Col: 13.\n  SELECT 1_000\u001b[4m.\u001b[0m000_005;"
+    },
+    {
+      "statement_index": 53,
+      "line_start": 77,
+      "line_end": 77,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Invalid expression / Unexpected token. Line 1, Col: 13.\n  SELECT 1_000\u001b[4m.\u001b[0m;"
+    },
+    {
+      "statement_index": 55,
+      "line_start": 79,
+      "line_end": 79,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Invalid expression / Unexpected token. Line 1, Col: 13.\n  SELECT 1_000\u001b[4m.\u001b[0m5e0_1;"
+    },
+    {
+      "statement_index": 56,
+      "line_start": 81,
+      "line_end": 88,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 61,
+      "line_start": 96,
+      "line_end": 96,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Invalid expression / Unexpected token. Line 1, Col: 14.\n  SELECT 1_000_\u001b[4m.\u001b[0m5;"
+    },
+    {
+      "statement_index": 62,
+      "line_start": 97,
+      "line_end": 97,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Invalid expression / Unexpected token. Line 1, Col: 13.\n  SELECT 1_000\u001b[4m.\u001b[0m_5;"
+    },
+    {
+      "statement_index": 63,
+      "line_start": 98,
+      "line_end": 98,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Invalid expression / Unexpected token. Line 1, Col: 13.\n  SELECT 1_000\u001b[4m.\u001b[0m5_;"
+    },
+    {
+      "statement_index": 64,
+      "line_start": 99,
+      "line_end": 99,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Invalid expression / Unexpected token. Line 1, Col: 13.\n  SELECT 1_000\u001b[4m.\u001b[0m5e_1;"
+    },
+    {
+      "statement_index": 65,
+      "line_start": 101,
+      "line_end": 101,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 66,
+      "line_start": 103,
+      "line_end": 109,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 67,
+      "line_start": 111,
+      "line_end": 112,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 68,
+      "line_start": 114,
+      "line_end": 115,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 70,
+      "line_start": 120,
+      "line_end": 122,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 71,
+      "line_start": 124,
+      "line_end": 126,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 72,
+      "line_start": 128,
+      "line_end": 129,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 74,
+      "line_start": 134,
+      "line_end": 136,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 75,
+      "line_start": 138,
+      "line_end": 140,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 76,
+      "line_start": 142,
+      "line_end": 144,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 78,
+      "line_start": 149,
+      "line_end": 153,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 79,
+      "line_start": 155,
+      "line_end": 157,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 80,
+      "line_start": 159,
+      "line_end": 161,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 86,
+      "line_start": 189,
+      "line_end": 189,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 87,
+      "line_start": 191,
+      "line_end": 191,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 88,
+      "line_start": 193,
+      "line_end": 193,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 89,
+      "line_start": 195,
+      "line_end": 195,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 69,
+      "line_start": 117,
+      "line_end": 118,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 73,
+      "line_start": 131,
+      "line_end": 132,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 77,
+      "line_start": 146,
+      "line_end": 147,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 81,
+      "line_start": 163,
+      "line_end": 163,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 82,
+      "line_start": 165,
+      "line_end": 168,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 83,
+      "line_start": 170,
+      "line_end": 175,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 84,
+      "line_start": 177,
+      "line_end": 180,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 85,
+      "line_start": 182,
+      "line_end": 187,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    }
+  ],
+  "recorded_output": {
+    "format": "pg-regress",
+    "file": "assets/numerology.out",
+    "sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+    "driver": null
+  },
+  "cases": [
+    {
+      "id": "pg-numerology-0001-bf1fea25",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0b100101;",
+      "target_sql": "SELECT b'100101'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "37"
+            ]
+          ],
+          "result_digest": "0f84b5cb7aaba0433a3a06b5876e270ebd0be8c0acc787e46c615ea116df8e3d",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 1
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 15.5027499422431,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=EXECUTION_ERROR",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0002-4393fd29",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0o273;",
+      "target_sql": "SELECT 0 AS o273",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "187"
+            ]
+          ],
+          "result_digest": "1e29acf27180f2d35e3b24aaa571a983f788d68233323e71e069c7ecbae67afa",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 2
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "o273",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 17.956958152353764,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "RESULT_SCHEMA_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Canonical result schemas differ",
+        "details": [
+          "column[0] name: source='?column?', doris='o273'"
+        ],
+        "possible_causes": [
+          "Source and Doris may infer different return types for the expression.",
+          "The SQLGlot rewrite may have changed the expression result type.",
+          "Database-driver type normalization may be incomplete."
+        ]
+      },
+      "中文结论": "返回字段数量、名称或类型不同"
+    },
+    {
+      "id": "pg-numerology-0003-bc278c1f",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0x42F;",
+      "target_sql": "SELECT x'42F'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "1071"
+            ]
+          ],
+          "result_digest": "4504d311cdf1ca90657c87995ff07ff7b97eb13af9b48f445f4239a4cfc7a8d9",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 3
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "x'42F'",
+            "database_type": "VAR_STRING",
+            "canonical_type": "string"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$binary": "BC8="
+            }
+          ]
+        ],
+        "result_digest": "340f124e9536419896460ffdb3c6237c42c20c72b5c4d7279c908e1d31e23d74",
+        "error": null,
+        "elapsed_ms": 41.9024582952261,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=4504d311cdf1ca90657c87995ff07ff7b97eb13af9b48f445f4239a4cfc7a8d9",
+          "doris_digest=1fe3148e85ab94169115ffb4b91cdb059724100a55ae13f6c0e1a4e8c27bac84",
+          "source_sample=[['1071']]",
+          "doris_sample=[['\\\\x042f']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-numerology-0004-5b3e7f7e",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0b1111111111111111111111111111111;",
+      "target_sql": "SELECT b'1111111111111111111111111111111'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "2147483647"
+            ]
+          ],
+          "result_digest": "55378dc37bd2695071aacf2b0512290c5303c1bcacd66d4b3976e7b875cd8ce2",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 4
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 13.059625402092934,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=EXECUTION_ERROR",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0005-68d49865",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0b10000000000000000000000000000000;",
+      "target_sql": "SELECT b'10000000000000000000000000000000'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "2147483648"
+            ]
+          ],
+          "result_digest": "e9f0e5096a6ce796c6ca24722d24adc9f7ec0ffeff65774fb884bb2cb9492d87",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 5
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 12.317500077188015,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=EXECUTION_ERROR",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0006-2c1a7e8b",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0o17777777777;",
+      "target_sql": "SELECT 0 AS o17777777777",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "2147483647"
+            ]
+          ],
+          "result_digest": "55378dc37bd2695071aacf2b0512290c5303c1bcacd66d4b3976e7b875cd8ce2",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 6
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "o17777777777",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 40.31379148364067,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "RESULT_SCHEMA_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Canonical result schemas differ",
+        "details": [
+          "column[0] name: source='?column?', doris='o17777777777'"
+        ],
+        "possible_causes": [
+          "Source and Doris may infer different return types for the expression.",
+          "The SQLGlot rewrite may have changed the expression result type.",
+          "Database-driver type normalization may be incomplete."
+        ]
+      },
+      "中文结论": "返回字段数量、名称或类型不同"
+    },
+    {
+      "id": "pg-numerology-0007-113b58a4",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0o20000000000;",
+      "target_sql": "SELECT 0 AS o20000000000",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "2147483648"
+            ]
+          ],
+          "result_digest": "e9f0e5096a6ce796c6ca24722d24adc9f7ec0ffeff65774fb884bb2cb9492d87",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 7
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "o20000000000",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 17.85337459295988,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "RESULT_SCHEMA_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Canonical result schemas differ",
+        "details": [
+          "column[0] name: source='?column?', doris='o20000000000'"
+        ],
+        "possible_causes": [
+          "Source and Doris may infer different return types for the expression.",
+          "The SQLGlot rewrite may have changed the expression result type.",
+          "Database-driver type normalization may be incomplete."
+        ]
+      },
+      "中文结论": "返回字段数量、名称或类型不同"
+    },
+    {
+      "id": "pg-numerology-0008-e7bc3623",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0x7FFFFFFF;",
+      "target_sql": "SELECT x'7FFFFFFF'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "2147483647"
+            ]
+          ],
+          "result_digest": "55378dc37bd2695071aacf2b0512290c5303c1bcacd66d4b3976e7b875cd8ce2",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 8
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "x'7FFFFFFF'",
+            "database_type": "VAR_STRING",
+            "canonical_type": "string"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$binary": "f////w=="
+            }
+          ]
+        ],
+        "result_digest": "81d41ea726c10bf92fcc3c4cf8dd43aebe64f089a31e5e7a2b60dad9bde13d21",
+        "error": null,
+        "elapsed_ms": 31.540708616375923,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=55378dc37bd2695071aacf2b0512290c5303c1bcacd66d4b3976e7b875cd8ce2",
+          "doris_digest=a1416606ba03ca3e3837d5b9b3e681b57506d4c54b62a0c76fa66d86a5c4fb30",
+          "source_sample=[['2147483647']]",
+          "doris_sample=[['\\\\x7fffffff']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-numerology-0009-69ae7cae",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0x80000000;",
+      "target_sql": "SELECT x'80000000'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "2147483648"
+            ]
+          ],
+          "result_digest": "e9f0e5096a6ce796c6ca24722d24adc9f7ec0ffeff65774fb884bb2cb9492d87",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 9
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "x'80000000'",
+            "database_type": "VAR_STRING",
+            "canonical_type": "string"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$binary": "gAAAAA=="
+            }
+          ]
+        ],
+        "result_digest": "854f3c7a82cc3fcb0cbb28e180a65f19764915b6ccf6ea8619ff88cab9649286",
+        "error": null,
+        "elapsed_ms": 19.177374430000782,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=e9f0e5096a6ce796c6ca24722d24adc9f7ec0ffeff65774fb884bb2cb9492d87",
+          "doris_digest=74222c0985651bf7cc093496b726955104697bfe9dbdacf8a77ea3b7e75faaac",
+          "source_sample=[['2147483648']]",
+          "doris_sample=[['\\\\x80000000']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-numerology-0010-8616092f",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT -0b10000000000000000000000000000000;",
+      "target_sql": "SELECT -b'10000000000000000000000000000000'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "-2147483648"
+            ]
+          ],
+          "result_digest": "2de1cd545afd58bfc3d93d9d3517eb5a2c8c25f69332785628c74ab646e72928",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 10
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 14.680207706987858,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=EXECUTION_ERROR",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0011-d12aadfa",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT -0b10000000000000000000000000000001;",
+      "target_sql": "SELECT -b'10000000000000000000000000000001'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "-2147483649"
+            ]
+          ],
+          "result_digest": "2874ef2b4b143e1c4ac32baa5073a0103934c8440af56a06448559b4cb19eeba",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 11
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 70.9902923554182,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=EXECUTION_ERROR",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0012-8e6f36b0",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT -0o20000000000;",
+      "target_sql": "SELECT -0 AS o20000000000",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "-2147483648"
+            ]
+          ],
+          "result_digest": "2de1cd545afd58bfc3d93d9d3517eb5a2c8c25f69332785628c74ab646e72928",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 12
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "o20000000000",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 14.633375220000744,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "RESULT_SCHEMA_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Canonical result schemas differ",
+        "details": [
+          "column[0] name: source='?column?', doris='o20000000000'"
+        ],
+        "possible_causes": [
+          "Source and Doris may infer different return types for the expression.",
+          "The SQLGlot rewrite may have changed the expression result type.",
+          "Database-driver type normalization may be incomplete."
+        ]
+      },
+      "中文结论": "返回字段数量、名称或类型不同"
+    },
+    {
+      "id": "pg-numerology-0013-749586fe",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT -0o20000000001;",
+      "target_sql": "SELECT -0 AS o20000000001",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "-2147483649"
+            ]
+          ],
+          "result_digest": "2874ef2b4b143e1c4ac32baa5073a0103934c8440af56a06448559b4cb19eeba",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 13
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "o20000000001",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 15.625500120222569,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "RESULT_SCHEMA_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Canonical result schemas differ",
+        "details": [
+          "column[0] name: source='?column?', doris='o20000000001'"
+        ],
+        "possible_causes": [
+          "Source and Doris may infer different return types for the expression.",
+          "The SQLGlot rewrite may have changed the expression result type.",
+          "Database-driver type normalization may be incomplete."
+        ]
+      },
+      "中文结论": "返回字段数量、名称或类型不同"
+    },
+    {
+      "id": "pg-numerology-0014-997ce8ed",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT -0x80000000;",
+      "target_sql": "SELECT -x'80000000'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "-2147483648"
+            ]
+          ],
+          "result_digest": "2de1cd545afd58bfc3d93d9d3517eb5a2c8c25f69332785628c74ab646e72928",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 14
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "CAST_ERROR",
+          "message": "(1105, 'errCode = 2, detailMessage = Cannot cast from VARBINARY(2147483647) to numeric type.')",
+          "code": "1105"
+        },
+        "elapsed_ms": 12.059375643730164,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=CAST_ERROR",
+          "doris_error_message=(1105, 'errCode = 2, detailMessage = Cannot cast from VARBINARY(2147483647) to numeric type.')",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0015-19d5c006",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT -0x80000001;",
+      "target_sql": "SELECT -x'80000001'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "-2147483649"
+            ]
+          ],
+          "result_digest": "2874ef2b4b143e1c4ac32baa5073a0103934c8440af56a06448559b4cb19eeba",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 15
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "CAST_ERROR",
+          "message": "(1105, 'errCode = 2, detailMessage = Cannot cast from VARBINARY(2147483647) to numeric type.')",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.417125351727009,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=CAST_ERROR",
+          "doris_error_message=(1105, 'errCode = 2, detailMessage = Cannot cast from VARBINARY(2147483647) to numeric type.')",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0016-554fa98c",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0b111111111111111111111111111111111111111111111111111111111111111;",
+      "target_sql": "SELECT b'111111111111111111111111111111111111111111111111111111111111111'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "9223372036854775807"
+            ]
+          ],
+          "result_digest": "bc8eb95e1e9db726225627c9c80b2cc5b4d2b7e9ac6b081a65633b073eab2136",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 16
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.97274960577488,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=EXECUTION_ERROR",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0017-73d4763f",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0b1000000000000000000000000000000000000000000000000000000000000000;",
+      "target_sql": "SELECT b'1000000000000000000000000000000000000000000000000000000000000000'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "9223372036854775808"
+            ]
+          ],
+          "result_digest": "25607a9238080532e0e894cb82e0076a5217149224b6c25eca03371cb75c841f",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 17
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 12.368416413664818,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=EXECUTION_ERROR",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0018-7a05d9a2",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0o777777777777777777777;",
+      "target_sql": "SELECT 0 AS o777777777777777777777",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "9223372036854775807"
+            ]
+          ],
+          "result_digest": "bc8eb95e1e9db726225627c9c80b2cc5b4d2b7e9ac6b081a65633b073eab2136",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 18
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "o777777777777777777777",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 11.954708024859428,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "RESULT_SCHEMA_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Canonical result schemas differ",
+        "details": [
+          "column[0] name: source='?column?', doris='o777777777777777777777'"
+        ],
+        "possible_causes": [
+          "Source and Doris may infer different return types for the expression.",
+          "The SQLGlot rewrite may have changed the expression result type.",
+          "Database-driver type normalization may be incomplete."
+        ]
+      },
+      "中文结论": "返回字段数量、名称或类型不同"
+    },
+    {
+      "id": "pg-numerology-0019-335c2dae",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0o1000000000000000000000;",
+      "target_sql": "SELECT 0 AS o1000000000000000000000",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "9223372036854775808"
+            ]
+          ],
+          "result_digest": "25607a9238080532e0e894cb82e0076a5217149224b6c25eca03371cb75c841f",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 19
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "o1000000000000000000000",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 11.73312496393919,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "RESULT_SCHEMA_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Canonical result schemas differ",
+        "details": [
+          "column[0] name: source='?column?', doris='o1000000000000000000000'"
+        ],
+        "possible_causes": [
+          "Source and Doris may infer different return types for the expression.",
+          "The SQLGlot rewrite may have changed the expression result type.",
+          "Database-driver type normalization may be incomplete."
+        ]
+      },
+      "中文结论": "返回字段数量、名称或类型不同"
+    },
+    {
+      "id": "pg-numerology-0020-885d9173",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0x7FFFFFFFFFFFFFFF;",
+      "target_sql": "SELECT x'7FFFFFFFFFFFFFFF'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "9223372036854775807"
+            ]
+          ],
+          "result_digest": "bc8eb95e1e9db726225627c9c80b2cc5b4d2b7e9ac6b081a65633b073eab2136",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 20
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "x'7FFFFFFFFFFFFFFF'",
+            "database_type": "VAR_STRING",
+            "canonical_type": "string"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$binary": "f/////////8="
+            }
+          ]
+        ],
+        "result_digest": "90b26b9864d89adc360d4749f57d70a6783a969479b862f165a16959aa872910",
+        "error": null,
+        "elapsed_ms": 14.769834466278553,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=bc8eb95e1e9db726225627c9c80b2cc5b4d2b7e9ac6b081a65633b073eab2136",
+          "doris_digest=751d50a58f06a28db34150714b7e73e8a80dee6f9d7b054da14ea1a6b2782adb",
+          "source_sample=[['9223372036854775807']]",
+          "doris_sample=[['\\\\x7fffffffffffffff']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-numerology-0021-65b661c9",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0x8000000000000000;",
+      "target_sql": "SELECT x'8000000000000000'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "9223372036854775808"
+            ]
+          ],
+          "result_digest": "25607a9238080532e0e894cb82e0076a5217149224b6c25eca03371cb75c841f",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 21
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "x'8000000000000000'",
+            "database_type": "VAR_STRING",
+            "canonical_type": "string"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$binary": "gAAAAAAAAAA="
+            }
+          ]
+        ],
+        "result_digest": "84ffcb940f435c1d2def56c6b1edda5a20b0f2c2788fa0326db2e5338e60beef",
+        "error": null,
+        "elapsed_ms": 15.834500081837177,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=25607a9238080532e0e894cb82e0076a5217149224b6c25eca03371cb75c841f",
+          "doris_digest=5438c33713b57cd34f791e35991d9405709cf1ce73b72d5b622288342e2115f7",
+          "source_sample=[['9223372036854775808']]",
+          "doris_sample=[['\\\\x8000000000000000']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-numerology-0022-72c6b526",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT -0b1000000000000000000000000000000000000000000000000000000000000000;",
+      "target_sql": "SELECT -b'1000000000000000000000000000000000000000000000000000000000000000'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "-9223372036854775808"
+            ]
+          ],
+          "result_digest": "d37f1303dc98b751907a0195235fec31b7c06857fb89850f6e1e73b547812f62",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 22
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.92658394575119,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=EXECUTION_ERROR",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0023-529faf1e",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT -0b1000000000000000000000000000000000000000000000000000000000000001;",
+      "target_sql": "SELECT -b'1000000000000000000000000000000000000000000000000000000000000001'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "-9223372036854775809"
+            ]
+          ],
+          "result_digest": "b93ee5bb984f0b4926cfe09576eb221d0937257a02dac1a8b8e4e80ace61c246",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 23
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 13.562583364546299,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=EXECUTION_ERROR",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0024-6a9c516b",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT -0o1000000000000000000000;",
+      "target_sql": "SELECT -0 AS o1000000000000000000000",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "-9223372036854775808"
+            ]
+          ],
+          "result_digest": "d37f1303dc98b751907a0195235fec31b7c06857fb89850f6e1e73b547812f62",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 24
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "o1000000000000000000000",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 11.424500495195389,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "RESULT_SCHEMA_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Canonical result schemas differ",
+        "details": [
+          "column[0] name: source='?column?', doris='o1000000000000000000000'"
+        ],
+        "possible_causes": [
+          "Source and Doris may infer different return types for the expression.",
+          "The SQLGlot rewrite may have changed the expression result type.",
+          "Database-driver type normalization may be incomplete."
+        ]
+      },
+      "中文结论": "返回字段数量、名称或类型不同"
+    },
+    {
+      "id": "pg-numerology-0025-f8ec6ef6",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT -0o1000000000000000000001;",
+      "target_sql": "SELECT -0 AS o1000000000000000000001",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "-9223372036854775809"
+            ]
+          ],
+          "result_digest": "b93ee5bb984f0b4926cfe09576eb221d0937257a02dac1a8b8e4e80ace61c246",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 25
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "o1000000000000000000001",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 11.71270851045847,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "RESULT_SCHEMA_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Canonical result schemas differ",
+        "details": [
+          "column[0] name: source='?column?', doris='o1000000000000000000001'"
+        ],
+        "possible_causes": [
+          "Source and Doris may infer different return types for the expression.",
+          "The SQLGlot rewrite may have changed the expression result type.",
+          "Database-driver type normalization may be incomplete."
+        ]
+      },
+      "中文结论": "返回字段数量、名称或类型不同"
+    },
+    {
+      "id": "pg-numerology-0026-ffe92375",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT -0x8000000000000000;",
+      "target_sql": "SELECT -x'8000000000000000'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "-9223372036854775808"
+            ]
+          ],
+          "result_digest": "d37f1303dc98b751907a0195235fec31b7c06857fb89850f6e1e73b547812f62",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 26
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "CAST_ERROR",
+          "message": "(1105, 'errCode = 2, detailMessage = Cannot cast from VARBINARY(2147483647) to numeric type.')",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.698083020746708,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=CAST_ERROR",
+          "doris_error_message=(1105, 'errCode = 2, detailMessage = Cannot cast from VARBINARY(2147483647) to numeric type.')",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0027-c26c0457",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT -0x8000000000000001;",
+      "target_sql": "SELECT -x'8000000000000001'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "-9223372036854775809"
+            ]
+          ],
+          "result_digest": "b93ee5bb984f0b4926cfe09576eb221d0937257a02dac1a8b8e4e80ace61c246",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 27
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "CAST_ERROR",
+          "message": "(1105, 'errCode = 2, detailMessage = Cannot cast from VARBINARY(2147483647) to numeric type.')",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.748791672289371,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=CAST_ERROR",
+          "doris_error_message=(1105, 'errCode = 2, detailMessage = Cannot cast from VARBINARY(2147483647) to numeric type.')",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0028-4f02026b",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 123abc;",
+      "target_sql": "SELECT 123 AS abc",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "trailing junk after numeric literal at or near \"123abc\"",
+            "code": "trailing junk after numeric literal at or near \"123abc\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 28
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "abc",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            123
+          ]
+        ],
+        "result_digest": "9ac1282387644e4f513672c5dab82b3f4db6990d18396efd451eece0263123b9",
+        "error": null,
+        "elapsed_ms": 11.463625356554985,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=trailing junk after numeric literal at or near \"123abc\"",
+          "source_error_code=trailing junk after numeric literal at or near \"123abc\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0029-c7e45ec9",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0x0o;",
+      "target_sql": "SELECT `0x0o`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "trailing junk after numeric literal at or near \"0x0o\"",
+            "code": "trailing junk after numeric literal at or near \"0x0o\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 29
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column '0x0o' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.211957782506943,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Both sides failed with compatible recorded/live error behavior",
+        "details": [],
+        "possible_causes": []
+      },
+      "中文结论": "两端同类报错，具体原因尚未确认；不计入成功结果匹配数"
+    },
+    {
+      "id": "pg-numerology-0030-c1db4386",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0.a;",
+      "target_sql": "SELECT 0. AS a",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "trailing junk after numeric literal at or near \"0.a\"",
+            "code": "trailing junk after numeric literal at or near \"0.a\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 30
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "a",
+            "database_type": "DECIMAL",
+            "canonical_type": "decimal"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$decimal": "0"
+            }
+          ]
+        ],
+        "result_digest": "64b64aea7a6fcfa6ac786b9a0928c05350c82562488602b7f2efc3d3b3c65c23",
+        "error": null,
+        "elapsed_ms": 11.774417012929916,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=trailing junk after numeric literal at or near \"0.a\"",
+          "source_error_code=trailing junk after numeric literal at or near \"0.a\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0031-71d2199a",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0.0a;",
+      "target_sql": "SELECT 0.0 AS a",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "trailing junk after numeric literal at or near \"0.0a\"",
+            "code": "trailing junk after numeric literal at or near \"0.0a\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 31
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "a",
+            "database_type": "DECIMAL",
+            "canonical_type": "decimal"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$decimal": "0.0"
+            }
+          ]
+        ],
+        "result_digest": "3a55d44defd58a21383eb3a1fada16f9014ebdd3d76aac927e2af19a8a554904",
+        "error": null,
+        "elapsed_ms": 11.549541726708412,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=trailing junk after numeric literal at or near \"0.0a\"",
+          "source_error_code=trailing junk after numeric literal at or near \"0.0a\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0032-71d2199a",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT .0a;",
+      "target_sql": "SELECT 0.0 AS a",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "trailing junk after numeric literal at or near \".0a\"",
+            "code": "trailing junk after numeric literal at or near \".0a\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 32
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "a",
+            "database_type": "DECIMAL",
+            "canonical_type": "decimal"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$decimal": "0.0"
+            }
+          ]
+        ],
+        "result_digest": "3a55d44defd58a21383eb3a1fada16f9014ebdd3d76aac927e2af19a8a554904",
+        "error": null,
+        "elapsed_ms": 10.819667018949986,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=trailing junk after numeric literal at or near \".0a\"",
+          "source_error_code=trailing junk after numeric literal at or near \".0a\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0033-33a201b2",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0.0e1a;",
+      "target_sql": "SELECT 0.0e1 AS a",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "trailing junk after numeric literal at or near \"0.0e1a\"",
+            "code": "trailing junk after numeric literal at or near \"0.0e1a\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 33
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "a",
+            "database_type": "DECIMAL",
+            "canonical_type": "decimal"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$decimal": "0"
+            }
+          ]
+        ],
+        "result_digest": "64b64aea7a6fcfa6ac786b9a0928c05350c82562488602b7f2efc3d3b3c65c23",
+        "error": null,
+        "elapsed_ms": 12.479749508202076,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=trailing junk after numeric literal at or near \"0.0e1a\"",
+          "source_error_code=trailing junk after numeric literal at or near \"0.0e1a\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0034-0597a37e",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0.0e;",
+      "target_sql": "SELECT 0.0e",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "trailing junk after numeric literal at or near \"0.0e\"",
+            "code": "trailing junk after numeric literal at or near \"0.0e\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 34
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, 'errCode = 2, detailMessage = Can not dereference field: 0e')",
+          "code": "1105"
+        },
+        "elapsed_ms": 12.48620729893446,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Both sides failed with compatible recorded/live error behavior",
+        "details": [],
+        "possible_causes": []
+      },
+      "中文结论": "两端同类报错，具体原因尚未确认；不计入成功结果匹配数"
+    },
+    {
+      "id": "pg-numerology-0035-97a6754a",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0.0e+a;",
+      "target_sql": "SELECT 0.0e + a",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "trailing junk after numeric literal at or near \"0.0e+\"",
+            "code": "trailing junk after numeric literal at or near \"0.0e+\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 35
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, 'errCode = 2, detailMessage = Can not dereference field: 0e')",
+          "code": "1105"
+        },
+        "elapsed_ms": 16.007416881620884,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Both sides failed with compatible recorded/live error behavior",
+        "details": [],
+        "possible_causes": []
+      },
+      "中文结论": "两端同类报错，具体原因尚未确认；不计入成功结果匹配数"
+    },
+    {
+      "id": "pg-numerology-0038-40292161",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0b;",
+      "target_sql": "SELECT `0b`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "invalid binary integer at or near \"0b\"",
+            "code": "invalid binary integer at or near \"0b\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 38
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column '0b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 12.512749992311,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Both sides failed with compatible recorded/live error behavior",
+        "details": [],
+        "possible_causes": []
+      },
+      "中文结论": "两端同类报错，具体原因尚未确认；不计入成功结果匹配数"
+    },
+    {
+      "id": "pg-numerology-0039-2cf24225",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 1b;",
+      "target_sql": "SELECT 1 AS b",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "trailing junk after numeric literal at or near \"1b\"",
+            "code": "trailing junk after numeric literal at or near \"1b\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 39
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "b",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 11.779166758060455,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=trailing junk after numeric literal at or near \"1b\"",
+          "source_error_code=trailing junk after numeric literal at or near \"1b\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0040-33157fdf",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0b0x;",
+      "target_sql": "SELECT `0b0x`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "trailing junk after numeric literal at or near \"0b0x\"",
+            "code": "trailing junk after numeric literal at or near \"0b0x\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 40
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column '0b0x' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.318749748170376,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Both sides failed with compatible recorded/live error behavior",
+        "details": [],
+        "possible_causes": []
+      },
+      "中文结论": "两端同类报错，具体原因尚未确认；不计入成功结果匹配数"
+    },
+    {
+      "id": "pg-numerology-0041-4efe6eaa",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0o;",
+      "target_sql": "SELECT 0 AS o",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "invalid octal integer at or near \"0o\"",
+            "code": "invalid octal integer at or near \"0o\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 41
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "o",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 11.44395861774683,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=invalid octal integer at or near \"0o\"",
+          "source_error_code=invalid octal integer at or near \"0o\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0042-077be3a9",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 1o;",
+      "target_sql": "SELECT 1 AS o",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "trailing junk after numeric literal at or near \"1o\"",
+            "code": "trailing junk after numeric literal at or near \"1o\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 42
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "o",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 13.493582606315613,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=trailing junk after numeric literal at or near \"1o\"",
+          "source_error_code=trailing junk after numeric literal at or near \"1o\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0043-c31d8dd1",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0o0x;",
+      "target_sql": "SELECT 0 AS o0x",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "trailing junk after numeric literal at or near \"0o0x\"",
+            "code": "trailing junk after numeric literal at or near \"0o0x\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 43
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "o0x",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 12.060124427080154,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=trailing junk after numeric literal at or near \"0o0x\"",
+          "source_error_code=trailing junk after numeric literal at or near \"0o0x\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0044-a9ff2e9b",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0x;",
+      "target_sql": "SELECT `0x`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "invalid hexadecimal integer at or near \"0x\"",
+            "code": "invalid hexadecimal integer at or near \"0x\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 44
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column '0x' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.469084769487381,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Both sides failed with compatible recorded/live error behavior",
+        "details": [],
+        "possible_causes": []
+      },
+      "中文结论": "两端同类报错，具体原因尚未确认；不计入成功结果匹配数"
+    },
+    {
+      "id": "pg-numerology-0045-c3b9b519",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 1x;",
+      "target_sql": "SELECT 1 AS x",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "trailing junk after numeric literal at or near \"1x\"",
+            "code": "trailing junk after numeric literal at or near \"1x\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 45
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "x",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 11.910875327885151,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=trailing junk after numeric literal at or near \"1x\"",
+          "source_error_code=trailing junk after numeric literal at or near \"1x\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0046-cf0a0c41",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0x0y;",
+      "target_sql": "SELECT `0x0y`",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "trailing junk after numeric literal at or near \"0x0y\"",
+            "code": "trailing junk after numeric literal at or near \"0x0y\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 46
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column '0x0y' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.2126674503088,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Both sides failed with compatible recorded/live error behavior",
+        "details": [],
+        "possible_causes": []
+      },
+      "中文结论": "两端同类报错，具体原因尚未确认；不计入成功结果匹配数"
+    },
+    {
+      "id": "pg-numerology-0047-b021aae2",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 1_000_000;",
+      "target_sql": "SELECT 1 AS _000_000",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "1000000"
+            ]
+          ],
+          "result_digest": "67248892bae56e107783e742e46891dccac1a14e3ce9d92307749730bcf80b12",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 47
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "_000_000",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 13.536125421524048,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "RESULT_SCHEMA_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Canonical result schemas differ",
+        "details": [
+          "column[0] name: source='?column?', doris='_000_000'"
+        ],
+        "possible_causes": [
+          "Source and Doris may infer different return types for the expression.",
+          "The SQLGlot rewrite may have changed the expression result type.",
+          "Database-driver type normalization may be incomplete."
+        ]
+      },
+      "中文结论": "返回字段数量、名称或类型不同"
+    },
+    {
+      "id": "pg-numerology-0048-28a108ba",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 1_2_3;",
+      "target_sql": "SELECT 1 AS _2_3",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "123"
+            ]
+          ],
+          "result_digest": "0e2763a955b5edaf987da101c5b39611acbea5dc1278993b610b9c3a36d5a7ec",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 48
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "_2_3",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            1
+          ]
+        ],
+        "result_digest": "4029f7a68f0b162800fd7cd5356ebaa2f4baf18c9080d0983f8a791f7848cc3f",
+        "error": null,
+        "elapsed_ms": 12.465165928006172,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "RESULT_SCHEMA_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Canonical result schemas differ",
+        "details": [
+          "column[0] name: source='?column?', doris='_2_3'"
+        ],
+        "possible_causes": [
+          "Source and Doris may infer different return types for the expression.",
+          "The SQLGlot rewrite may have changed the expression result type.",
+          "Database-driver type normalization may be incomplete."
+        ]
+      },
+      "中文结论": "返回字段数量、名称或类型不同"
+    },
+    {
+      "id": "pg-numerology-0049-9b45177b",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0x1EEE_FFFF;",
+      "target_sql": "SELECT x'1EEE_FFFF'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "518979583"
+            ]
+          ],
+          "result_digest": "06906bbf140d6186081d191d99a56d204a846705129ee44957f27c83f6624b13",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 49
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column 'x' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.163375340402126,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=EXECUTION_ERROR",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Unknown column 'x' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0050-0c169c9a",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0o2_73;",
+      "target_sql": "SELECT 0 AS o2_73",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "187"
+            ]
+          ],
+          "result_digest": "1e29acf27180f2d35e3b24aaa571a983f788d68233323e71e069c7ecbae67afa",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 50
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "o2_73",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            0
+          ]
+        ],
+        "result_digest": "62ffd6738291f9f0298756e9cff63c9445c91f6ea7669a2ab54bcd3e7eab1c22",
+        "error": null,
+        "elapsed_ms": 10.671666823327541,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "RESULT_SCHEMA_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Canonical result schemas differ",
+        "details": [
+          "column[0] name: source='?column?', doris='o2_73'"
+        ],
+        "possible_causes": [
+          "Source and Doris may infer different return types for the expression.",
+          "The SQLGlot rewrite may have changed the expression result type.",
+          "Database-driver type normalization may be incomplete."
+        ]
+      },
+      "中文结论": "返回字段数量、名称或类型不同"
+    },
+    {
+      "id": "pg-numerology-0051-33408a72",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 0b_10_0101;",
+      "target_sql": "SELECT b'_10_0101'",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "37"
+            ]
+          ],
+          "result_digest": "0f84b5cb7aaba0433a3a06b5876e270ebd0be8c0acc787e46c615ea116df8e3d",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 51
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 10.59320755302906,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=EXECUTION_ERROR",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = Unknown column 'b' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0054-8a209ea6",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT .000_005;",
+      "target_sql": "SELECT 0.000 AS _005",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "?column?",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "0.000005"
+            ]
+          ],
+          "result_digest": "b1160f5665800ef1630e6be69f16fdfbc362fbb21195bff0e3004a00180657be",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 54
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "_005",
+            "database_type": "DECIMAL",
+            "canonical_type": "decimal"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$decimal": "0.000"
+            }
+          ]
+        ],
+        "result_digest": "8e113a9bb2684d594919a40baeb1f7c87af9756cb5243ba1c4f7f0cb8c6984b7",
+        "error": null,
+        "elapsed_ms": 12.920708395540714,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "RESULT_SCHEMA_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Canonical result schemas differ",
+        "details": [
+          "column[0] name: source='?column?', doris='_005'"
+        ],
+        "possible_causes": [
+          "Source and Doris may infer different return types for the expression.",
+          "The SQLGlot rewrite may have changed the expression result type.",
+          "Database-driver type normalization may be incomplete."
+        ]
+      },
+      "中文结论": "返回字段数量、名称或类型不同"
+    },
+    {
+      "id": "pg-numerology-0057-f1dc0d67",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT _100;",
+      "target_sql": "SELECT _100",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "column \"_100\" does not exist",
+            "code": "column \"_100\" does not exist"
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 57
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = Unknown column '_100' in 'table list' in UNBOUND_ONE_ROW_RELATION clause(line 1, pos 7)\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 12.60770857334137,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Both sides failed with compatible recorded/live error behavior",
+        "details": [],
+        "possible_causes": []
+      },
+      "中文结论": "两端同类报错，具体原因尚未确认；不计入成功结果匹配数"
+    },
+    {
+      "id": "pg-numerology-0058-3d65d0e3",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 100_;",
+      "target_sql": "SELECT 100 AS _",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "trailing junk after numeric literal at or near \"100_\"",
+            "code": "trailing junk after numeric literal at or near \"100_\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 58
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "_",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            100
+          ]
+        ],
+        "result_digest": "a9b1d1a3bb39d16dcaf602a5c77f2933233d57b928fa3cb5c02b39ac2f5ecf46",
+        "error": null,
+        "elapsed_ms": 12.648958712816238,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=trailing junk after numeric literal at or near \"100_\"",
+          "source_error_code=trailing junk after numeric literal at or near \"100_\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0059-d73d9e0e",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT 100__000;",
+      "target_sql": "SELECT 100 AS __000",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "trailing junk after numeric literal at or near \"100__000\"",
+            "code": "trailing junk after numeric literal at or near \"100__000\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 59
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "__000",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            100
+          ]
+        ],
+        "result_digest": "a9b1d1a3bb39d16dcaf602a5c77f2933233d57b928fa3cb5c02b39ac2f5ecf46",
+        "error": null,
+        "elapsed_ms": 13.98458331823349,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=trailing junk after numeric literal at or near \"100__000\"",
+          "source_error_code=trailing junk after numeric literal at or near \"100__000\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-numerology-0060-be24813a",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT _1_000.5;",
+      "target_sql": "SELECT _1_000.5",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "PARSE_ERROR",
+            "message": "syntax error at or near \".5\"",
+            "code": "syntax error at or near \".5\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/assets/numerology.out",
+        "artifact_sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a",
+        "statement_index": 60
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = \\nextraneous input '.5' expecting {<EOF>, ';'}(line 1, pos 13)\\n\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.086874641478062,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ERROR_BEHAVIOR_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Both sides failed, but normalized error categories differ",
+        "details": [
+          "source_error_category=PARSE_ERROR",
+          "source_error_message=syntax error at or near \".5\"",
+          "source_error_code=syntax error at or near \".5\"",
+          "doris_error_category=EXECUTION_ERROR",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = \\nextraneous input '.5' expecting {<EOF>, ';'}(line 1, pos 13)\\n\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "Source and Doris may classify the same invalid input differently.",
+          "Error normalization may not yet map equivalent engine-specific errors.",
+          "Source and Doris session, UDF, or version settings may differ."
+        ]
+      },
+      "中文结论": "两端均报错，但错误类别不同"
+    }
+  ],
+  "summary": {
+    "total": 54,
+    "matched": 8,
+    "non_matching": 46,
+    "successful_matches": 0,
+    "negative_source_cases": 21,
+    "needs_review": 54,
+    "known_source_success": 33,
+    "successful_match_rate_all": 0.0,
+    "successful_match_rate_source_success": 0.0,
+    "translation_failed": 0,
+    "source_evidence_failed": 0,
+    "doris_execution_failed": 24,
+    "schema_mismatch": 13,
+    "row_count_mismatch": 0,
+    "row_value_mismatch": 5,
+    "inconclusive": 0,
+    "outcomes": {
+      "ERROR_BEHAVIOR_MISMATCH": 1,
+      "EXECUTION_STATUS_MISMATCH": 27,
+      "MATCH": 8,
+      "RESULT_SCHEMA_MISMATCH": 13,
+      "ROW_VALUE_MISMATCH": 5
+    },
+    "run_statuses": {
+      "COMPLETED": 54
+    }
+  },
+  "中文字段说明": {
+    "summary": "统计。successful_matches 只统计两端成功且匹配；matched 保留旧比较器代码计数，可能包含两端同类报错，不是通过数。",
+    "cases": "逐条源 SQL、社区输出、比较结果及有限结果样本。",
+    "source_evidence": "参考结果来源；recorded_output 表示读取 .out，没有执行源数据库。",
+    "data_assurance": "unverified 表示验证器不负责核验基表；外部数据准备报告须另外提供，不是本轮失败原因判定。",
+    "comparison": "自动观察到的差异，不是 SQLGlot 缺陷归因。equivalent 仅是已有证据下旧比较器的判断，不证明完整类型、所有输入或负向错误原因等价。",
+    "result_digest": "完整结果归一化后的摘要指纹，不代表类型和顺序均通过。",
+    "row_sample": "最多前五行，仅供定位；不是完整结果，也不能用于宣称全量值相同。",
+    "internal_codes": "稳定程序字段保留英文；含义见结果代码中文说明。"
+  },
+  "结果代码中文说明": {
+    "MATCH": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+    "TRANSLATION_FAILED": "SQLGlot 解析或生成失败",
+    "SOURCE_EVIDENCE_UNAVAILABLE": "无法取得或解析源端参考结果",
+    "TARGET_EXECUTION_FAILED": "Doris 执行流程失败",
+    "EXECUTION_STATUS_MISMATCH": "两端执行状态不同：一端成功、一端失败",
+    "ERROR_BEHAVIOR_MISMATCH": "两端均报错，但错误类别不同",
+    "RESULT_SCHEMA_MISMATCH": "返回字段数量、名称或类型不同",
+    "ROW_COUNT_MISMATCH": "返回记录行数不同",
+    "ROW_VALUE_MISMATCH": "返回记录值、重复次数或要求的顺序不同",
+    "SOURCE_ENVIRONMENT_ERROR": "源数据库环境不可用",
+    "TARGET_ENVIRONMENT_ERROR": "Doris 环境不可用，例如数据库、表或权限缺失",
+    "ENVIRONMENT_ERROR": "至少一端环境不可用",
+    "UNKNOWN": "没有形成比较结论"
+  },
+  "case_file": {
+    "path": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/expanded/numerology.yaml",
+    "sha256": "f0f1ec439a6771017da8d8138540c09d5d12ee0b60f255ab34561b3540032fe4"
+  }
+}

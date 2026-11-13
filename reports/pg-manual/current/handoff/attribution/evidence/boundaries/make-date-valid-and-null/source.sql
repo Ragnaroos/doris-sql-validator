@@ -1,0 +1,1 @@
+SELECT y,m,d,MAKE_DATE(y,m,d) AS value FROM (VALUES(2013,2,28),(2024,2,29),(NULL,2,28)) v(y,m,d) ORDER BY y NULLS LAST;

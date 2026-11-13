@@ -1,0 +1,1568 @@
+{
+  "started_at": "2026-11-11T09:40:20.823836+00:00",
+  "finished_at": "2026-11-11T09:40:21.101231+00:00",
+  "sqlglot_version": "30.25.1.dev6",
+  "sqlglot_commit": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+  "source": {
+    "dialect": "postgres",
+    "engine": "postgres",
+    "connection_profile": "postgres-local",
+    "database": "dsv_pg_manual_20261111"
+  },
+  "target": {
+    "dialect": "doris",
+    "engine": "doris",
+    "connection_profile": "doris-local",
+    "database": "dsv_pg_manual_20261111"
+  },
+  "input": {
+    "format": "pg-regress",
+    "file": "assets/time.sql",
+    "sha256": "89f74ddb5ec458c8f9ff219eab06f48f6ea13767c563782f80569ce364d0960c"
+  },
+  "validation_mode": "recorded_output",
+  "import_summary": {
+    "accepted": 15,
+    "skipped": 29,
+    "ambiguous": 0,
+    "errors": 0
+  },
+  "import_diagnostics": [
+    {
+      "statement_index": 1,
+      "line_start": 1,
+      "line_end": 5,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 2,
+      "line_start": 7,
+      "line_end": 7,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 3,
+      "line_start": 8,
+      "line_end": 8,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 4,
+      "line_start": 9,
+      "line_end": 10,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 5,
+      "line_start": 11,
+      "line_end": 11,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 6,
+      "line_start": 12,
+      "line_end": 12,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 7,
+      "line_start": 13,
+      "line_end": 13,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 8,
+      "line_start": 14,
+      "line_end": 14,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 9,
+      "line_start": 15,
+      "line_end": 15,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 10,
+      "line_start": 17,
+      "line_end": 17,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 11,
+      "line_start": 18,
+      "line_end": 18,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 12,
+      "line_start": 19,
+      "line_end": 20,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 13,
+      "line_start": 23,
+      "line_end": 23,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 14,
+      "line_start": 25,
+      "line_end": 25,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 15,
+      "line_start": 27,
+      "line_end": 27,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 16,
+      "line_start": 29,
+      "line_end": 29,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 17,
+      "line_start": 31,
+      "line_end": 31,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 19,
+      "line_start": 35,
+      "line_end": 35,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 20,
+      "line_start": 35,
+      "line_end": 36,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 21,
+      "line_start": 36,
+      "line_end": 37,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 26,
+      "line_start": 41,
+      "line_end": 44,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 27,
+      "line_start": 45,
+      "line_end": 45,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 28,
+      "line_start": 46,
+      "line_end": 46,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 29,
+      "line_start": 47,
+      "line_end": 47,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 30,
+      "line_start": 48,
+      "line_end": 48,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 31,
+      "line_start": 50,
+      "line_end": 59,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 42,
+      "line_start": 77,
+      "line_end": 77,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 43,
+      "line_start": 78,
+      "line_end": 78,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 44,
+      "line_start": 79,
+      "line_end": 79,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    }
+  ],
+  "recorded_output": {
+    "format": "pg-regress",
+    "file": "assets/time.out",
+    "sha256": "df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08",
+    "driver": null
+  },
+  "cases": [
+    {
+      "id": "pg-time-0018-df2485c4",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '23:59:59.999999'::time;",
+      "target_sql": "SELECT CAST('23:59:59.999999' AS TIME)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "time",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "23:59:59.999999"
+            ]
+          ],
+          "result_digest": "9bb1245ead3fedb68084cff56de60ae5571763a6e7709cb5323f959bc6463b8f",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/time.out",
+        "artifact_sha256": "df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08",
+        "statement_index": 18
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('23:59:59.999999' AS TIME)",
+            "database_type": "TIME",
+            "canonical_type": "time"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$repr": "datetime.timedelta(days=1)"
+            }
+          ]
+        ],
+        "result_digest": "993f47fd02b3c62744f07d9248c82a3ca96f11625d75c1dcb93a14248c122829",
+        "error": null,
+        "elapsed_ms": 19.302082248032093,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=9bb1245ead3fedb68084cff56de60ae5571763a6e7709cb5323f959bc6463b8f",
+          "doris_digest=96adb1ee47cf191f2ffc7adf394eb7b35978918d861a0068f59463b675478de7",
+          "source_sample=[['23:59:59.999999']]",
+          "doris_sample=[['1 day, 0:00:00']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-time-0022-333b380a",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '24:00:00.01'::time;",
+      "target_sql": "SELECT CAST('24:00:00.01' AS TIME)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "date/time field value out of range: \"24:00:00.01\"",
+            "code": "date/time field value out of range: \"24:00:00.01\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/time.out",
+        "artifact_sha256": "df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08",
+        "statement_index": 22
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('24:00:00.01' AS TIME)",
+            "database_type": "TIME",
+            "canonical_type": "time"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$repr": "datetime.timedelta(days=1)"
+            }
+          ]
+        ],
+        "result_digest": "993f47fd02b3c62744f07d9248c82a3ca96f11625d75c1dcb93a14248c122829",
+        "error": null,
+        "elapsed_ms": 12.68733385950327,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=date/time field value out of range: \"24:00:00.01\"",
+          "source_error_code=date/time field value out of range: \"24:00:00.01\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-time-0023-aab2582a",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '23:59:60.01'::time;",
+      "target_sql": "SELECT CAST('23:59:60.01' AS TIME)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "date/time field value out of range: \"23:59:60.01\"",
+            "code": "date/time field value out of range: \"23:59:60.01\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/time.out",
+        "artifact_sha256": "df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08",
+        "statement_index": 23
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('23:59:60.01' AS TIME)",
+            "database_type": "TIME",
+            "canonical_type": "time"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 15.097416937351227,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=date/time field value out of range: \"23:59:60.01\"",
+          "source_error_code=date/time field value out of range: \"23:59:60.01\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-time-0024-3f651a00",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '24:01:00'::time;",
+      "target_sql": "SELECT CAST('24:01:00' AS TIME)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "date/time field value out of range: \"24:01:00\"",
+            "code": "date/time field value out of range: \"24:01:00\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/time.out",
+        "artifact_sha256": "df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08",
+        "statement_index": 24
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('24:01:00' AS TIME)",
+            "database_type": "TIME",
+            "canonical_type": "time"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$repr": "datetime.timedelta(days=1, seconds=60)"
+            }
+          ]
+        ],
+        "result_digest": "136684191a0b8fa64f7eb809d9d67ec905a07e0c095db158976b20c0aa40aadf",
+        "error": null,
+        "elapsed_ms": 12.644083239138126,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=date/time field value out of range: \"24:01:00\"",
+          "source_error_code=date/time field value out of range: \"24:01:00\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-time-0025-df167988",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT '25:00:00'::time;",
+      "target_sql": "SELECT CAST('25:00:00' AS TIME)",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "date/time field value out of range: \"25:00:00\"",
+            "code": "date/time field value out of range: \"25:00:00\""
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/time.out",
+        "artifact_sha256": "df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08",
+        "statement_index": 25
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "CAST('25:00:00' AS TIME)",
+            "database_type": "TIME",
+            "canonical_type": "time"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            {
+              "$repr": "datetime.timedelta(days=1, seconds=3600)"
+            }
+          ]
+        ],
+        "result_digest": "bee55176ada5d228ad512116b158fb005bc7b5e159d3217b77645ae69b88122c",
+        "error": null,
+        "elapsed_ms": 43.483708053827286,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=date/time field value out of range: \"25:00:00\"",
+          "source_error_code=date/time field value out of range: \"25:00:00\""
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-time-0032-ce54a135",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT EXTRACT(MICROSECOND FROM TIME '2020-05-26 13:30:25.575401');",
+      "target_sql": "SELECT EXTRACT(MICROSECOND FROM CAST('2020-05-26 13:30:25.575401' AS TIME))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "extract",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "25575401"
+            ]
+          ],
+          "result_digest": "36229b76a49178ca49a99a011201dacc4be3916d1d05cc8054cbed0fad515b8a",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/time.out",
+        "artifact_sha256": "df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08",
+        "statement_index": 32
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "EXTRACT(MICROSECOND FROM CAST('2020-05-26 13:30:25.575401' AS TIME))",
+            "database_type": "INT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 16.158875077962875,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=36229b76a49178ca49a99a011201dacc4be3916d1d05cc8054cbed0fad515b8a",
+          "doris_digest=c6bb4cfd0414fb9422955049899642caafb6bada2194f68145f385cf34bb4daf",
+          "source_sample=[['25575401']]",
+          "doris_sample=[['']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-time-0033-c230bada",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT EXTRACT(MILLISECOND FROM TIME '2020-05-26 13:30:25.575401');",
+      "target_sql": "SELECT EXTRACT(MILLISECOND FROM CAST('2020-05-26 13:30:25.575401' AS TIME))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "extract",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "25575.401"
+            ]
+          ],
+          "result_digest": "00ab5174783a119b4d03dab7d9c315d9804780a07cf411d8007103bc35c04949",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/time.out",
+        "artifact_sha256": "df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08",
+        "statement_index": 33
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = \\nmismatched input 'MILLISECOND' expecting {'DAY', 'DAYOFWEEK', 'DAYOFYEAR', 'DAY_HOUR', 'DAY_MICROSECOND', 'DAY_MINUTE', 'DAY_SECOND', 'DOW', 'DOY', 'HOUR', 'HOUR_MICROSECOND', 'HOUR_MINUTE', 'HOUR_SECOND', 'MICROSECOND', 'MINUTE', 'MINUTE_MICROSECOND', 'MINUTE_SECOND', 'MONTH', 'QUARTER', 'SECOND', 'SECOND_MICROSECOND', 'WEEK', 'YEAR', 'YEAR_MONTH'}(line 1, pos 15)\\n\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 11.119833216071129,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=True",
+          "doris_success=False",
+          "doris_error_category=EXECUTION_ERROR",
+          "doris_error_message=(1105, \"errCode = 2, detailMessage = \\nmismatched input 'MILLISECOND' expecting {'DAY', 'DAYOFWEEK', 'DAYOFYEAR', 'DAY_HOUR', 'DAY_MICROSECOND', 'DAY_MINUTE', 'DAY_SECOND', 'DOW', 'DOY', 'HOUR', 'HOUR_MICROSECOND', 'HOUR_MINUTE', 'HOUR_SECOND', 'MICROSECOND', 'MINUTE', 'MINUTE_MICROSECOND', 'MINUTE_SECOND', 'MONTH', 'QUARTER', 'SECOND', 'SECOND_MICROSECOND', 'WEEK', 'YEAR', 'YEAR_MONTH'}(line 1, pos 15)\\n\")",
+          "doris_error_code=1105"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-time-0034-c3c729bb",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT EXTRACT(SECOND      FROM TIME '2020-05-26 13:30:25.575401');",
+      "target_sql": "SELECT EXTRACT(SECOND FROM CAST('2020-05-26 13:30:25.575401' AS TIME))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "extract",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "25.575401"
+            ]
+          ],
+          "result_digest": "f01d507cbbca214ee363992c2b006a97191a1e640b7fd44fe33797c2f8c1a571",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/time.out",
+        "artifact_sha256": "df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08",
+        "statement_index": 34
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "EXTRACT(SECOND FROM CAST('2020-05-26 13:30:25.575401' AS TIME))",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 14.26987536251545,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=f01d507cbbca214ee363992c2b006a97191a1e640b7fd44fe33797c2f8c1a571",
+          "doris_digest=c6bb4cfd0414fb9422955049899642caafb6bada2194f68145f385cf34bb4daf",
+          "source_sample=[['25.575401']]",
+          "doris_sample=[['']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-time-0035-71c4492f",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT EXTRACT(MINUTE      FROM TIME '2020-05-26 13:30:25.575401');",
+      "target_sql": "SELECT EXTRACT(MINUTE FROM CAST('2020-05-26 13:30:25.575401' AS TIME))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "extract",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "30"
+            ]
+          ],
+          "result_digest": "8c4aeb54f80801f8ee5810986e91f838ca579deb581c668f0f7d25108ac927ab",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/time.out",
+        "artifact_sha256": "df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08",
+        "statement_index": 35
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "EXTRACT(MINUTE FROM CAST('2020-05-26 13:30:25.575401' AS TIME))",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 13.94145842641592,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=8c4aeb54f80801f8ee5810986e91f838ca579deb581c668f0f7d25108ac927ab",
+          "doris_digest=c6bb4cfd0414fb9422955049899642caafb6bada2194f68145f385cf34bb4daf",
+          "source_sample=[['30']]",
+          "doris_sample=[['']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-time-0036-42ebd4b8",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT EXTRACT(HOUR        FROM TIME '2020-05-26 13:30:25.575401');",
+      "target_sql": "SELECT EXTRACT(HOUR FROM CAST('2020-05-26 13:30:25.575401' AS TIME))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "extract",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "13"
+            ]
+          ],
+          "result_digest": "412cf3d771dce5f97db3e44a5a8603bfe7f1f6dc4b6928b864b713513d5ca03b",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/time.out",
+        "artifact_sha256": "df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08",
+        "statement_index": 36
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "EXTRACT(HOUR FROM CAST('2020-05-26 13:30:25.575401' AS TIME))",
+            "database_type": "INT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 12.59712502360344,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=412cf3d771dce5f97db3e44a5a8603bfe7f1f6dc4b6928b864b713513d5ca03b",
+          "doris_digest=c6bb4cfd0414fb9422955049899642caafb6bada2194f68145f385cf34bb4daf",
+          "source_sample=[['13']]",
+          "doris_sample=[['']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-time-0037-3411a8d0",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT EXTRACT(DAY         FROM TIME '2020-05-26 13:30:25.575401');",
+      "target_sql": "SELECT EXTRACT(DAY FROM CAST('2020-05-26 13:30:25.575401' AS TIME))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "unit \"day\" not supported for type time without time zone",
+            "code": "unit \"day\" not supported for type time without time zone"
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/time.out",
+        "artifact_sha256": "df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08",
+        "statement_index": 37
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "EXTRACT(DAY FROM CAST('2020-05-26 13:30:25.575401' AS TIME))",
+            "database_type": "TINYINT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 13.835582882165909,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "EXECUTION_STATUS_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Source evidence and Doris execution status differ",
+        "details": [
+          "source_success=False",
+          "doris_success=True",
+          "source_error_category=EXECUTION_ERROR",
+          "source_error_message=unit \"day\" not supported for type time without time zone",
+          "source_error_code=unit \"day\" not supported for type time without time zone"
+        ],
+        "possible_causes": [
+          "One engine may not support the function, syntax, or data type used by its SQL.",
+          "Source and Doris session, UDF, permission, or version settings may differ.",
+          "The SQLGlot-generated SQL may be incompatible with the target Doris version."
+        ]
+      },
+      "中文结论": "两端执行状态不同：一端成功、一端失败"
+    },
+    {
+      "id": "pg-time-0038-cc79ba84",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT EXTRACT(FORTNIGHT   FROM TIME '2020-05-26 13:30:25.575401');",
+      "target_sql": "SELECT EXTRACT(FORTNIGHT FROM CAST('2020-05-26 13:30:25.575401' AS TIME))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "unit \"fortnight\" not recognized for type time without time zone",
+            "code": "unit \"fortnight\" not recognized for type time without time zone"
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/time.out",
+        "artifact_sha256": "df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08",
+        "statement_index": 38
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = \\nmismatched input 'FORTNIGHT' expecting {'DAY', 'DAYOFWEEK', 'DAYOFYEAR', 'DAY_HOUR', 'DAY_MICROSECOND', 'DAY_MINUTE', 'DAY_SECOND', 'DOW', 'DOY', 'HOUR', 'HOUR_MICROSECOND', 'HOUR_MINUTE', 'HOUR_SECOND', 'MICROSECOND', 'MINUTE', 'MINUTE_MICROSECOND', 'MINUTE_SECOND', 'MONTH', 'QUARTER', 'SECOND', 'SECOND_MICROSECOND', 'WEEK', 'YEAR', 'YEAR_MONTH'}(line 1, pos 15)\\n\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 10.683915577828884,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Both sides failed with compatible recorded/live error behavior",
+        "details": [],
+        "possible_causes": []
+      },
+      "中文结论": "两端同类报错，具体原因尚未确认；不计入成功结果匹配数"
+    },
+    {
+      "id": "pg-time-0039-98f3ca62",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT EXTRACT(TIMEZONE    FROM TIME '2020-05-26 13:30:25.575401');",
+      "target_sql": "SELECT EXTRACT(TIMEZONE FROM CAST('2020-05-26 13:30:25.575401' AS TIME))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": false,
+          "columns": [],
+          "row_count": 0,
+          "row_sample": [],
+          "result_digest": null,
+          "error": {
+            "category": "EXECUTION_ERROR",
+            "message": "unit \"timezone\" not supported for type time without time zone",
+            "code": "unit \"timezone\" not supported for type time without time zone"
+          },
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": false,
+          "column_names": false,
+          "column_types": false,
+          "row_count": false,
+          "row_values": "unavailable",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/time.out",
+        "artifact_sha256": "df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08",
+        "statement_index": 39
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": false,
+        "columns": [],
+        "row_count": 0,
+        "row_sample": [],
+        "result_digest": null,
+        "error": {
+          "category": "EXECUTION_ERROR",
+          "message": "(1105, \"errCode = 2, detailMessage = \\nmismatched input 'TIMEZONE' expecting {'DAY', 'DAYOFWEEK', 'DAYOFYEAR', 'DAY_HOUR', 'DAY_MICROSECOND', 'DAY_MINUTE', 'DAY_SECOND', 'DOW', 'DOY', 'HOUR', 'HOUR_MICROSECOND', 'HOUR_MINUTE', 'HOUR_SECOND', 'MICROSECOND', 'MINUTE', 'MINUTE_MICROSECOND', 'MINUTE_SECOND', 'MONTH', 'QUARTER', 'SECOND', 'SECOND_MICROSECOND', 'WEEK', 'YEAR', 'YEAR_MONTH'}(line 1, pos 15)\\n\")",
+          "code": "1105"
+        },
+        "elapsed_ms": 13.775374740362167,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "MATCH",
+        "semantic_assessment": "MATCHES_RECORDED_SOURCE_OUTPUT",
+        "equivalent": true,
+        "summary": "Both sides failed with compatible recorded/live error behavior",
+        "details": [],
+        "possible_causes": []
+      },
+      "中文结论": "两端同类报错，具体原因尚未确认；不计入成功结果匹配数"
+    },
+    {
+      "id": "pg-time-0040-341de9e7",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT EXTRACT(EPOCH       FROM TIME '2020-05-26 13:30:25.575401');",
+      "target_sql": "SELECT UNIX_TIMESTAMP(CAST('2020-05-26 13:30:25.575401' AS TIME))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "extract",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "48625.575401"
+            ]
+          ],
+          "result_digest": "61c5a4847160b2f356fd7584cd494eb6c35141cfcc199da2ca0dbb5aa649ac26",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/time.out",
+        "artifact_sha256": "df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08",
+        "statement_index": 40
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "UNIX_TIMESTAMP(CAST('2020-05-26 13:30:25.575401' AS TIME))",
+            "database_type": "DECIMAL",
+            "canonical_type": "decimal"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 16.80670864880085,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=61c5a4847160b2f356fd7584cd494eb6c35141cfcc199da2ca0dbb5aa649ac26",
+          "doris_digest=c6bb4cfd0414fb9422955049899642caafb6bada2194f68145f385cf34bb4daf",
+          "source_sample=[['48625.575401']]",
+          "doris_sample=[['']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    },
+    {
+      "id": "pg-time-0041-ce54a135",
+      "validation_mode": "recorded_output",
+      "data_assurance": "not_applicable",
+      "status": "COMPLETED",
+      "source_sql": "SELECT date_part('microsecond', TIME '2020-05-26 13:30:25.575401');",
+      "target_sql": "SELECT EXTRACT(MICROSECOND FROM CAST('2020-05-26 13:30:25.575401' AS TIME))",
+      "transpilation_error": null,
+      "source_evidence_error": null,
+      "source_evidence": {
+        "mode": "recorded_output",
+        "result": {
+          "engine": "postgres-recorded",
+          "success": true,
+          "columns": [
+            {
+              "name": "date_part",
+              "database_type": null,
+              "canonical_type": "unknown"
+            }
+          ],
+          "row_count": 1,
+          "row_sample": [
+            [
+              "25575401"
+            ]
+          ],
+          "result_digest": "36229b76a49178ca49a99a011201dacc4be3916d1d05cc8054cbed0fad515b8a",
+          "error": null,
+          "elapsed_ms": 0,
+          "query_id": null
+        },
+        "capabilities": {
+          "execution_status": true,
+          "error_category": true,
+          "column_count": true,
+          "column_names": true,
+          "column_types": false,
+          "row_count": true,
+          "row_values": "display_text",
+          "complex_types": false
+        },
+        "value_encoding": "postgres_psql_text",
+        "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/time.out",
+        "artifact_sha256": "df3987ba69811f227876432b3fd209a4c1fcda311459c6c1a60330d2aad02e08",
+        "statement_index": 41
+      },
+      "target_result": {
+        "engine": "doris",
+        "success": true,
+        "columns": [
+          {
+            "name": "EXTRACT(MICROSECOND FROM CAST('2020-05-26 13:30:25.575401' AS TIME))",
+            "database_type": "INT",
+            "canonical_type": "integer"
+          }
+        ],
+        "row_count": 1,
+        "row_sample": [
+          [
+            null
+          ]
+        ],
+        "result_digest": "21b35c4abc3ab087af01b14be2492a09b97f8312087ebfa5e66b619b37792650",
+        "error": null,
+        "elapsed_ms": 14.197499491274357,
+        "query_id": null
+      },
+      "comparison": {
+        "observed_outcome": "ROW_VALUE_MISMATCH",
+        "semantic_assessment": "DIFFERENT_FOR_CONSTANT_QUERY",
+        "equivalent": false,
+        "summary": "Normalized result row values differ",
+        "details": [
+          "source_digest=36229b76a49178ca49a99a011201dacc4be3916d1d05cc8054cbed0fad515b8a",
+          "doris_digest=c6bb4cfd0414fb9422955049899642caafb6bada2194f68145f385cf34bb4daf",
+          "source_sample=[['25575401']]",
+          "doris_sample=[['']]"
+        ],
+        "possible_causes": [
+          "Function, cast, NULL, rounding, timezone, or complex-type semantics may differ.",
+          "The SQLGlot rewrite may have changed expression semantics.",
+          "Result normalization or Recorded Output text may have lost type information."
+        ]
+      },
+      "中文结论": "返回记录值、重复次数或要求的顺序不同"
+    }
+  ],
+  "summary": {
+    "total": 15,
+    "matched": 2,
+    "non_matching": 13,
+    "successful_matches": 0,
+    "negative_source_cases": 7,
+    "needs_review": 15,
+    "known_source_success": 8,
+    "successful_match_rate_all": 0.0,
+    "successful_match_rate_source_success": 0.0,
+    "translation_failed": 0,
+    "source_evidence_failed": 0,
+    "doris_execution_failed": 3,
+    "schema_mismatch": 0,
+    "row_count_mismatch": 0,
+    "row_value_mismatch": 7,
+    "inconclusive": 0,
+    "outcomes": {
+      "EXECUTION_STATUS_MISMATCH": 6,
+      "MATCH": 2,
+      "ROW_VALUE_MISMATCH": 7
+    },
+    "run_statuses": {
+      "COMPLETED": 15
+    }
+  },
+  "中文字段说明": {
+    "summary": "统计。successful_matches 只统计两端成功且匹配；matched 保留旧比较器代码计数，可能包含两端同类报错，不是通过数。",
+    "cases": "逐条源 SQL、社区输出、比较结果及有限结果样本。",
+    "source_evidence": "参考结果来源；recorded_output 表示读取 .out，没有执行源数据库。",
+    "data_assurance": "unverified 表示验证器不负责核验基表；外部数据准备报告须另外提供，不是本轮失败原因判定。",
+    "comparison": "自动观察到的差异，不是 SQLGlot 缺陷归因。equivalent 仅是已有证据下旧比较器的判断，不证明完整类型、所有输入或负向错误原因等价。",
+    "result_digest": "完整结果归一化后的摘要指纹，不代表类型和顺序均通过。",
+    "row_sample": "最多前五行，仅供定位；不是完整结果，也不能用于宣称全量值相同。",
+    "internal_codes": "稳定程序字段保留英文；含义见结果代码中文说明。"
+  },
+  "结果代码中文说明": {
+    "MATCH": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+    "TRANSLATION_FAILED": "SQLGlot 解析或生成失败",
+    "SOURCE_EVIDENCE_UNAVAILABLE": "无法取得或解析源端参考结果",
+    "TARGET_EXECUTION_FAILED": "Doris 执行流程失败",
+    "EXECUTION_STATUS_MISMATCH": "两端执行状态不同：一端成功、一端失败",
+    "ERROR_BEHAVIOR_MISMATCH": "两端均报错，但错误类别不同",
+    "RESULT_SCHEMA_MISMATCH": "返回字段数量、名称或类型不同",
+    "ROW_COUNT_MISMATCH": "返回记录行数不同",
+    "ROW_VALUE_MISMATCH": "返回记录值、重复次数或要求的顺序不同",
+    "SOURCE_ENVIRONMENT_ERROR": "源数据库环境不可用",
+    "TARGET_ENVIRONMENT_ERROR": "Doris 环境不可用，例如数据库、表或权限缺失",
+    "ENVIRONMENT_ERROR": "至少一端环境不可用",
+    "UNKNOWN": "没有形成比较结论"
+  },
+  "case_file": {
+    "path": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/time.yaml",
+    "sha256": "9a5d15715bd62d5a02b57cf678340a670d0147e9d1904b44473c027da449bfc6"
+  }
+}

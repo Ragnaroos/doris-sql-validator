@@ -1,0 +1,904 @@
+source:
+  dialect: postgres
+  engine: postgres
+  database: dsv_pg_manual_20261111
+target:
+  connection_profile: doris-local
+  database: dsv_pg_manual_20261111
+input:
+  format: pg-regress
+  file: assets/collate.sql
+  sha256: 2d4283b3125e38ab83e959eee0be9a316c4bc3d2362f4a4ada580c4330630162
+recorded_output:
+  format: pg-regress
+  file: assets/collate.out
+  sha256: 4c9560d40dbaa1f6fb3227c0689103796d816a0abbf0d82ccc40309a1ecd7f37
+import_summary:
+  accepted: 4
+  skipped: 138
+  ambiguous: 0
+  errors: 4
+import_diagnostics:
+- statement_index: 1
+  line_start: 1
+  line_end: 13
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 2
+  line_start: 14
+  line_end: 14
+  disposition: skipped
+  statement_type: set
+  reason: Expected one read-only Query, got Set
+- statement_index: 3
+  line_start: 16
+  line_end: 19
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 4
+  line_start: 21
+  line_end: 26
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 5
+  line_start: 28
+  line_end: 30
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 6
+  line_start: 32
+  line_end: 37
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 7
+  line_start: 39
+  line_end: 39
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 8
+  line_start: 40
+  line_end: 40
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 13
+  line_start: 45
+  line_end: 47
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 14
+  line_start: 48
+  line_end: 48
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 15
+  line_start: 48
+  line_end: 52
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 16
+  line_start: 53
+  line_end: 53
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 18
+  line_start: 56
+  line_end: 59
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 19
+  line_start: 60
+  line_end: 60
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 28
+  line_start: 77
+  line_end: 83
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 29
+  line_start: 85
+  line_end: 85
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 33
+  line_start: 92
+  line_end: 94
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 34
+  line_start: 95
+  line_end: 95
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 35
+  line_start: 96
+  line_end: 96
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 48
+  line_start: 119
+  line_end: 119
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 71
+  line_start: 147
+  line_end: 149
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 83
+  line_start: 180
+  line_end: 183
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 87
+  line_start: 193
+  line_end: 194
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 90
+  line_start: 200
+  line_end: 202
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 91
+  line_start: 203
+  line_end: 203
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 92
+  line_start: 204
+  line_end: 204
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 93
+  line_start: 204
+  line_end: 205
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 94
+  line_start: 207
+  line_end: 207
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 95
+  line_start: 207
+  line_end: 208
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 97
+  line_start: 213
+  line_end: 217
+  disposition: skipped
+  statement_type: set
+  reason: Expected one read-only Query, got Set
+- statement_index: 98
+  line_start: 218
+  line_end: 218
+  disposition: skipped
+  statement_type: set
+  reason: Expected one read-only Query, got Set
+- statement_index: 99
+  line_start: 219
+  line_end: 219
+  disposition: skipped
+  statement_type: set
+  reason: Expected one read-only Query, got Set
+- statement_index: 100
+  line_start: 221
+  line_end: 221
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 101
+  line_start: 222
+  line_end: 222
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 102
+  line_start: 223
+  line_end: 223
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 103
+  line_start: 224
+  line_end: 224
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 104
+  line_start: 225
+  line_end: 225
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 105
+  line_start: 225
+  line_end: 226
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 106
+  line_start: 227
+  line_end: 227
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 107
+  line_start: 228
+  line_end: 228
+  disposition: skipped
+  statement_type: alter
+  reason: Expected one read-only Query, got Alter
+- statement_index: 108
+  line_start: 228
+  line_end: 229
+  disposition: skipped
+  statement_type: delete
+  reason: Expected one read-only Query, got Delete
+- statement_index: 109
+  line_start: 230
+  line_end: 230
+  disposition: skipped
+  statement_type: alter
+  reason: Expected one read-only Query, got Alter
+- statement_index: 110
+  line_start: 232
+  line_end: 232
+  disposition: skipped
+  statement_type: reset
+  reason: Expected one read-only Query, got Command
+- statement_index: 111
+  line_start: 233
+  line_end: 233
+  disposition: skipped
+  statement_type: reset
+  reason: Expected one read-only Query, got Command
+- statement_index: 112
+  line_start: 234
+  line_end: 234
+  disposition: skipped
+  statement_type: reset
+  reason: Expected one read-only Query, got Command
+- statement_index: 113
+  line_start: 237
+  line_end: 240
+  disposition: skipped
+  statement_type: explain
+  reason: Expected one read-only Query, got Command
+- statement_index: 114
+  line_start: 241
+  line_end: 242
+  disposition: skipped
+  statement_type: explain
+  reason: Expected one read-only Query, got Command
+- statement_index: 115
+  line_start: 245
+  line_end: 247
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 117
+  line_start: 251
+  line_end: 251
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 118
+  line_start: 251
+  line_end: 252
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 119
+  line_start: 252
+  line_end: 253
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 120
+  line_start: 253
+  line_end: 255
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 121
+  line_start: 256
+  line_end: 256
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 122
+  line_start: 257
+  line_end: 257
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 123
+  line_start: 257
+  line_end: 259
+  disposition: skipped
+  statement_type: drop
+  reason: Expected one read-only Query, got Command
+- statement_index: 124
+  line_start: 260
+  line_end: 260
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 125
+  line_start: 261
+  line_end: 261
+  disposition: skipped
+  statement_type: drop
+  reason: Expected one read-only Query, got Command
+- statement_index: 126
+  line_start: 261
+  line_end: 264
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 127
+  line_start: 266
+  line_end: 268
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 128
+  line_start: 269
+  line_end: 269
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 129
+  line_start: 272
+  line_end: 272
+  disposition: error
+  statement_type: parse_error
+  reason: "Invalid expression / Unexpected token. Line 1, Col: 20.\n  SELECT collation\
+    \ \e[4mfor\e[0m ('foo');"
+- statement_index: 130
+  line_start: 272
+  line_end: 273
+  disposition: error
+  statement_type: parse_error
+  reason: "Invalid expression / Unexpected token. Line 1, Col: 20.\n  SELECT collation\
+    \ \e[4mfor\e[0m ('foo'::text);"
+- statement_index: 131
+  line_start: 274
+  line_end: 274
+  disposition: error
+  statement_type: parse_error
+  reason: "Invalid expression / Unexpected token. Line 1, Col: 20.\n  SELECT collation\
+    \ \e[4mfor\e[0m ((SELECT a FROM collate_test1 LIMIT 1));"
+- statement_index: 132
+  line_start: 274
+  line_end: 275
+  disposition: error
+  statement_type: parse_error
+  reason: "Invalid expression / Unexpected token. Line 1, Col: 20.\n  SELECT collation\
+    \ \e[4mfor\e[0m ((SELECT b FROM collate_test1 LIMIT 1));"
+- statement_index: 133
+  line_start: 277
+  line_end: 280
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 134
+  line_start: 281
+  line_end: 285
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 135
+  line_start: 286
+  line_end: 287
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 136
+  line_start: 288
+  line_end: 289
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 137
+  line_start: 290
+  line_end: 291
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 138
+  line_start: 292
+  line_end: 293
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 139
+  line_start: 294
+  line_end: 295
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 140
+  line_start: 296
+  line_end: 297
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 141
+  line_start: 298
+  line_end: 299
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 142
+  line_start: 300
+  line_end: 301
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 143
+  line_start: 302
+  line_end: 303
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Command
+- statement_index: 144
+  line_start: 305
+  line_end: 311
+  disposition: skipped
+  statement_type: explain
+  reason: Expected one read-only Query, got Command
+- statement_index: 145
+  line_start: 312
+  line_end: 313
+  disposition: skipped
+  statement_type: explain
+  reason: Expected one read-only Query, got Command
+- statement_index: 146
+  line_start: 315
+  line_end: 320
+  disposition: skipped
+  statement_type: drop
+  reason: Expected one read-only Query, got Drop
+- statement_index: 9
+  line_start: 42
+  line_end: 42
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 10
+  line_start: 43
+  line_end: 43
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 11
+  line_start: 44
+  line_end: 44
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 12
+  line_start: 45
+  line_end: 45
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 17
+  line_start: 54
+  line_end: 54
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 20
+  line_start: 61
+  line_end: 61
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 21
+  line_start: 64
+  line_end: 64
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 22
+  line_start: 65
+  line_end: 65
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 23
+  line_start: 67
+  line_end: 67
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 24
+  line_start: 69
+  line_end: 70
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 25
+  line_start: 71
+  line_end: 71
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 30
+  line_start: 87
+  line_end: 87
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 31
+  line_start: 88
+  line_end: 88
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 32
+  line_start: 90
+  line_end: 90
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 36
+  line_start: 98
+  line_end: 99
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 37
+  line_start: 102
+  line_end: 104
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 38
+  line_start: 105
+  line_end: 105
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 39
+  line_start: 106
+  line_end: 106
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 40
+  line_start: 108
+  line_end: 108
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 41
+  line_start: 109
+  line_end: 109
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 42
+  line_start: 110
+  line_end: 110
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 43
+  line_start: 112
+  line_end: 112
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 44
+  line_start: 113
+  line_end: 113
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 45
+  line_start: 114
+  line_end: 114
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 46
+  line_start: 116
+  line_end: 116
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 47
+  line_start: 117
+  line_end: 117
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 49
+  line_start: 120
+  line_end: 120
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 50
+  line_start: 121
+  line_end: 121
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 51
+  line_start: 122
+  line_end: 122
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 52
+  line_start: 123
+  line_end: 123
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 53
+  line_start: 125
+  line_end: 125
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 54
+  line_start: 126
+  line_end: 126
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 55
+  line_start: 128
+  line_end: 128
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 56
+  line_start: 129
+  line_end: 129
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 57
+  line_start: 131
+  line_end: 132
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 58
+  line_start: 132
+  line_end: 133
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 59
+  line_start: 134
+  line_end: 134
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 60
+  line_start: 135
+  line_end: 135
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 61
+  line_start: 135
+  line_end: 137
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 62
+  line_start: 138
+  line_end: 138
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 63
+  line_start: 139
+  line_end: 139
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 64
+  line_start: 140
+  line_end: 140
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 65
+  line_start: 142
+  line_end: 142
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 66
+  line_start: 142
+  line_end: 143
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 67
+  line_start: 143
+  line_end: 144
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 68
+  line_start: 144
+  line_end: 145
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 69
+  line_start: 145
+  line_end: 146
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 70
+  line_start: 146
+  line_end: 147
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 72
+  line_start: 149
+  line_end: 152
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 73
+  line_start: 152
+  line_end: 153
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 74
+  line_start: 153
+  line_end: 154
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 75
+  line_start: 154
+  line_end: 161
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 77
+  line_start: 166
+  line_end: 167
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 78
+  line_start: 168
+  line_end: 169
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 79
+  line_start: 170
+  line_end: 170
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 81
+  line_start: 176
+  line_end: 176
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 82
+  line_start: 177
+  line_end: 177
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 84
+  line_start: 185
+  line_end: 185
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 85
+  line_start: 188
+  line_end: 190
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 86
+  line_start: 191
+  line_end: 191
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 88
+  line_start: 196
+  line_end: 196
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 89
+  line_start: 197
+  line_end: 197
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 96
+  line_start: 208
+  line_end: 210
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+- statement_index: 116
+  line_start: 249
+  line_end: 249
+  disposition: skipped
+  statement_type: deferred_environment_dependency
+  reason: 依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段
+cases:
+- id: pg-collate-0026-af6ea175
+  statement_index: 26
+  line_start: 73
+  line_end: 74
+  output_occurrence: 1
+  sql: SELECT 'bbc' COLLATE "C" > 'Abc' COLLATE "C" AS "true";
+- id: pg-collate-0027-d8db4eff
+  statement_index: 27
+  line_start: 75
+  line_end: 75
+  output_occurrence: 1
+  sql: SELECT 'bbc' COLLATE "POSIX" < 'Abc' COLLATE "POSIX" AS "false";
+- id: pg-collate-0076-6c178227
+  statement_index: 76
+  line_start: 163
+  line_end: 164
+  output_occurrence: 1
+  sql: |-
+    SELECT a, b, a < b as lt FROM
+      (VALUES ('a', 'B'), ('A', 'b' COLLATE "C")) v(a,b);
+- id: pg-collate-0080-62d6468d
+  statement_index: 80
+  line_start: 172
+  line_end: 174
+  output_occurrence: 1
+  sql: SELECT CAST('42' AS text COLLATE "C");

@@ -1,0 +1,1 @@
+SELECT STDDEV_POP(b) FROM aggtest;

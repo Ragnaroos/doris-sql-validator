@@ -1,0 +1,1 @@
+SELECT LAG(ten, four, NULL) OVER (PARTITION BY four ORDER BY CASE WHEN ten IS NULL THEN 1 ELSE 0 END, ten), ten, four FROM tenk1 WHERE unique2 < 10;

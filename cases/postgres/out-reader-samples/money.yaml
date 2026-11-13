@@ -1,0 +1,698 @@
+source:
+  dialect: postgres
+  engine: postgres
+target:
+  connection_profile: doris-local
+input:
+  format: pg-regress
+  file: assets/money.sql
+  sha256: 123d8a3608550968b84255b61cd1e8964f75ae38493cacd9bd13260b769c39dc
+recorded_output:
+  format: pg-regress
+  file: assets/money.out
+  sha256: 5e8ce72fca5e4225b4818a7dc8990ecf97f7fd4b420ba83539f401b2f3c95870
+import_summary:
+  accepted: 99
+  skipped: 14
+  ambiguous: 0
+  errors: 0
+import_diagnostics:
+- statement_index: 1
+  line_start: 1
+  line_end: 7
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 2
+  line_start: 9
+  line_end: 9
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 39
+  line_start: 52
+  line_end: 52
+  disposition: skipped
+  statement_type: delete
+  reason: Expected one read-only Query, got Delete
+- statement_index: 40
+  line_start: 53
+  line_end: 53
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 42
+  line_start: 56
+  line_end: 56
+  disposition: skipped
+  statement_type: delete
+  reason: Expected one read-only Query, got Delete
+- statement_index: 43
+  line_start: 57
+  line_end: 57
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 45
+  line_start: 60
+  line_end: 60
+  disposition: skipped
+  statement_type: delete
+  reason: Expected one read-only Query, got Delete
+- statement_index: 46
+  line_start: 61
+  line_end: 61
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 48
+  line_start: 64
+  line_end: 64
+  disposition: skipped
+  statement_type: delete
+  reason: Expected one read-only Query, got Delete
+- statement_index: 49
+  line_start: 65
+  line_end: 65
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 51
+  line_start: 68
+  line_end: 68
+  disposition: skipped
+  statement_type: delete
+  reason: Expected one read-only Query, got Delete
+- statement_index: 52
+  line_start: 69
+  line_end: 69
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 54
+  line_start: 72
+  line_end: 72
+  disposition: skipped
+  statement_type: delete
+  reason: Expected one read-only Query, got Delete
+- statement_index: 55
+  line_start: 73
+  line_end: 73
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+cases:
+- id: pg-money-0003-cca02ee5
+  statement_index: 3
+  line_start: 10
+  line_end: 10
+  output_occurrence: 1
+  sql: SELECT * FROM money_data;
+- id: pg-money-0004-4ded3f09
+  statement_index: 4
+  line_start: 11
+  line_end: 11
+  output_occurrence: 1
+  sql: SELECT m + '123' FROM money_data;
+- id: pg-money-0005-d3a314dc
+  statement_index: 5
+  line_start: 12
+  line_end: 12
+  output_occurrence: 1
+  sql: SELECT m + '123.45' FROM money_data;
+- id: pg-money-0006-05fffbfe
+  statement_index: 6
+  line_start: 13
+  line_end: 13
+  output_occurrence: 1
+  sql: SELECT m - '123.45' FROM money_data;
+- id: pg-money-0007-7574add0
+  statement_index: 7
+  line_start: 14
+  line_end: 14
+  output_occurrence: 1
+  sql: SELECT m / '2'::money FROM money_data;
+- id: pg-money-0008-f10bece4
+  statement_index: 8
+  line_start: 15
+  line_end: 15
+  output_occurrence: 1
+  sql: SELECT m * 2 FROM money_data;
+- id: pg-money-0009-c89298ad
+  statement_index: 9
+  line_start: 16
+  line_end: 16
+  output_occurrence: 1
+  sql: SELECT 2 * m FROM money_data;
+- id: pg-money-0010-b9577bd1
+  statement_index: 10
+  line_start: 17
+  line_end: 17
+  output_occurrence: 1
+  sql: SELECT m / 2 FROM money_data;
+- id: pg-money-0011-b605a160
+  statement_index: 11
+  line_start: 18
+  line_end: 18
+  output_occurrence: 1
+  sql: SELECT m * 2::int2 FROM money_data;
+- id: pg-money-0012-4a3edfd6
+  statement_index: 12
+  line_start: 19
+  line_end: 19
+  output_occurrence: 1
+  sql: SELECT 2::int2 * m FROM money_data;
+- id: pg-money-0013-e682cfe6
+  statement_index: 13
+  line_start: 20
+  line_end: 20
+  output_occurrence: 1
+  sql: SELECT m / 2::int2 FROM money_data;
+- id: pg-money-0014-6ae2a83a
+  statement_index: 14
+  line_start: 21
+  line_end: 21
+  output_occurrence: 1
+  sql: SELECT m * 2::int8 FROM money_data;
+- id: pg-money-0015-0bcf0b8b
+  statement_index: 15
+  line_start: 22
+  line_end: 22
+  output_occurrence: 1
+  sql: SELECT 2::int8 * m FROM money_data;
+- id: pg-money-0016-1626c9bd
+  statement_index: 16
+  line_start: 23
+  line_end: 23
+  output_occurrence: 1
+  sql: SELECT m / 2::int8 FROM money_data;
+- id: pg-money-0017-9da03cfe
+  statement_index: 17
+  line_start: 24
+  line_end: 24
+  output_occurrence: 1
+  sql: SELECT m * 2::float8 FROM money_data;
+- id: pg-money-0018-47c8baa1
+  statement_index: 18
+  line_start: 25
+  line_end: 25
+  output_occurrence: 1
+  sql: SELECT 2::float8 * m FROM money_data;
+- id: pg-money-0019-c941cea1
+  statement_index: 19
+  line_start: 26
+  line_end: 26
+  output_occurrence: 1
+  sql: SELECT m / 2::float8 FROM money_data;
+- id: pg-money-0020-9446e347
+  statement_index: 20
+  line_start: 27
+  line_end: 27
+  output_occurrence: 1
+  sql: SELECT m * 2::float4 FROM money_data;
+- id: pg-money-0021-8b5639aa
+  statement_index: 21
+  line_start: 28
+  line_end: 28
+  output_occurrence: 1
+  sql: SELECT 2::float4 * m FROM money_data;
+- id: pg-money-0022-5fba5bc2
+  statement_index: 22
+  line_start: 29
+  line_end: 29
+  output_occurrence: 1
+  sql: SELECT m / 2::float4 FROM money_data;
+- id: pg-money-0023-a54d8efe
+  statement_index: 23
+  line_start: 31
+  line_end: 32
+  output_occurrence: 1
+  sql: SELECT m = '$123.00' FROM money_data;
+- id: pg-money-0024-28c025ab
+  statement_index: 24
+  line_start: 33
+  line_end: 33
+  output_occurrence: 1
+  sql: SELECT m != '$124.00' FROM money_data;
+- id: pg-money-0025-e0417f03
+  statement_index: 25
+  line_start: 34
+  line_end: 34
+  output_occurrence: 1
+  sql: SELECT m <= '$123.00' FROM money_data;
+- id: pg-money-0026-edaaa5df
+  statement_index: 26
+  line_start: 35
+  line_end: 35
+  output_occurrence: 1
+  sql: SELECT m >= '$123.00' FROM money_data;
+- id: pg-money-0027-e153c5d4
+  statement_index: 27
+  line_start: 36
+  line_end: 36
+  output_occurrence: 1
+  sql: SELECT m < '$124.00' FROM money_data;
+- id: pg-money-0028-cc481fad
+  statement_index: 28
+  line_start: 37
+  line_end: 37
+  output_occurrence: 1
+  sql: SELECT m > '$122.00' FROM money_data;
+- id: pg-money-0029-f27c2475
+  statement_index: 29
+  line_start: 39
+  line_end: 40
+  output_occurrence: 1
+  sql: SELECT m = '$123.01' FROM money_data;
+- id: pg-money-0030-9b742373
+  statement_index: 30
+  line_start: 41
+  line_end: 41
+  output_occurrence: 1
+  sql: SELECT m != '$123.00' FROM money_data;
+- id: pg-money-0031-49c69df6
+  statement_index: 31
+  line_start: 42
+  line_end: 42
+  output_occurrence: 1
+  sql: SELECT m <= '$122.99' FROM money_data;
+- id: pg-money-0032-abbfd36f
+  statement_index: 32
+  line_start: 43
+  line_end: 43
+  output_occurrence: 1
+  sql: SELECT m >= '$123.01' FROM money_data;
+- id: pg-money-0033-cebc2216
+  statement_index: 33
+  line_start: 44
+  line_end: 44
+  output_occurrence: 1
+  sql: SELECT m > '$124.00' FROM money_data;
+- id: pg-money-0034-bb97a5f2
+  statement_index: 34
+  line_start: 45
+  line_end: 45
+  output_occurrence: 1
+  sql: SELECT m < '$122.00' FROM money_data;
+- id: pg-money-0035-e2362b6d
+  statement_index: 35
+  line_start: 47
+  line_end: 47
+  output_occurrence: 1
+  sql: SELECT cashlarger(m, '$124.00') FROM money_data;
+- id: pg-money-0036-4273a62e
+  statement_index: 36
+  line_start: 48
+  line_end: 48
+  output_occurrence: 1
+  sql: SELECT cashsmaller(m, '$124.00') FROM money_data;
+- id: pg-money-0037-b36eca12
+  statement_index: 37
+  line_start: 49
+  line_end: 49
+  output_occurrence: 1
+  sql: SELECT cash_words(m) FROM money_data;
+- id: pg-money-0038-ef7557af
+  statement_index: 38
+  line_start: 50
+  line_end: 50
+  output_occurrence: 1
+  sql: SELECT cash_words(m + '1.23') FROM money_data;
+- id: pg-money-0041-cca02ee5
+  statement_index: 41
+  line_start: 54
+  line_end: 54
+  output_occurrence: 2
+  sql: SELECT * FROM money_data;
+- id: pg-money-0044-cca02ee5
+  statement_index: 44
+  line_start: 58
+  line_end: 58
+  output_occurrence: 3
+  sql: SELECT * FROM money_data;
+- id: pg-money-0047-cca02ee5
+  statement_index: 47
+  line_start: 62
+  line_end: 62
+  output_occurrence: 4
+  sql: SELECT * FROM money_data;
+- id: pg-money-0050-cca02ee5
+  statement_index: 50
+  line_start: 66
+  line_end: 66
+  output_occurrence: 5
+  sql: SELECT * FROM money_data;
+- id: pg-money-0053-cca02ee5
+  statement_index: 53
+  line_start: 70
+  line_end: 70
+  output_occurrence: 6
+  sql: SELECT * FROM money_data;
+- id: pg-money-0056-cca02ee5
+  statement_index: 56
+  line_start: 74
+  line_end: 74
+  output_occurrence: 7
+  sql: SELECT * FROM money_data;
+- id: pg-money-0057-a1bdd31a
+  statement_index: 57
+  line_start: 76
+  line_end: 77
+  output_occurrence: 1
+  sql: SELECT '1234567890'::money;
+- id: pg-money-0058-c81812a8
+  statement_index: 58
+  line_start: 78
+  line_end: 78
+  output_occurrence: 1
+  sql: SELECT '12345678901234567'::money;
+- id: pg-money-0059-360d1605
+  statement_index: 59
+  line_start: 79
+  line_end: 79
+  output_occurrence: 1
+  sql: SELECT '123456789012345678'::money;
+- id: pg-money-0060-b7897416
+  statement_index: 60
+  line_start: 80
+  line_end: 80
+  output_occurrence: 1
+  sql: SELECT '9223372036854775807'::money;
+- id: pg-money-0061-a62ee8f4
+  statement_index: 61
+  line_start: 81
+  line_end: 81
+  output_occurrence: 1
+  sql: SELECT '-12345'::money;
+- id: pg-money-0062-84faec3a
+  statement_index: 62
+  line_start: 82
+  line_end: 82
+  output_occurrence: 1
+  sql: SELECT '-1234567890'::money;
+- id: pg-money-0063-3e36c8c5
+  statement_index: 63
+  line_start: 83
+  line_end: 83
+  output_occurrence: 1
+  sql: SELECT '-12345678901234567'::money;
+- id: pg-money-0064-bc2fcb56
+  statement_index: 64
+  line_start: 84
+  line_end: 84
+  output_occurrence: 1
+  sql: SELECT '-123456789012345678'::money;
+- id: pg-money-0065-0a2853ed
+  statement_index: 65
+  line_start: 85
+  line_end: 85
+  output_occurrence: 1
+  sql: SELECT '-9223372036854775808'::money;
+- id: pg-money-0066-58ef1e1f
+  statement_index: 66
+  line_start: 87
+  line_end: 88
+  output_occurrence: 1
+  sql: SELECT '(1)'::money;
+- id: pg-money-0067-580c4482
+  statement_index: 67
+  line_start: 89
+  line_end: 89
+  output_occurrence: 1
+  sql: SELECT '($123,456.78)'::money;
+- id: pg-money-0068-fd0e9cac
+  statement_index: 68
+  line_start: 91
+  line_end: 92
+  output_occurrence: 1
+  sql: SELECT pg_input_is_valid('\x0001', 'money');
+- id: pg-money-0069-303e097b
+  statement_index: 69
+  line_start: 93
+  line_end: 93
+  output_occurrence: 1
+  sql: SELECT * FROM pg_input_error_info('\x0001', 'money');
+- id: pg-money-0070-4a71d374
+  statement_index: 70
+  line_start: 94
+  line_end: 94
+  output_occurrence: 1
+  sql: SELECT pg_input_is_valid('192233720368547758.07', 'money');
+- id: pg-money-0071-f911521a
+  statement_index: 71
+  line_start: 95
+  line_end: 95
+  output_occurrence: 1
+  sql: SELECT * FROM pg_input_error_info('192233720368547758.07', 'money');
+- id: pg-money-0072-2df1df8d
+  statement_index: 72
+  line_start: 97
+  line_end: 98
+  output_occurrence: 1
+  sql: SELECT '-92233720368547758.08'::money;
+- id: pg-money-0073-bb0fe484
+  statement_index: 73
+  line_start: 99
+  line_end: 99
+  output_occurrence: 1
+  sql: SELECT '92233720368547758.07'::money;
+- id: pg-money-0074-ffd230a3
+  statement_index: 74
+  line_start: 101
+  line_end: 101
+  output_occurrence: 1
+  sql: SELECT '-92233720368547758.09'::money;
+- id: pg-money-0075-6bec3eec
+  statement_index: 75
+  line_start: 102
+  line_end: 102
+  output_occurrence: 1
+  sql: SELECT '92233720368547758.08'::money;
+- id: pg-money-0076-db9a71f3
+  statement_index: 76
+  line_start: 104
+  line_end: 105
+  output_occurrence: 1
+  sql: SELECT '-92233720368547758.085'::money;
+- id: pg-money-0077-49237eed
+  statement_index: 77
+  line_start: 106
+  line_end: 106
+  output_occurrence: 1
+  sql: SELECT '92233720368547758.075'::money;
+- id: pg-money-0078-4d14abcc
+  statement_index: 78
+  line_start: 108
+  line_end: 109
+  output_occurrence: 1
+  sql: SELECT '878.08'::money / 11::float8;
+- id: pg-money-0079-1ccc9399
+  statement_index: 79
+  line_start: 110
+  line_end: 110
+  output_occurrence: 1
+  sql: SELECT '878.08'::money / 11::float4;
+- id: pg-money-0080-2d2c0e49
+  statement_index: 80
+  line_start: 111
+  line_end: 111
+  output_occurrence: 1
+  sql: SELECT '878.08'::money / 11::bigint;
+- id: pg-money-0081-964c987d
+  statement_index: 81
+  line_start: 112
+  line_end: 112
+  output_occurrence: 1
+  sql: SELECT '878.08'::money / 11::int;
+- id: pg-money-0082-97c2271f
+  statement_index: 82
+  line_start: 113
+  line_end: 113
+  output_occurrence: 1
+  sql: SELECT '878.08'::money / 11::smallint;
+- id: pg-money-0083-aa62cabe
+  statement_index: 83
+  line_start: 115
+  line_end: 116
+  output_occurrence: 1
+  sql: SELECT '90000000000000099.00'::money / 10::bigint;
+- id: pg-money-0084-caa48d3b
+  statement_index: 84
+  line_start: 117
+  line_end: 117
+  output_occurrence: 1
+  sql: SELECT '90000000000000099.00'::money / 10::int;
+- id: pg-money-0085-17eb622a
+  statement_index: 85
+  line_start: 118
+  line_end: 118
+  output_occurrence: 1
+  sql: SELECT '90000000000000099.00'::money / 10::smallint;
+- id: pg-money-0086-15509935
+  statement_index: 86
+  line_start: 120
+  line_end: 121
+  output_occurrence: 1
+  sql: SELECT 1234567890::money;
+- id: pg-money-0087-a017ebd2
+  statement_index: 87
+  line_start: 122
+  line_end: 122
+  output_occurrence: 1
+  sql: SELECT 12345678901234567::money;
+- id: pg-money-0088-dcd8f28d
+  statement_index: 88
+  line_start: 123
+  line_end: 123
+  output_occurrence: 1
+  sql: SELECT (-12345)::money;
+- id: pg-money-0089-c7b13d9b
+  statement_index: 89
+  line_start: 124
+  line_end: 124
+  output_occurrence: 1
+  sql: SELECT (-1234567890)::money;
+- id: pg-money-0090-259efb04
+  statement_index: 90
+  line_start: 125
+  line_end: 125
+  output_occurrence: 1
+  sql: SELECT (-12345678901234567)::money;
+- id: pg-money-0091-e1d34431
+  statement_index: 91
+  line_start: 126
+  line_end: 126
+  output_occurrence: 1
+  sql: SELECT 1234567890::int4::money;
+- id: pg-money-0092-3942a1c2
+  statement_index: 92
+  line_start: 127
+  line_end: 127
+  output_occurrence: 1
+  sql: SELECT 12345678901234567::int8::money;
+- id: pg-money-0093-4666b18a
+  statement_index: 93
+  line_start: 128
+  line_end: 128
+  output_occurrence: 1
+  sql: SELECT 12345678901234567::numeric::money;
+- id: pg-money-0094-7bb53e8f
+  statement_index: 94
+  line_start: 129
+  line_end: 129
+  output_occurrence: 1
+  sql: SELECT (-1234567890)::int4::money;
+- id: pg-money-0095-bdaddc72
+  statement_index: 95
+  line_start: 130
+  line_end: 130
+  output_occurrence: 1
+  sql: SELECT (-12345678901234567)::int8::money;
+- id: pg-money-0096-f659a9a4
+  statement_index: 96
+  line_start: 131
+  line_end: 131
+  output_occurrence: 1
+  sql: SELECT (-12345678901234567)::numeric::money;
+- id: pg-money-0097-5909e787
+  statement_index: 97
+  line_start: 133
+  line_end: 134
+  output_occurrence: 1
+  sql: SELECT '12345678901234567'::money::numeric;
+- id: pg-money-0098-2caf5321
+  statement_index: 98
+  line_start: 135
+  line_end: 135
+  output_occurrence: 1
+  sql: SELECT '-12345678901234567'::money::numeric;
+- id: pg-money-0099-2e3ebf79
+  statement_index: 99
+  line_start: 136
+  line_end: 136
+  output_occurrence: 1
+  sql: SELECT '92233720368547758.07'::money::numeric;
+- id: pg-money-0100-12b0c5d4
+  statement_index: 100
+  line_start: 137
+  line_end: 137
+  output_occurrence: 1
+  sql: SELECT '-92233720368547758.08'::money::numeric;
+- id: pg-money-0101-e7faa4c8
+  statement_index: 101
+  line_start: 139
+  line_end: 140
+  output_occurrence: 1
+  sql: SELECT '92233720368547758.07'::money + '0.01'::money;
+- id: pg-money-0102-7eeb47da
+  statement_index: 102
+  line_start: 141
+  line_end: 141
+  output_occurrence: 1
+  sql: SELECT '-92233720368547758.08'::money - '0.01'::money;
+- id: pg-money-0103-206781b1
+  statement_index: 103
+  line_start: 142
+  line_end: 142
+  output_occurrence: 1
+  sql: SELECT '92233720368547758.07'::money * 2::float8;
+- id: pg-money-0104-5410b754
+  statement_index: 104
+  line_start: 143
+  line_end: 143
+  output_occurrence: 1
+  sql: SELECT '-1'::money / 1.175494e-38::float4;
+- id: pg-money-0105-a4212e37
+  statement_index: 105
+  line_start: 144
+  line_end: 144
+  output_occurrence: 1
+  sql: SELECT '92233720368547758.07'::money * 2::int4;
+- id: pg-money-0106-17bd5064
+  statement_index: 106
+  line_start: 145
+  line_end: 145
+  output_occurrence: 1
+  sql: SELECT '-92233720368547758.08'::money * -1::int8;
+- id: pg-money-0107-e902a04b
+  statement_index: 107
+  line_start: 146
+  line_end: 146
+  output_occurrence: 1
+  sql: SELECT '-92233720368547758.08'::money / -1::int8;
+- id: pg-money-0108-43ea6cd7
+  statement_index: 108
+  line_start: 147
+  line_end: 147
+  output_occurrence: 1
+  sql: SELECT '-92233720368547758.08'::money / -1::int4;
+- id: pg-money-0109-56d1aea2
+  statement_index: 109
+  line_start: 148
+  line_end: 148
+  output_occurrence: 1
+  sql: SELECT '-92233720368547758.08'::money / -1::int2;
+- id: pg-money-0110-2dcac07b
+  statement_index: 110
+  line_start: 149
+  line_end: 149
+  output_occurrence: 1
+  sql: SELECT '1'::money / 0::int2;
+- id: pg-money-0111-ce18721c
+  statement_index: 111
+  line_start: 150
+  line_end: 150
+  output_occurrence: 1
+  sql: SELECT '42'::money * 'inf'::float8;
+- id: pg-money-0112-55859b93
+  statement_index: 112
+  line_start: 151
+  line_end: 151
+  output_occurrence: 1
+  sql: SELECT '42'::money * '-inf'::float8;
+- id: pg-money-0113-0b7c50b8
+  statement_index: 113
+  line_start: 152
+  line_end: 152
+  output_occurrence: 1
+  sql: SELECT '42'::money * 'nan'::float4;

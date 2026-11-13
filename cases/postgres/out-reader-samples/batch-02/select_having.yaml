@@ -1,0 +1,161 @@
+source:
+  dialect: postgres
+  engine: postgres
+target:
+  connection_profile: doris-local
+input:
+  format: pg-regress
+  file: assets/select_having.sql
+  sha256: bf8adb623f24960d979619f1e697612ba5d25f949af72db66c76666345f9c68f
+recorded_output:
+  format: pg-regress
+  file: assets/select_having.out
+  sha256: 14ea106d976003bfa237df0b0fc484141f1cb6041f4c9310bc74cf919cb5ac7e
+import_summary:
+  accepted: 11
+  skipped: 12
+  ambiguous: 0
+  errors: 0
+import_diagnostics:
+- statement_index: 1
+  line_start: 1
+  line_end: 6
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 2
+  line_start: 7
+  line_end: 7
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 3
+  line_start: 8
+  line_end: 8
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 4
+  line_start: 9
+  line_end: 9
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 5
+  line_start: 10
+  line_end: 10
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 6
+  line_start: 11
+  line_end: 11
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 7
+  line_start: 12
+  line_end: 12
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 8
+  line_start: 13
+  line_end: 13
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 9
+  line_start: 14
+  line_end: 14
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 10
+  line_start: 15
+  line_end: 15
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 11
+  line_start: 16
+  line_end: 16
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 23
+  line_start: 50
+  line_end: 50
+  disposition: skipped
+  statement_type: drop
+  reason: Expected one read-only Query, got Drop
+cases:
+- id: pg-select-having-0012-324a784d
+  statement_index: 12
+  line_start: 18
+  line_end: 19
+  output_occurrence: 1
+  sql: "SELECT b, c FROM test_having\n\tGROUP BY b, c HAVING count(*) = 1 ORDER BY\
+    \ b, c;"
+- id: pg-select-having-0013-22308485
+  statement_index: 13
+  line_start: 21
+  line_end: 23
+  output_occurrence: 1
+  sql: "SELECT b, c FROM test_having\n\tGROUP BY b, c HAVING b = 3 ORDER BY b, c;"
+- id: pg-select-having-0014-4fe7b161
+  statement_index: 14
+  line_start: 25
+  line_end: 27
+  output_occurrence: 1
+  sql: "SELECT lower(c), count(c) FROM test_having\n\tGROUP BY lower(c) HAVING count(*)\
+    \ > 2 OR min(a) = max(a)\n\tORDER BY lower(c);"
+- id: pg-select-having-0015-2d4d34f7
+  statement_index: 15
+  line_start: 29
+  line_end: 31
+  output_occurrence: 1
+  sql: "SELECT c, max(a) FROM test_having\n\tGROUP BY c HAVING count(*) > 2 OR min(a)\
+    \ = max(a)\n\tORDER BY c;"
+- id: pg-select-having-0016-dfc7ef89
+  statement_index: 16
+  line_start: 33
+  line_end: 36
+  output_occurrence: 1
+  sql: SELECT min(a), max(a) FROM test_having HAVING min(a) = max(a);
+- id: pg-select-having-0017-33114e9a
+  statement_index: 17
+  line_start: 37
+  line_end: 37
+  output_occurrence: 1
+  sql: SELECT min(a), max(a) FROM test_having HAVING min(a) < max(a);
+- id: pg-select-having-0018-79b82fa3
+  statement_index: 18
+  line_start: 39
+  line_end: 40
+  output_occurrence: 1
+  sql: SELECT a FROM test_having HAVING min(a) < max(a);
+- id: pg-select-having-0019-254512af
+  statement_index: 19
+  line_start: 41
+  line_end: 41
+  output_occurrence: 1
+  sql: SELECT 1 AS one FROM test_having HAVING a > 1;
+- id: pg-select-having-0020-0bdc38cf
+  statement_index: 20
+  line_start: 43
+  line_end: 44
+  output_occurrence: 1
+  sql: SELECT 1 AS one FROM test_having HAVING 1 > 2;
+- id: pg-select-having-0021-58870b23
+  statement_index: 21
+  line_start: 45
+  line_end: 45
+  output_occurrence: 1
+  sql: SELECT 1 AS one FROM test_having HAVING 1 < 2;
+- id: pg-select-having-0022-cab4a689
+  statement_index: 22
+  line_start: 47
+  line_end: 48
+  output_occurrence: 1
+  sql: SELECT 1 AS one FROM test_having WHERE 1/a = 1 HAVING 1 < 2;

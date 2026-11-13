@@ -1,0 +1,123 @@
+source:
+  dialect: hive
+  engine: hive
+  connection_profile: hive-local
+  database: dsv_validation
+target:
+  connection_profile: doris-local
+  database: dsv_validation
+input:
+  format: manual
+import_summary:
+  accepted: 32
+  skipped: 0
+  ambiguous: 0
+  errors: 0
+import_diagnostics: []
+cases:
+- id: mvp-001
+  statement_index: 1
+  sql: SELECT 1 AS value
+- id: mvp-002
+  statement_index: 2
+  sql: SELECT add_months(CAST('2024-02-29' AS DATE), 4) AS value
+- id: mvp-003
+  statement_index: 3
+  sql: SELECT AES_DECRYPT(NULL, '1234567890123456') AS value
+- id: mvp-004
+  statement_index: 4
+  sql: SELECT array_contains(array('reading', 'swimming'), 'reading') AS value
+- id: mvp-005
+  statement_index: 5
+  sql: SELECT size(NULL) AS value
+- id: mvp-006
+  statement_index: 6
+  sql: SELECT substr('Test', 0, 4) AS value
+- id: mvp-007
+  statement_index: 7
+  sql: SELECT CAST('-1.623' AS INT) AS value
+- id: mvp-008
+  statement_index: 8
+  sql: SELECT MAP('name', 'John', 'address', 'New York') AS value
+- id: mvp-009
+  statement_index: 9
+  sql: SELECT named_struct('name', 'John', 'age', 30) AS value
+- id: mvp-010
+  statement_index: 10
+  sql: SELECT unbase64('SGVsbG8=') AS value
+- id: mvp-011
+  statement_index: 11
+  sql: SELECT from_utc_timestamp('2024-01-01 04:00:00', 'Asia/Shanghai') AS value
+- id: mvp-012
+  statement_index: 12
+  sql: SELECT get_json_object('["John","Doe"]', '$[0]') AS value
+- id: mvp-013
+  statement_index: 13
+  sql: SELECT next_day('2024-01-01', 'MO') AS value
+- id: mvp-014
+  statement_index: 14
+  sql: SELECT sign(-1.0) AS value
+- id: mvp-015
+  statement_index: 15
+  sql: SELECT unhex('41G42') AS value
+- id: mvp-016
+  statement_index: 16
+  sql: SELECT AVG(CAST(9999999999.99 AS DECIMAL(10,2))) AS value
+- id: mvp-017
+  statement_index: 17
+  sql: SELECT length(CAST('测试' AS BINARY)) AS value
+- id: mvp-018
+  statement_index: 18
+  sql: SELECT lower(CAST(-1.23E-4 AS STRING)) AS value
+- id: mvp-019
+  statement_index: 19
+  sql: SELECT instr(CAST(11.00 AS DECIMAL(8,2)), '0') AS value
+- id: mvp-020
+  statement_index: 20
+  sql: SELECT log10(-1) AS value
+- id: mvp-021
+  statement_index: 21
+  sql: SELECT percentile_approx(age, 0.5) AS value FROM (SELECT 20 AS age UNION ALL
+    SELECT 25 UNION ALL SELECT 30 UNION ALL SELECT 35 UNION ALL SELECT 40) t
+- id: mvp-022
+  statement_index: 22
+  sql: SELECT pos, val FROM (SELECT array('apple', 'banana', 'cherry') AS fruits UNION
+    ALL SELECT array('dancing', 'singing') AS fruits) t LATERAL VIEW posexplode(fruits)
+    exploded_fruits AS pos, val ORDER BY pos, val
+- id: mvp-023
+  statement_index: 23
+  sql: SELECT sqrt(-1) AS value
+- id: mvp-024
+  statement_index: 24
+  sql: SELECT CAST(STDDEV_POP(value) AS DOUBLE) AS std_dev FROM (SELECT 0.0001 AS
+    value UNION ALL SELECT 0.0002) t
+- id: mvp-025
+  statement_index: 25
+  sql: SELECT json_tuple('{"a":1,"b":2}', 'a', 'b')
+- id: mvp-026
+  statement_index: 26
+  sql: SELECT case_id, CAST(decimal_value AS BIGINT) AS value FROM validation_types
+    ORDER BY case_id
+- id: mvp-027
+  statement_index: 27
+  sql: SELECT case_id, array_contains(tags, 'reading') AS value FROM validation_types
+    ORDER BY case_id
+- id: mvp-028
+  statement_index: 28
+  sql: SELECT c.customer_id, o.order_id, o.amount FROM customers c JOIN orders o ON
+    c.customer_id = o.customer_id ORDER BY c.customer_id, o.order_id
+- id: mvp-029
+  statement_index: 29
+  sql: SELECT c.region, SUM(o.amount) AS total_amount FROM customers c JOIN orders
+    o ON c.customer_id = o.customer_id GROUP BY c.region ORDER BY c.region
+- id: mvp-030
+  statement_index: 30
+  sql: SELECT order_id, customer_id, ROW_NUMBER() OVER (PARTITION BY customer_id ORDER
+    BY order_time, order_id) AS rn FROM orders ORDER BY customer_id, rn
+- id: mvp-031
+  statement_index: 31
+  sql: SELECT c.customer_id, o.order_id FROM customers c LEFT JOIN orders o ON c.customer_id
+    = o.customer_id ORDER BY c.customer_id, o.order_id
+- id: mvp-032
+  statement_index: 32
+  sql: SELECT region FROM customers WHERE region IS NOT NULL

@@ -1,0 +1,1 @@
+SELECT CAST(STR_TO_DATE('January 8, 1999','%M %e, %Y') AS DATE);

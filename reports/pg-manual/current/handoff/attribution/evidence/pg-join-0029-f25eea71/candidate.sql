@@ -1,0 +1,1 @@
+SELECT * FROM (SELECT i AS a, j AS b, t AS c FROM J1_TBL) AS t1;

@@ -1,0 +1,1 @@
+SELECT XML_IS_WELL_FORMED('abc');

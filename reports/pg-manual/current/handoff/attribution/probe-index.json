@@ -1,0 +1,3958 @@
+{
+  "用途": "本轮候选/控制重放/边界的证据导航，不判定根因。失败尝试与完整执行分开。",
+  "候选计划": [
+    {
+      "查询": "pg-aggregates-0005-11b43275",
+      "分析方向": "integer-avg-decimal",
+      "候选文件": "evidence/pg-aggregates-0005-11b43275/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-aggregates-0006-86de303b",
+      "分析方向": "integer-avg-decimal",
+      "候选文件": "evidence/pg-aggregates-0006-86de303b/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-aggregates-0010-12bf388c",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-aggregates-0010-12bf388c/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-aggregates-0015-4a78a728",
+      "分析方向": "float-sum-contract",
+      "候选文件": "evidence/pg-aggregates-0015-4a78a728/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0129-97df5e76",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0129-97df5e76/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0130-1a544234",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0130-1a544234/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0131-c7124ae8",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0131-c7124ae8/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0134-9c537f22",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0134-9c537f22/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0135-33e4f75c",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0135-33e4f75c/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0136-911e2fbc",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0136-911e2fbc/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0137-c6d3924c",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0137-c6d3924c/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0138-ae9e4f97",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0138-ae9e4f97/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0139-8147b663",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0139-8147b663/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0140-1ae879f3",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0140-1ae879f3/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0141-e83ebde6",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0141-e83ebde6/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0143-d4ff47e9",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0143-d4ff47e9/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0144-215ce358",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0144-215ce358/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0146-1dba32e8",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0146-1dba32e8/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0150-c883f965",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0150-c883f965/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0152-5f46c961",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0152-5f46c961/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0153-1bce402b",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0153-1bce402b/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0154-879640d2",
+      "分析方向": "array-constructor",
+      "候选文件": null,
+      "生成失败": "诊断尚未实现 ARRAY 查询构造器"
+    },
+    {
+      "查询": "pg-arrays-0158-76e9e56b",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0158-76e9e56b/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0160-d80d5020",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0160-d80d5020/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0161-c1ad99d8",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0161-c1ad99d8/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0162-94f706e5",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0162-94f706e5/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0163-7e801567",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0163-7e801567/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0164-eba9ca06",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0164-eba9ca06/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0165-befda27f",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0165-befda27f/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0166-8cc7f264",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0166-8cc7f264/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0197-7667c505",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0197-7667c505/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0199-5d28259f",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0199-5d28259f/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0201-43f9dae0",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0201-43f9dae0/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0210-f27d4da8",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0210-f27d4da8/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0211-3e580130",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0211-3e580130/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0246-58760171",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0246-58760171/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0247-933ca919",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0247-933ca919/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0248-c6f58b28",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0248-c6f58b28/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0249-e2238cac",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0249-e2238cac/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0250-7b229df0",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0250-7b229df0/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0251-f4b1710d",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0251-f4b1710d/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0252-ce30e209",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0252-ce30e209/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-arrays-0253-be3c6fa6",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-arrays-0253-be3c6fa6/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-date-0024-afe42f36",
+      "分析方向": "date-literal-format",
+      "候选文件": "evidence/pg-date-0024-afe42f36/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-groupingsets-0012-47939b25",
+      "分析方向": "grouping-id",
+      "候选文件": "evidence/pg-groupingsets-0012-47939b25/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-groupingsets-0045-e2685715",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-groupingsets-0045-e2685715/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-groupingsets-0046-ee2dc97b",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-groupingsets-0046-ee2dc97b/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-join-0028-f25eea71",
+      "分析方向": "table-column-alias",
+      "候选文件": "evidence/pg-join-0028-f25eea71/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-join-0029-f25eea71",
+      "分析方向": "table-column-alias",
+      "候选文件": "evidence/pg-join-0029-f25eea71/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-join-0030-8603f3ed",
+      "分析方向": "table-column-alias",
+      "候选文件": "evidence/pg-join-0030-8603f3ed/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-join-0031-f4169150",
+      "分析方向": "table-column-alias",
+      "候选文件": "evidence/pg-join-0031-f4169150/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-join-0084-d692d7c3",
+      "分析方向": "full-join-generator-exception",
+      "候选文件": null,
+      "生成失败": "'NoneType' object is not iterable"
+    },
+    {
+      "查询": "pg-join-0087-f13d67d0",
+      "分析方向": "full-join-generator-exception",
+      "候选文件": null,
+      "生成失败": "'NoneType' object is not iterable"
+    },
+    {
+      "查询": "pg-join-0088-9518261f",
+      "分析方向": "full-join-generator-exception",
+      "候选文件": null,
+      "生成失败": "'NoneType' object is not iterable"
+    },
+    {
+      "查询": "pg-json-0057-738e7b11",
+      "分析方向": "array-constructor",
+      "候选文件": null,
+      "生成失败": "诊断尚未实现 ARRAY 查询构造器"
+    },
+    {
+      "查询": "pg-json-0060-0cb6c97c",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-json-0060-0cb6c97c/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0064-dce5ae8b",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-json-0064-dce5ae8b/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0135-0315e130",
+      "分析方向": "json-text-extraction",
+      "候选文件": "evidence/pg-json-0135-0315e130/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0153-859161a9",
+      "分析方向": "json-text-extraction",
+      "候选文件": "evidence/pg-json-0153-859161a9/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0155-579440b1",
+      "分析方向": "json-text-extraction",
+      "候选文件": "evidence/pg-json-0155-579440b1/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0156-f9da221f",
+      "分析方向": "json-text-extraction",
+      "候选文件": "evidence/pg-json-0156-f9da221f/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0158-382f7a2f",
+      "分析方向": "json-text-extraction",
+      "候选文件": "evidence/pg-json-0158-382f7a2f/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0160-7531df7d",
+      "分析方向": "json-text-extraction",
+      "候选文件": "evidence/pg-json-0160-7531df7d/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0161-635df7fb",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-json-0161-635df7fb/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0162-6b380766",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-json-0162-6b380766/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0163-093476ed",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-json-0163-093476ed/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0164-0923d889",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-json-0164-0923d889/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0165-7c004789",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-json-0165-7c004789/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0166-6c15e0b8",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-json-0166-6c15e0b8/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0167-f3c33896",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-json-0167-f3c33896/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0168-d6b16d12",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-json-0168-d6b16d12/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0174-ff8d41d2",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-json-0174-ff8d41d2/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0177-0fec5401",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-json-0177-0fec5401/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0194-013c6457",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-json-0194-013c6457/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0197-ffab593b",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-json-0197-ffab593b/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0057-0dd4ec19",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0057-0dd4ec19/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0075-27aae931",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0075-27aae931/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0124-ce70ecc5",
+      "分析方向": "json-text-extraction",
+      "候选文件": "evidence/pg-jsonb-0124-ce70ecc5/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0135-6b4dd957",
+      "分析方向": "jsonb-containment",
+      "候选文件": "evidence/pg-jsonb-0135-6b4dd957/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0136-4e07d50c",
+      "分析方向": "jsonb-containment",
+      "候选文件": "evidence/pg-jsonb-0136-4e07d50c/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0137-26e8e6c3",
+      "分析方向": "jsonb-containment",
+      "候选文件": "evidence/pg-jsonb-0137-26e8e6c3/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0138-0f3fc6a3",
+      "分析方向": "jsonb-containment",
+      "候选文件": "evidence/pg-jsonb-0138-0f3fc6a3/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0139-c3fabcbb",
+      "分析方向": "jsonb-containment",
+      "候选文件": "evidence/pg-jsonb-0139-c3fabcbb/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0140-6b4dd957",
+      "分析方向": "jsonb-containment",
+      "候选文件": "evidence/pg-jsonb-0140-6b4dd957/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0199-6e48a507",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0199-6e48a507/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0200-15e82b89",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0200-15e82b89/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0201-639d32ce",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0201-639d32ce/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0202-107bfecc",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0202-107bfecc/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0204-522fac2b",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0204-522fac2b/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0205-5f02749a",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0205-5f02749a/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0206-7b83fddf",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0206-7b83fddf/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0207-007c4486",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0207-007c4486/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0209-2a965830",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0209-2a965830/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0210-b407053e",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0210-b407053e/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0211-0441451f",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0211-0441451f/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0212-60b91a2b",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0212-60b91a2b/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0214-7ee1efe4",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0214-7ee1efe4/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0215-44efa3b4",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0215-44efa3b4/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0216-65489bec",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0216-65489bec/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0217-79898f60",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0217-79898f60/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-jsonb-0218-eb3572a8",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-jsonb-0218-eb3572a8/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-subselect-0011-ba931994",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-subselect-0011-ba931994/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-subselect-0012-a01c4e7d",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-subselect-0012-a01c4e7d/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-subselect-0013-9ff200d9",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-subselect-0013-9ff200d9/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0001-8842af4e",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0001-8842af4e/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0002-46978a15",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0002-46978a15/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0005-4e651bba",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0005-4e651bba/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0006-20935b45",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0006-20935b45/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0007-dee35ffd",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0007-dee35ffd/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0008-3b1c7020",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0008-3b1c7020/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0009-774cd2a0",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0009-774cd2a0/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0010-84c85402",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0010-84c85402/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0011-043dbbe9",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0011-043dbbe9/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0012-69bca50e",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0012-69bca50e/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0013-6809b41b",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0013-6809b41b/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0014-e4feb980",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0014-e4feb980/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0015-0cb45014",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0015-0cb45014/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0016-75c00d8c",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0016-75c00d8c/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0017-86fb9d5a",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0017-86fb9d5a/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0027-021c0d72",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0027-021c0d72/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0028-cb1f47b2",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0028-cb1f47b2/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-union-0029-6c7c44d0",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-union-0029-6c7c44d0/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-window-0006-bf2d68e1",
+      "分析方向": "named-window",
+      "候选文件": "evidence/pg-window-0006-bf2d68e1/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-window-0007-d8c07fd5",
+      "分析方向": "named-window",
+      "候选文件": "evidence/pg-window-0007-d8c07fd5/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-window-0009-fbac9f79",
+      "分析方向": "named-window",
+      "候选文件": "evidence/pg-window-0009-fbac9f79/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-window-0010-ac7b0db2",
+      "分析方向": "named-window",
+      "候选文件": "evidence/pg-window-0010-ac7b0db2/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-window-0036-1d9414c5",
+      "分析方向": "named-window",
+      "候选文件": "evidence/pg-window-0036-1d9414c5/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-window-0038-4aba58d8",
+      "分析方向": "named-window",
+      "候选文件": "evidence/pg-window-0038-4aba58d8/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-window-0041-1b9507b3",
+      "分析方向": "named-window",
+      "候选文件": "evidence/pg-window-0041-1b9507b3/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-window-0048-536e1e97",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-window-0048-536e1e97/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-window-0049-f467131d",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-window-0049-f467131d/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-window-0050-8b853a62",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-window-0050-8b853a62/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-window-0051-ce3792dc",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-window-0051-ce3792dc/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-window-0052-682b3131",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-window-0052-682b3131/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-window-0055-461f08dc",
+      "分析方向": "window-exclude",
+      "候选文件": null,
+      "生成失败": "EXCLUDE clause is not supported in the WINDOW clause"
+    },
+    {
+      "查询": "pg-window-0056-323a4316",
+      "分析方向": "window-exclude",
+      "候选文件": null,
+      "生成失败": "EXCLUDE clause is not supported in the WINDOW clause"
+    },
+    {
+      "查询": "pg-window-0057-e7f23b7b",
+      "分析方向": "window-exclude",
+      "候选文件": null,
+      "生成失败": "EXCLUDE clause is not supported in the WINDOW clause"
+    },
+    {
+      "查询": "pg-window-0058-a6d78a71",
+      "分析方向": "window-exclude",
+      "候选文件": null,
+      "生成失败": "EXCLUDE clause is not supported in the WINDOW clause"
+    },
+    {
+      "查询": "pg-window-0059-b05800ec",
+      "分析方向": "window-exclude",
+      "候选文件": null,
+      "生成失败": "EXCLUDE clause is not supported in the WINDOW clause"
+    },
+    {
+      "查询": "pg-window-0060-fb3b911d",
+      "分析方向": "window-exclude",
+      "候选文件": null,
+      "生成失败": "EXCLUDE clause is not supported in the WINDOW clause"
+    },
+    {
+      "查询": "pg-window-0061-82375ee3",
+      "分析方向": "window-exclude",
+      "候选文件": null,
+      "生成失败": "EXCLUDE clause is not supported in the WINDOW clause"
+    },
+    {
+      "查询": "pg-window-0062-c3b04485",
+      "分析方向": "window-exclude",
+      "候选文件": null,
+      "生成失败": "EXCLUDE clause is not supported in the WINDOW clause"
+    },
+    {
+      "查询": "pg-window-0063-39c9997e",
+      "分析方向": "window-exclude",
+      "候选文件": null,
+      "生成失败": "EXCLUDE clause is not supported in the WINDOW clause"
+    },
+    {
+      "查询": "pg-window-0064-2e7cfd65",
+      "分析方向": "window-exclude",
+      "候选文件": null,
+      "生成失败": "EXCLUDE clause is not supported in the WINDOW clause"
+    },
+    {
+      "查询": "pg-window-0068-06f27850",
+      "分析方向": "named-window",
+      "候选文件": "evidence/pg-window-0068-06f27850/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-window-0069-289c97b4",
+      "分析方向": "window-exclude",
+      "候选文件": null,
+      "生成失败": "EXCLUDE clause is not supported in the WINDOW clause"
+    },
+    {
+      "查询": "pg-window-0070-e6a99045",
+      "分析方向": "window-exclude",
+      "候选文件": null,
+      "生成失败": "EXCLUDE clause is not supported in the WINDOW clause"
+    },
+    {
+      "查询": "pg-window-0071-d0e8311e",
+      "分析方向": "window-exclude",
+      "候选文件": null,
+      "生成失败": "EXCLUDE clause is not supported in the WINDOW clause"
+    },
+    {
+      "查询": "pg-window-0072-75e7d362",
+      "分析方向": "named-window",
+      "候选文件": "evidence/pg-window-0072-75e7d362/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-multirangetypes-0605-e88badff",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-multirangetypes-0605-e88badff/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0001-bf1fea25",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0001-bf1fea25/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0002-4393fd29",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0002-4393fd29/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0003-bc278c1f",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0003-bc278c1f/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0004-5b3e7f7e",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0004-5b3e7f7e/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0005-68d49865",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0005-68d49865/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0006-2c1a7e8b",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0006-2c1a7e8b/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0007-113b58a4",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0007-113b58a4/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0008-e7bc3623",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0008-e7bc3623/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0009-69ae7cae",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0009-69ae7cae/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0016-554fa98c",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0016-554fa98c/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0017-73d4763f",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0017-73d4763f/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0018-7a05d9a2",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0018-7a05d9a2/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0019-335c2dae",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0019-335c2dae/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0020-885d9173",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0020-885d9173/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0021-65b661c9",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0021-65b661c9/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0049-9b45177b",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0049-9b45177b/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0050-0c169c9a",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0050-0c169c9a/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numerology-0051-33408a72",
+      "分析方向": "nondecimal-integer-literal",
+      "候选文件": "evidence/pg-numerology-0051-33408a72/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-rangetypes-0377-0d6fb286",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-rangetypes-0377-0d6fb286/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-sqljson-0182-0b849be1",
+      "分析方向": "native-null-ordering",
+      "候选文件": "evidence/pg-sqljson-0182-0b849be1/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-xml-0034-0de0843b",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-xml-0034-0de0843b/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-xml-0152-481c458f",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-xml-0152-481c458f/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-xml-0153-4b9bd07b",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-xml-0153-4b9bd07b/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-xml-0154-303139cc",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-xml-0154-303139cc/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-boolean-0010-222849e6",
+      "分析方向": "boolean-input-prefix",
+      "候选文件": "evidence/pg-boolean-0010-222849e6/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-boolean-0013-41441aee",
+      "分析方向": "boolean-input-prefix",
+      "候选文件": "evidence/pg-boolean-0013-41441aee/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-boolean-0018-0e6e96f9",
+      "分析方向": "boolean-input-prefix",
+      "候选文件": "evidence/pg-boolean-0018-0e6e96f9/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-rowtypes-0091-02456573",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-rowtypes-0091-02456573/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-rowtypes-0092-99426b72",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-rowtypes-0092-99426b72/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-rowtypes-0093-43b5e991",
+      "分析方向": "array-constructor",
+      "候选文件": "evidence/pg-rowtypes-0093-43b5e991/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-select-distinct-on-0001",
+      "分析方向": "order-by-using",
+      "候选文件": "evidence/pg-select-distinct-on-0001/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-select-distinct-on-0003",
+      "分析方向": "order-by-using",
+      "候选文件": "evidence/pg-select-distinct-on-0003/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-aggregates-0021-7678f6ba",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-aggregates-0021-7678f6ba/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-aggregates-0023-251c8665",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-aggregates-0023-251c8665/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-interval-0003-8fdfc48d",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-interval-0003-8fdfc48d/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0063-7e24ac8c",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-json-0063-7e24ac8c/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-json-0191-09aa37c5",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-json-0191-09aa37c5/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-numeric-0525-c4b5f8ba",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-numeric-0525-c4b5f8ba/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-timestamp-0139-6926e893",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-timestamp-0139-6926e893/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-timestamp-0140-b552f818",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-timestamp-0140-b552f818/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-window-0020-3478fa0b",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-window-0020-3478fa0b/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-window-0030-297e95fe",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-window-0030-297e95fe/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-with-0003-18c284af",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-with-0003-18c284af/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-multirangetypes-0129-1a5b202e",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-multirangetypes-0129-1a5b202e/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-rangetypes-0162-d0b7936f",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-rangetypes-0162-d0b7936f/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-sqljson-queryfuncs-0025-2e24b896",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-sqljson-queryfuncs-0025-2e24b896/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-xml-0195-3a732bd3",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-xml-0195-3a732bd3/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-boolean-0027-1e7243be",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-boolean-0027-1e7243be/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-boolean-0028-50f4807b",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-boolean-0028-50f4807b/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-float4-0073-8a7309ae",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-float4-0073-8a7309ae/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-float8-0133-1686bfe4",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-float8-0133-1686bfe4/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-float8-0136-1407357d",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-float8-0136-1407357d/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-money-0057-a1bdd31a",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-money-0057-a1bdd31a/candidate.sql",
+      "生成失败": null
+    },
+    {
+      "查询": "pg-rowtypes-0049-cd764c59",
+      "分析方向": "control-replay",
+      "候选文件": "evidence/pg-rowtypes-0049-cd764c59/candidate.sql",
+      "生成失败": null
+    }
+  ],
+  "后续候选": [
+    {
+      "查询": "pg-join-0084-d692d7c3",
+      "分析方向": "natural-full-join",
+      "候选文件": "evidence/pg-join-0084-d692d7c3/candidate-02.sql"
+    },
+    {
+      "查询": "pg-join-0087-f13d67d0",
+      "分析方向": "natural-full-join",
+      "候选文件": "evidence/pg-join-0087-f13d67d0/candidate-02.sql"
+    },
+    {
+      "查询": "pg-join-0088-9518261f",
+      "分析方向": "natural-full-join",
+      "候选文件": "evidence/pg-join-0088-9518261f/candidate-02.sql"
+    },
+    {
+      "查询": "pg-with-0003-18c284af",
+      "分析方向": "recursive-cte-types",
+      "候选文件": "evidence/pg-with-0003-18c284af/candidate-02.sql"
+    },
+    {
+      "查询": "pg-groupingsets-0012-47939b25",
+      "分析方向": "grouping-id",
+      "候选文件": "evidence/pg-groupingsets-0012-47939b25/candidate-02.sql"
+    },
+    {
+      "查询": "pg-select-distinct-on-0001",
+      "分析方向": "order-by-using",
+      "候选文件": "evidence/pg-select-distinct-on-0001/candidate-02.sql"
+    },
+    {
+      "查询": "pg-select-distinct-on-0003",
+      "分析方向": "order-by-using",
+      "候选文件": "evidence/pg-select-distinct-on-0003/candidate-02.sql"
+    },
+    {
+      "查询": "pg-window-0050-8b853a62",
+      "分析方向": "integer-division",
+      "候选文件": "evidence/pg-window-0050-8b853a62/candidate-02.sql"
+    },
+    {
+      "查询": "pg-window-0051-ce3792dc",
+      "分析方向": "integer-division",
+      "候选文件": "evidence/pg-window-0051-ce3792dc/candidate-02.sql"
+    },
+    {
+      "查询": "pg-window-0055-461f08dc",
+      "分析方向": "window-exclude-no-others",
+      "候选文件": "evidence/pg-window-0055-461f08dc/candidate-02.sql"
+    },
+    {
+      "查询": "pg-join-0028-f25eea71",
+      "分析方向": "table-column-alias",
+      "候选文件": "evidence/pg-join-0028-f25eea71/candidate-02.sql"
+    },
+    {
+      "查询": "pg-join-0031-f4169150",
+      "分析方向": "table-column-alias",
+      "候选文件": "evidence/pg-join-0031-f4169150/candidate-02.sql"
+    }
+  ],
+  "执行记录": {
+    "original": [
+      {
+        "id": "pg-window-0068-06f27850",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0068-06f27850/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0009-fbac9f79",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0009-fbac9f79/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0051-ce3792dc",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0051-ce3792dc/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0051-ce3792dc",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0051-ce3792dc/probe-02/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-rowtypes-0049-cd764c59",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-rowtypes-0049-cd764c59/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0248-c6f58b28",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0248-c6f58b28/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0028-cb1f47b2",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0028-cb1f47b2/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0134-9c537f22",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0134-9c537f22/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0038-4aba58d8",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0038-4aba58d8/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0144-215ce358",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0144-215ce358/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-select-distinct-on-0001",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-select-distinct-on-0001/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": true,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-select-distinct-on-0001",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-select-distinct-on-0001/probe-02/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-float8-0133-1686bfe4",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-float8-0133-1686bfe4/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0153-1bce402b",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0153-1bce402b/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-boolean-0018-0e6e96f9",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-boolean-0018-0e6e96f9/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0014-e4feb980",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0014-e4feb980/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": true,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-join-0030-8603f3ed",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-join-0030-8603f3ed/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0202-107bfecc",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0202-107bfecc/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-subselect-0012-a01c4e7d",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-subselect-0012-a01c4e7d/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0010-84c85402",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0010-84c85402/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": true,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0009-774cd2a0",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0009-774cd2a0/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": true,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-xml-0154-303139cc",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-xml-0154-303139cc/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0009-69ae7cae",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0009-69ae7cae/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0036-1d9414c5",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0036-1d9414c5/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": true,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-aggregates-0015-4a78a728",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-aggregates-0015-4a78a728/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0013-6809b41b",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0013-6809b41b/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-with-0003-18c284af",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-with-0003-18c284af/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-with-0003-18c284af",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-with-0003-18c284af/probe-02/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0153-859161a9",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0153-859161a9/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0158-76e9e56b",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0158-76e9e56b/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-timestamp-0139-6926e893",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-timestamp-0139-6926e893/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": false,
+        "type_unknown": true,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0168-d6b16d12",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0168-d6b16d12/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0131-c7124ae8",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0131-c7124ae8/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0160-7531df7d",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0160-7531df7d/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0249-e2238cac",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0249-e2238cac/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0210-f27d4da8",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0210-f27d4da8/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0017-73d4763f",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0017-73d4763f/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": true,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0057-0dd4ec19",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0057-0dd4ec19/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-join-0084-d692d7c3",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-join-0084-d692d7c3/probe-02/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0138-0f3fc6a3",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0138-0f3fc6a3/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0211-0441451f",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0211-0441451f/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0140-1ae879f3",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0140-1ae879f3/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-boolean-0027-1e7243be",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-boolean-0027-1e7243be/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0020-885d9173",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0020-885d9173/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0007-113b58a4",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0007-113b58a4/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0194-013c6457",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0194-013c6457/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-aggregates-0006-86de303b",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-aggregates-0006-86de303b/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": false,
+        "type_unknown": true,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0191-09aa37c5",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0191-09aa37c5/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0049-9b45177b",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0049-9b45177b/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0139-c3fabcbb",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0139-c3fabcbb/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-xml-0034-0de0843b",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-xml-0034-0de0843b/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-join-0087-f13d67d0",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-join-0087-f13d67d0/probe-02/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0072-75e7d362",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0072-75e7d362/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0197-ffab593b",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0197-ffab593b/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-groupingsets-0012-47939b25",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-groupingsets-0012-47939b25/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-groupingsets-0012-47939b25",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-groupingsets-0012-47939b25/probe-02/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-rowtypes-0091-02456573",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-rowtypes-0091-02456573/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-join-0031-f4169150",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-join-0031-f4169150/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-join-0031-f4169150",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-join-0031-f4169150/probe-02/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0048-536e1e97",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0048-536e1e97/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0135-6b4dd957",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0135-6b4dd957/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0166-8cc7f264",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0166-8cc7f264/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0049-f467131d",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0049-f467131d/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0006-bf2d68e1",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0006-bf2d68e1/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-groupingsets-0045-e2685715",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-groupingsets-0045-e2685715/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-sqljson-0182-0b849be1",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-sqljson-0182-0b849be1/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0006-20935b45",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0006-20935b45/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0167-f3c33896",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0167-f3c33896/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-xml-0152-481c458f",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-xml-0152-481c458f/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0253-be3c6fa6",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0253-be3c6fa6/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0007-d8c07fd5",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0007-d8c07fd5/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": true,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0246-58760171",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0246-58760171/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0136-911e2fbc",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0136-911e2fbc/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-boolean-0010-222849e6",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-boolean-0010-222849e6/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0008-3b1c7020",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0008-3b1c7020/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": true,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0162-6b380766",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0162-6b380766/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0015-0cb45014",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0015-0cb45014/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-subselect-0013-9ff200d9",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-subselect-0013-9ff200d9/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0005-4e651bba",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0005-4e651bba/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0164-eba9ca06",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0164-eba9ca06/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0129-97df5e76",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0129-97df5e76/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0001-8842af4e",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0001-8842af4e/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0161-c1ad99d8",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0161-c1ad99d8/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0052-682b3131",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0052-682b3131/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-boolean-0013-41441aee",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-boolean-0013-41441aee/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0201-639d32ce",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0201-639d32ce/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0055-461f08dc",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0055-461f08dc/probe-02/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-date-0024-afe42f36",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-date-0024-afe42f36/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0011-043dbbe9",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0011-043dbbe9/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0165-7c004789",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0165-7c004789/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-sqljson-queryfuncs-0025-2e24b896",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-sqljson-queryfuncs-0025-2e24b896/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-timestamp-0140-b552f818",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-timestamp-0140-b552f818/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": true,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-subselect-0011-ba931994",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-subselect-0011-ba931994/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-join-0028-f25eea71",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-join-0028-f25eea71/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-join-0028-f25eea71",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-join-0028-f25eea71/probe-02/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-join-0029-f25eea71",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-join-0029-f25eea71/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0020-3478fa0b",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0020-3478fa0b/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-aggregates-0010-12bf388c",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-aggregates-0010-12bf388c/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0124-ce70ecc5",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0124-ce70ecc5/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0162-94f706e5",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0162-94f706e5/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-select-distinct-on-0003",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-select-distinct-on-0003/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": true,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-select-distinct-on-0003",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-select-distinct-on-0003/probe-02/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-arrays-0138-ae9e4f97",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0138-ae9e4f97/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0003-bc278c1f",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0003-bc278c1f/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0141-e83ebde6",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0141-e83ebde6/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0163-093476ed",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0163-093476ed/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0041-1b9507b3",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0041-1b9507b3/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0212-60b91a2b",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0212-60b91a2b/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0016-75c00d8c",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0016-75c00d8c/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": true,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-interval-0003-8fdfc48d",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-interval-0003-8fdfc48d/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0200-15e82b89",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0200-15e82b89/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0136-4e07d50c",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0136-4e07d50c/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0005-68d49865",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0005-68d49865/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0197-7667c505",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0197-7667c505/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-rowtypes-0093-43b5e991",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-rowtypes-0093-43b5e991/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-aggregates-0023-251c8665",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-aggregates-0023-251c8665/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0007-dee35ffd",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0007-dee35ffd/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0130-1a544234",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0130-1a544234/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0029-6c7c44d0",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0029-6c7c44d0/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-multirangetypes-0129-1a5b202e",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-multirangetypes-0129-1a5b202e/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-xml-0153-4b9bd07b",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-xml-0153-4b9bd07b/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0247-933ca919",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0247-933ca919/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0137-c6d3924c",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0137-c6d3924c/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0209-2a965830",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0209-2a965830/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0064-dce5ae8b",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0064-dce5ae8b/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0017-86fb9d5a",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0017-86fb9d5a/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": true,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0002-46978a15",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0002-46978a15/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0177-0fec5401",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0177-0fec5401/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0137-26e8e6c3",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0137-26e8e6c3/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-boolean-0028-50f4807b",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-boolean-0028-50f4807b/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0165-befda27f",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0165-befda27f/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-join-0088-9518261f",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-join-0088-9518261f/probe-02/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0010-ac7b0db2",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0010-ac7b0db2/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0060-0cb6c97c",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0060-0cb6c97c/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-aggregates-0021-7678f6ba",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-aggregates-0021-7678f6ba/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0008-e7bc3623",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0008-e7bc3623/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0075-27aae931",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0075-27aae931/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-xml-0195-3a732bd3",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-xml-0195-3a732bd3/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0135-0315e130",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0135-0315e130/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0174-ff8d41d2",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0174-ff8d41d2/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0001-bf1fea25",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0001-bf1fea25/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0251-f4b1710d",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0251-f4b1710d/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0150-c883f965",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0150-c883f965/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-rowtypes-0092-99426b72",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-rowtypes-0092-99426b72/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0139-8147b663",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0139-8147b663/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0021-65b661c9",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0021-65b661c9/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": true,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0252-ce30e209",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0252-ce30e209/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0199-6e48a507",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0199-6e48a507/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0018-7a05d9a2",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0018-7a05d9a2/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0143-d4ff47e9",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0143-d4ff47e9/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-float8-0136-1407357d",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-float8-0136-1407357d/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0152-5f46c961",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0152-5f46c961/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0030-297e95fe",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0030-297e95fe/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0164-0923d889",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0164-0923d889/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-groupingsets-0046-ee2dc97b",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-groupingsets-0046-ee2dc97b/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0161-635df7fb",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0161-635df7fb/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0016-554fa98c",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0016-554fa98c/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0002-4393fd29",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0002-4393fd29/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0210-b407053e",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0210-b407053e/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0201-43f9dae0",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0201-43f9dae0/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0146-1dba32e8",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0146-1dba32e8/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-numeric-0525-c4b5f8ba",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numeric-0525-c4b5f8ba/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0155-579440b1",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0155-579440b1/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0211-3e580130",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0211-3e580130/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0004-5b3e7f7e",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0004-5b3e7f7e/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0199-5d28259f",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0199-5d28259f/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-jsonb-0140-6b4dd957",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0140-6b4dd957/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0012-69bca50e",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0012-69bca50e/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": true,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0050-8b853a62",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0050-8b853a62/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-window-0050-8b853a62",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-window-0050-8b853a62/probe-02/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0063-7e24ac8c",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0063-7e24ac8c/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0250-7b229df0",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0250-7b229df0/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-union-0027-021c0d72",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-union-0027-021c0d72/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0156-f9da221f",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0156-f9da221f/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0019-335c2dae",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0019-335c2dae/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": true,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0135-33e4f75c",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0135-33e4f75c/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0160-d80d5020",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0160-d80d5020/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-aggregates-0005-11b43275",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-aggregates-0005-11b43275/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": true,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0050-0c169c9a",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0050-0c169c9a/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-numerology-0006-2c1a7e8b",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0006-2c1a7e8b/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0158-382f7a2f",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0158-382f7a2f/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-arrays-0163-7e801567",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-arrays-0163-7e801567/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      },
+      {
+        "id": "pg-float4-0073-8a7309ae",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-float4-0073-8a7309ae/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": true,
+        "variant": false
+      },
+      {
+        "id": "pg-json-0166-6c15e0b8",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/pg-json-0166-6c15e0b8/probe-01/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": false,
+        "values": null,
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": false
+      }
+    ],
+    "boundaries": [
+      {
+        "id": "pg-jsonb-0142-f3ac9275",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/json-containment-null/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-boolean-0010-222849e6",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/boolean-case-space/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-aggregates-0010-12bf388c",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/array-empty-typed/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-json-0153-859161a9",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/json-text-json-null/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-jsonb-0142-f3ac9275",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/json-containment-sql-null/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-jsonb-0142-f3ac9275",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/json-containment-array-duplicates/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-date-0266-add0cea0",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/make-date-valid-and-null/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-union-0001-8842af4e",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/null-order-ascending/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-date-0024-afe42f36",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/date-month-name-leap/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-window-0006-bf2d68e1",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/named-window-null-peers/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-boolean-0010-222849e6",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/boolean-sql-null/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-aggregates-0010-12bf388c",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/array-null-elements/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-json-0153-859161a9",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/json-text-string/probe-02/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-json-0153-859161a9",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/json-text-string/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "不同",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-window-0050-8b853a62",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/integer-division-negative/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-with-0003-18c284af",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/recursive-cte-integer-anchor/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-aggregates-0010-12bf388c",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/array-nested-typed/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": false,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-json-0153-859161a9",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/json-text-missing/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      },
+      {
+        "id": "pg-union-0001-8842af4e",
+        "file": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/null-order-descending/probe/probe-evidence.json",
+        "source_ok": true,
+        "target_ok": true,
+        "values": "一致",
+        "types_equal": true,
+        "type_unknown": false,
+        "order_problem": false,
+        "control": false,
+        "variant": true
+      }
+    ]
+  },
+  "工具失败": [
+    {
+      "id": "pg-numerology-0002-4393fd29",
+      "folder": "reports/pg-manual/current/handoff/attribution/evidence/boundaries/numeric-octal-zero",
+      "attempt": "probe",
+      "rule": "nondecimal-integer-literal",
+      "attempt_error": "ParseError: Invalid expression / Unexpected token. Line 1, Col: 13.\n  SELECT 0o0 \u001b[4mAS\u001b[0m value;\n"
+    },
+    {
+      "id": "pg-jsonb-0204-522fac2b",
+      "folder": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0204-522fac2b",
+      "attempt": "probe-01",
+      "rule": "array-constructor",
+      "attempt_error": "ParseError: Required keyword: 'this' missing for <class 'sqlglot.expressions.core.BitwiseOr'>. Line 1, Col: 63.\n  SELECT CAST('{\"a\":null, \"b\":\"qq\"}' AS JSONB) ?| ARRAY('a', 'b'\u001b[4m)\u001b[0m;\n"
+    },
+    {
+      "id": "pg-jsonb-0205-5f02749a",
+      "folder": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0205-5f02749a",
+      "attempt": "probe-01",
+      "rule": "array-constructor",
+      "attempt_error": "ParseError: Required keyword: 'this' missing for <class 'sqlglot.expressions.core.BitwiseOr'>. Line 1, Col: 63.\n  SELECT CAST('{\"a\":null, \"b\":\"qq\"}' AS JSONB) ?| ARRAY('b', 'a'\u001b[4m)\u001b[0m;\n"
+    },
+    {
+      "id": "pg-jsonb-0206-7b83fddf",
+      "folder": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0206-7b83fddf",
+      "attempt": "probe-01",
+      "rule": "array-constructor",
+      "attempt_error": "ParseError: Required keyword: 'this' missing for <class 'sqlglot.expressions.core.BitwiseOr'>. Line 1, Col: 63.\n  SELECT CAST('{\"a\":null, \"b\":\"qq\"}' AS JSONB) ?| ARRAY('c', 'a'\u001b[4m)\u001b[0m;\n"
+    },
+    {
+      "id": "pg-jsonb-0207-007c4486",
+      "folder": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0207-007c4486",
+      "attempt": "probe-01",
+      "rule": "array-constructor",
+      "attempt_error": "ParseError: Required keyword: 'this' missing for <class 'sqlglot.expressions.core.BitwiseOr'>. Line 1, Col: 63.\n  SELECT CAST('{\"a\":null, \"b\":\"qq\"}' AS JSONB) ?| ARRAY('c', 'd'\u001b[4m)\u001b[0m;\n"
+    },
+    {
+      "id": "pg-jsonb-0214-7ee1efe4",
+      "folder": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0214-7ee1efe4",
+      "attempt": "probe-01",
+      "rule": "array-constructor",
+      "attempt_error": "ParseError: Required keyword: 'this' missing for <class 'sqlglot.expressions.core.BitwiseAnd'>. Line 1, Col: 63.\n  SELECT CAST('{\"a\":null, \"b\":\"qq\"}' AS JSONB) ?& ARRAY('a', 'b'\u001b[4m)\u001b[0m;\n"
+    },
+    {
+      "id": "pg-jsonb-0215-44efa3b4",
+      "folder": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0215-44efa3b4",
+      "attempt": "probe-01",
+      "rule": "array-constructor",
+      "attempt_error": "ParseError: Required keyword: 'this' missing for <class 'sqlglot.expressions.core.BitwiseAnd'>. Line 1, Col: 63.\n  SELECT CAST('{\"a\":null, \"b\":\"qq\"}' AS JSONB) ?& ARRAY('b', 'a'\u001b[4m)\u001b[0m;\n"
+    },
+    {
+      "id": "pg-jsonb-0216-65489bec",
+      "folder": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0216-65489bec",
+      "attempt": "probe-01",
+      "rule": "array-constructor",
+      "attempt_error": "ParseError: Required keyword: 'this' missing for <class 'sqlglot.expressions.core.BitwiseAnd'>. Line 1, Col: 63.\n  SELECT CAST('{\"a\":null, \"b\":\"qq\"}' AS JSONB) ?& ARRAY('c', 'a'\u001b[4m)\u001b[0m;\n"
+    },
+    {
+      "id": "pg-jsonb-0217-79898f60",
+      "folder": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0217-79898f60",
+      "attempt": "probe-01",
+      "rule": "array-constructor",
+      "attempt_error": "ParseError: Required keyword: 'this' missing for <class 'sqlglot.expressions.core.BitwiseAnd'>. Line 1, Col: 63.\n  SELECT CAST('{\"a\":null, \"b\":\"qq\"}' AS JSONB) ?& ARRAY('c', 'd'\u001b[4m)\u001b[0m;\n"
+    },
+    {
+      "id": "pg-jsonb-0218-eb3572a8",
+      "folder": "reports/pg-manual/current/handoff/attribution/evidence/pg-jsonb-0218-eb3572a8",
+      "attempt": "probe-01",
+      "rule": "array-constructor",
+      "attempt_error": "ParseError: Required keyword: 'this' missing for <class 'sqlglot.expressions.core.BitwiseAnd'>. Line 1, Col: 78.\n  SELECT CAST('{\"a\":null, \"b\":\"qq\"}' AS JSONB) ?& ARRAY('a', 'a', 'b', 'b', 'b'\u001b[4m)\u001b[0m;\n"
+    },
+    {
+      "id": "pg-multirangetypes-0605-e88badff",
+      "folder": "reports/pg-manual/current/handoff/attribution/evidence/pg-multirangetypes-0605-e88badff",
+      "attempt": "probe-01",
+      "rule": "array-constructor",
+      "attempt_error": "TypeError: Object of type Multirange is not JSON serializable"
+    },
+    {
+      "id": "pg-numerology-0051-33408a72",
+      "folder": "reports/pg-manual/current/handoff/attribution/evidence/pg-numerology-0051-33408a72",
+      "attempt": "probe-01",
+      "rule": "nondecimal-integer-literal",
+      "attempt_error": "TokenError: Error tokenizing 'SELECT b'_10_0101'"
+    },
+    {
+      "id": "pg-rangetypes-0377-0d6fb286",
+      "folder": "reports/pg-manual/current/handoff/attribution/evidence/pg-rangetypes-0377-0d6fb286",
+      "attempt": "probe-01",
+      "rule": "array-constructor",
+      "attempt_error": "TypeError: Object of type Range is not JSON serializable"
+    },
+    {
+      "id": "pg-rangetypes-0162-d0b7936f",
+      "folder": "reports/pg-manual/current/handoff/attribution/evidence/pg-rangetypes-0162-d0b7936f",
+      "attempt": "probe-01",
+      "rule": "control-replay",
+      "attempt_error": "TypeError: Object of type Range is not JSON serializable"
+    },
+    {
+      "id": "pg-money-0057-a1bdd31a",
+      "folder": "reports/pg-manual/current/handoff/attribution/evidence/pg-money-0057-a1bdd31a",
+      "attempt": "probe-01",
+      "rule": "control-replay",
+      "attempt_error": "ParseError: Expected TYPE after CAST. Line 1, Col: 33.\n  SELECT CAST('1234567890' AS \u001b[4mMONEY\u001b[0m);\n\n\nRequired keyword: 'to' missing for <class 'sqlglot.expressions.functions.Cast'>. Line 1, Col: 33.\n  SELECT CAST('1234567890' AS \u001b[4mMONEY\u001b[0m);\n\n\nInvalid expression / Unexpected token. Line 1, Col: 34.\n  SELECT CAST('1234567890' AS MONEY\u001b[4m)\u001b[0m;\n"
+    }
+  ],
+  "工具失败限制": "Doris Parser 可在读取候选之前拒绝旧生成 SQL；Range/Multirange 可能执行后序列化失败。均不算完整执行证据或目标能力已确认。",
+  "边界": [
+    {
+      "目录": "evidence/boundaries/array-null-elements",
+      "查询": "pg-aggregates-0010-12bf388c",
+      "分析方向": "array-constructor",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/array-empty-typed",
+      "查询": "pg-aggregates-0010-12bf388c",
+      "分析方向": "array-constructor",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/array-nested-typed",
+      "查询": "pg-aggregates-0010-12bf388c",
+      "分析方向": "array-constructor",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/null-order-ascending",
+      "查询": "pg-union-0001-8842af4e",
+      "分析方向": "native-null-ordering",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/null-order-descending",
+      "查询": "pg-union-0001-8842af4e",
+      "分析方向": "native-null-ordering",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/named-window-null-peers",
+      "查询": "pg-window-0006-bf2d68e1",
+      "分析方向": "named-window",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/json-text-json-null",
+      "查询": "pg-json-0153-859161a9",
+      "分析方向": "json-text-extraction",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/json-text-missing",
+      "查询": "pg-json-0153-859161a9",
+      "分析方向": "json-text-extraction",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/json-text-string",
+      "查询": "pg-json-0153-859161a9",
+      "分析方向": "json-text-extraction",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/json-containment-null",
+      "查询": "pg-jsonb-0142-f3ac9275",
+      "分析方向": "jsonb-containment",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/json-containment-array-duplicates",
+      "查询": "pg-jsonb-0142-f3ac9275",
+      "分析方向": "jsonb-containment",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/json-containment-sql-null",
+      "查询": "pg-jsonb-0142-f3ac9275",
+      "分析方向": "jsonb-containment",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/integer-division-negative",
+      "查询": "pg-window-0050-8b853a62",
+      "分析方向": "integer-division",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/recursive-cte-integer-anchor",
+      "查询": "pg-with-0003-18c284af",
+      "分析方向": "recursive-cte-types",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/numeric-octal-zero",
+      "查询": "pg-numerology-0002-4393fd29",
+      "分析方向": "nondecimal-integer-literal",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/date-month-name-leap",
+      "查询": "pg-date-0024-afe42f36",
+      "分析方向": "date-literal-format",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/make-date-valid-and-null",
+      "查询": "pg-date-0266-add0cea0",
+      "分析方向": "make-date-valid-input",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/boolean-case-space",
+      "查询": "pg-boolean-0010-222849e6",
+      "分析方向": "boolean-input-prefix",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    },
+    {
+      "目录": "evidence/boundaries/boolean-sql-null",
+      "查询": "pg-boolean-0010-222849e6",
+      "分析方向": "boolean-input-prefix",
+      "来源": "人工设计的新变体，实际执行 PG，不复用原 .out"
+    }
+  ],
+  "初始连接沙箱限制": "初始默认沙箱连接被拒绝；在获得只读本地连接权限后完成实测，不把沙箱错误算作查询或数据库缺陷。"
+}

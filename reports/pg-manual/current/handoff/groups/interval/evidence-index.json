@@ -1,0 +1,3584 @@
+{
+  "用途": "人工调用归因 Skill 的原文件引用索引；不复制、不调用 AI、不连接数据库",
+  "引用方式": "文件路径相对于本索引目录；始终使用原文件，不创建备份或改写 YAML",
+  "入口": {
+    "case_file": "../../../../../../cases/postgres/manual/current/interval.yaml",
+    "report_file": "../../../validation/interval/validation.json",
+    "source_file": "../../../../../../cases/postgres/manual/current/assets/interval.sql",
+    "recorded_output_file": "../../../../../../cases/postgres/manual/current/assets/interval.out",
+    "setup_files": [
+      "../../../data-preparation/postgres-setup.sql",
+      "../../../data-preparation/doris-setup.sql"
+    ],
+    "preparation_report": "../../../data-preparation/data-preparation.md"
+  },
+  "首轮运行查询数": 20,
+  "未在本轮运行的查询编号": [],
+  "待分析查询": [
+    {
+      "查询编号": "pg-interval-0003-8fdfc48d",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-interval-0004-c90dd650",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-interval-0005-52af31c8",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-interval-0006-8bbc181a",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-interval-0007-f1af5ce0",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-interval-0008-a5e251de",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-interval-0009-3add4f85",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-interval-0010-1d0b98d6",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-interval-0011-c3689488",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-interval-0012-5f6e40d5",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-interval-0042-9b4eb8dd",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-interval-0043-c75b564b",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-interval-0044-52cb668e",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-interval-0046-b7094563",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-interval-0055-ea0dbdc1",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-interval-0074-9e931758",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-interval-0075-5310bd27",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-interval-0076-42ea5d08",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-interval-0077-02688b9c",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-interval-0078-a0dd407c",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    }
+  ],
+  "导入阶段诊断": [
+    {
+      "statement_index": 1,
+      "line_start": 1,
+      "line_end": 5,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 2,
+      "line_start": 6,
+      "line_end": 6,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 13,
+      "line_start": 20,
+      "line_end": 20,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 14,
+      "line_start": 22,
+      "line_end": 22,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 15,
+      "line_start": 23,
+      "line_end": 23,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 16,
+      "line_start": 24,
+      "line_end": 24,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 17,
+      "line_start": 25,
+      "line_end": 25,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 18,
+      "line_start": 26,
+      "line_end": 26,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 19,
+      "line_start": 27,
+      "line_end": 27,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 20,
+      "line_start": 28,
+      "line_end": 28,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 21,
+      "line_start": 29,
+      "line_end": 29,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 22,
+      "line_start": 30,
+      "line_end": 30,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 23,
+      "line_start": 31,
+      "line_end": 31,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 24,
+      "line_start": 32,
+      "line_end": 32,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 25,
+      "line_start": 33,
+      "line_end": 33,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 26,
+      "line_start": 35,
+      "line_end": 36,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 27,
+      "line_start": 37,
+      "line_end": 37,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 49,
+      "line_start": 82,
+      "line_end": 85,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 50,
+      "line_start": 86,
+      "line_end": 91,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 51,
+      "line_start": 92,
+      "line_end": 93,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 52,
+      "line_start": 94,
+      "line_end": 94,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 53,
+      "line_start": 95,
+      "line_end": 95,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 54,
+      "line_start": 96,
+      "line_end": 96,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 57,
+      "line_start": 106,
+      "line_end": 106,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 58,
+      "line_start": 107,
+      "line_end": 107,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 59,
+      "line_start": 108,
+      "line_end": 109,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 61,
+      "line_start": 111,
+      "line_end": 111,
+      "disposition": "skipped",
+      "statement_type": "reset",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 63,
+      "line_start": 116,
+      "line_end": 116,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 64,
+      "line_start": 118,
+      "line_end": 126,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 65,
+      "line_start": 127,
+      "line_end": 127,
+      "disposition": "skipped",
+      "statement_type": "copy",
+      "reason": "Expected one read-only Query, got Copy"
+    },
+    {
+      "statement_index": 70,
+      "line_start": 150,
+      "line_end": 150,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 71,
+      "line_start": 152,
+      "line_end": 152,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 72,
+      "line_start": 153,
+      "line_end": 153,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 96,
+      "line_start": 201,
+      "line_end": 202,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 97,
+      "line_start": 203,
+      "line_end": 203,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 163,
+      "line_start": 281,
+      "line_end": 282,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 165,
+      "line_start": 289,
+      "line_end": 290,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 168,
+      "line_start": 302,
+      "line_end": 303,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 172,
+      "line_start": 316,
+      "line_end": 319,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 174,
+      "line_start": 328,
+      "line_end": 329,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 176,
+      "line_start": 338,
+      "line_end": 339,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 186,
+      "line_start": 360,
+      "line_end": 363,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 339,
+      "line_start": 557,
+      "line_end": 558,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 341,
+      "line_start": 560,
+      "line_end": 560,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 343,
+      "line_start": 562,
+      "line_end": 562,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 345,
+      "line_start": 564,
+      "line_end": 564,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 377,
+      "line_start": 659,
+      "line_end": 659,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 378,
+      "line_start": 660,
+      "line_end": 660,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 380,
+      "line_start": 664,
+      "line_end": 677,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 28,
+      "line_start": 39,
+      "line_end": 40,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 29,
+      "line_start": 41,
+      "line_end": 41,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 30,
+      "line_start": 42,
+      "line_end": 42,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 31,
+      "line_start": 43,
+      "line_end": 43,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 32,
+      "line_start": 44,
+      "line_end": 44,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 33,
+      "line_start": 46,
+      "line_end": 48,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 34,
+      "line_start": 50,
+      "line_end": 51,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 35,
+      "line_start": 53,
+      "line_end": 54,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 36,
+      "line_start": 56,
+      "line_end": 57,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 37,
+      "line_start": 59,
+      "line_end": 60,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 38,
+      "line_start": 62,
+      "line_end": 63,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 39,
+      "line_start": 65,
+      "line_end": 66,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 40,
+      "line_start": 68,
+      "line_end": 71,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 41,
+      "line_start": 73,
+      "line_end": 75,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 45,
+      "line_start": 78,
+      "line_end": 79,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 47,
+      "line_start": 80,
+      "line_end": 81,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 48,
+      "line_start": 81,
+      "line_end": 82,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 56,
+      "line_start": 101,
+      "line_end": 104,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 60,
+      "line_start": 110,
+      "line_end": 110,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 62,
+      "line_start": 113,
+      "line_end": 114,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 66,
+      "line_start": 128,
+      "line_end": 139,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 67,
+      "line_start": 141,
+      "line_end": 142,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 68,
+      "line_start": 144,
+      "line_end": 145,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 69,
+      "line_start": 147,
+      "line_end": 148,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 79,
+      "line_start": 163,
+      "line_end": 163,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 80,
+      "line_start": 165,
+      "line_end": 169,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 81,
+      "line_start": 171,
+      "line_end": 172,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 82,
+      "line_start": 174,
+      "line_end": 178,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 83,
+      "line_start": 180,
+      "line_end": 182,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 84,
+      "line_start": 183,
+      "line_end": 183,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 85,
+      "line_start": 185,
+      "line_end": 185,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 86,
+      "line_start": 186,
+      "line_end": 186,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 87,
+      "line_start": 188,
+      "line_end": 190,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 88,
+      "line_start": 192,
+      "line_end": 192,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 89,
+      "line_start": 193,
+      "line_end": 193,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 90,
+      "line_start": 194,
+      "line_end": 194,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 91,
+      "line_start": 195,
+      "line_end": 195,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 92,
+      "line_start": 196,
+      "line_end": 196,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 93,
+      "line_start": 197,
+      "line_end": 197,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 94,
+      "line_start": 198,
+      "line_end": 198,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 95,
+      "line_start": 199,
+      "line_end": 199,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 98,
+      "line_start": 205,
+      "line_end": 206,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 99,
+      "line_start": 207,
+      "line_end": 207,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 100,
+      "line_start": 209,
+      "line_end": 209,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 101,
+      "line_start": 209,
+      "line_end": 210,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 102,
+      "line_start": 210,
+      "line_end": 211,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 103,
+      "line_start": 211,
+      "line_end": 212,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 104,
+      "line_start": 212,
+      "line_end": 213,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 105,
+      "line_start": 213,
+      "line_end": 214,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 106,
+      "line_start": 214,
+      "line_end": 215,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 107,
+      "line_start": 215,
+      "line_end": 216,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 108,
+      "line_start": 217,
+      "line_end": 217,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 109,
+      "line_start": 218,
+      "line_end": 218,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 110,
+      "line_start": 219,
+      "line_end": 219,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 111,
+      "line_start": 221,
+      "line_end": 222,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 112,
+      "line_start": 223,
+      "line_end": 223,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 113,
+      "line_start": 224,
+      "line_end": 224,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 114,
+      "line_start": 225,
+      "line_end": 225,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 115,
+      "line_start": 226,
+      "line_end": 226,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 116,
+      "line_start": 227,
+      "line_end": 227,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 117,
+      "line_start": 228,
+      "line_end": 228,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 118,
+      "line_start": 229,
+      "line_end": 229,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 119,
+      "line_start": 230,
+      "line_end": 230,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 120,
+      "line_start": 231,
+      "line_end": 231,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 121,
+      "line_start": 232,
+      "line_end": 232,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 122,
+      "line_start": 233,
+      "line_end": 233,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 123,
+      "line_start": 234,
+      "line_end": 234,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 124,
+      "line_start": 235,
+      "line_end": 235,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 125,
+      "line_start": 236,
+      "line_end": 236,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 126,
+      "line_start": 237,
+      "line_end": 237,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 127,
+      "line_start": 238,
+      "line_end": 238,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 128,
+      "line_start": 239,
+      "line_end": 239,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 129,
+      "line_start": 240,
+      "line_end": 240,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 130,
+      "line_start": 241,
+      "line_end": 241,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 131,
+      "line_start": 242,
+      "line_end": 242,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 132,
+      "line_start": 243,
+      "line_end": 243,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 133,
+      "line_start": 244,
+      "line_end": 244,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 134,
+      "line_start": 245,
+      "line_end": 245,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 135,
+      "line_start": 246,
+      "line_end": 246,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 136,
+      "line_start": 247,
+      "line_end": 247,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 137,
+      "line_start": 248,
+      "line_end": 248,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 138,
+      "line_start": 249,
+      "line_end": 249,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 139,
+      "line_start": 250,
+      "line_end": 250,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 140,
+      "line_start": 251,
+      "line_end": 251,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 141,
+      "line_start": 252,
+      "line_end": 252,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 142,
+      "line_start": 252,
+      "line_end": 253,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 143,
+      "line_start": 253,
+      "line_end": 254,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 144,
+      "line_start": 254,
+      "line_end": 255,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 145,
+      "line_start": 255,
+      "line_end": 258,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 146,
+      "line_start": 259,
+      "line_end": 259,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 147,
+      "line_start": 260,
+      "line_end": 260,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 148,
+      "line_start": 260,
+      "line_end": 261,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 149,
+      "line_start": 262,
+      "line_end": 262,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 150,
+      "line_start": 263,
+      "line_end": 263,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 151,
+      "line_start": 264,
+      "line_end": 264,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 152,
+      "line_start": 265,
+      "line_end": 265,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 153,
+      "line_start": 266,
+      "line_end": 266,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 154,
+      "line_start": 267,
+      "line_end": 267,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 155,
+      "line_start": 268,
+      "line_end": 268,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 156,
+      "line_start": 269,
+      "line_end": 269,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 157,
+      "line_start": 270,
+      "line_end": 270,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 158,
+      "line_start": 271,
+      "line_end": 271,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 159,
+      "line_start": 272,
+      "line_end": 272,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 160,
+      "line_start": 273,
+      "line_end": 273,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 161,
+      "line_start": 273,
+      "line_end": 274,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 162,
+      "line_start": 274,
+      "line_end": 279,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 164,
+      "line_start": 283,
+      "line_end": 287,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 166,
+      "line_start": 291,
+      "line_end": 294,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 167,
+      "line_start": 296,
+      "line_end": 300,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 169,
+      "line_start": 304,
+      "line_end": 307,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 170,
+      "line_start": 309,
+      "line_end": 313,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 171,
+      "line_start": 315,
+      "line_end": 316,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 173,
+      "line_start": 320,
+      "line_end": 326,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 175,
+      "line_start": 330,
+      "line_end": 336,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 177,
+      "line_start": 340,
+      "line_end": 341,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 178,
+      "line_start": 343,
+      "line_end": 351,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 179,
+      "line_start": 353,
+      "line_end": 354,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 180,
+      "line_start": 355,
+      "line_end": 355,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 181,
+      "line_start": 356,
+      "line_end": 356,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 182,
+      "line_start": 357,
+      "line_end": 357,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 183,
+      "line_start": 358,
+      "line_end": 358,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 184,
+      "line_start": 359,
+      "line_end": 359,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 185,
+      "line_start": 359,
+      "line_end": 360,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 187,
+      "line_start": 364,
+      "line_end": 364,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 188,
+      "line_start": 365,
+      "line_end": 365,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 189,
+      "line_start": 366,
+      "line_end": 366,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 190,
+      "line_start": 368,
+      "line_end": 369,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 191,
+      "line_start": 370,
+      "line_end": 370,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 192,
+      "line_start": 371,
+      "line_end": 371,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 193,
+      "line_start": 372,
+      "line_end": 372,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 194,
+      "line_start": 373,
+      "line_end": 373,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 195,
+      "line_start": 374,
+      "line_end": 374,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 196,
+      "line_start": 375,
+      "line_end": 375,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 197,
+      "line_start": 376,
+      "line_end": 376,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 198,
+      "line_start": 377,
+      "line_end": 377,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 199,
+      "line_start": 378,
+      "line_end": 378,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 200,
+      "line_start": 380,
+      "line_end": 380,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 201,
+      "line_start": 381,
+      "line_end": 381,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 202,
+      "line_start": 383,
+      "line_end": 383,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 203,
+      "line_start": 385,
+      "line_end": 385,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 204,
+      "line_start": 386,
+      "line_end": 386,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 205,
+      "line_start": 388,
+      "line_end": 389,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 206,
+      "line_start": 390,
+      "line_end": 390,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 207,
+      "line_start": 391,
+      "line_end": 391,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 208,
+      "line_start": 392,
+      "line_end": 392,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 209,
+      "line_start": 393,
+      "line_end": 393,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 210,
+      "line_start": 394,
+      "line_end": 394,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 211,
+      "line_start": 395,
+      "line_end": 395,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 212,
+      "line_start": 396,
+      "line_end": 396,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 213,
+      "line_start": 397,
+      "line_end": 397,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 214,
+      "line_start": 398,
+      "line_end": 398,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 215,
+      "line_start": 399,
+      "line_end": 399,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 216,
+      "line_start": 400,
+      "line_end": 400,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 217,
+      "line_start": 401,
+      "line_end": 401,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 218,
+      "line_start": 402,
+      "line_end": 402,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 219,
+      "line_start": 403,
+      "line_end": 403,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 220,
+      "line_start": 404,
+      "line_end": 404,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 221,
+      "line_start": 406,
+      "line_end": 406,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 222,
+      "line_start": 407,
+      "line_end": 407,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 223,
+      "line_start": 408,
+      "line_end": 408,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 224,
+      "line_start": 409,
+      "line_end": 409,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 225,
+      "line_start": 410,
+      "line_end": 410,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 226,
+      "line_start": 412,
+      "line_end": 413,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 227,
+      "line_start": 414,
+      "line_end": 414,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 228,
+      "line_start": 415,
+      "line_end": 415,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 229,
+      "line_start": 416,
+      "line_end": 416,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 230,
+      "line_start": 417,
+      "line_end": 417,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 231,
+      "line_start": 418,
+      "line_end": 418,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 232,
+      "line_start": 419,
+      "line_end": 419,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 233,
+      "line_start": 420,
+      "line_end": 420,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 234,
+      "line_start": 422,
+      "line_end": 422,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 235,
+      "line_start": 423,
+      "line_end": 423,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 236,
+      "line_start": 424,
+      "line_end": 424,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 237,
+      "line_start": 425,
+      "line_end": 425,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 238,
+      "line_start": 427,
+      "line_end": 427,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 239,
+      "line_start": 428,
+      "line_end": 428,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 240,
+      "line_start": 429,
+      "line_end": 429,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 241,
+      "line_start": 430,
+      "line_end": 430,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 242,
+      "line_start": 432,
+      "line_end": 432,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 243,
+      "line_start": 433,
+      "line_end": 433,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 244,
+      "line_start": 434,
+      "line_end": 434,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 245,
+      "line_start": 435,
+      "line_end": 435,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 246,
+      "line_start": 436,
+      "line_end": 436,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 247,
+      "line_start": 437,
+      "line_end": 437,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 248,
+      "line_start": 439,
+      "line_end": 439,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 249,
+      "line_start": 440,
+      "line_end": 440,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 250,
+      "line_start": 441,
+      "line_end": 441,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 251,
+      "line_start": 442,
+      "line_end": 442,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 252,
+      "line_start": 443,
+      "line_end": 443,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 253,
+      "line_start": 444,
+      "line_end": 444,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 254,
+      "line_start": 446,
+      "line_end": 447,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 255,
+      "line_start": 448,
+      "line_end": 448,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 256,
+      "line_start": 449,
+      "line_end": 449,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 257,
+      "line_start": 450,
+      "line_end": 450,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 258,
+      "line_start": 451,
+      "line_end": 451,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 259,
+      "line_start": 452,
+      "line_end": 452,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 260,
+      "line_start": 453,
+      "line_end": 453,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 261,
+      "line_start": 454,
+      "line_end": 454,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 262,
+      "line_start": 456,
+      "line_end": 456,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 263,
+      "line_start": 457,
+      "line_end": 457,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 264,
+      "line_start": 458,
+      "line_end": 458,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 265,
+      "line_start": 459,
+      "line_end": 459,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 266,
+      "line_start": 460,
+      "line_end": 460,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 267,
+      "line_start": 461,
+      "line_end": 461,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 268,
+      "line_start": 462,
+      "line_end": 462,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 269,
+      "line_start": 463,
+      "line_end": 463,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 270,
+      "line_start": 465,
+      "line_end": 465,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 271,
+      "line_start": 466,
+      "line_end": 466,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 272,
+      "line_start": 467,
+      "line_end": 467,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 273,
+      "line_start": 468,
+      "line_end": 468,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 274,
+      "line_start": 470,
+      "line_end": 470,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 275,
+      "line_start": 471,
+      "line_end": 471,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 276,
+      "line_start": 472,
+      "line_end": 472,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 277,
+      "line_start": 473,
+      "line_end": 473,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 278,
+      "line_start": 475,
+      "line_end": 475,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 279,
+      "line_start": 476,
+      "line_end": 476,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 280,
+      "line_start": 477,
+      "line_end": 477,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 281,
+      "line_start": 478,
+      "line_end": 478,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 282,
+      "line_start": 480,
+      "line_end": 480,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 283,
+      "line_start": 481,
+      "line_end": 481,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 284,
+      "line_start": 482,
+      "line_end": 482,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 285,
+      "line_start": 483,
+      "line_end": 483,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 286,
+      "line_start": 485,
+      "line_end": 485,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 287,
+      "line_start": 486,
+      "line_end": 486,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 288,
+      "line_start": 487,
+      "line_end": 487,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 289,
+      "line_start": 488,
+      "line_end": 488,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 290,
+      "line_start": 490,
+      "line_end": 491,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 291,
+      "line_start": 492,
+      "line_end": 492,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 292,
+      "line_start": 493,
+      "line_end": 493,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 293,
+      "line_start": 494,
+      "line_end": 494,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 294,
+      "line_start": 496,
+      "line_end": 496,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 295,
+      "line_start": 497,
+      "line_end": 497,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 296,
+      "line_start": 498,
+      "line_end": 498,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 297,
+      "line_start": 499,
+      "line_end": 499,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 298,
+      "line_start": 501,
+      "line_end": 501,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 299,
+      "line_start": 502,
+      "line_end": 502,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 300,
+      "line_start": 503,
+      "line_end": 503,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 301,
+      "line_start": 504,
+      "line_end": 504,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 302,
+      "line_start": 506,
+      "line_end": 506,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 303,
+      "line_start": 507,
+      "line_end": 507,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 304,
+      "line_start": 509,
+      "line_end": 509,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 305,
+      "line_start": 510,
+      "line_end": 510,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 306,
+      "line_start": 512,
+      "line_end": 512,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 307,
+      "line_start": 513,
+      "line_end": 513,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 308,
+      "line_start": 515,
+      "line_end": 515,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 309,
+      "line_start": 516,
+      "line_end": 516,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 310,
+      "line_start": 518,
+      "line_end": 519,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 311,
+      "line_start": 520,
+      "line_end": 520,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 312,
+      "line_start": 521,
+      "line_end": 521,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 313,
+      "line_start": 522,
+      "line_end": 522,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 314,
+      "line_start": 523,
+      "line_end": 523,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 315,
+      "line_start": 524,
+      "line_end": 524,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 316,
+      "line_start": 526,
+      "line_end": 527,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 317,
+      "line_start": 528,
+      "line_end": 528,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 318,
+      "line_start": 530,
+      "line_end": 530,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 319,
+      "line_start": 531,
+      "line_end": 531,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 320,
+      "line_start": 533,
+      "line_end": 533,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 321,
+      "line_start": 534,
+      "line_end": 534,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 322,
+      "line_start": 536,
+      "line_end": 537,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 323,
+      "line_start": 538,
+      "line_end": 538,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 324,
+      "line_start": 539,
+      "line_end": 539,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 325,
+      "line_start": 540,
+      "line_end": 540,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 326,
+      "line_start": 542,
+      "line_end": 543,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 327,
+      "line_start": 544,
+      "line_end": 544,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 328,
+      "line_start": 545,
+      "line_end": 545,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 329,
+      "line_start": 546,
+      "line_end": 546,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 330,
+      "line_start": 547,
+      "line_end": 547,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 331,
+      "line_start": 548,
+      "line_end": 548,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 332,
+      "line_start": 549,
+      "line_end": 549,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 333,
+      "line_start": 550,
+      "line_end": 550,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 334,
+      "line_start": 551,
+      "line_end": 551,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 335,
+      "line_start": 552,
+      "line_end": 552,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 336,
+      "line_start": 553,
+      "line_end": 553,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 337,
+      "line_start": 554,
+      "line_end": 554,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 338,
+      "line_start": 555,
+      "line_end": 555,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 340,
+      "line_start": 559,
+      "line_end": 559,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 342,
+      "line_start": 561,
+      "line_end": 561,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 344,
+      "line_start": 563,
+      "line_end": 563,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 346,
+      "line_start": 565,
+      "line_end": 565,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 347,
+      "line_start": 567,
+      "line_end": 568,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 348,
+      "line_start": 569,
+      "line_end": 569,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 349,
+      "line_start": 571,
+      "line_end": 572,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 350,
+      "line_start": 573,
+      "line_end": 573,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 351,
+      "line_start": 574,
+      "line_end": 574,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 352,
+      "line_start": 576,
+      "line_end": 576,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 353,
+      "line_start": 577,
+      "line_end": 577,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 354,
+      "line_start": 579,
+      "line_end": 579,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 355,
+      "line_start": 580,
+      "line_end": 580,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 356,
+      "line_start": 581,
+      "line_end": 581,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 357,
+      "line_start": 582,
+      "line_end": 582,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 358,
+      "line_start": 583,
+      "line_end": 583,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 359,
+      "line_start": 585,
+      "line_end": 603,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 360,
+      "line_start": 605,
+      "line_end": 620,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 361,
+      "line_start": 622,
+      "line_end": 622,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 362,
+      "line_start": 622,
+      "line_end": 623,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 363,
+      "line_start": 623,
+      "line_end": 625,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 364,
+      "line_start": 626,
+      "line_end": 626,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 365,
+      "line_start": 627,
+      "line_end": 627,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 366,
+      "line_start": 628,
+      "line_end": 628,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 367,
+      "line_start": 630,
+      "line_end": 630,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 368,
+      "line_start": 631,
+      "line_end": 631,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 369,
+      "line_start": 632,
+      "line_end": 632,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 370,
+      "line_start": 633,
+      "line_end": 633,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 371,
+      "line_start": 635,
+      "line_end": 642,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 372,
+      "line_start": 644,
+      "line_end": 645,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 373,
+      "line_start": 647,
+      "line_end": 652,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 374,
+      "line_start": 653,
+      "line_end": 653,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 375,
+      "line_start": 655,
+      "line_end": 656,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 376,
+      "line_start": 657,
+      "line_end": 657,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 379,
+      "line_start": 662,
+      "line_end": 662,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 381,
+      "line_start": 679,
+      "line_end": 686,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 382,
+      "line_start": 688,
+      "line_end": 696,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 383,
+      "line_start": 698,
+      "line_end": 698,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 384,
+      "line_start": 699,
+      "line_end": 699,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 385,
+      "line_start": 700,
+      "line_end": 700,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 386,
+      "line_start": 701,
+      "line_end": 701,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 387,
+      "line_start": 703,
+      "line_end": 710,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 388,
+      "line_start": 712,
+      "line_end": 719,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 389,
+      "line_start": 721,
+      "line_end": 722,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 390,
+      "line_start": 723,
+      "line_end": 723,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 391,
+      "line_start": 724,
+      "line_end": 724,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 392,
+      "line_start": 725,
+      "line_end": 725,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 393,
+      "line_start": 726,
+      "line_end": 726,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 394,
+      "line_start": 727,
+      "line_end": 727,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 395,
+      "line_start": 728,
+      "line_end": 728,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 396,
+      "line_start": 729,
+      "line_end": 729,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 397,
+      "line_start": 731,
+      "line_end": 740,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 398,
+      "line_start": 742,
+      "line_end": 751,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 399,
+      "line_start": 753,
+      "line_end": 753,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 400,
+      "line_start": 754,
+      "line_end": 754,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 401,
+      "line_start": 755,
+      "line_end": 755,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 402,
+      "line_start": 756,
+      "line_end": 756,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 403,
+      "line_start": 757,
+      "line_end": 757,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 404,
+      "line_start": 758,
+      "line_end": 758,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 405,
+      "line_start": 759,
+      "line_end": 759,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 406,
+      "line_start": 760,
+      "line_end": 760,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 407,
+      "line_start": 761,
+      "line_end": 761,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 408,
+      "line_start": 762,
+      "line_end": 762,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 409,
+      "line_start": 764,
+      "line_end": 764,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 410,
+      "line_start": 765,
+      "line_end": 765,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 411,
+      "line_start": 766,
+      "line_end": 766,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 412,
+      "line_start": 767,
+      "line_end": 767,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 413,
+      "line_start": 768,
+      "line_end": 768,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 414,
+      "line_start": 769,
+      "line_end": 769,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 415,
+      "line_start": 770,
+      "line_end": 770,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 416,
+      "line_start": 772,
+      "line_end": 772,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 417,
+      "line_start": 773,
+      "line_end": 773,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 418,
+      "line_start": 775,
+      "line_end": 777,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 419,
+      "line_start": 779,
+      "line_end": 781,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 420,
+      "line_start": 783,
+      "line_end": 785,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 421,
+      "line_start": 787,
+      "line_end": 789,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 422,
+      "line_start": 791,
+      "line_end": 791,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 423,
+      "line_start": 792,
+      "line_end": 792,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 424,
+      "line_start": 793,
+      "line_end": 793,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 425,
+      "line_start": 794,
+      "line_end": 794,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 426,
+      "line_start": 795,
+      "line_end": 795,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 427,
+      "line_start": 796,
+      "line_end": 796,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 428,
+      "line_start": 797,
+      "line_end": 797,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 429,
+      "line_start": 798,
+      "line_end": 798,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 430,
+      "line_start": 800,
+      "line_end": 800,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 431,
+      "line_start": 801,
+      "line_end": 801,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 432,
+      "line_start": 803,
+      "line_end": 803,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 433,
+      "line_start": 804,
+      "line_end": 804,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 434,
+      "line_start": 806,
+      "line_end": 807,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 435,
+      "line_start": 808,
+      "line_end": 808,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 436,
+      "line_start": 810,
+      "line_end": 811,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 437,
+      "line_start": 812,
+      "line_end": 812,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 438,
+      "line_start": 814,
+      "line_end": 816,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 439,
+      "line_start": 817,
+      "line_end": 817,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 440,
+      "line_start": 818,
+      "line_end": 818,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 441,
+      "line_start": 819,
+      "line_end": 819,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 442,
+      "line_start": 820,
+      "line_end": 820,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 443,
+      "line_start": 821,
+      "line_end": 821,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 444,
+      "line_start": 823,
+      "line_end": 824,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 445,
+      "line_start": 825,
+      "line_end": 825,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    },
+    {
+      "statement_index": 446,
+      "line_start": 826,
+      "line_end": 826,
+      "disposition": "skipped",
+      "statement_type": "out_of_scope_query",
+      "reason": "本次固定初始数据阶段/样本范围之外，不是 SQLGlot 失败"
+    }
+  ],
+  "数据准备报告已提供": true,
+  "文件": [
+    {
+      "文件": "../../../../../../cases/postgres/manual/current/assets/interval.sql",
+      "用途": "原始 PostgreSQL 完整脚本，不执行其中 DDL/DML",
+      "sha256": "9935b81fc45c1c710cca1421827b292e549e28d06059f96aa42ad9f2d8ab08bc"
+    },
+    {
+      "文件": "../../../../../../cases/postgres/manual/current/assets/interval.out",
+      "用途": "原始参考输出，不改写答案",
+      "sha256": "10ca5a973d20ced8a0af9e8836f48bcea1bf5286266b2e804146e5e3c27304bb"
+    },
+    {
+      "文件": "../../../../../../cases/postgres/manual/current/interval.yaml",
+      "用途": "首轮使用的源查询 YAML，直接使用原件",
+      "sha256": "3d211e55f01a53087e42b9227e23e8b2354a77317ded8bd6b203df06205b2ed3"
+    },
+    {
+      "文件": "../../../validation/interval/validation.json",
+      "用途": "首轮结构化结果，值样本最多五行",
+      "sha256": "8c489c2551b07efa516f42ac9a2a6fcfeb775422b5cb480fac11ef35107e0bdf"
+    },
+    {
+      "文件": "../../../validation/interval/validation.md",
+      "用途": "首轮可读报告原件",
+      "sha256": "59e06b0cc50ce61cdb672b8ab4b7eb41c5b23077a05538022d9e6e9b3786954f"
+    },
+    {
+      "文件": "../../../data-preparation/postgres-setup.sql",
+      "用途": "用户指定的准备脚本或数据依赖，仅引用不执行",
+      "sha256": "920645ec3722d8702493a9b9a089fc9acbb0c5e7cc458e3a4e6cc754bcf2f428"
+    },
+    {
+      "文件": "../../../data-preparation/doris-setup.sql",
+      "用途": "用户指定的准备脚本或数据依赖，仅引用不执行",
+      "sha256": "3b96e9598a8b538335281223b9d6a44bb4168572b94a9e7ef97eef99f0555d00"
+    },
+    {
+      "文件": "../../../data-preparation/data-preparation.md",
+      "用途": "外部数据准备报告原件；本工具不重新核验数据库",
+      "sha256": "9b43557e8dfd7981d6727d1554b39ea2098990053c8809143f0a87b4ce3b55e6"
+    }
+  ]
+}

@@ -1,0 +1,1896 @@
+{
+  "用途": "人工调用归因 Skill 的原文件引用索引；不复制、不调用 AI、不连接数据库",
+  "引用方式": "文件路径相对于本索引目录；始终使用原文件，不创建备份或改写 YAML",
+  "入口": {
+    "case_file": "../../../../../../cases/postgres/manual/current/expanded/rowtypes.yaml",
+    "report_file": "../../../validation/rowtypes/validation.json",
+    "source_file": "../../../../../../cases/postgres/manual/current/expanded/assets/rowtypes.sql",
+    "recorded_output_file": "../../../../../../cases/postgres/manual/current/expanded/assets/rowtypes.out",
+    "setup_files": [
+      "../../../data-preparation/postgres-setup.sql",
+      "../../../data-preparation/doris-setup.sql"
+    ],
+    "preparation_report": "../../../data-preparation/data-preparation.md"
+  },
+  "首轮运行查询数": 32,
+  "未在本轮运行的查询编号": [],
+  "待分析查询": [
+    {
+      "查询编号": "pg-rowtypes-0044-153503f5",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0045-b3ca0c4a",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0046-373d4941",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0047-0da17d46",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0048-ab817a17",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0049-cd764c59",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0050-69122409",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0051-41b122f6",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0052-73df2125",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0053-893efa67",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0056-a5163413",
+      "自动结果": "ERROR_BEHAVIOR_MISMATCH",
+      "中文解释": "两端均报错，但错误类别不同",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-rowtypes-0057-3b64a6c9",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0058-00c70f3a",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0059-297a6e5f",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0081-fd8cf4b8",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0082-7eda1c80",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0083-6d89aeb3",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-rowtypes-0084-de49d1be",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0085-aa5e0a97",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0086-dc4ce6ab",
+      "自动结果": "ERROR_BEHAVIOR_MISMATCH",
+      "中文解释": "两端均报错，但错误类别不同",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-rowtypes-0087-737fe762",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0088-123073fa",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0089-022f25a2",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0090-5a69e236",
+      "自动结果": "ERROR_BEHAVIOR_MISMATCH",
+      "中文解释": "两端均报错，但错误类别不同",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-rowtypes-0091-02456573",
+      "自动结果": "TRANSLATION_FAILED",
+      "中文解释": "SQLGlot 解析或生成失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0092-99426b72",
+      "自动结果": "TRANSLATION_FAILED",
+      "中文解释": "SQLGlot 解析或生成失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0093-43b5e991",
+      "自动结果": "TRANSLATION_FAILED",
+      "中文解释": "SQLGlot 解析或生成失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0184-d45ab09c",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0185-689f813d",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-rowtypes-0186-2c9f476e",
+      "自动结果": "ERROR_BEHAVIOR_MISMATCH",
+      "中文解释": "两端均报错，但错误类别不同",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-rowtypes-0187-ab8214fe",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-rowtypes-0217-9cfd1064",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    }
+  ],
+  "导入阶段诊断": [
+    {
+      "statement_index": 1,
+      "line_start": 1,
+      "line_end": 7,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 2,
+      "line_start": 9,
+      "line_end": 9,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 3,
+      "line_start": 11,
+      "line_end": 13,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 20,
+      "line_start": 41,
+      "line_end": 41,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 21,
+      "line_start": 43,
+      "line_end": 43,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 22,
+      "line_start": 44,
+      "line_end": 44,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 26,
+      "line_start": 52,
+      "line_end": 52,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 27,
+      "line_start": 54,
+      "line_end": 54,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 29,
+      "line_start": 58,
+      "line_end": 59,
+      "disposition": "skipped",
+      "statement_type": "alter",
+      "reason": "Expected one read-only Query, got Alter"
+    },
+    {
+      "statement_index": 30,
+      "line_start": 61,
+      "line_end": 62,
+      "disposition": "skipped",
+      "statement_type": "alter",
+      "reason": "Expected one read-only Query, got Alter"
+    },
+    {
+      "statement_index": 32,
+      "line_start": 66,
+      "line_end": 67,
+      "disposition": "skipped",
+      "statement_type": "update",
+      "reason": "Expected one read-only Query, got Update"
+    },
+    {
+      "statement_index": 34,
+      "line_start": 71,
+      "line_end": 71,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expecting ). Line 1, Col: 29.\n  insert into quadtable (f1, q\u001b[4m.\u001b[0mc1.r, q.c2.i) values(44,55,66);\n\nInvalid expression / Unexpected token. Line 1, Col: 29.\n  insert into quadtable (f1, q\u001b[4m.\u001b[0mc1.r, q.c2.i) values(44,55,66);"
+    },
+    {
+      "statement_index": 35,
+      "line_start": 73,
+      "line_end": 73,
+      "disposition": "skipped",
+      "statement_type": "update",
+      "reason": "Expected one read-only Query, got Update"
+    },
+    {
+      "statement_index": 36,
+      "line_start": 75,
+      "line_end": 75,
+      "disposition": "skipped",
+      "statement_type": "update",
+      "reason": "Expected one read-only Query, got Update"
+    },
+    {
+      "statement_index": 38,
+      "line_start": 79,
+      "line_end": 83,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 39,
+      "line_start": 84,
+      "line_end": 84,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 40,
+      "line_start": 86,
+      "line_end": 86,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 42,
+      "line_start": 90,
+      "line_end": 91,
+      "disposition": "skipped",
+      "statement_type": "update",
+      "reason": "Expected one read-only Query, got Update"
+    },
+    {
+      "statement_index": 54,
+      "line_start": 111,
+      "line_end": 113,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.RegexpLike'>. Line 1, Col: 27.\n  select ROW('ABC','DEF') ~\u001b[4m<=\u001b[0m~ ROW('DEF','ABC') as true;"
+    },
+    {
+      "statement_index": 55,
+      "line_start": 114,
+      "line_end": 114,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.RegexpLike'>. Line 1, Col: 27.\n  select ROW('ABC','DEF') ~\u001b[4m>=\u001b[0m~ ROW('DEF','ABC') as false;"
+    },
+    {
+      "statement_index": 61,
+      "line_start": 128,
+      "line_end": 132,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 63,
+      "line_start": 138,
+      "line_end": 141,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 65,
+      "line_start": 147,
+      "line_end": 150,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 67,
+      "line_start": 156,
+      "line_end": 159,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 69,
+      "line_start": 165,
+      "line_end": 166,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 70,
+      "line_start": 167,
+      "line_end": 167,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 71,
+      "line_start": 168,
+      "line_end": 168,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 72,
+      "line_start": 169,
+      "line_end": 169,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 73,
+      "line_start": 170,
+      "line_end": 170,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 74,
+      "line_start": 171,
+      "line_end": 171,
+      "disposition": "skipped",
+      "statement_type": "set",
+      "reason": "Expected one read-only Query, got Set"
+    },
+    {
+      "statement_index": 75,
+      "line_start": 173,
+      "line_end": 174,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 77,
+      "line_start": 178,
+      "line_end": 178,
+      "disposition": "skipped",
+      "statement_type": "reset",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 79,
+      "line_start": 181,
+      "line_end": 185,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 94,
+      "line_start": 211,
+      "line_end": 212,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 95,
+      "line_start": 213,
+      "line_end": 213,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 96,
+      "line_start": 214,
+      "line_end": 214,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 97,
+      "line_start": 215,
+      "line_end": 215,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 99,
+      "line_start": 216,
+      "line_end": 222,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 113,
+      "line_start": 243,
+      "line_end": 244,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 116,
+      "line_start": 247,
+      "line_end": 247,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 119,
+      "line_start": 251,
+      "line_end": 252,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 122,
+      "line_start": 256,
+      "line_end": 256,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Invalid expression / Unexpected token. Line 1, Col: 20.\n  drop type testtype1\u001b[4m,\u001b[0m testtype3, testtype5, testtype6;"
+    },
+    {
+      "statement_index": 123,
+      "line_start": 258,
+      "line_end": 262,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 124,
+      "line_start": 264,
+      "line_end": 265,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 30.\n  select row(1, 2)::testtype1 *\u001b[4m<\u001b[0m row(1, 3)::testtype1;"
+    },
+    {
+      "statement_index": 125,
+      "line_start": 266,
+      "line_end": 266,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 31.\n  select row(1, 2)::testtype1 *\u001b[4m<=\u001b[0m row(1, 3)::testtype1;"
+    },
+    {
+      "statement_index": 126,
+      "line_start": 267,
+      "line_end": 267,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 30.\n  select row(1, 2)::testtype1 *\u001b[4m=\u001b[0m row(1, 2)::testtype1;"
+    },
+    {
+      "statement_index": 127,
+      "line_start": 268,
+      "line_end": 268,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 31.\n  select row(1, 2)::testtype1 *\u001b[4m<>\u001b[0m row(1, 3)::testtype1;"
+    },
+    {
+      "statement_index": 128,
+      "line_start": 269,
+      "line_end": 269,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 31.\n  select row(1, 3)::testtype1 *\u001b[4m>=\u001b[0m row(1, 2)::testtype1;"
+    },
+    {
+      "statement_index": 129,
+      "line_start": 270,
+      "line_end": 270,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 30.\n  select row(1, 3)::testtype1 *\u001b[4m>\u001b[0m row(1, 2)::testtype1;"
+    },
+    {
+      "statement_index": 130,
+      "line_start": 272,
+      "line_end": 273,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 31.\n  select row(1, -2)::testtype1 *\u001b[4m<\u001b[0m row(1, -3)::testtype1;"
+    },
+    {
+      "statement_index": 131,
+      "line_start": 274,
+      "line_end": 274,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 32.\n  select row(1, -2)::testtype1 *\u001b[4m<=\u001b[0m row(1, -3)::testtype1;"
+    },
+    {
+      "statement_index": 132,
+      "line_start": 275,
+      "line_end": 275,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 31.\n  select row(1, -2)::testtype1 *\u001b[4m=\u001b[0m row(1, -3)::testtype1;"
+    },
+    {
+      "statement_index": 133,
+      "line_start": 276,
+      "line_end": 276,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 32.\n  select row(1, -2)::testtype1 *\u001b[4m<>\u001b[0m row(1, -2)::testtype1;"
+    },
+    {
+      "statement_index": 134,
+      "line_start": 277,
+      "line_end": 277,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 32.\n  select row(1, -3)::testtype1 *\u001b[4m>=\u001b[0m row(1, -2)::testtype1;"
+    },
+    {
+      "statement_index": 135,
+      "line_start": 278,
+      "line_end": 278,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 31.\n  select row(1, -3)::testtype1 *\u001b[4m>\u001b[0m row(1, -2)::testtype1;"
+    },
+    {
+      "statement_index": 136,
+      "line_start": 280,
+      "line_end": 282,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 31.\n  select row(1, -2)::testtype1 *\u001b[4m<\u001b[0m row(1, 3)::testtype1;"
+    },
+    {
+      "statement_index": 137,
+      "line_start": 284,
+      "line_end": 285,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 138,
+      "line_start": 285,
+      "line_end": 286,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 33.\n  select row(1, true)::testtype2 *\u001b[4m<\u001b[0m row(2, true)::testtype2;"
+    },
+    {
+      "statement_index": 139,
+      "line_start": 287,
+      "line_end": 287,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 34.\n  select row(-2, true)::testtype2 *\u001b[4m<\u001b[0m row(-1, true)::testtype2;"
+    },
+    {
+      "statement_index": 140,
+      "line_start": 288,
+      "line_end": 288,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 34.\n  select row(0, false)::testtype2 *\u001b[4m<\u001b[0m row(0, true)::testtype2;"
+    },
+    {
+      "statement_index": 141,
+      "line_start": 289,
+      "line_end": 289,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 35.\n  select row(0, false)::testtype2 *\u001b[4m<>\u001b[0m row(0, true)::testtype2;"
+    },
+    {
+      "statement_index": 142,
+      "line_start": 291,
+      "line_end": 291,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 143,
+      "line_start": 291,
+      "line_end": 292,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 34.\n  select row(1, 'abc')::testtype3 *\u001b[4m<\u001b[0m row(1, 'abd')::testtype3;"
+    },
+    {
+      "statement_index": 144,
+      "line_start": 293,
+      "line_end": 293,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 34.\n  select row(1, 'abc')::testtype3 *\u001b[4m<\u001b[0m row(1, 'abcd')::testtype3;"
+    },
+    {
+      "statement_index": 145,
+      "line_start": 294,
+      "line_end": 294,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 34.\n  select row(1, 'abc')::testtype3 *\u001b[4m>\u001b[0m row(1, 'abd')::testtype3;"
+    },
+    {
+      "statement_index": 146,
+      "line_start": 295,
+      "line_end": 295,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 35.\n  select row(1, 'abc')::testtype3 *\u001b[4m<>\u001b[0m row(1, 'abd')::testtype3;"
+    },
+    {
+      "statement_index": 147,
+      "line_start": 297,
+      "line_end": 297,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 148,
+      "line_start": 297,
+      "line_end": 298,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 36.\n  select row(1, '(1,2)')::testtype4 *\u001b[4m<\u001b[0m row(1, '(1,3)')::testtype4;"
+    },
+    {
+      "statement_index": 149,
+      "line_start": 299,
+      "line_end": 299,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 37.\n  select row(1, '(1,2)')::testtype4 *\u001b[4m<>\u001b[0m row(1, '(1,3)')::testtype4;"
+    },
+    {
+      "statement_index": 150,
+      "line_start": 301,
+      "line_end": 302,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 30.\n  select row(1, 2)::testtype1 *\u001b[4m<\u001b[0m row(1, 'abc')::testtype3;"
+    },
+    {
+      "statement_index": 151,
+      "line_start": 303,
+      "line_end": 303,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 31.\n  select row(1, 2)::testtype1 *\u001b[4m<>\u001b[0m row(1, 'abc')::testtype3;"
+    },
+    {
+      "statement_index": 152,
+      "line_start": 304,
+      "line_end": 304,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 153,
+      "line_start": 305,
+      "line_end": 305,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 30.\n  select row(1, 2)::testtype1 *\u001b[4m<\u001b[0m row(1)::testtype5;"
+    },
+    {
+      "statement_index": 154,
+      "line_start": 306,
+      "line_end": 306,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 31.\n  select row(1, 2)::testtype1 *\u001b[4m<>\u001b[0m row(1)::testtype5;"
+    },
+    {
+      "statement_index": 155,
+      "line_start": 308,
+      "line_end": 309,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 156,
+      "line_start": 310,
+      "line_end": 310,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 36.\n  select row(1, '(1,2)')::testtype6 *\u001b[4m<\u001b[0m row(1, '(1,3)')::testtype6;"
+    },
+    {
+      "statement_index": 157,
+      "line_start": 311,
+      "line_end": 311,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 37.\n  select row(1, '(1,2)')::testtype6 *\u001b[4m>=\u001b[0m row(1, '(1,3)')::testtype6;"
+    },
+    {
+      "statement_index": 158,
+      "line_start": 312,
+      "line_end": 312,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Required keyword: 'expression' missing for <class 'sqlglot.expressions.core.Mul'>. Line 1, Col: 37.\n  select row(1, '(1,2)')::testtype6 *\u001b[4m<>\u001b[0m row(1, '(1,3)')::testtype6;"
+    },
+    {
+      "statement_index": 160,
+      "line_start": 320,
+      "line_end": 320,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Invalid expression / Unexpected token. Line 1, Col: 20.\n  drop type testtype1\u001b[4m,\u001b[0m testtype2, testtype3, testtype4, testtype5, testtype6;"
+    },
+    {
+      "statement_index": 161,
+      "line_start": 323,
+      "line_end": 327,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Expected one read-only Query, got Transaction"
+    },
+    {
+      "statement_index": 162,
+      "line_start": 329,
+      "line_end": 333,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 163,
+      "line_start": 335,
+      "line_end": 338,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 164,
+      "line_start": 340,
+      "line_end": 342,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 165,
+      "line_start": 344,
+      "line_end": 346,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 166,
+      "line_start": 348,
+      "line_end": 350,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 167,
+      "line_start": 352,
+      "line_end": 352,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 168,
+      "line_start": 354,
+      "line_end": 357,
+      "disposition": "skipped",
+      "statement_type": "update",
+      "reason": "Expected one read-only Query, got Update"
+    },
+    {
+      "statement_index": 170,
+      "line_start": 361,
+      "line_end": 361,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Expected one read-only Query, got Rollback"
+    },
+    {
+      "statement_index": 171,
+      "line_start": 363,
+      "line_end": 368,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 172,
+      "line_start": 370,
+      "line_end": 372,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 173,
+      "line_start": 374,
+      "line_end": 376,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 174,
+      "line_start": 378,
+      "line_end": 380,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 175,
+      "line_start": 382,
+      "line_end": 384,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 188,
+      "line_start": 404,
+      "line_end": 409,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 191,
+      "line_start": 414,
+      "line_end": 415,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 194,
+      "line_start": 420,
+      "line_end": 421,
+      "disposition": "skipped",
+      "statement_type": "alter",
+      "reason": "Expected one read-only Query, got Alter"
+    },
+    {
+      "statement_index": 205,
+      "line_start": 449,
+      "line_end": 452,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 209,
+      "line_start": 463,
+      "line_end": 463,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 210,
+      "line_start": 464,
+      "line_end": 464,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 211,
+      "line_start": 465,
+      "line_end": 465,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 213,
+      "line_start": 468,
+      "line_end": 469,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 214,
+      "line_start": 470,
+      "line_end": 470,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 216,
+      "line_start": 473,
+      "line_end": 480,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 218,
+      "line_start": 486,
+      "line_end": 490,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 220,
+      "line_start": 497,
+      "line_end": 505,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 222,
+      "line_start": 513,
+      "line_end": 519,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 224,
+      "line_start": 521,
+      "line_end": 521,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 225,
+      "line_start": 523,
+      "line_end": 528,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 226,
+      "line_start": 529,
+      "line_end": 532,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 227,
+      "line_start": 534,
+      "line_end": 537,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 228,
+      "line_start": 538,
+      "line_end": 542,
+      "disposition": "skipped",
+      "statement_type": "explain",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 229,
+      "line_start": 544,
+      "line_end": 547,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 230,
+      "line_start": 548,
+      "line_end": 548,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 237,
+      "line_start": 564,
+      "line_end": 564,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 4,
+      "line_start": 15,
+      "line_end": 17,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 5,
+      "line_start": 19,
+      "line_end": 19,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 6,
+      "line_start": 21,
+      "line_end": 21,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 7,
+      "line_start": 23,
+      "line_end": 23,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 8,
+      "line_start": 25,
+      "line_end": 25,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 9,
+      "line_start": 27,
+      "line_end": 27,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 10,
+      "line_start": 27,
+      "line_end": 28,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 11,
+      "line_start": 28,
+      "line_end": 29,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 12,
+      "line_start": 29,
+      "line_end": 30,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 13,
+      "line_start": 30,
+      "line_end": 31,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 14,
+      "line_start": 31,
+      "line_end": 32,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 15,
+      "line_start": 32,
+      "line_end": 35,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "字符串参数引用了原脚本创建的对象；本次未准备该对象"
+    },
+    {
+      "statement_index": 16,
+      "line_start": 36,
+      "line_end": 36,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "字符串参数引用了原脚本创建的对象；本次未准备该对象"
+    },
+    {
+      "statement_index": 17,
+      "line_start": 37,
+      "line_end": 37,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "字符串参数引用了原脚本创建的对象；本次未准备该对象"
+    },
+    {
+      "statement_index": 18,
+      "line_start": 38,
+      "line_end": 38,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 19,
+      "line_start": 39,
+      "line_end": 39,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 23,
+      "line_start": 46,
+      "line_end": 46,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 24,
+      "line_start": 48,
+      "line_end": 48,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 25,
+      "line_start": 48,
+      "line_end": 50,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 28,
+      "line_start": 56,
+      "line_end": 56,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 31,
+      "line_start": 64,
+      "line_end": 64,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 33,
+      "line_start": 69,
+      "line_end": 69,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 37,
+      "line_start": 75,
+      "line_end": 77,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 41,
+      "line_start": 88,
+      "line_end": 88,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 43,
+      "line_start": 93,
+      "line_end": 93,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 60,
+      "line_start": 122,
+      "line_end": 126,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 62,
+      "line_start": 134,
+      "line_end": 136,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 64,
+      "line_start": 143,
+      "line_end": 145,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 66,
+      "line_start": 152,
+      "line_end": 154,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 68,
+      "line_start": 161,
+      "line_end": 163,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 76,
+      "line_start": 176,
+      "line_end": 176,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 78,
+      "line_start": 180,
+      "line_end": 181,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 80,
+      "line_start": 187,
+      "line_end": 188,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 98,
+      "line_start": 216,
+      "line_end": 216,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 100,
+      "line_start": 224,
+      "line_end": 225,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 101,
+      "line_start": 226,
+      "line_end": 226,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 102,
+      "line_start": 227,
+      "line_end": 227,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 103,
+      "line_start": 228,
+      "line_end": 228,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 104,
+      "line_start": 229,
+      "line_end": 229,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 105,
+      "line_start": 230,
+      "line_end": 230,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 106,
+      "line_start": 232,
+      "line_end": 233,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 107,
+      "line_start": 234,
+      "line_end": 234,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 108,
+      "line_start": 235,
+      "line_end": 235,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 109,
+      "line_start": 236,
+      "line_end": 236,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 110,
+      "line_start": 237,
+      "line_end": 237,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 111,
+      "line_start": 238,
+      "line_end": 238,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 112,
+      "line_start": 240,
+      "line_end": 241,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 114,
+      "line_start": 245,
+      "line_end": 245,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 115,
+      "line_start": 246,
+      "line_end": 246,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 117,
+      "line_start": 248,
+      "line_end": 248,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 118,
+      "line_start": 249,
+      "line_end": 249,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 120,
+      "line_start": 253,
+      "line_end": 253,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 121,
+      "line_start": 254,
+      "line_end": 254,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 159,
+      "line_start": 314,
+      "line_end": 318,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 169,
+      "line_start": 359,
+      "line_end": 359,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 176,
+      "line_start": 386,
+      "line_end": 386,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖自定义/无法确认的函数或构造器：fcompos1；本次不安装 UDF"
+    },
+    {
+      "statement_index": 177,
+      "line_start": 387,
+      "line_end": 387,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖自定义/无法确认的函数或构造器：fcompos2；本次不安装 UDF"
+    },
+    {
+      "statement_index": 178,
+      "line_start": 388,
+      "line_end": 388,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖自定义/无法确认的函数或构造器：fcompos3；本次不安装 UDF"
+    },
+    {
+      "statement_index": 179,
+      "line_start": 389,
+      "line_end": 389,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 180,
+      "line_start": 391,
+      "line_end": 396,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 181,
+      "line_start": 397,
+      "line_end": 397,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 182,
+      "line_start": 398,
+      "line_end": 398,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 183,
+      "line_start": 398,
+      "line_end": 399,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 189,
+      "line_start": 411,
+      "line_end": 411,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 190,
+      "line_start": 412,
+      "line_end": 412,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 192,
+      "line_start": 417,
+      "line_end": 417,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 193,
+      "line_start": 418,
+      "line_end": 418,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 195,
+      "line_start": 423,
+      "line_end": 423,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 196,
+      "line_start": 424,
+      "line_end": 424,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 197,
+      "line_start": 426,
+      "line_end": 431,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 198,
+      "line_start": 432,
+      "line_end": 433,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 199,
+      "line_start": 435,
+      "line_end": 437,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 200,
+      "line_start": 438,
+      "line_end": 439,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 201,
+      "line_start": 440,
+      "line_end": 441,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 202,
+      "line_start": 442,
+      "line_end": 443,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 203,
+      "line_start": 444,
+      "line_end": 445,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 204,
+      "line_start": 446,
+      "line_end": 447,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 206,
+      "line_start": 453,
+      "line_end": 455,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 207,
+      "line_start": 456,
+      "line_end": 458,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 208,
+      "line_start": 459,
+      "line_end": 461,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 212,
+      "line_start": 466,
+      "line_end": 466,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 215,
+      "line_start": 471,
+      "line_end": 471,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 219,
+      "line_start": 492,
+      "line_end": 495,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 221,
+      "line_start": 507,
+      "line_end": 511,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 223,
+      "line_start": 520,
+      "line_end": 520,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖源库对象或系统目录状态；本次未准备相应对象"
+    },
+    {
+      "statement_index": 231,
+      "line_start": 550,
+      "line_end": 551,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 232,
+      "line_start": 552,
+      "line_end": 553,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 233,
+      "line_start": 554,
+      "line_end": 555,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 234,
+      "line_start": 557,
+      "line_end": 558,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 235,
+      "line_start": 559,
+      "line_end": 560,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    },
+    {
+      "statement_index": 236,
+      "line_start": 561,
+      "line_end": 562,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖用户定义的类型、Domain、枚举或复合类型；本次未准备这些对象"
+    }
+  ],
+  "数据准备报告已提供": true,
+  "文件": [
+    {
+      "文件": "../../../../../../cases/postgres/manual/current/expanded/assets/rowtypes.sql",
+      "用途": "原始 PostgreSQL 完整脚本，不执行其中 DDL/DML",
+      "sha256": "b2ab6529278b567f30c06a9a73672a1749249ada2d624b920c8768b7198161ea"
+    },
+    {
+      "文件": "../../../../../../cases/postgres/manual/current/expanded/assets/rowtypes.out",
+      "用途": "原始参考输出，不改写答案",
+      "sha256": "c362dd7cec2b4e7588d94481da0eb996d11c5a50aeb1c879a7cd52f15e64fd6a"
+    },
+    {
+      "文件": "../../../../../../cases/postgres/manual/current/expanded/rowtypes.yaml",
+      "用途": "首轮使用的源查询 YAML，直接使用原件",
+      "sha256": "e79c1e8724c9eb1b70b75b90c2f1be4f619273279f01ae39420c52d80e3a8db9"
+    },
+    {
+      "文件": "../../../validation/rowtypes/validation.json",
+      "用途": "首轮结构化结果，值样本最多五行",
+      "sha256": "4437733e684fada42cd05d7b38c931d40a634ce24f86321b1851ad95849e90e6"
+    },
+    {
+      "文件": "../../../validation/rowtypes/validation.md",
+      "用途": "首轮可读报告原件",
+      "sha256": "9992d050e687c06e65d902331d7f599dcdb9091bf44d52aa5e0ee1c2a02e2d3c"
+    },
+    {
+      "文件": "../../../data-preparation/postgres-setup.sql",
+      "用途": "用户指定的准备脚本或数据依赖，仅引用不执行",
+      "sha256": "920645ec3722d8702493a9b9a089fc9acbb0c5e7cc458e3a4e6cc754bcf2f428"
+    },
+    {
+      "文件": "../../../data-preparation/doris-setup.sql",
+      "用途": "用户指定的准备脚本或数据依赖，仅引用不执行",
+      "sha256": "3b96e9598a8b538335281223b9d6a44bb4168572b94a9e7ef97eef99f0555d00"
+    },
+    {
+      "文件": "../../../data-preparation/data-preparation.md",
+      "用途": "外部数据准备报告原件；本工具不重新核验数据库",
+      "sha256": "9b43557e8dfd7981d6727d1554b39ea2098990053c8809143f0a87b4ce3b55e6"
+    }
+  ]
+}

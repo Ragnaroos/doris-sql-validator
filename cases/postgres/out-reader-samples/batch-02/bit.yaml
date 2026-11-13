@@ -1,0 +1,869 @@
+source:
+  dialect: postgres
+  engine: postgres
+target:
+  connection_profile: doris-local
+input:
+  format: pg-regress
+  file: assets/bit.sql
+  sha256: 123dfa0607c9d27b6d8aec7c6ccc90f39eacb65b09980f262709801d90b4eaba
+recorded_output:
+  format: pg-regress
+  file: assets/bit.out
+  sha256: 35d744ebbbf5cdb1910792ea944ef9b05c72a1641eeb97c30b88ecefefab65a4
+import_summary:
+  accepted: 95
+  skipped: 36
+  ambiguous: 0
+  errors: 1
+import_diagnostics:
+- statement_index: 1
+  line_start: 1
+  line_end: 9
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 2
+  line_start: 11
+  line_end: 11
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 3
+  line_start: 11
+  line_end: 12
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 4
+  line_start: 13
+  line_end: 13
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 5
+  line_start: 14
+  line_end: 14
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 6
+  line_start: 15
+  line_end: 15
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 8
+  line_start: 21
+  line_end: 21
+  disposition: skipped
+  statement_type: create
+  reason: "Expecting ). Line 1, Col: 39.\n  CREATE TABLE VARBIT_TABLE(v BIT \e[4mVARYING\e\
+    [0m(11));"
+- statement_index: 9
+  line_start: 23
+  line_end: 23
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 10
+  line_start: 24
+  line_end: 24
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 11
+  line_start: 25
+  line_end: 25
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 12
+  line_start: 26
+  line_end: 26
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 13
+  line_start: 27
+  line_end: 27
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 30
+  line_start: 69
+  line_end: 70
+  disposition: skipped
+  statement_type: drop
+  reason: Expected one read-only Query, got Drop
+- statement_index: 31
+  line_start: 71
+  line_end: 71
+  disposition: skipped
+  statement_type: create
+  reason: "Expecting ). Line 1, Col: 40.\n  CREATE TABLE varbit_table (a BIT \e[4mVARYING\e\
+    [0m(16), b BIT VARYING(16));"
+- statement_index: 32
+  line_start: 72
+  line_end: 72
+  disposition: skipped
+  statement_type: copy
+  reason: Expected one read-only Query, got Copy
+- statement_index: 36
+  line_start: 91
+  line_end: 91
+  disposition: skipped
+  statement_type: drop
+  reason: Expected one read-only Query, got Drop
+- statement_index: 37
+  line_start: 93
+  line_end: 94
+  disposition: skipped
+  statement_type: drop
+  reason: Expected one read-only Query, got Drop
+- statement_index: 38
+  line_start: 95
+  line_end: 95
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 39
+  line_start: 96
+  line_end: 96
+  disposition: skipped
+  statement_type: copy
+  reason: Expected one read-only Query, got Copy
+- statement_index: 43
+  line_start: 115
+  line_end: 115
+  disposition: skipped
+  statement_type: drop
+  reason: Expected one read-only Query, got Drop
+- statement_index: 85
+  line_start: 169
+  line_end: 174
+  disposition: skipped
+  statement_type: create
+  reason: Expected one read-only Query, got Create
+- statement_index: 86
+  line_start: 175
+  line_end: 175
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 87
+  line_start: 176
+  line_end: 176
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 88
+  line_start: 177
+  line_end: 177
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 89
+  line_start: 178
+  line_end: 178
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 90
+  line_start: 179
+  line_end: 179
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 96
+  line_start: 194
+  line_end: 194
+  disposition: skipped
+  statement_type: create
+  reason: "Expecting ). Line 1, Col: 45.\n  CREATE TABLE VARBIT_SHIFT_TABLE(v BIT\
+    \ \e[4mVARYING\e[0m(20));"
+- statement_index: 97
+  line_start: 195
+  line_end: 195
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 98
+  line_start: 196
+  line_end: 196
+  disposition: skipped
+  statement_type: insert
+  reason: "Invalid expression / Unexpected token. Line 1, Col: 68.\n  INSERT INTO\
+    \ VARBIT_SHIFT_TABLE SELECT CAST(v || B'0' AS BIT VARYING\e[4m(\e[0m6)) >>1 FROM\
+    \ VARBIT_SHIFT_TABLE;"
+- statement_index: 99
+  line_start: 197
+  line_end: 197
+  disposition: skipped
+  statement_type: insert
+  reason: "Invalid expression / Unexpected token. Line 1, Col: 69.\n  INSERT INTO\
+    \ VARBIT_SHIFT_TABLE SELECT CAST(v || B'00' AS BIT VARYING\e[4m(\e[0m8)) >>2 FROM\
+    \ VARBIT_SHIFT_TABLE;"
+- statement_index: 100
+  line_start: 198
+  line_end: 198
+  disposition: skipped
+  statement_type: insert
+  reason: "Invalid expression / Unexpected token. Line 1, Col: 71.\n  INSERT INTO\
+    \ VARBIT_SHIFT_TABLE SELECT CAST(v || B'0000' AS BIT VARYING\e[4m(\e[0m12)) >>4\
+    \ FROM VARBIT_SHIFT_TABLE;"
+- statement_index: 101
+  line_start: 199
+  line_end: 199
+  disposition: skipped
+  statement_type: insert
+  reason: "Invalid expression / Unexpected token. Line 1, Col: 75.\n  INSERT INTO\
+    \ VARBIT_SHIFT_TABLE SELECT CAST(v || B'00000000' AS BIT VARYING\e[4m(\e[0m20))\
+    \ >>8 FROM VARBIT_SHIFT_TABLE;"
+- statement_index: 105
+  line_start: 209
+  line_end: 209
+  disposition: skipped
+  statement_type: drop
+  reason: Expected one read-only Query, got Drop
+- statement_index: 106
+  line_start: 210
+  line_end: 210
+  disposition: skipped
+  statement_type: drop
+  reason: Expected one read-only Query, got Drop
+- statement_index: 120
+  line_start: 231
+  line_end: 237
+  disposition: skipped
+  statement_type: create
+  reason: "Expecting ). Line 4, Col: 16.\n  CREATE TABLE bit_defaults(\n  b1 bit(4)\
+    \ DEFAULT '1001',\n  b2 bit(4) DEFAULT B'0101',\n  b3 bit \e[4mvarying\e[0m(5)\
+    \ DEFAULT '1001',\n  b4 bit varying(5) DEFAULT B'0101'\n);"
+- statement_index: 121
+  line_start: 238
+  line_end: 239
+  disposition: skipped
+  statement_type: insert
+  reason: Expected one read-only Query, got Insert
+- statement_index: 122
+  line_start: 240
+  line_end: 240
+  disposition: error
+  statement_type: parse_error
+  reason: Expected one read-only Query, got Alias
+cases:
+- id: pg-bit-0007-f02ec9c6
+  statement_index: 7
+  line_start: 15
+  line_end: 19
+  output_occurrence: 1
+  sql: SELECT * FROM BIT_TABLE;
+- id: pg-bit-0014-e2c4bb66
+  statement_index: 14
+  line_start: 27
+  line_end: 30
+  output_occurrence: 1
+  sql: SELECT * FROM VARBIT_TABLE;
+- id: pg-bit-0015-ababd899
+  statement_index: 15
+  line_start: 32
+  line_end: 33
+  output_occurrence: 1
+  sql: SELECT b' 0';
+- id: pg-bit-0016-61bca181
+  statement_index: 16
+  line_start: 34
+  line_end: 34
+  output_occurrence: 1
+  sql: SELECT b'0 ';
+- id: pg-bit-0017-d071168a
+  statement_index: 17
+  line_start: 35
+  line_end: 35
+  output_occurrence: 1
+  sql: SELECT x' 0';
+- id: pg-bit-0018-8fbe6087
+  statement_index: 18
+  line_start: 36
+  line_end: 36
+  output_occurrence: 1
+  sql: SELECT x'0 ';
+- id: pg-bit-0019-37ea55d9
+  statement_index: 19
+  line_start: 38
+  line_end: 41
+  output_occurrence: 1
+  sql: |-
+    SELECT v, b, (v || b) AS concat
+           FROM BIT_TABLE, VARBIT_TABLE
+           ORDER BY 3;
+- id: pg-bit-0020-2ee962d5
+  statement_index: 20
+  line_start: 43
+  line_end: 45
+  output_occurrence: 1
+  sql: |-
+    SELECT b, length(b) AS lb
+           FROM BIT_TABLE;
+- id: pg-bit-0021-4b092a45
+  statement_index: 21
+  line_start: 46
+  line_end: 47
+  output_occurrence: 1
+  sql: |-
+    SELECT v, length(v) AS lv
+           FROM VARBIT_TABLE;
+- id: pg-bit-0022-fe88e1f0
+  statement_index: 22
+  line_start: 49
+  line_end: 54
+  output_occurrence: 1
+  sql: |-
+    SELECT b,
+           SUBSTRING(b FROM 2 FOR 4) AS sub_2_4,
+           SUBSTRING(b FROM 7 FOR 13) AS sub_7_13,
+           SUBSTRING(b FROM 6) AS sub_6
+           FROM BIT_TABLE;
+- id: pg-bit-0023-cf535357
+  statement_index: 23
+  line_start: 55
+  line_end: 59
+  output_occurrence: 1
+  sql: |-
+    SELECT v,
+           SUBSTRING(v FROM 2 FOR 4) AS sub_2_4,
+           SUBSTRING(v FROM 7 FOR 13) AS sub_7_13,
+           SUBSTRING(v FROM 6) AS sub_6
+           FROM VARBIT_TABLE;
+- id: pg-bit-0024-89958cf4
+  statement_index: 24
+  line_start: 61
+  line_end: 62
+  output_occurrence: 1
+  sql: SELECT SUBSTRING('01010101'::bit(8) FROM 2 FOR 2147483646) AS "1010101";
+- id: pg-bit-0025-6b3902a8
+  statement_index: 25
+  line_start: 63
+  line_end: 63
+  output_occurrence: 1
+  sql: SELECT SUBSTRING('01010101'::bit(8) FROM -10 FOR 2147483646) AS "01010101";
+- id: pg-bit-0026-af154103
+  statement_index: 26
+  line_start: 64
+  line_end: 64
+  output_occurrence: 1
+  sql: SELECT SUBSTRING('01010101'::bit(8) FROM -10 FOR -2147483646) AS "error";
+- id: pg-bit-0027-4022b05e
+  statement_index: 27
+  line_start: 65
+  line_end: 65
+  output_occurrence: 1
+  sql: SELECT SUBSTRING('01010101'::varbit FROM 2 FOR 2147483646) AS "1010101";
+- id: pg-bit-0028-c8ab843a
+  statement_index: 28
+  line_start: 66
+  line_end: 66
+  output_occurrence: 1
+  sql: SELECT SUBSTRING('01010101'::varbit FROM -10 FOR 2147483646) AS "01010101";
+- id: pg-bit-0029-81307df3
+  statement_index: 29
+  line_start: 67
+  line_end: 67
+  output_occurrence: 1
+  sql: SELECT SUBSTRING('01010101'::varbit FROM -10 FOR -2147483646) AS "error";
+- id: pg-bit-0033-9f852f18
+  statement_index: 33
+  line_start: 73
+  line_end: 86
+  output_occurrence: 1
+  sql: |-
+    SELECT a, b, ~a AS "~ a", a & b AS "a & b",
+           a | b AS "a | b", a # b AS "a # b" FROM varbit_table;
+- id: pg-bit-0034-5ed87cac
+  statement_index: 34
+  line_start: 87
+  line_end: 88
+  output_occurrence: 1
+  sql: |-
+    SELECT a,b,a<b AS "a<b",a<=b AS "a<=b",a=b AS "a=b",
+            a>=b AS "a>=b",a>b AS "a>b",a<>b AS "a<>b" FROM varbit_table;
+- id: pg-bit-0035-72106b4a
+  statement_index: 35
+  line_start: 89
+  line_end: 89
+  output_occurrence: 1
+  sql: SELECT a,a<<4 AS "a<<4",b,b>>2 AS "b>>2" FROM varbit_table;
+- id: pg-bit-0040-8eadbdff
+  statement_index: 40
+  line_start: 97
+  line_end: 110
+  output_occurrence: 1
+  sql: "SELECT a,b,~a AS \"~ a\",a & b AS \"a & b\",\n\ta|b AS \"a | b\", a # b AS\
+    \ \"a # b\" FROM bit_table;"
+- id: pg-bit-0041-0d347ce5
+  statement_index: 41
+  line_start: 111
+  line_end: 112
+  output_occurrence: 1
+  sql: |-
+    SELECT a,b,a<b AS "a<b",a<=b AS "a<=b",a=b AS "a=b",
+            a>=b AS "a>=b",a>b AS "a>b",a<>b AS "a<>b" FROM bit_table;
+- id: pg-bit-0042-112e1be7
+  statement_index: 42
+  line_start: 113
+  line_end: 113
+  output_occurrence: 1
+  sql: SELECT a,a<<4 AS "a<<4",b,b>>2 AS "b>>2" FROM bit_table;
+- id: pg-bit-0044-e16f06ff
+  statement_index: 44
+  line_start: 118
+  line_end: 119
+  output_occurrence: 1
+  sql: select B'001' & B'10';
+- id: pg-bit-0045-1ef7e230
+  statement_index: 45
+  line_start: 120
+  line_end: 120
+  output_occurrence: 1
+  sql: select B'0111' | B'011';
+- id: pg-bit-0046-479ef11f
+  statement_index: 46
+  line_start: 121
+  line_end: 121
+  output_occurrence: 1
+  sql: 'select B''0010'' # B''011101'';'
+- id: pg-bit-0047-301a8e99
+  statement_index: 47
+  line_start: 123
+  line_end: 124
+  output_occurrence: 1
+  sql: SELECT POSITION(B'1010' IN B'0000101');
+- id: pg-bit-0048-caf7f5b8
+  statement_index: 48
+  line_start: 124
+  line_end: 125
+  output_occurrence: 1
+  sql: SELECT POSITION(B'1010' IN B'00001010');
+- id: pg-bit-0049-595c054b
+  statement_index: 49
+  line_start: 125
+  line_end: 126
+  output_occurrence: 1
+  sql: SELECT POSITION(B'1010' IN B'00000101');
+- id: pg-bit-0050-bb4bcf7c
+  statement_index: 50
+  line_start: 126
+  line_end: 127
+  output_occurrence: 1
+  sql: SELECT POSITION(B'1010' IN B'000001010');
+- id: pg-bit-0051-3a142de9
+  statement_index: 51
+  line_start: 127
+  line_end: 129
+  output_occurrence: 1
+  sql: SELECT POSITION(B'' IN B'00001010');
+- id: pg-bit-0052-00592fea
+  statement_index: 52
+  line_start: 129
+  line_end: 130
+  output_occurrence: 1
+  sql: SELECT POSITION(B'0' IN B'');
+- id: pg-bit-0053-42e1d4df
+  statement_index: 53
+  line_start: 130
+  line_end: 131
+  output_occurrence: 1
+  sql: SELECT POSITION(B'' IN B'');
+- id: pg-bit-0054-1ecd298b
+  statement_index: 54
+  line_start: 131
+  line_end: 132
+  output_occurrence: 1
+  sql: SELECT POSITION(B'101101' IN B'001011011011011000');
+- id: pg-bit-0055-2846a24a
+  statement_index: 55
+  line_start: 132
+  line_end: 133
+  output_occurrence: 1
+  sql: SELECT POSITION(B'10110110' IN B'001011011011010');
+- id: pg-bit-0056-fcfbadfd
+  statement_index: 56
+  line_start: 133
+  line_end: 134
+  output_occurrence: 1
+  sql: SELECT POSITION(B'1011011011011' IN B'001011011011011');
+- id: pg-bit-0057-93be16f6
+  statement_index: 57
+  line_start: 134
+  line_end: 135
+  output_occurrence: 1
+  sql: SELECT POSITION(B'1011011011011' IN B'00001011011011011');
+- id: pg-bit-0058-30959611
+  statement_index: 58
+  line_start: 135
+  line_end: 137
+  output_occurrence: 1
+  sql: SELECT POSITION(B'11101011' IN B'11101011');
+- id: pg-bit-0059-58faa847
+  statement_index: 59
+  line_start: 137
+  line_end: 138
+  output_occurrence: 1
+  sql: SELECT POSITION(B'11101011' IN B'011101011');
+- id: pg-bit-0060-92ceb8e3
+  statement_index: 60
+  line_start: 138
+  line_end: 139
+  output_occurrence: 1
+  sql: SELECT POSITION(B'11101011' IN B'00011101011');
+- id: pg-bit-0061-97441cec
+  statement_index: 61
+  line_start: 139
+  line_end: 140
+  output_occurrence: 1
+  sql: SELECT POSITION(B'11101011' IN B'0000011101011');
+- id: pg-bit-0062-d1d81002
+  statement_index: 62
+  line_start: 140
+  line_end: 142
+  output_occurrence: 1
+  sql: SELECT POSITION(B'111010110' IN B'111010110');
+- id: pg-bit-0063-70bb2d0f
+  statement_index: 63
+  line_start: 142
+  line_end: 143
+  output_occurrence: 1
+  sql: SELECT POSITION(B'111010110' IN B'0111010110');
+- id: pg-bit-0064-cb7ca512
+  statement_index: 64
+  line_start: 143
+  line_end: 144
+  output_occurrence: 1
+  sql: SELECT POSITION(B'111010110' IN B'000111010110');
+- id: pg-bit-0065-064bcc08
+  statement_index: 65
+  line_start: 144
+  line_end: 145
+  output_occurrence: 1
+  sql: SELECT POSITION(B'111010110' IN B'00000111010110');
+- id: pg-bit-0066-6b7cee3e
+  statement_index: 66
+  line_start: 145
+  line_end: 147
+  output_occurrence: 1
+  sql: SELECT POSITION(B'111010110' IN B'11101011');
+- id: pg-bit-0067-0f374bcc
+  statement_index: 67
+  line_start: 147
+  line_end: 148
+  output_occurrence: 1
+  sql: SELECT POSITION(B'111010110' IN B'011101011');
+- id: pg-bit-0068-d261399c
+  statement_index: 68
+  line_start: 148
+  line_end: 149
+  output_occurrence: 1
+  sql: SELECT POSITION(B'111010110' IN B'00011101011');
+- id: pg-bit-0069-dba0b492
+  statement_index: 69
+  line_start: 149
+  line_end: 150
+  output_occurrence: 1
+  sql: SELECT POSITION(B'111010110' IN B'0000011101011');
+- id: pg-bit-0070-d1d81002
+  statement_index: 70
+  line_start: 150
+  line_end: 152
+  output_occurrence: 2
+  sql: SELECT POSITION(B'111010110' IN B'111010110');
+- id: pg-bit-0071-70bb2d0f
+  statement_index: 71
+  line_start: 152
+  line_end: 153
+  output_occurrence: 2
+  sql: SELECT POSITION(B'111010110' IN B'0111010110');
+- id: pg-bit-0072-cb7ca512
+  statement_index: 72
+  line_start: 153
+  line_end: 154
+  output_occurrence: 2
+  sql: SELECT POSITION(B'111010110' IN B'000111010110');
+- id: pg-bit-0073-064bcc08
+  statement_index: 73
+  line_start: 154
+  line_end: 155
+  output_occurrence: 2
+  sql: SELECT POSITION(B'111010110' IN B'00000111010110');
+- id: pg-bit-0074-d546974c
+  statement_index: 74
+  line_start: 155
+  line_end: 157
+  output_occurrence: 1
+  sql: SELECT POSITION(B'111010110' IN B'000001110101111101011');
+- id: pg-bit-0075-7a835daf
+  statement_index: 75
+  line_start: 157
+  line_end: 158
+  output_occurrence: 1
+  sql: SELECT POSITION(B'111010110' IN B'0000001110101111101011');
+- id: pg-bit-0076-14193951
+  statement_index: 76
+  line_start: 158
+  line_end: 159
+  output_occurrence: 1
+  sql: SELECT POSITION(B'111010110' IN B'000000001110101111101011');
+- id: pg-bit-0077-dfb6069c
+  statement_index: 77
+  line_start: 159
+  line_end: 160
+  output_occurrence: 1
+  sql: SELECT POSITION(B'111010110' IN B'00000000001110101111101011');
+- id: pg-bit-0078-217a86de
+  statement_index: 78
+  line_start: 160
+  line_end: 162
+  output_occurrence: 1
+  sql: SELECT POSITION(B'111010110' IN B'0000011101011111010110');
+- id: pg-bit-0079-09b22e90
+  statement_index: 79
+  line_start: 162
+  line_end: 163
+  output_occurrence: 1
+  sql: SELECT POSITION(B'111010110' IN B'00000011101011111010110');
+- id: pg-bit-0080-552fd82c
+  statement_index: 80
+  line_start: 163
+  line_end: 164
+  output_occurrence: 1
+  sql: SELECT POSITION(B'111010110' IN B'0000000011101011111010110');
+- id: pg-bit-0081-ac8b2e03
+  statement_index: 81
+  line_start: 164
+  line_end: 165
+  output_occurrence: 1
+  sql: SELECT POSITION(B'111010110' IN B'000000000011101011111010110');
+- id: pg-bit-0082-21fef106
+  statement_index: 82
+  line_start: 165
+  line_end: 167
+  output_occurrence: 1
+  sql: SELECT POSITION(B'000000000011101011111010110' IN B'000000000011101011111010110');
+- id: pg-bit-0083-8313870d
+  statement_index: 83
+  line_start: 167
+  line_end: 168
+  output_occurrence: 1
+  sql: SELECT POSITION(B'00000000011101011111010110' IN B'000000000011101011111010110');
+- id: pg-bit-0084-e9975bc6
+  statement_index: 84
+  line_start: 168
+  line_end: 169
+  output_occurrence: 1
+  sql: SELECT POSITION(B'0000000000011101011111010110' IN B'000000000011101011111010110');
+- id: pg-bit-0091-188fef23
+  statement_index: 91
+  line_start: 180
+  line_end: 183
+  output_occurrence: 1
+  sql: |-
+    SELECT POSITION(B'1101' IN b),
+           POSITION(B'11011' IN b),
+           b
+           FROM BIT_SHIFT_TABLE ;
+- id: pg-bit-0092-0c362668
+  statement_index: 92
+  line_start: 184
+  line_end: 185
+  output_occurrence: 1
+  sql: |-
+    SELECT b, b >> 1 AS bsr, b << 1 AS bsl
+           FROM BIT_SHIFT_TABLE ;
+- id: pg-bit-0093-f4c10e2c
+  statement_index: 93
+  line_start: 186
+  line_end: 187
+  output_occurrence: 1
+  sql: |-
+    SELECT b, b >> 8 AS bsr8, b << 8 AS bsl8
+           FROM BIT_SHIFT_TABLE ;
+- id: pg-bit-0094-363a98d0
+  statement_index: 94
+  line_start: 188
+  line_end: 189
+  output_occurrence: 1
+  sql: |-
+    SELECT b::bit(15), b::bit(15) >> 1 AS bsr, b::bit(15) << 1 AS bsl
+           FROM BIT_SHIFT_TABLE ;
+- id: pg-bit-0095-f2417ea8
+  statement_index: 95
+  line_start: 190
+  line_end: 191
+  output_occurrence: 1
+  sql: |-
+    SELECT b::bit(15), b::bit(15) >> 8 AS bsr8, b::bit(15) << 8 AS bsl8
+           FROM BIT_SHIFT_TABLE ;
+- id: pg-bit-0102-1494ea8e
+  statement_index: 102
+  line_start: 200
+  line_end: 203
+  output_occurrence: 1
+  sql: |-
+    SELECT POSITION(B'1101' IN v),
+           POSITION(B'11011' IN v),
+           v
+           FROM VARBIT_SHIFT_TABLE ;
+- id: pg-bit-0103-5c1a6c2d
+  statement_index: 103
+  line_start: 204
+  line_end: 205
+  output_occurrence: 1
+  sql: |-
+    SELECT v, v >> 1 AS vsr, v << 1 AS vsl
+           FROM VARBIT_SHIFT_TABLE ;
+- id: pg-bit-0104-1ac4a44e
+  statement_index: 104
+  line_start: 206
+  line_end: 207
+  output_occurrence: 1
+  sql: |-
+    SELECT v, v >> 8 AS vsr8, v << 8 AS vsl8
+           FROM VARBIT_SHIFT_TABLE ;
+- id: pg-bit-0107-124a125e
+  statement_index: 107
+  line_start: 212
+  line_end: 213
+  output_occurrence: 1
+  sql: SELECT get_bit(B'0101011000100', 10);
+- id: pg-bit-0108-73e11c02
+  statement_index: 108
+  line_start: 214
+  line_end: 214
+  output_occurrence: 1
+  sql: SELECT set_bit(B'0101011000100100', 15, 1);
+- id: pg-bit-0109-73f2b61f
+  statement_index: 109
+  line_start: 215
+  line_end: 215
+  output_occurrence: 1
+  sql: SELECT set_bit(B'0101011000100100', 16, 1);
+- id: pg-bit-0110-6542d715
+  statement_index: 110
+  line_start: 215
+  line_end: 218
+  output_occurrence: 1
+  sql: SELECT overlay(B'0101011100' placing '001' from 2 for 3);
+- id: pg-bit-0111-0e365504
+  statement_index: 111
+  line_start: 219
+  line_end: 219
+  output_occurrence: 1
+  sql: SELECT overlay(B'0101011100' placing '101' from 6);
+- id: pg-bit-0112-f46cc6df
+  statement_index: 112
+  line_start: 220
+  line_end: 220
+  output_occurrence: 1
+  sql: SELECT overlay(B'0101011100' placing '001' from 11);
+- id: pg-bit-0113-3453faf6
+  statement_index: 113
+  line_start: 221
+  line_end: 221
+  output_occurrence: 1
+  sql: SELECT overlay(B'0101011100' placing '001' from 20);
+- id: pg-bit-0114-941c9a67
+  statement_index: 114
+  line_start: 223
+  line_end: 224
+  output_occurrence: 1
+  sql: SELECT bit_count(B'0101011100'::bit(10));
+- id: pg-bit-0115-f2a0ef80
+  statement_index: 115
+  line_start: 225
+  line_end: 225
+  output_occurrence: 1
+  sql: SELECT bit_count(B'1111111111'::bit(10));
+- id: pg-bit-0116-3c6fed87
+  statement_index: 116
+  line_start: 226
+  line_end: 226
+  output_occurrence: 1
+  sql: SELECT bit_count(repeat('0', 100)::bit(100));
+- id: pg-bit-0117-2b92a352
+  statement_index: 117
+  line_start: 227
+  line_end: 227
+  output_occurrence: 1
+  sql: SELECT bit_count(repeat('1', 100)::bit(100));
+- id: pg-bit-0118-fc3fdefd
+  statement_index: 118
+  line_start: 228
+  line_end: 228
+  output_occurrence: 1
+  sql: SELECT bit_count(repeat('01', 500)::bit(1000));
+- id: pg-bit-0119-949253dd
+  statement_index: 119
+  line_start: 229
+  line_end: 229
+  output_occurrence: 1
+  sql: SELECT bit_count(repeat('10101', 200)::bit(1000));
+- id: pg-bit-0123-64e8d6bc
+  statement_index: 123
+  line_start: 242
+  line_end: 243
+  output_occurrence: 1
+  sql: SELECT pg_input_is_valid('01010001', 'bit(10)');
+- id: pg-bit-0124-e34a64e7
+  statement_index: 124
+  line_start: 244
+  line_end: 244
+  output_occurrence: 1
+  sql: SELECT * FROM pg_input_error_info('01010001', 'bit(10)');
+- id: pg-bit-0125-086339bb
+  statement_index: 125
+  line_start: 245
+  line_end: 245
+  output_occurrence: 1
+  sql: SELECT pg_input_is_valid('01010Z01', 'bit(8)');
+- id: pg-bit-0126-fc89a5b4
+  statement_index: 126
+  line_start: 246
+  line_end: 246
+  output_occurrence: 1
+  sql: SELECT * FROM pg_input_error_info('01010Z01', 'bit(8)');
+- id: pg-bit-0127-81e3a323
+  statement_index: 127
+  line_start: 247
+  line_end: 247
+  output_occurrence: 1
+  sql: SELECT pg_input_is_valid('x01010Z01', 'bit(32)');
+- id: pg-bit-0128-c48fcf6a
+  statement_index: 128
+  line_start: 248
+  line_end: 248
+  output_occurrence: 1
+  sql: SELECT * FROM pg_input_error_info('x01010Z01', 'bit(32)');
+- id: pg-bit-0129-b5856278
+  statement_index: 129
+  line_start: 250
+  line_end: 250
+  output_occurrence: 1
+  sql: SELECT pg_input_is_valid('01010Z01', 'varbit');
+- id: pg-bit-0130-1b642527
+  statement_index: 130
+  line_start: 251
+  line_end: 251
+  output_occurrence: 1
+  sql: SELECT * FROM pg_input_error_info('01010Z01', 'varbit');
+- id: pg-bit-0131-d7060d25
+  statement_index: 131
+  line_start: 252
+  line_end: 252
+  output_occurrence: 1
+  sql: SELECT pg_input_is_valid('x01010Z01', 'varbit');
+- id: pg-bit-0132-9e507f17
+  statement_index: 132
+  line_start: 253
+  line_end: 253
+  output_occurrence: 1
+  sql: SELECT * FROM pg_input_error_info('x01010Z01', 'varbit');

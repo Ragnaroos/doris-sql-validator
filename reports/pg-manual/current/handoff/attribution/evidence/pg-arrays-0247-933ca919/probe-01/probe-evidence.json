@@ -1,0 +1,234 @@
+{
+  "查询编号": "pg-arrays-0247-933ca919",
+  "执行时间": "2026-11-13T08:28:06.311493+00:00",
+  "源SQL": "select 'foo' like any (array['%a', '%b']);",
+  "首次源SQL": "select 'foo' like any (array['%a', '%b']);",
+  "是否边界变体": false,
+  "首轮报告SHA256": "fb15e15ba55fef3c6ac397d852c06070213c0561ca88f58ea2d2da8ed9b94106",
+  "首轮SQLGlot版本": "30.25.1.dev6",
+  "首轮SQLGlot提交": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+  "本次工具SQLGlot版本": "30.25.1.dev6",
+  "对照工具代码SHA256": "618d1d4bfc040e981ded04c230a50b437036ebdab195c86bc8a1fb86d57cc97e",
+  "独立DorisSQL": "SELECT 'foo' LIKE ANY(ARRAY('%a', '%b'));\n",
+  "候选与社区输出相同": false,
+  "说明": "只读对照工具，不生成 AI 改写、不修改数据库数据、不判定最终根因；边界变体需由调用者明确提供，未执行不算通过",
+  "历史输出参考": {
+    "mode": "recorded_output",
+    "result": {
+      "engine": "postgres-recorded",
+      "success": true,
+      "columns": [
+        {
+          "name": "?column?",
+          "database_type": null,
+          "canonical_type": "unknown"
+        }
+      ],
+      "rows": [
+        [
+          "f"
+        ]
+      ],
+      "error": null,
+      "elapsed_ms": 0.0,
+      "query_id": null,
+      "result_digest": null
+    },
+    "capabilities": {
+      "execution_status": true,
+      "error_category": true,
+      "column_count": true,
+      "column_names": true,
+      "column_types": false,
+      "row_count": true,
+      "row_values": "display_text",
+      "complex_types": false
+    },
+    "value_encoding": "postgres_psql_text",
+    "artifact": "/Users/a123/Documents/网站维护/doris-sql-validator/cases/postgres/manual/current/assets/arrays.out",
+    "artifact_sha256": "486dfdddfff31da3e8914aa88d1ddcd275e137993a825a2c5f46a0eef6196d16",
+    "statement_index": 247
+  },
+  "历史输出限制": "仅保留原 .out 的显示文本证据；未自动证明它与本次实时 PG 的类型、错误细节和格式完全一致，需结合会话和数据阶段核对",
+  "PostgreSQL实际结果": {
+    "引擎": "postgres",
+    "SQL": "select 'foo' like any (array['%a', '%b']);",
+    "成功": true,
+    "字段": [
+      {
+        "名称": "?column?",
+        "PostgreSQL类型编号": 16,
+        "原生类型": "bool",
+        "精度": null,
+        "小数位数": null
+      }
+    ],
+    "记录": [
+      [
+        false
+      ]
+    ],
+    "错误": null,
+    "版本与会话": {
+      "实际数据库": "dsv_pg_manual_20261111",
+      "数据库版本": "PostgreSQL 18.1 (Debian 18.1-1.pgdg12+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+      "时区": "UTC",
+      "日期格式": "ISO, MDY",
+      "浮点显示额外位数": "0"
+    }
+  },
+  "社区输出未重放原因": "UnsupportedError: Arrays are not supported by MySQL",
+  "独立Doris实际结果": {
+    "引擎": "doris",
+    "SQL": "SELECT 'foo' LIKE ANY(ARRAY('%a', '%b'));\n",
+    "成功": true,
+    "字段": [
+      {
+        "名称": "'foo' LIKE ANY(ARRAY('%a', '%b'))",
+        "协议类型": "BOOLEAN",
+        "原生类型": "boolean",
+        "精度": 1,
+        "小数位数": 0
+      }
+    ],
+    "记录": [
+      [
+        0
+      ]
+    ],
+    "错误": null,
+    "数据库与版本函数返回值": {
+      "实际数据库": "dsv_pg_manual_20261111",
+      "版本函数返回值": "5.7.99"
+    },
+    "类型转换会话设置": [
+      [
+        "enable_strict_cast",
+        "false",
+        "false",
+        "0"
+      ]
+    ],
+    "类型证据说明": "原生类型来自 EXPLAIN VERBOSE；未解析到的位置保留未知，不用协议 STRING 猜 JSON/数组类型"
+  },
+  "独立候选比较": {
+    "执行状态": "一致",
+    "字段数量": "一致",
+    "显式别名": "未发现需检查的显式别名",
+    "字段类型": [
+      {
+        "字段位置": 1,
+        "源原生类型": "bool",
+        "Doris原生类型": "boolean",
+        "逻辑类型": "一致",
+        "类型声明": "一致",
+        "精度与小数位": "不适用"
+      }
+    ],
+    "记录行数": "一致",
+    "记录值及重复次数": "一致",
+    "最终行顺序": "无最终 ORDER BY，忽略结果行顺序但保留重复次数",
+    "浮点容差": "未自动放宽精确比较；有浮点差异时须另存误差与明确容差策略",
+    "证据范围": "仅本次输入；未自动验证所有边界、数组下界、排序唯一性及全部类型契约"
+  },
+  "源端重复执行结果": {
+    "引擎": "postgres",
+    "SQL": "select 'foo' like any (array['%a', '%b']);",
+    "成功": true,
+    "字段": [
+      {
+        "名称": "?column?",
+        "PostgreSQL类型编号": 16,
+        "原生类型": "bool",
+        "精度": null,
+        "小数位数": null
+      }
+    ],
+    "记录": [
+      [
+        false
+      ]
+    ],
+    "错误": null,
+    "版本与会话": {
+      "实际数据库": "dsv_pg_manual_20261111",
+      "数据库版本": "PostgreSQL 18.1 (Debian 18.1-1.pgdg12+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+      "时区": "UTC",
+      "日期格式": "ISO, MDY",
+      "浮点显示额外位数": "0"
+    }
+  },
+  "目标重复执行结果": {
+    "引擎": "doris",
+    "SQL": "SELECT 'foo' LIKE ANY(ARRAY('%a', '%b'));\n",
+    "成功": true,
+    "字段": [
+      {
+        "名称": "'foo' LIKE ANY(ARRAY('%a', '%b'))",
+        "协议类型": "BOOLEAN",
+        "原生类型": "boolean",
+        "精度": 1,
+        "小数位数": 0
+      }
+    ],
+    "记录": [
+      [
+        0
+      ]
+    ],
+    "错误": null,
+    "数据库与版本函数返回值": {
+      "实际数据库": "dsv_pg_manual_20261111",
+      "版本函数返回值": "5.7.99"
+    },
+    "类型转换会话设置": [
+      [
+        "enable_strict_cast",
+        "false",
+        "false",
+        "0"
+      ]
+    ],
+    "类型证据说明": "原生类型来自 EXPLAIN VERBOSE；未解析到的位置保留未知，不用协议 STRING 猜 JSON/数组类型"
+  },
+  "源端重复稳定性": {
+    "执行状态": "一致",
+    "字段数量": "一致",
+    "显式别名": "未发现需检查的显式别名",
+    "字段类型": [
+      {
+        "字段位置": 1,
+        "源原生类型": "bool",
+        "Doris原生类型": "bool",
+        "逻辑类型": "一致",
+        "类型声明": "一致",
+        "精度与小数位": "不适用"
+      }
+    ],
+    "记录行数": "一致",
+    "记录值及重复次数": "一致",
+    "最终行顺序": "无最终 ORDER BY，忽略结果行顺序但保留重复次数",
+    "浮点容差": "未自动放宽精确比较；有浮点差异时须另存误差与明确容差策略",
+    "证据范围": "仅本次输入；未自动验证所有边界、数组下界、排序唯一性及全部类型契约"
+  },
+  "重复执行独立候选比较": {
+    "执行状态": "一致",
+    "字段数量": "一致",
+    "显式别名": "未发现需检查的显式别名",
+    "字段类型": [
+      {
+        "字段位置": 1,
+        "源原生类型": "bool",
+        "Doris原生类型": "boolean",
+        "逻辑类型": "一致",
+        "类型声明": "一致",
+        "精度与小数位": "不适用"
+      }
+    ],
+    "记录行数": "一致",
+    "记录值及重复次数": "一致",
+    "最终行顺序": "无最终 ORDER BY，忽略结果行顺序但保留重复次数",
+    "浮点容差": "未自动放宽精确比较；有浮点差异时须另存误差与明确容差策略",
+    "证据范围": "仅本次输入；未自动验证所有边界、数组下界、排序唯一性及全部类型契约"
+  }
+}

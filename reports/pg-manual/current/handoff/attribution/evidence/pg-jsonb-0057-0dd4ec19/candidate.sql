@@ -1,0 +1,1 @@
+SELECT ARRAY_TO_JSON(ARRAY(CAST('{"a":1}' AS JSONB), CAST('{"b":[2,3]}' AS JSONB)));

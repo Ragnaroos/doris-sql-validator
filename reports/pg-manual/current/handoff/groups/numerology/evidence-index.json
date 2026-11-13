@@ -1,0 +1,668 @@
+{
+  "用途": "人工调用归因 Skill 的原文件引用索引；不复制、不调用 AI、不连接数据库",
+  "引用方式": "文件路径相对于本索引目录；始终使用原文件，不创建备份或改写 YAML",
+  "入口": {
+    "case_file": "../../../../../../cases/postgres/manual/current/expanded/numerology.yaml",
+    "report_file": "../../../validation/numerology/validation.json",
+    "source_file": "../../../../../../cases/postgres/manual/current/expanded/assets/numerology.sql",
+    "recorded_output_file": "../../../../../../cases/postgres/manual/current/expanded/assets/numerology.out",
+    "setup_files": [
+      "../../../data-preparation/postgres-setup.sql",
+      "../../../data-preparation/doris-setup.sql"
+    ],
+    "preparation_report": "../../../data-preparation/data-preparation.md"
+  },
+  "首轮运行查询数": 54,
+  "未在本轮运行的查询编号": [],
+  "待分析查询": [
+    {
+      "查询编号": "pg-numerology-0001-bf1fea25",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0002-4393fd29",
+      "自动结果": "RESULT_SCHEMA_MISMATCH",
+      "中文解释": "返回字段数量、名称或类型不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0003-bc278c1f",
+      "自动结果": "ROW_VALUE_MISMATCH",
+      "中文解释": "返回记录值、重复次数或要求的顺序不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0004-5b3e7f7e",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0005-68d49865",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0006-2c1a7e8b",
+      "自动结果": "RESULT_SCHEMA_MISMATCH",
+      "中文解释": "返回字段数量、名称或类型不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0007-113b58a4",
+      "自动结果": "RESULT_SCHEMA_MISMATCH",
+      "中文解释": "返回字段数量、名称或类型不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0008-e7bc3623",
+      "自动结果": "ROW_VALUE_MISMATCH",
+      "中文解释": "返回记录值、重复次数或要求的顺序不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0009-69ae7cae",
+      "自动结果": "ROW_VALUE_MISMATCH",
+      "中文解释": "返回记录值、重复次数或要求的顺序不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0010-8616092f",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0011-d12aadfa",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0012-8e6f36b0",
+      "自动结果": "RESULT_SCHEMA_MISMATCH",
+      "中文解释": "返回字段数量、名称或类型不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0013-749586fe",
+      "自动结果": "RESULT_SCHEMA_MISMATCH",
+      "中文解释": "返回字段数量、名称或类型不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0014-997ce8ed",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0015-19d5c006",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0016-554fa98c",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0017-73d4763f",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0018-7a05d9a2",
+      "自动结果": "RESULT_SCHEMA_MISMATCH",
+      "中文解释": "返回字段数量、名称或类型不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0019-335c2dae",
+      "自动结果": "RESULT_SCHEMA_MISMATCH",
+      "中文解释": "返回字段数量、名称或类型不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0020-885d9173",
+      "自动结果": "ROW_VALUE_MISMATCH",
+      "中文解释": "返回记录值、重复次数或要求的顺序不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0021-65b661c9",
+      "自动结果": "ROW_VALUE_MISMATCH",
+      "中文解释": "返回记录值、重复次数或要求的顺序不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0022-72c6b526",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0023-529faf1e",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0024-6a9c516b",
+      "自动结果": "RESULT_SCHEMA_MISMATCH",
+      "中文解释": "返回字段数量、名称或类型不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0025-f8ec6ef6",
+      "自动结果": "RESULT_SCHEMA_MISMATCH",
+      "中文解释": "返回字段数量、名称或类型不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0026-ffe92375",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0027-c26c0457",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0028-4f02026b",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0029-c7e45ec9",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0030-c1db4386",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0031-71d2199a",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0032-71d2199a",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0033-33a201b2",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0034-0597a37e",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0035-97a6754a",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0038-40292161",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0039-2cf24225",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0040-33157fdf",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0041-4efe6eaa",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0042-077be3a9",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0043-c31d8dd1",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0044-a9ff2e9b",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0045-c3b9b519",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0046-cf0a0c41",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0047-b021aae2",
+      "自动结果": "RESULT_SCHEMA_MISMATCH",
+      "中文解释": "返回字段数量、名称或类型不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0048-28a108ba",
+      "自动结果": "RESULT_SCHEMA_MISMATCH",
+      "中文解释": "返回字段数量、名称或类型不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0049-9b45177b",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0050-0c169c9a",
+      "自动结果": "RESULT_SCHEMA_MISMATCH",
+      "中文解释": "返回字段数量、名称或类型不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0051-33408a72",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0054-8a209ea6",
+      "自动结果": "RESULT_SCHEMA_MISMATCH",
+      "中文解释": "返回字段数量、名称或类型不同",
+      "源端报错": false
+    },
+    {
+      "查询编号": "pg-numerology-0057-f1dc0d67",
+      "自动结果": "MATCH",
+      "中文解释": "已有证据未发现差异（不代表所有类型和输入均已验证）",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0058-3d65d0e3",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0059-d73d9e0e",
+      "自动结果": "EXECUTION_STATUS_MISMATCH",
+      "中文解释": "两端执行状态不同：一端成功、一端失败",
+      "源端报错": true
+    },
+    {
+      "查询编号": "pg-numerology-0060-be24813a",
+      "自动结果": "ERROR_BEHAVIOR_MISMATCH",
+      "中文解释": "两端均报错，但错误类别不同",
+      "源端报错": true
+    }
+  ],
+  "导入阶段诊断": [
+    {
+      "statement_index": 36,
+      "line_start": 54,
+      "line_end": 54,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 37,
+      "line_start": 55,
+      "line_end": 55,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 52,
+      "line_start": 76,
+      "line_end": 76,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Invalid expression / Unexpected token. Line 1, Col: 13.\n  SELECT 1_000\u001b[4m.\u001b[0m000_005;"
+    },
+    {
+      "statement_index": 53,
+      "line_start": 77,
+      "line_end": 77,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Invalid expression / Unexpected token. Line 1, Col: 13.\n  SELECT 1_000\u001b[4m.\u001b[0m;"
+    },
+    {
+      "statement_index": 55,
+      "line_start": 79,
+      "line_end": 79,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Invalid expression / Unexpected token. Line 1, Col: 13.\n  SELECT 1_000\u001b[4m.\u001b[0m5e0_1;"
+    },
+    {
+      "statement_index": 56,
+      "line_start": 81,
+      "line_end": 88,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 61,
+      "line_start": 96,
+      "line_end": 96,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Invalid expression / Unexpected token. Line 1, Col: 14.\n  SELECT 1_000_\u001b[4m.\u001b[0m5;"
+    },
+    {
+      "statement_index": 62,
+      "line_start": 97,
+      "line_end": 97,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Invalid expression / Unexpected token. Line 1, Col: 13.\n  SELECT 1_000\u001b[4m.\u001b[0m_5;"
+    },
+    {
+      "statement_index": 63,
+      "line_start": 98,
+      "line_end": 98,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Invalid expression / Unexpected token. Line 1, Col: 13.\n  SELECT 1_000\u001b[4m.\u001b[0m5_;"
+    },
+    {
+      "statement_index": 64,
+      "line_start": 99,
+      "line_end": 99,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Invalid expression / Unexpected token. Line 1, Col: 13.\n  SELECT 1_000\u001b[4m.\u001b[0m5e_1;"
+    },
+    {
+      "statement_index": 65,
+      "line_start": 101,
+      "line_end": 101,
+      "disposition": "error",
+      "statement_type": "parse_error",
+      "reason": "Expected one read-only Query, got Command"
+    },
+    {
+      "statement_index": 66,
+      "line_start": 103,
+      "line_end": 109,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 67,
+      "line_start": 111,
+      "line_end": 112,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 68,
+      "line_start": 114,
+      "line_end": 115,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 70,
+      "line_start": 120,
+      "line_end": 122,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 71,
+      "line_start": 124,
+      "line_end": 126,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 72,
+      "line_start": 128,
+      "line_end": 129,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 74,
+      "line_start": 134,
+      "line_end": 136,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 75,
+      "line_start": 138,
+      "line_end": 140,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 76,
+      "line_start": 142,
+      "line_end": 144,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 78,
+      "line_start": 149,
+      "line_end": 153,
+      "disposition": "skipped",
+      "statement_type": "create",
+      "reason": "Expected one read-only Query, got Create"
+    },
+    {
+      "statement_index": 79,
+      "line_start": 155,
+      "line_end": 157,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 80,
+      "line_start": 159,
+      "line_end": 161,
+      "disposition": "skipped",
+      "statement_type": "insert",
+      "reason": "Expected one read-only Query, got Insert"
+    },
+    {
+      "statement_index": 86,
+      "line_start": 189,
+      "line_end": 189,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 87,
+      "line_start": 191,
+      "line_end": 191,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 88,
+      "line_start": 193,
+      "line_end": 193,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 89,
+      "line_start": 195,
+      "line_end": 195,
+      "disposition": "skipped",
+      "statement_type": "drop",
+      "reason": "Expected one read-only Query, got Drop"
+    },
+    {
+      "statement_index": 69,
+      "line_start": 117,
+      "line_end": 118,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 73,
+      "line_start": 131,
+      "line_end": 132,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 77,
+      "line_start": 146,
+      "line_end": 147,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 81,
+      "line_start": 163,
+      "line_end": 163,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 82,
+      "line_start": 165,
+      "line_end": 168,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 83,
+      "line_start": 170,
+      "line_end": 175,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 84,
+      "line_start": 177,
+      "line_end": 180,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    },
+    {
+      "statement_index": 85,
+      "line_start": 182,
+      "line_end": 187,
+      "disposition": "skipped",
+      "statement_type": "deferred_environment_dependency",
+      "reason": "依赖表、视图或表值函数；本次未为新脚本准备相应对象与数据阶段"
+    }
+  ],
+  "数据准备报告已提供": true,
+  "文件": [
+    {
+      "文件": "../../../../../../cases/postgres/manual/current/expanded/assets/numerology.sql",
+      "用途": "原始 PostgreSQL 完整脚本，不执行其中 DDL/DML",
+      "sha256": "c7e4c9cb9dd5670c077cc25f011839aa010bbe271c50103e68687dbdb3be925f"
+    },
+    {
+      "文件": "../../../../../../cases/postgres/manual/current/expanded/assets/numerology.out",
+      "用途": "原始参考输出，不改写答案",
+      "sha256": "f9d55aa1c39d7c79e50d747c3da16e0190a9e90c8fd5233c46258e808c0c955a"
+    },
+    {
+      "文件": "../../../../../../cases/postgres/manual/current/expanded/numerology.yaml",
+      "用途": "首轮使用的源查询 YAML，直接使用原件",
+      "sha256": "f0f1ec439a6771017da8d8138540c09d5d12ee0b60f255ab34561b3540032fe4"
+    },
+    {
+      "文件": "../../../validation/numerology/validation.json",
+      "用途": "首轮结构化结果，值样本最多五行",
+      "sha256": "7dce5e2861dbfbf9d770eae469ff5106cf60b4a897b8c77e896fee8f3aaf8db9"
+    },
+    {
+      "文件": "../../../validation/numerology/validation.md",
+      "用途": "首轮可读报告原件",
+      "sha256": "7d18a67fffe29f2cdb9c3e1216fdfa494b0db2d683eeb2ddcf4d61a6dfb2cf54"
+    },
+    {
+      "文件": "../../../data-preparation/postgres-setup.sql",
+      "用途": "用户指定的准备脚本或数据依赖，仅引用不执行",
+      "sha256": "920645ec3722d8702493a9b9a089fc9acbb0c5e7cc458e3a4e6cc754bcf2f428"
+    },
+    {
+      "文件": "../../../data-preparation/doris-setup.sql",
+      "用途": "用户指定的准备脚本或数据依赖，仅引用不执行",
+      "sha256": "3b96e9598a8b538335281223b9d6a44bb4168572b94a9e7ef97eef99f0555d00"
+    },
+    {
+      "文件": "../../../data-preparation/data-preparation.md",
+      "用途": "外部数据准备报告原件；本工具不重新核验数据库",
+      "sha256": "9b43557e8dfd7981d6727d1554b39ea2098990053c8809143f0a87b4ce3b55e6"
+    }
+  ]
+}
