@@ -1,6 +1,6 @@
 # jsonb：PostgreSQL → Doris 归因明细
 
-报告日期：2026-11-13。仅重做步骤四，不实施修复。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
+参考运行日期：2026-11-13。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
 
 ## 1. 输入与范围
 
@@ -44,7 +44,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -538,7 +538,7 @@ Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -681,7 +681,7 @@ SELECT JSON_EXTRACT(CAST('[{"b": "c"}, {"b": "cc"}]' AS JSONB), '$[1]')
 
 PG-DORIS-005 修正 JSON 文本提取、路径参数和 JSON null：JSONExtractScalar 当前生成 JSON_EXTRACT，丢失文本提取和 JSON null→SQL NULL 语义；json_extract_path_text 的附加路径也未完整生成。
 
-代码位置：[sqlglot/generators/doris.py:75](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 75）；[sqlglot/parsers/postgres.py:151](../../../../../../../sqlglot/sqlglot/parsers/postgres.py)（行 151）。
+代码位置：[sqlglot/generators/doris.py:75](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L75)（行 75）；[sqlglot/parsers/postgres.py:151](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parsers/postgres.py#L151)（行 151）。
 
 第一次候选：
 
@@ -977,7 +977,7 @@ Doris 原错误：
 
 PG-DORIS-006 补充 JSONB_CONTAINS 的 Doris 映射并区分 JSON 与数组算子：JSONB_CONTAINS 原样输出没有对应 Doris 函数；JSON_CONTAINS 加布尔类型对齐的候选已执行。PG @> 还可能解析成 ArrayContainsAll，不能仅按操作符全局替换。
 
-代码位置：[sqlglot/expressions/json.py:49](../../../../../../../sqlglot/sqlglot/expressions/json.py)（行 49）；[sqlglot/generators/doris.py:57](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 57）；[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）。
+代码位置：[sqlglot/expressions/json.py:49](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/expressions/json.py#L49)（行 49）；[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（行 57）；[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）。
 
 第一次候选：
 
@@ -1086,7 +1086,7 @@ Doris 原错误：
 
 PG-DORIS-006 补充 JSONB_CONTAINS 的 Doris 映射并区分 JSON 与数组算子：JSONB_CONTAINS 原样输出没有对应 Doris 函数；JSON_CONTAINS 加布尔类型对齐的候选已执行。PG @> 还可能解析成 ArrayContainsAll，不能仅按操作符全局替换。
 
-代码位置：[sqlglot/expressions/json.py:49](../../../../../../../sqlglot/sqlglot/expressions/json.py)（行 49）；[sqlglot/generators/doris.py:57](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 57）；[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）。
+代码位置：[sqlglot/expressions/json.py:49](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/expressions/json.py#L49)（行 49）；[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（行 57）；[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）。
 
 第一次候选：
 
@@ -1195,7 +1195,7 @@ Doris 原错误：
 
 PG-DORIS-006 补充 JSONB_CONTAINS 的 Doris 映射并区分 JSON 与数组算子：JSONB_CONTAINS 原样输出没有对应 Doris 函数；JSON_CONTAINS 加布尔类型对齐的候选已执行。PG @> 还可能解析成 ArrayContainsAll，不能仅按操作符全局替换。
 
-代码位置：[sqlglot/expressions/json.py:49](../../../../../../../sqlglot/sqlglot/expressions/json.py)（行 49）；[sqlglot/generators/doris.py:57](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 57）；[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）。
+代码位置：[sqlglot/expressions/json.py:49](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/expressions/json.py#L49)（行 49）；[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（行 57）；[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）。
 
 第一次候选：
 
@@ -1304,7 +1304,7 @@ Doris 原错误：
 
 PG-DORIS-006 补充 JSONB_CONTAINS 的 Doris 映射并区分 JSON 与数组算子：JSONB_CONTAINS 原样输出没有对应 Doris 函数；JSON_CONTAINS 加布尔类型对齐的候选已执行。PG @> 还可能解析成 ArrayContainsAll，不能仅按操作符全局替换。
 
-代码位置：[sqlglot/expressions/json.py:49](../../../../../../../sqlglot/sqlglot/expressions/json.py)（行 49）；[sqlglot/generators/doris.py:57](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 57）；[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）。
+代码位置：[sqlglot/expressions/json.py:49](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/expressions/json.py#L49)（行 49）；[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（行 57）；[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）。
 
 第一次候选：
 
@@ -1413,7 +1413,7 @@ Doris 原错误：
 
 PG-DORIS-006 补充 JSONB_CONTAINS 的 Doris 映射并区分 JSON 与数组算子：JSONB_CONTAINS 原样输出没有对应 Doris 函数；JSON_CONTAINS 加布尔类型对齐的候选已执行。PG @> 还可能解析成 ArrayContainsAll，不能仅按操作符全局替换。
 
-代码位置：[sqlglot/expressions/json.py:49](../../../../../../../sqlglot/sqlglot/expressions/json.py)（行 49）；[sqlglot/generators/doris.py:57](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 57）；[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）。
+代码位置：[sqlglot/expressions/json.py:49](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/expressions/json.py#L49)（行 49）；[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（行 57）；[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）。
 
 第一次候选：
 
@@ -1522,7 +1522,7 @@ Doris 原错误：
 
 PG-DORIS-006 补充 JSONB_CONTAINS 的 Doris 映射并区分 JSON 与数组算子：JSONB_CONTAINS 原样输出没有对应 Doris 函数；JSON_CONTAINS 加布尔类型对齐的候选已执行。PG @> 还可能解析成 ArrayContainsAll，不能仅按操作符全局替换。
 
-代码位置：[sqlglot/expressions/json.py:49](../../../../../../../sqlglot/sqlglot/expressions/json.py)（行 49）；[sqlglot/generators/doris.py:57](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 57）；[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）。
+代码位置：[sqlglot/expressions/json.py:49](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/expressions/json.py#L49)（行 49）；[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（行 57）；[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）。
 
 第一次候选：
 
@@ -3407,7 +3407,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -3492,7 +3492,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -3577,7 +3577,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -3662,7 +3662,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -3797,7 +3797,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -3861,7 +3861,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -3925,7 +3925,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -3989,7 +3989,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -4103,7 +4103,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -4188,7 +4188,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -4273,7 +4273,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -4358,7 +4358,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -4493,7 +4493,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -4557,7 +4557,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -4621,7 +4621,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -4685,7 +4685,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -4749,7 +4749,7 @@ UnsupportedError: Arrays are not supported by MySQL
 
 PG-DORIS-001 Doris 数组元素构造器不应沿用 MySQL 的整体禁用：DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 654）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 

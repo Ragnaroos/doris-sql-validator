@@ -102,7 +102,7 @@
 ## 3. 后续应生成的中文产物
 
 ```text
-attribution/attribution-details.md   每个不匹配/负向用例的 SQL、证据、独立改写、原因及未完成项
+attribution/attribution-details.md   源端成功差异的 SQL、对照、原因及未完成项；源端负向简表说明
 attribution/attribution-summary.md   按确认原因汇总，区分已确认、部分确认、证据不足和未执行
 attribution/sqlglot-tasks.md         供人显式调用 pg-doris-fix 的修复或补验证任务；其他原因明确说明
 attribution/evidence/<case-id>/   对照命令产生的原始执行证据及边界用例，不覆盖首轮报告

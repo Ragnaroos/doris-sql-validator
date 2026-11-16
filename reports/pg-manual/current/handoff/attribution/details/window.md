@@ -1,6 +1,6 @@
 # window：PostgreSQL → Doris 归因明细
 
-报告日期：2026-11-13。仅重做步骤四，不实施修复。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
+参考运行日期：2026-11-13。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
 
 ## 1. 输入与范围
 
@@ -111,7 +111,7 @@ Doris 原错误：
 
 PG-DORIS-003 将命名 WINDOW 内联到实际窗口表达式：未内联的 OVER w / WINDOW w AS 在本版 Doris 被拒绝；使用社区已有 eliminate_window_clause 构造的独立候选可以执行。
 
-代码位置：[sqlglot/transforms.py:1058](../../../../../../../sqlglot/sqlglot/transforms.py)（行 1058）；[sqlglot/generators/mysql.py:189](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 189）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/transforms.py:1058](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L1058)（行 1058）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（行 189）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -218,7 +218,7 @@ Doris 原错误：
 
 PG-DORIS-003 将命名 WINDOW 内联到实际窗口表达式：未内联的 OVER w / WINDOW w AS 在本版 Doris 被拒绝；使用社区已有 eliminate_window_clause 构造的独立候选可以执行。
 
-代码位置：[sqlglot/transforms.py:1058](../../../../../../../sqlglot/sqlglot/transforms.py)（行 1058）；[sqlglot/generators/mysql.py:189](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 189）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/transforms.py:1058](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L1058)（行 1058）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（行 189）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -325,7 +325,7 @@ Doris 原错误：
 
 PG-DORIS-003 将命名 WINDOW 内联到实际窗口表达式：未内联的 OVER w / WINDOW w AS 在本版 Doris 被拒绝；使用社区已有 eliminate_window_clause 构造的独立候选可以执行。
 
-代码位置：[sqlglot/transforms.py:1058](../../../../../../../sqlglot/sqlglot/transforms.py)（行 1058）；[sqlglot/generators/mysql.py:189](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 189）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/transforms.py:1058](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L1058)（行 1058）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（行 189）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -432,7 +432,7 @@ Doris 原错误：
 
 PG-DORIS-003 将命名 WINDOW 内联到实际窗口表达式：未内联的 OVER w / WINDOW w AS 在本版 Doris 被拒绝；使用社区已有 eliminate_window_clause 构造的独立候选可以执行。
 
-代码位置：[sqlglot/transforms.py:1058](../../../../../../../sqlglot/sqlglot/transforms.py)（行 1058）；[sqlglot/generators/mysql.py:189](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 189）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/transforms.py:1058](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L1058)（行 1058）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（行 189）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -1033,7 +1033,7 @@ Doris 原错误：
 
 PG-DORIS-003 将命名 WINDOW 内联到实际窗口表达式：未内联的 OVER w / WINDOW w AS 在本版 Doris 被拒绝；使用社区已有 eliminate_window_clause 构造的独立候选可以执行。
 
-代码位置：[sqlglot/transforms.py:1058](../../../../../../../sqlglot/sqlglot/transforms.py)（行 1058）；[sqlglot/generators/mysql.py:189](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 189）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/transforms.py:1058](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L1058)（行 1058）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（行 189）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -1141,7 +1141,7 @@ Doris 原错误：
 
 PG-DORIS-003 将命名 WINDOW 内联到实际窗口表达式：未内联的 OVER w / WINDOW w AS 在本版 Doris 被拒绝；使用社区已有 eliminate_window_clause 构造的独立候选可以执行。
 
-代码位置：[sqlglot/transforms.py:1058](../../../../../../../sqlglot/sqlglot/transforms.py)（行 1058）；[sqlglot/generators/mysql.py:189](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 189）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/transforms.py:1058](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L1058)（行 1058）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（行 189）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -1248,7 +1248,7 @@ Doris 原错误：
 
 PG-DORIS-003 将命名 WINDOW 内联到实际窗口表达式：未内联的 OVER w / WINDOW w AS 在本版 Doris 被拒绝；使用社区已有 eliminate_window_clause 构造的独立候选可以执行。
 
-代码位置：[sqlglot/transforms.py:1058](../../../../../../../sqlglot/sqlglot/transforms.py)（行 1058）；[sqlglot/generators/mysql.py:189](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 189）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/transforms.py:1058](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L1058)（行 1058）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（行 189）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -1387,7 +1387,7 @@ UnsupportedError: 'NULLS LAST' translation not supported in window function SUM
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -1463,7 +1463,7 @@ UnsupportedError: 'NULLS LAST' translation not supported in window function SUM
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -1539,11 +1539,11 @@ UnsupportedError: 'NULLS LAST' translation not supported in window function SUM
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 PG-DORIS-010 保留已知整数输入的 PostgreSQL 除法：窗口查询中的整数列除法在 Doris 变成分数，改变 ORDER BY/RANGE 的分组和结果；DIV 加 INT 类型对齐候选修复了两个具体样本的行值。
 
-代码位置：[sqlglot/generator.py:4621](../../../../../../../sqlglot/sqlglot/generator.py)（行 4621）；[sqlglot/parsers/postgres.py](../../../../../../../sqlglot/sqlglot/parsers/postgres.py)；[sqlglot/optimizer/annotate_types.py](../../../../../../../sqlglot/sqlglot/optimizer/annotate_types.py)。
+代码位置：[sqlglot/generator.py:4621](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L4621)（行 4621）；[sqlglot/parsers/postgres.py](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parsers/postgres.py)；[sqlglot/optimizer/annotate_types.py](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/optimizer/annotate_types.py)。
 
 第一次候选：
 
@@ -1629,11 +1629,11 @@ UnsupportedError: 'NULLS LAST' translation not supported in window function SUM
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 PG-DORIS-010 保留已知整数输入的 PostgreSQL 除法：窗口查询中的整数列除法在 Doris 变成分数，改变 ORDER BY/RANGE 的分组和结果；DIV 加 INT 类型对齐候选修复了两个具体样本的行值。
 
-代码位置：[sqlglot/generator.py:4621](../../../../../../../sqlglot/sqlglot/generator.py)（行 4621）；[sqlglot/parsers/postgres.py](../../../../../../../sqlglot/sqlglot/parsers/postgres.py)；[sqlglot/optimizer/annotate_types.py](../../../../../../../sqlglot/sqlglot/optimizer/annotate_types.py)。
+代码位置：[sqlglot/generator.py:4621](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L4621)（行 4621）；[sqlglot/parsers/postgres.py](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parsers/postgres.py)；[sqlglot/optimizer/annotate_types.py](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/optimizer/annotate_types.py)。
 
 第一次候选：
 
@@ -1716,7 +1716,7 @@ UnsupportedError: 'NULLS LAST' translation not supported in window function SUM
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -1893,7 +1893,7 @@ UnsupportedError: EXCLUDE clause is not supported in the WINDOW clause
 
 PG-DORIS-020 明确窗口 EXCLUDE 与无 ORDER BY 帧的兼容范围：部分源查询被生成器的 EXCLUDE 限制阻断；移除 NO OTHERS 的样本又被 Doris 要求 frame 必须有 ORDER BY 拒绝。
 
-代码位置：[sqlglot/generator.py:3699](../../../../../../../sqlglot/sqlglot/generator.py)（行 3699）；[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）。
+代码位置：[sqlglot/generator.py:3699](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3699)（行 3699）；[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）。
 
 首次候选构造失败（即使后续成功仍保留）：
 
@@ -1980,7 +1980,7 @@ UnsupportedError: EXCLUDE clause is not supported in the WINDOW clause
 
 PG-DORIS-020 明确窗口 EXCLUDE 与无 ORDER BY 帧的兼容范围：部分源查询被生成器的 EXCLUDE 限制阻断；移除 NO OTHERS 的样本又被 Doris 要求 frame 必须有 ORDER BY 拒绝。
 
-代码位置：[sqlglot/generator.py:3699](../../../../../../../sqlglot/sqlglot/generator.py)（行 3699）；[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）。
+代码位置：[sqlglot/generator.py:3699](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3699)（行 3699）；[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）。
 
 首次候选构造失败（即使后续成功仍保留）：
 
@@ -2031,7 +2031,7 @@ UnsupportedError: EXCLUDE clause is not supported in the WINDOW clause
 
 PG-DORIS-020 明确窗口 EXCLUDE 与无 ORDER BY 帧的兼容范围：部分源查询被生成器的 EXCLUDE 限制阻断；移除 NO OTHERS 的样本又被 Doris 要求 frame 必须有 ORDER BY 拒绝。
 
-代码位置：[sqlglot/generator.py:3699](../../../../../../../sqlglot/sqlglot/generator.py)（行 3699）；[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）。
+代码位置：[sqlglot/generator.py:3699](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3699)（行 3699）；[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）。
 
 首次候选构造失败（即使后续成功仍保留）：
 
@@ -2082,7 +2082,7 @@ UnsupportedError: EXCLUDE clause is not supported in the WINDOW clause
 
 PG-DORIS-020 明确窗口 EXCLUDE 与无 ORDER BY 帧的兼容范围：部分源查询被生成器的 EXCLUDE 限制阻断；移除 NO OTHERS 的样本又被 Doris 要求 frame 必须有 ORDER BY 拒绝。
 
-代码位置：[sqlglot/generator.py:3699](../../../../../../../sqlglot/sqlglot/generator.py)（行 3699）；[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）。
+代码位置：[sqlglot/generator.py:3699](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3699)（行 3699）；[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）。
 
 首次候选构造失败（即使后续成功仍保留）：
 
@@ -2135,7 +2135,7 @@ EXCLUDE clause is not supported in the WINDOW clause
 
 PG-DORIS-020 明确窗口 EXCLUDE 与无 ORDER BY 帧的兼容范围：部分源查询被生成器的 EXCLUDE 限制阻断；移除 NO OTHERS 的样本又被 Doris 要求 frame 必须有 ORDER BY 拒绝。
 
-代码位置：[sqlglot/generator.py:3699](../../../../../../../sqlglot/sqlglot/generator.py)（行 3699）；[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）。
+代码位置：[sqlglot/generator.py:3699](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3699)（行 3699）；[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）。
 
 首次候选构造失败（即使后续成功仍保留）：
 
@@ -2188,7 +2188,7 @@ EXCLUDE clause is not supported in the WINDOW clause
 
 PG-DORIS-020 明确窗口 EXCLUDE 与无 ORDER BY 帧的兼容范围：部分源查询被生成器的 EXCLUDE 限制阻断；移除 NO OTHERS 的样本又被 Doris 要求 frame 必须有 ORDER BY 拒绝。
 
-代码位置：[sqlglot/generator.py:3699](../../../../../../../sqlglot/sqlglot/generator.py)（行 3699）；[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）。
+代码位置：[sqlglot/generator.py:3699](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3699)（行 3699）；[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）。
 
 首次候选构造失败（即使后续成功仍保留）：
 
@@ -2241,7 +2241,7 @@ EXCLUDE clause is not supported in the WINDOW clause
 
 PG-DORIS-020 明确窗口 EXCLUDE 与无 ORDER BY 帧的兼容范围：部分源查询被生成器的 EXCLUDE 限制阻断；移除 NO OTHERS 的样本又被 Doris 要求 frame 必须有 ORDER BY 拒绝。
 
-代码位置：[sqlglot/generator.py:3699](../../../../../../../sqlglot/sqlglot/generator.py)（行 3699）；[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）。
+代码位置：[sqlglot/generator.py:3699](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3699)（行 3699）；[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）。
 
 首次候选构造失败（即使后续成功仍保留）：
 
@@ -2294,7 +2294,7 @@ EXCLUDE clause is not supported in the WINDOW clause
 
 PG-DORIS-020 明确窗口 EXCLUDE 与无 ORDER BY 帧的兼容范围：部分源查询被生成器的 EXCLUDE 限制阻断；移除 NO OTHERS 的样本又被 Doris 要求 frame 必须有 ORDER BY 拒绝。
 
-代码位置：[sqlglot/generator.py:3699](../../../../../../../sqlglot/sqlglot/generator.py)（行 3699）；[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）。
+代码位置：[sqlglot/generator.py:3699](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3699)（行 3699）；[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）。
 
 首次候选构造失败（即使后续成功仍保留）：
 
@@ -2347,7 +2347,7 @@ EXCLUDE clause is not supported in the WINDOW clause
 
 PG-DORIS-020 明确窗口 EXCLUDE 与无 ORDER BY 帧的兼容范围：部分源查询被生成器的 EXCLUDE 限制阻断；移除 NO OTHERS 的样本又被 Doris 要求 frame 必须有 ORDER BY 拒绝。
 
-代码位置：[sqlglot/generator.py:3699](../../../../../../../sqlglot/sqlglot/generator.py)（行 3699）；[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）。
+代码位置：[sqlglot/generator.py:3699](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3699)（行 3699）；[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）。
 
 首次候选构造失败（即使后续成功仍保留）：
 
@@ -2400,7 +2400,7 @@ EXCLUDE clause is not supported in the WINDOW clause
 
 PG-DORIS-020 明确窗口 EXCLUDE 与无 ORDER BY 帧的兼容范围：部分源查询被生成器的 EXCLUDE 限制阻断；移除 NO OTHERS 的样本又被 Doris 要求 frame 必须有 ORDER BY 拒绝。
 
-代码位置：[sqlglot/generator.py:3699](../../../../../../../sqlglot/sqlglot/generator.py)（行 3699）；[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）。
+代码位置：[sqlglot/generator.py:3699](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3699)（行 3699）；[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）。
 
 首次候选构造失败（即使后续成功仍保留）：
 
@@ -2631,7 +2631,7 @@ Doris 原错误：
 
 PG-DORIS-003 将命名 WINDOW 内联到实际窗口表达式：未内联的 OVER w / WINDOW w AS 在本版 Doris 被拒绝；使用社区已有 eliminate_window_clause 构造的独立候选可以执行。
 
-代码位置：[sqlglot/transforms.py:1058](../../../../../../../sqlglot/sqlglot/transforms.py)（行 1058）；[sqlglot/generators/mysql.py:189](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 189）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/transforms.py:1058](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L1058)（行 1058）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（行 189）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -2716,7 +2716,7 @@ UnsupportedError: EXCLUDE clause is not supported in the WINDOW clause
 
 PG-DORIS-020 明确窗口 EXCLUDE 与无 ORDER BY 帧的兼容范围：部分源查询被生成器的 EXCLUDE 限制阻断；移除 NO OTHERS 的样本又被 Doris 要求 frame 必须有 ORDER BY 拒绝。
 
-代码位置：[sqlglot/generator.py:3699](../../../../../../../sqlglot/sqlglot/generator.py)（行 3699）；[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）。
+代码位置：[sqlglot/generator.py:3699](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3699)（行 3699）；[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）。
 
 首次候选构造失败（即使后续成功仍保留）：
 
@@ -2767,7 +2767,7 @@ UnsupportedError: EXCLUDE clause is not supported in the WINDOW clause
 
 PG-DORIS-020 明确窗口 EXCLUDE 与无 ORDER BY 帧的兼容范围：部分源查询被生成器的 EXCLUDE 限制阻断；移除 NO OTHERS 的样本又被 Doris 要求 frame 必须有 ORDER BY 拒绝。
 
-代码位置：[sqlglot/generator.py:3699](../../../../../../../sqlglot/sqlglot/generator.py)（行 3699）；[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）。
+代码位置：[sqlglot/generator.py:3699](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3699)（行 3699）；[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）。
 
 首次候选构造失败（即使后续成功仍保留）：
 
@@ -2818,7 +2818,7 @@ UnsupportedError: EXCLUDE clause is not supported in the WINDOW clause
 
 PG-DORIS-020 明确窗口 EXCLUDE 与无 ORDER BY 帧的兼容范围：部分源查询被生成器的 EXCLUDE 限制阻断；移除 NO OTHERS 的样本又被 Doris 要求 frame 必须有 ORDER BY 拒绝。
 
-代码位置：[sqlglot/generator.py:3699](../../../../../../../sqlglot/sqlglot/generator.py)（行 3699）；[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）。
+代码位置：[sqlglot/generator.py:3699](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3699)（行 3699）；[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）。
 
 首次候选构造失败（即使后续成功仍保留）：
 
@@ -2871,7 +2871,7 @@ AttributeError: 'Identifier' object has no attribute 'sql_name'
 
 PG-DORIS-003 将命名 WINDOW 内联到实际窗口表达式：未内联的 OVER w / WINDOW w AS 在本版 Doris 被拒绝；使用社区已有 eliminate_window_clause 构造的独立候选可以执行。
 
-代码位置：[sqlglot/transforms.py:1058](../../../../../../../sqlglot/sqlglot/transforms.py)（行 1058）；[sqlglot/generators/mysql.py:189](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 189）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/transforms.py:1058](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L1058)（行 1058）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（行 189）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 

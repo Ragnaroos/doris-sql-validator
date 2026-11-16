@@ -1,6 +1,6 @@
 # with：PostgreSQL → Doris 归因明细
 
-报告日期：2026-11-13。仅重做步骤四，不实施修复。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
+参考运行日期：2026-11-13。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
 
 ## 1. 输入与范围
 
@@ -73,7 +73,7 @@ Doris 原错误：
 
 PG-DORIS-009 对齐递归 CTE 的锚点和递归列类型：PG 锚点 VALUES(1) 的 INT 语义没有传到 Doris 的最小宽度字面量；当前 Doris 报 TINYINT 锚点与 SMALLINT 递归列不一致。显式双端 INT 的递归候选成功。
 
-代码位置：[sqlglot/generator.py:1610](../../../../../../../sqlglot/sqlglot/generator.py)（行 1610）；[sqlglot/generator.py:1801](../../../../../../../sqlglot/sqlglot/generator.py)（行 1801）；[sqlglot/optimizer/annotate_types.py](../../../../../../../sqlglot/sqlglot/optimizer/annotate_types.py)。
+代码位置：[sqlglot/generator.py:1610](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L1610)（行 1610）；[sqlglot/generator.py:1801](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L1801)（行 1801）；[sqlglot/optimizer/annotate_types.py](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/optimizer/annotate_types.py)。
 
 第一次候选：
 

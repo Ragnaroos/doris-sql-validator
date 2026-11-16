@@ -7,7 +7,7 @@ description: 根据完整 PostgreSQL 回归 SQL、DDL、INSERT/COPY 数据和预
 
 本 Skill 负责验证器之外的建表、装数和核验。它不修复 SQLGlot、不生成查询答案、不调用后续归因 Skill。只有用户显式调用时执行；先说明计划操作的数据库、表和写入范围。
 
-工作流产物的目录和文件名使用英文，正文默认中文。Parser、AST、Generator、Schema、Session、Decimal 等通用术语可保留英文；不直观的状态和结论仍需解释。历史中文文件名按实际路径读取，不覆盖或改名原证据。
+工作流产物的目录和文件名使用英文，正文默认中文。Parser、AST、Generator、Schema、Session、Decimal 等通用术语可保留英文；不直观的状态和结论仍需解释。报告使用项目相对路径，说明输入、环境、执行结果与限制，不加入个人会话或文件清理过程。按实际输入路径读取，不覆盖或改名原证据。
 
 ## 输入与执行范围
 
@@ -19,7 +19,7 @@ description: 根据完整 PostgreSQL 回归 SQL、DDL、INSERT/COPY 数据和预
 
 ## 准备和核验
 
-1. 阅读项目 `docs/POSTGRES_MANUAL_WORKFLOW.md`，定位项目环境和已有 Adapter；不要调用旧的固定 753 条评估脚本来准备任意用户数据，它绑定特定语料与库名。
+1. 阅读项目 `docs/POSTGRES_MANUAL_WORKFLOW.md`，定位项目环境和已有 Adapter；按用户提供的脚本与数据准备。固定语料维护助手绑定特定输入和环境，不作为任意用户数据的通用准备器。
 2. 检查完整脚本的执行阶段：CREATE、INSERT/COPY、UPDATE、DELETE、SET、事务及其间 SELECT。将每条 SELECT 与它实际看到的数据状态对应。若中间修改数据，拆成独立阶段、独立库/Case YAML 或明确的外部逐阶段运行步骤，不能“最终状态装一次后跑所有查询”。
 3. 保持源脚本和预期输出原件不变。先在 PostgreSQL 重建对应阶段并核对 `.out` 能可靠表达的执行状态/结果；版本、Locale、时区或非确定性导致偏差时单列，不改写 `.out` 来迎合当前环境。
 4. 生成独立 Doris DDL/装数脚本。逐列写明源类型、目标类型、NULL、长度、精度、时区和映射限制。无约束 NUMERIC、JSONB、数组下界、CHAR、BYTEA、特殊日期不假定可直接同类型迁移；无法无损表示的值明确记录，必要时将相关查询列为受限制，不静默截断或换测试值。

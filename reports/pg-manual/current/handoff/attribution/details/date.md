@@ -1,6 +1,6 @@
 # date：PostgreSQL → Doris 归因明细
 
-报告日期：2026-11-13。仅重做步骤四，不实施修复。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
+参考运行日期：2026-11-13。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
 
 ## 1. 输入与范围
 
@@ -60,7 +60,7 @@ SELECT CAST('January 8, 1999' AS DATE)
 
 PG-DORIS-014 保留合法 PostgreSQL 日期字面量格式：January 8, 1999 在 PG 为成功 DATE，普通 Doris CAST 返回 NULL；指定格式 STR_TO_DATE 的候选和闰年正常变体成功。
 
-代码位置：[sqlglot/generator.py:4281](../../../../../../../sqlglot/sqlglot/generator.py)（行 4281）；[sqlglot/generators/doris.py:57](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 57）。
+代码位置：[sqlglot/generator.py:4281](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L4281)（行 4281）；[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（行 57）。
 
 第一次候选：
 

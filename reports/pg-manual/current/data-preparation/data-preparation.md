@@ -2,14 +2,14 @@
 
 ## 1. 实际完成范围
 
-本批专用库：`dsv_pg_manual_20261111`；复核本批已创建的专用库，不重新建表、不重复装数；覆盖上一轮 current 核验证据
+参考评估库：`dsv_pg_manual_20261111`。该标识记录所用环境，不表示用户机器上已经存在此库。
 已准备并完整核验 21 张逻辑表/视图，共 11097 行。当前实际数据一致，不代表两端类型域和约束完全相同。
-本次采用已有 20 个官方脚本中固定的 753 条样本选择范围，不复制任何旧通过率/执行结果；并非官方全量脚本回放。查询 SQL 与官方 .out 原件保持不变。
+核验范围为 20 个官方脚本中固定选择的 753 条查询，不是官方全量脚本回放。查询 SQL 与官方 .out 原件保持不变。
 
 ## 2. 数据阶段与输入
 
 所有样本对应 setup/postgres-setup.sql 和三个官方 COPY 文件构成的固定初始阶段，旧脚本中其他临时表、后续 UPDATE/复用阶段不在本轮范围。当前 PG 的 753 条源结果已重新执行核对，结果不对应的记录另外列出。
-原始输入、源脚本位置和官方 commit 见 cases/postgres/manual/current/scope.json；旧的 source_baseline_verified、源行值、Outcome 均未复制。
+原始输入、源脚本位置和官方 commit 见 cases/postgres/manual/current/scope.json。
 postgres-setup.sql 为源 CREATE/INSERT，COPY 数据由 scripts/pg_manual_sample.py --prepare 使用 cursor.copy 从固定 data 文件加载；doris-setup.sql 保存本批首次真实执行的目标 CREATE/INSERT/view 语句。本轮若为复核，则保留这些脚本但不重复执行。
 
 ## 3. 逐表完整记录核验与类型映射
@@ -55,7 +55,7 @@ postgres-setup.sql 为源 CREATE/INSERT，COPY 数据由 scripts/pg_manual_sampl
 
 PostgreSQL 环境（版本/数据库/时区/日期格式/浮点额外显示位）：`['PostgreSQL 18.1 (Debian 18.1-1.pgdg12+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit', 'dsv_pg_manual_20261111', 'UTC', 'ISO, MDY', '0']`。
 Doris 的实际版本及 PG 错误 SQLSTATE 在 data-verification.json。沿用本批首次创建时的 PG 库配置；源查询核验时仅设置当前 PG Session 的 UTC、ISO/MDY、extra_float_digits=0、5s statement_timeout，不修改旧库、表数据或全局配置；Doris 使用原有 Session 政策。
-步骤二调用 scripts/pg_manual_sample.py --validate：当前 Importer 生成只读 Query YAML，再通过当前 CLI 的 Recorded Output 路径仅执行 Doris。本次用户明确授权替换 current，使用 --validate --overwrite 重新导入和执行；默认 --validate 仍拒绝覆盖已有产物。数据准备报告不是验证器内部 Gate，不会连接到 AI 归因/修复。
+准备和验证命令见 [PostgreSQL 工作流](../../../../docs/POSTGRES_MANUAL_WORKFLOW.md)。数据准备报告是外部前提证据，不是验证器内部 Gate；运行器不执行这里的准备 SQL。
 
 ## 6. 实际 Session 补查
 

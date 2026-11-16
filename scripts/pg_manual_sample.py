@@ -283,7 +283,7 @@ def reverify():
     database = evidence["database"]
     if not re.fullmatch(r"dsv_pg_manual_[a-z0-9_]+", database) or marker["database"] != database or marker["scope_sha256"] != fingerprint(INPUT / "scope.json"):
         raise RuntimeError("不能确认本批原有专用库与相同输入，拒绝复用")
-    evidence["preparation_action"] = "复核本批已创建的专用库，不重新建表、不重复装数；覆盖上一轮 current 核验证据"
+    evidence["preparation_action"] = "只读核验专用库的结构与完整记录；不重复建表或装数"
     evidence["reverification_started_at"] = datetime.now(timezone.utc).isoformat()
     pg, target = PostgresAdapter(), DorisAdapter()
     try:
@@ -348,11 +348,11 @@ def reverify():
 def report_preparation(evidence):
     checks = Counter(c.get("reference_check", "参考输出无法解析") for c in evidence["source_baselines"])
     lines = ["# PostgreSQL → Doris 数据准备报告", "", "## 1. 实际完成范围", "",
-        f"本批专用库：`{evidence['database']}`；{evidence.get('preparation_action', '本批首次新建并装数。没有复用、删除或修改历史评估库。')}",
+        f"评估库：`{evidence['database']}`。以下记录对应数据阶段的结构、完整记录核验和类型映射限制。",
         f"已准备并完整核验 {len(evidence['tables'])} 张逻辑表/视图，共 {sum(t['row_count'] for t in evidence['tables'].values())} 行。当前实际数据一致，不代表两端类型域和约束完全相同。",
-        "本次采用已有 20 个官方脚本中固定的 753 条样本选择范围，不复制任何旧通过率/执行结果；并非官方全量脚本回放。查询 SQL 与官方 .out 原件保持不变。", "",
+        "核验范围为 20 个官方脚本固定选择的 753 条查询，不是官方全量脚本回放。查询 SQL 与官方 .out 原件保持不变。", "",
         "## 2. 数据阶段与输入", "", "所有样本对应 setup/postgres-setup.sql 和三个官方 COPY 文件构成的固定初始阶段，旧脚本中其他临时表、后续 UPDATE/复用阶段不在本轮范围。当前 PG 的 753 条源结果已重新执行核对，结果不对应的记录另外列出。",
-        "原始输入、源脚本位置和官方 commit 见 cases/postgres/manual/current/scope.json；旧的 source_baseline_verified、源行值、Outcome 均未复制。",
+        "原始输入、源脚本位置和官方 commit 见 cases/postgres/manual/current/scope.json。",
         "postgres-setup.sql 为源 CREATE/INSERT，COPY 数据由 scripts/pg_manual_sample.py --prepare 使用 cursor.copy 从固定 data 文件加载；doris-setup.sql 保存本批首次真实执行的目标 CREATE/INSERT/view 语句。本轮若为复核，则保留这些脚本但不重复执行。", "",
         "## 3. 逐表完整记录核验与类型映射", "", "| 表 | 源/目标行数 | 重复记录数 | NULL 单元格数 | 完整记录 | 字段映射 |", "| :--- | :--- | ---: | ---: | :--- | :--- |"]
     for name, t in evidence["tables"].items():
@@ -365,7 +365,7 @@ def report_preparation(evidence):
     lines += ["", "成功结果按原生 PG 文本与官方 aligned .out 的行值/重复次数核对，不能恢复 .out 丢失的类型或 NULL 表示细节；负向用例仅确认两边都失败，不宣称同因。输出不可解析或当前源结果不同的记录保留在 data-verification.json，不静默视为通过，也不修改官方答案。", "",
         "## 5. 版本、Session、证据与下一步", "", f"PostgreSQL 环境（版本/数据库/时区/日期格式/浮点额外显示位）：`{evidence['postgres_environment']}`。",
         "Doris 的实际版本及 PG 错误 SQLSTATE 在 data-verification.json。沿用本批首次创建时的 PG 库配置；源查询核验时仅设置当前 PG Session 的 UTC、ISO/MDY、extra_float_digits=0、5s statement_timeout，不修改旧库、表数据或全局配置；Doris 使用原有 Session 政策。",
-        "步骤二调用 scripts/pg_manual_sample.py --validate：当前 Importer 生成只读 Query YAML，再通过当前 CLI 的 Recorded Output 路径仅执行 Doris。本次用户明确授权替换 current，使用 --validate --overwrite 重新导入和执行；默认 --validate 仍拒绝覆盖已有产物。数据准备报告不是验证器内部 Gate，不会连接到 AI 归因/修复。", ""]
+        "步骤二调用 scripts/pg_manual_sample.py --validate：当前 Importer 生成只读 Query YAML，再通过当前 CLI 的 Recorded Output 路径仅执行 Doris。默认拒绝覆盖已有产物；替换报告需另行确认输出范围。数据准备报告不是验证器内部 Gate，不会连接到 AI 归因/修复。", ""]
     (OUTPUT / "data-preparation/data-preparation.md").write_text("\n".join(lines))
 
 
@@ -477,7 +477,7 @@ def write_summary(scope, verification, runs):
         f"两端成功且已有证据匹配 {matches} 条；占交给运行器查询 {matches}/{n} = {successful_rate}。其余含负向报错、转换失败、执行/结果差异，不等同于 SQLGlot 缺陷。",
         f"内部 MATCH 共 {outcomes['MATCH']} 条，其中成功结果匹配 {matches} 条、两端均报错且粗粒度类别相同 {outcomes['MATCH']-matches} 条。后者不能算成功结果匹配，也尚未证明错误同因。运行器实际读到的源端负向报错共 {negative} 条。",
         f"按原样本范围计算 {matches}/{len(scope['cases'])} = {matches/len(scope['cases']):.2%}；未被当前 Importer 接受的查询未计入执行分母，见各组导入诊断。",
-        "先按数据准备 Skill 重新完整核验本批专用库，再使用当前框架 .out 模式验证；run 不连接 PG。本轮明确覆盖 current 的上一轮 YAML/报告并重新执行，不复用旧验证结果，不执行 AI 改写、归因或 SQLGlot 修复。", "",
+        "先按数据准备 Skill 重新完整核验本批专用库，再使用当前框架 .out 模式验证；run 不连接 PG。固定验证只记录实际执行结果，不调用 AI 改写、归因或 SQLGlot 修复。", "",
         "## 2. 每组结果", "", "“进入运行器”包括随后转译失败的查询，不等于全部已发往 Doris。负向报错数仅统计运行器实际取得的参考输出；准备阶段另外执行了全部 753 条源 SQL。", "", "| 原始脚本 | 样本范围 | 进入运行器 | 成功结果匹配 | 源端负向报错 | 范围内导入失败 | 详细报告 |", "| :--- | ---: | ---: | ---: | ---: | ---: | :--- |"]
     for r in runs:
         lines.append(f"| {r['file']} | {r['selected_scope']} | {r['accepted']} | {r['summary']['successful_matches']} | {r['summary']['negative_source_cases']} | {r['in_scope_import_errors']} | [查看](validation/{Path(r['file']).stem}/validation.md) |")
@@ -486,7 +486,7 @@ def write_summary(scope, verification, runs):
     for key, count in sorted(outcomes.items()): lines.append(f"| {explain(key)}（`{key}`） | {count} |")
     lines += ["", f"MATCH 的成功/双端报错拆分见第一节。以上是运行器的互斥结果；{import_errors} 条导入失败不包含在这 {n} 条中。", "", "## 4. 导入阶段失败", "",
         "导入诊断不是 Doris 执行失败。解析失败的 SELECT 候选也保留在 YAML，通过普通 run 记录 TRANSLATION_FAILED 及具体阶段；未通过 Parser 和只读校验不会执行数据库。所有组统一使用 validation.md/json，不生成额外失败文档。保留数量与导入诊断数量可能重叠。", "",
-        "本轮已修复框架的两处输出定位问题：Importer 与 .out Parser 共用原文回显识别口径，不再把 AST 相同但原文不同的查询合并计数；字面量/引号标识符/注释之外的空白行差异可匹配，受保护内容内部仍按原内容识别。读取结果时要求紧邻本条回显，不向后借用另一条查询的输出或错误。源 SQL、.out、SQLGlot 和比较规则没有因此修改。以下只列本轮实际剩余错误，不保留已修复的旧错误充当当前诊断。", "",
+        "输出定位规则：Importer 与 .out Parser 共用原文回显识别口径，不再把 AST 相同但原文不同的查询合并计数；字面量/引号标识符/注释之外的空白行差异可匹配，受保护内容内部仍按原内容识别。读取结果时要求紧邻本条回显，不向后借用另一条查询的输出或错误。源 SQL、.out、SQLGlot 和比较规则没有因此修改。以下列出本次导入诊断。", "",
         "| 原始脚本 | 语句编号 | 导入失败原因 |", "| :--- | ---: | :--- |"]
     from doris_sql_validator.report_labels import cell
     for r in runs:
@@ -518,8 +518,8 @@ def write_summary(scope, verification, runs):
         "负向用例不计入成功匹配；同类粗粒度错误不等于同因。参考 .out 通常不提供原生类型，MATCH 不表示完整类型、所有输入、排序唯一性或相关边界通过。",
         "当前数据与原始输入核验见 [data-preparation.md](data-preparation/data-preparation.md) 和 [data-verification.json](data-preparation/data-verification.json)。当前 PG 与 .out 不对应或无法解析的项目均保留，归因时需先阅读。",
         "两端 Session 实际值见数据准备报告；时区或转换模式不一致也可能造成差异，不能在尚未归因时全部算 SQLGlot 问题。",
-        "本轮只做步骤一、二；尚未创建归因结论或 SQLGlot 修复任务。未来由人调用 prepare-pg-review 和 pg-doris-attribute，不自动触发。",
-        "历史报告保留在旧路径，本轮 current 不覆盖它们；远程发布只纳入 current 路径，旧路径通过 .gitignore 排除，不意味着从本地删除。", ""]
+        "归因与修复由用户另行显式调用；确定性验证命令不会自动启动这些阶段。",
+        "不同运行应使用明确的输出目录；公开范围见 docs/PUBLISHING.md。", ""]
     (OUTPUT / "SUMMARY.md").write_text("\n".join(lines))
 
 

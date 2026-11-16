@@ -271,15 +271,15 @@ def summarize(scope, archive: Path):
     dump(OUTPUT / "validation-summary.json", {"database": scope["database"], "total": total, "distinct_sql_texts": len(sql_texts), "successful_matches": success, "outcomes": dict(outcomes), "archive": str(archive.relative_to(ROOT)), "runs": runs,
          "report_update_note": scope.get("report_update_note")})
     lines = ["# PostgreSQL → Doris：扩展语料首轮验证报告", "", "## 1. 本轮结果", "",
-        f"- 本次输入并进入验证器：**{total} 条用例**。报告统计来自本次运行结果，不按历史运行情况区分新旧 SQL。",
+        f"- 本次输入并进入验证器：**{total} 条用例**。同文但不同编号的 Case 独立计数。",
         f"- 按源 SQL 原文去重为 **{len(sql_texts)} 条**；同文但来源/用例编号不同的记录保留，数量与去重 SQL 数分开说明。",
         f"- 两端成功且参考输出匹配：**{success} 条（{success/total:.2%}）**。这是固定数据与现有文本证据下的匹配率，不是完整语义证明。",
         f"- SQLGlot 转译失败：**{outcomes['TRANSLATION_FAILED']} 条**；实际取得 Doris 执行结果：**{executed} 条**。",
         f"- 运行时读取到源端报错的负向用例：**{negative} 条**；其中 **{outcomes['MATCH']-success} 条**两端粗粒度错误类别相同，不计入成功匹配，也不证明同因。",
         f"- 测试库：`{scope['database']}`。源结果读官方 `.out`；验证器只执行 Doris。没有执行 AI 改写、归因或修复。", "",
         "## 2. 范围与数据前提", "",
-        "本批表查询使用已准备的 21 张逻辑表/视图；运行前在框架外只读检查了结构、完整记录和初始指纹。证据见 [environment-check.json](environment-check.json)，数据准备文件没有删除或改写。",
-        "另外两批 20 组官方脚本中，仅纳入不引用表、没有自定义类型/函数依赖且可固定输出的查询；未运行新的 DDL/DML，没有为新表编造数据。含表值函数的查询也保守留待数据准备。这是本批输入的准备条件，不是验证器对执行历史的记忆。",
+        "本批表查询使用已准备的 21 张逻辑表/视图；运行前在框架外只读检查了结构、完整记录和初始指纹。证据见 [environment-check.json](environment-check.json)。",
+        "另外两批 20 组官方脚本中，仅纳入不引用表、没有自定义类型/函数依赖且可固定输出的查询；未运行新的 DDL/DML，没有为新表编造数据。含表值函数的查询也保守留待数据准备。这些是该固定范围的数据前提。",
         f"本批可读取但因环境/对象、确定性或外部资源安全条件未纳入：**{len(scope['deferred_cases'])} 条**。完整 SQL、排除原因和每组数量见 [selection.json](../../../cases/postgres/manual/current/expanded/selection.json)；未纳入不表示通过。",
         "3 条 ORDER BY ... USING 查询已纳入普通 YAML 和本轮查询总数；SQLGlot Parser 拒绝的语法记为转译失败，后续参考输出读取、Doris 执行及比较未执行。原文和错误见 [该组验证报告](validation/select_distinct_on/validation.md)。其他未保留为 Case 的导入诊断不计入运行查询分母，也不能直接归为 SQLGlot 缺陷。",
         "`.out` 缺少原生类型和完整 NULL 表示信息；类型、Session、数据库能力、Adapter、比较器或数据前提仍可能导致差异。首轮报告只描述观察到的结果，不提前把不匹配归因给 SQLGlot。", "",
@@ -293,10 +293,9 @@ def summarize(scope, archive: Path):
     lines += ["", "## 5. 未进入执行与后续处理", "",
         "- 没有选中查询的输入脚本：" + ("、".join(g["name"] for g in scope["groups"] if not g["queries"]) or "无") + "。依赖本轮未准备的表或对象时不执行，不能把空结果算成通过。",
         "- 所有已运行查询的源 SQL、生成的 Doris SQL、执行错误与比较差异见逐组报告；匹配条目简写，不匹配及负向错误条目展开。",
-        "- 旧首轮报告已从 current 移除，恢复副本位于 `" + str(archive.relative_to(ROOT)) + "`，默认不发布到远程。数据准备和其他历史归因文件未删除。",
         "- 下一步可以由人调用归因 Skill 分析本轮报告；本次没有自动执行该步骤。", ""]
     if scope.get("report_update_note"):
-        lines += ["本次报告更新范围：" + scope["report_update_note"], ""]
+        lines += ["各组执行时间与版本见对应 validation.json；查询集合的更新信息另记在 validation-summary.json。", ""]
     (OUTPUT / "SUMMARY.md").write_text("\n".join(lines), encoding="utf-8")
     print(f"TOTAL {total}; successful matches {success}; report {OUTPUT/'SUMMARY.md'}", flush=True)
 

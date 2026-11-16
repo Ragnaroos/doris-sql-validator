@@ -9,7 +9,7 @@ description: 根据 PostgreSQL 到 Doris 的归因报告和 SQLGlot 修复任务
 
 ## 1. 输入与授权范围
 
-需要人提供 `attribution/sqlglot-tasks.md`、详细归因与汇总报告、对应首次 `validation.json`、固定 Case YAML/SQL/`.out`、数据准备证据、目标 SQLGlot checkout 及可用的 PG/Doris 只读连接。历史中文文件名同样可以读取，按实际路径引用，不重命名旧证据。
+需要人提供 `attribution/sqlglot-tasks.md`、详细归因与汇总报告、对应首次 `validation.json`、固定 Case YAML/SQL/`.out`、数据准备证据、目标 SQLGlot checkout 及可用的 PG/Doris 只读连接。使用项目相对路径或明确的 checkout 路径，不引用维护者的个人主目录；按实际路径引用，不重命名已有证据。
 
 - 用户指定任务时只处理指定范围；未指定时按任务依赖和优先级选择可独立验证的小批次，报告本轮范围。不能因为拿到整张清单就处理所有无关事项。
 - 默认修改用户指定的社区 SQLGlot checkout 和相关测试。验证框架修改仅限用户明确选择的框架修复任务；Doris 源码、基表/装数、Session 政策、原 SQL/`.out` 不在默认修改范围。

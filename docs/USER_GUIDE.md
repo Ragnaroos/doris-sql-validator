@@ -5,7 +5,6 @@
 PostgreSQL 的人工数据准备、首轮报告、证据交接、独立对照、归因和修复 Skill 完整步骤，
 见 [PostgreSQL 人工连续链路](POSTGRES_MANUAL_WORKFLOW.md)。AI 相关步骤由人显式调用，CLI 不调用模型。
 报告正文默认中文、文件名使用英文，通用术语允许使用英文；不直观的状态仍解释其含义。
-本指南后文的历史英文报告字段在新报告中附中文含义或被中文表述替代，旧报告按原路径保留。
 
 ## 1. 功能定位与验证流程
 
@@ -25,13 +24,13 @@ PostgreSQL 的人工数据准备、首轮报告、证据交接、独立对照、
         ▼
 import-cases
   ├── 按语句拆分脚本
-  ├── 只接受 SQLGlot 能识别的只读 Query
+  ├── 接受只读 Query，并保留查询形状的 Parser 失败作为普通错误 Case
   ├── 跳过 DDL、DML、EXPLAIN 等非只读语句
   └── 生成 Case YAML
         │
         ▼
 cases-lint
-  └── 检查 YAML 结构、Case ID 和 Recorded Output 索引
+  └── 检查 YAML 结构与 Case ID；参考输出的实际读取在导入/运行时检查
         │
         ▼
 run
@@ -132,7 +131,7 @@ PostgreSQL `.out` 读取支持默认 ASCII 横向表格，以及 `\x` / `\gx` �
 
 定位时按完整的外层语句回显计数，不把多行 PREPARE、EXPLAIN、视图/函数定义、查询前缀或结果单元格中的同文 SELECT 当成独立查询。支持识别 XML WARNING 后的原文与箭头诊断行、明确缩进的诊断续行，以及 NOTICE 的级联对象清单；未知输出不通过无限向后搜索“找一张能解析的表格”来掩盖。COPY 输入在官方 `.out` 中可能被省略，不能因此跳过后续查询；`\sv` 打印的视图定义也不是新执行的 SQL 回显。
 
-这些仍是显示文本，不提供原生类型，也不能可靠区分默认空白显示的 NULL 与空字符串、或还原与排版填充混合的行尾空格。任意自定义格式（如 Unicode/old-ascii 边框、wrapped 自动折行、tuples-only）不在此次支持范围。缺少行数标记、续行被截断、列结构不一致等情况仍报读取错误，不借用下一条 SQL 的输出，不自动回退到 Live Source。
+这些仍是显示文本，不提供原生类型，也不能可靠区分默认空白显示的 NULL 与空字符串、或还原与排版填充混合的行尾空格。任意自定义格式（如 Unicode/old-ascii 边框、wrapped 自动折行、tuples-only）不在支持范围。缺少行数标记、续行被截断、列结构不一致等情况仍报读取错误，不借用下一条 SQL 的输出，不自动回退到 Live Source。
 
 输出解析器按 `recorded_output.format` 选择，而不是只看 `.out` 扩展名：`pg-regress` 识别 PostgreSQL 回归测试的 psql 回显和结果；`hive-qtest` 识别 Hive QTest 的 PREHOOK/POSTHOOK 与制表符结果。两者读取后统一为相同的查询结果结构，复用后续比较器。这里的解析器不是 SQLGlot 的 SQL Parser；同一种数据库如果换成 CSV、JSON 或其他测试工具的输出，也需要对应的格式解析支持，不能直接假设与现有 `.out` 格式兼容。
 
@@ -150,12 +149,12 @@ PostgreSQL `.out` 读取支持默认 ASCII 横向表格，以及 `\x` / `\gx` �
 所有命令均假设当前目录为项目根目录：
 
 ```bash
-cd /Users/a123/Documents/网站维护/doris-sql-validator
+cd doris-sql-validator
 ```
 
 ### 4.1 Python 运行环境安装
 
-项目使用 Python 3.12，并把相邻的社区版 SQLGlot 仓库 `../sqlglot` 作为 editable dependency。
+项目使用 Python 3.12，并把相邻的社区版 SQLGlot 仓库 `../sqlglot` 作为 editable dependency。先按 [README 的安装步骤](../README.md#安装) 克隆两个仓库；已有 checkout 时不要重复 clone。
 
 ```bash
 python3.12 -m venv .venv
@@ -238,17 +237,13 @@ Hive/PostgreSQL                       Doris
 
 验证器不会因为输入脚本包含 `CREATE` 或 `INSERT` 就执行它们。若 Doris 表不存在，报告通常显示 `TARGET_ENVIRONMENT_ERROR`，错误类别为 `TABLE_NOT_FOUND`；若表存在但数据不同，通常显示 `ROW_COUNT_MISMATCH` 或 `ROW_VALUE_MISMATCH`。
 
-项目中的上游集成样本可使用独立准备脚本：
-
-```bash
-.venv/bin/python scripts/prepare_upstream_samples.py
-```
-
-这个脚本不是验证链路的一部分，只用于准备当前示例依赖的数据。
+可直接使用 [快速示例](../examples/postgres/basic/README.md) 提供的 PostgreSQL/Doris 准备 SQL。它们由用户在框架外用 SQL 客户端执行；只在新的专用测试库运行。官方回归语料的准备依赖与类型限制见 [样本说明](../cases/postgres/manual/current/README.md)。
 
 ## 5. Case YAML 生成
 
-建议把生成物放入单独目录：
+Live Source 的 YAML 可以放入单独目录。Recorded Output 还有额外限制：`.out/.q.out` 必须在 YAML 所在目录或其子目录，不能指向目录之外；将输入、参考输出和 YAML 放在同一目录最简单。以下 `/path/to/` 需要替换为自己的输入路径，开箱即用命令见快速示例。
+
+例如，为自有 Live Source 输入创建目录：
 
 ```bash
 mkdir -p cases/generated
@@ -277,7 +272,7 @@ mkdir -p cases/generated
   --input /path/to/query.q \
   --recorded-output /path/to/query.q.out \
   --qtest-driver TestMiniLlapLocalCliDriver \
-  --output cases/generated/hive-query-recorded.yaml
+  --output /path/to/hive-query-recorded.yaml
 ```
 
 `--qtest-driver` 用于记录输出所属的 Hive QTest Driver；只有对应输出确实依赖该信息时才需要填写。
@@ -304,7 +299,7 @@ mkdir -p cases/generated
   --target-database dsv_validation \
   --input /path/to/query.sql \
   --recorded-output /path/to/query.out \
-  --output cases/generated/pg-query-recorded.yaml
+  --output /path/to/pg-query-recorded.yaml
 ```
 
 ### 5.5 通用 SQL 文件导入
@@ -327,7 +322,7 @@ mkdir -p cases/generated
 
 YAML 是 Importer 的稳定输出，也是 `run` 的唯一批量输入。通常不需要用户手工补充标签、预期结果或生成后的 Doris SQL。
 
-下面是一个精简示例：
+下面是字段结构示意，不是可直接运行的配置；真实路径、指纹和查询编号应由 Importer 生成：
 
 ```yaml
 source:
@@ -389,7 +384,9 @@ cases:
 
 YAML 不保存生成的 Doris SQL。Doris SQL 取决于当前运行时加载的 SQLGlot 版本，因此每次运行时重新生成，并记录在最终 Report 中。
 
-`input.file` 主要用于报告来源追踪，运行时不会重新读取原始 SQL，因为 Case 已经保存在 YAML 中。`recorded_output.file` 则会在每次运行时读取，通常按 YAML 所在目录解析相对路径；移动 Recorded Output YAML 时，必须同时调整或移动它引用的 `.out/.q.out`。
+Parser 无法识别但形状为 SELECT/WITH 等查询的语句可以保留为普通 Case，并在运行报告中记录 `failure_stage=source_parse`；这不表示源数据库本身执行失败。DDL/DML 仍不会执行。
+
+`input.file` 主要用于报告来源追踪，运行时不会重新读取原始 SQL，因为 Case 已经保存在 YAML 中。`recorded_output.file` 则会在每次运行时读取，通常按 YAML 所在目录解析相对路径；移动 Recorded Output YAML 时，必须同时调整或移动它引用的 `.out/.q.out`，并使文件仍处于 YAML 目录的范围内。参考输出指纹不一致时会报错，不自动换用其他文件。
 
 ## 7. Case YAML 校验与验证执行
 
@@ -463,23 +460,20 @@ validation.json  面向程序、CI 或后续统计
 
 报告不会保存全部大结果集，只保存字段摘要、行数、完整结果 Digest 和最多 5 行样本。
 
-### 8.1 Summary：整体统计
+### 8.1 汇总统计
 
-示例：
+报告先展示查询总数、成功结果匹配比例和各类失败数量。例如：
 
-```text
-Total cases: 14
-Available evidence matched: 11
-Non-matching or failed: 3
-SQLGlot translation failed: 0
-Doris execution failed: 3
-Row count mismatch: 0
-Row value mismatch: 0
-```
+~~~text
+查询总数：4
+成功结果匹配：3
+SQLGlot 转译失败：0
+Doris 执行失败：1
+~~~
 
-这表示 14 条查询中 11 条在当前可用证据范围内匹配，3 条需要继续查看详细部分。
+成功匹配必须两端成功；源端负向报错即使内部 Outcome 为 MATCH，也不计成功匹配。各项分母和未取得源证据的情况分别说明。
 
-`Semantically inconclusive` 不等于验证器没有工作。对于依赖表的查询，如果框架没有证明两端数据完全相同，即使发现行数或执行状态不同，也会谨慎标记为 `INCONCLUSIVE`，避免直接把环境差异归因于 SQLGlot。
+INCONCLUSIVE 表示现有证据不足以作完整语义结论，不表示验证器没有工作。表查询数据前提未经框架核验时，发现差异也不能自动归为 SQLGlot 缺陷。
 
 ### 8.2 Import diagnostics：导入诊断
 
@@ -491,7 +485,7 @@ Statement 2 | skipped | insert  | Expected one read-only Query, got Insert
 Statement 3 | skipped | explain | Expected one read-only Query, got Command
 ```
 
-这些不是运行失败，而是 Importer 按“只验证只读 Query”的规则主动跳过。
+其中 DDL/DML 的 skipped 不是执行失败；parse_error 或 recorded_output 的 error 则应读取具体原因，分别排查源语法和参考输出读取。
 
 ### 8.3 Comparison coverage：比较证据覆盖范围
 
@@ -541,7 +535,7 @@ Semantic conclusion: Inconclusive
 - 当前 SQLGlot 生成的 Doris SQL；
 - 源端与 Doris 的执行状态；
 - 字段信息、行数和最多 5 行样本；
-- 数据不同时的完整结果 Digest；
+- JSON 中保留完整结果 Digest；Markdown 优先展示可读的字段、样本与错误，不反复列摘要值；
 - 原始错误类别、错误码和错误消息；
 - 针对该失败类型的排查方向。
 
@@ -597,46 +591,28 @@ doris_sample: ...
 
 `LIMIT` 没有稳定 `ORDER BY` 时，不同引擎可能合法地返回不同记录，不适合据此直接判断 SQLGlot 语义错误。
 
-## 10. 端到端执行示例
+## 10. 可运行示例与样本路径
 
-下面用当前发布样本中的 PostgreSQL `case.sql + case.out` 演示 Recorded Output。全批输入与数据准备说明见 [当前样本](../cases/postgres/manual/current/README.md)，首轮结果见 [SUMMARY.md](../reports/pg-manual/current/SUMMARY.md)。
+推荐从 [examples/postgres/basic/README.md](../examples/postgres/basic/README.md) 开始。目录同时包含常量 SQL/.out、表查询 SQL/.out、双端 DDL/INSERT 和逐步命令，不要求维护者的本地数据库已存在。
 
-```bash
-cd /Users/a123/Documents/网站维护/doris-sql-validator
+按示例完成 Doris 数据准备后：
 
-# 1. 首次使用先按 POSTGRES_MANUAL_WORKFLOW.md 调用数据准备 Skill
-#    本批已在 dsv_pg_manual_20261111 准备，不能假设其他机器已有此库
-
-# 2. 原始 SQL/.out 已导入并生成 YAML，可先检查
-.venv/bin/doris-sql-validator cases-lint \
-  --path cases/postgres/manual/current/case.yaml
-
-# 3. 执行 SQLGlot 转译、Doris 查询和结果比较
-.venv/bin/doris-sql-validator run \
-  --path cases/postgres/manual/current/case.yaml \
-  --output-dir reports/pg-manual/local-rerun/case
-
-# 4. 阅读人工报告
-open reports/pg-manual/local-rerun/case/validation.md
-```
-
-如需 Live Source：为自有 `queries.sql` 在同一数据阶段分别准备好两个库；以下库名沿用本批实际环境。无 `.out` 时，Importer 生成的 YAML 没有 `recorded_output`，运行器才会连接 PG。不要将整份官方脚本不分阶段直接当 Live Source 全量回放。
-
-```bash
-./scripts/postgres.sh up
-.venv/bin/doris-sql-validator doctor --source-engine postgres
-
+~~~bash
 .venv/bin/doris-sql-validator import-cases \
-  --format raw-sql --dialect postgres \
-  --input queries.sql \
-  --source-database dsv_pg_manual_20261111 \
-  --target-database dsv_pg_manual_20261111 \
-  --output cases/postgres/manual/local-live/cases.yaml
+  --format pg-regress --dialect postgres \
+  --input examples/postgres/basic/queries.sql \
+  --recorded-output examples/postgres/basic/expected.out \
+  --source-database dsv_demo --target-database dsv_demo \
+  --output examples/postgres/basic/generated-recorded.yaml
 
 .venv/bin/doris-sql-validator run \
-  --path cases/postgres/manual/local-live/cases.yaml \
-  --output-dir reports/pg-manual/local-live
-```
+  --path examples/postgres/basic/generated-recorded.yaml \
+  --output-dir reports/demo/recorded
+~~~
+
+不传 --recorded-output 则为 Live Source，需要两端已准备数据。仅导入和 lint 不连接数据库；run 会执行目标查询。使用不同输出目录保留多次运行，不覆盖仓库附带的参考报告。
+
+更大范围的 [官方回归样本](../cases/postgres/manual/current/README.md) 含多阶段数据和外部对象依赖，不保证全部 SQL 可在空库直接执行。学习后续人工归因与修复，见 [PostgreSQL 工作流](POSTGRES_MANUAL_WORKFLOW.md)。
 
 ## 11. 功能范围与限制
 
@@ -661,4 +637,4 @@ open reports/pg-manual/local-rerun/case/validation.md
 - 对随机函数、当前时间或无稳定排序的 `LIMIT` 提供确定性保证；
 - 静态证明两条 SQL 对所有可能数据都语义等价。
 
-当前发布的 PostgreSQL 输入与实际结果只保留 `cases/postgres/manual/current/` 和 `reports/pg-manual/current/`。旧 Hive/PG 两轮评估仍在本地，但不纳入远程发布；具体范围见 [PUBLISHING.md](PUBLISHING.md)。
+公开样例、参考报告及不应提交的本机文件见 [PUBLISHING.md](PUBLISHING.md)。参考报告的结果仅适用于其记录的版本、数据和 Session，不代表新环境的运行结果。

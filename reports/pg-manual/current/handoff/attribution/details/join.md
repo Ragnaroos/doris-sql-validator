@@ -1,6 +1,6 @@
 # join：PostgreSQL → Doris 归因明细
 
-报告日期：2026-11-13。仅重做步骤四，不实施修复。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
+参考运行日期：2026-11-13。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
 
 ## 1. 输入与范围
 
@@ -69,7 +69,7 @@ Doris 原错误：
 
 PG-DORIS-004 支持基表别名后的列名列表：AS t(a,b,c) 被直接生成到 Doris 后失败。显式投影候选可行；后续 CTE 列名列表候选也已实测，可避免默认读取表 Schema。
 
-代码位置：[sqlglot/generator.py:1628](../../../../../../../sqlglot/sqlglot/generator.py)（行 1628）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generator.py:1628](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L1628)（行 1628）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -179,7 +179,7 @@ Doris 原错误：
 
 PG-DORIS-004 支持基表别名后的列名列表：AS t(a,b,c) 被直接生成到 Doris 后失败。显式投影候选可行；后续 CTE 列名列表候选也已实测，可避免默认读取表 Schema。
 
-代码位置：[sqlglot/generator.py:1628](../../../../../../../sqlglot/sqlglot/generator.py)（行 1628）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generator.py:1628](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L1628)（行 1628）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -282,7 +282,7 @@ Doris 原错误：
 
 PG-DORIS-004 支持基表别名后的列名列表：AS t(a,b,c) 被直接生成到 Doris 后失败。显式投影候选可行；后续 CTE 列名列表候选也已实测，可避免默认读取表 Schema。
 
-代码位置：[sqlglot/generator.py:1628](../../../../../../../sqlglot/sqlglot/generator.py)（行 1628）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generator.py:1628](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L1628)（行 1628）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -386,7 +386,7 @@ Doris 原错误：
 
 PG-DORIS-004 支持基表别名后的列名列表：AS t(a,b,c) 被直接生成到 Doris 后失败。显式投影候选可行；后续 CTE 列名列表候选也已实测，可避免默认读取表 Schema。
 
-代码位置：[sqlglot/generator.py:1628](../../../../../../../sqlglot/sqlglot/generator.py)（行 1628）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generator.py:1628](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L1628)（行 1628）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -1078,7 +1078,7 @@ TypeError: 'NoneType' object is not iterable
 
 PG-DORIS-012 避免 NATURAL FULL JOIN 在 MySQL 兼容变换中崩溃：eliminate_full_outer_join 对 NATURAL FULL JOIN 的 using=None 迭代触发 TypeError，3 条合法查询无法生成。显式 FULL JOIN ON + COALESCE 的独立候选行值一致。
 
-代码位置：[sqlglot/transforms.py:685](../../../../../../../sqlglot/sqlglot/transforms.py)（行 685）；[sqlglot/transforms.py:706](../../../../../../../sqlglot/sqlglot/transforms.py)（行 706）；[sqlglot/generators/mysql.py:189](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 189）。
+代码位置：[sqlglot/transforms.py:685](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L685)（行 685）；[sqlglot/transforms.py:706](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L706)（行 706）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（行 189）。
 
 首次候选构造失败（即使后续成功仍保留）：
 
@@ -1267,7 +1267,7 @@ TypeError: 'NoneType' object is not iterable
 
 PG-DORIS-012 避免 NATURAL FULL JOIN 在 MySQL 兼容变换中崩溃：eliminate_full_outer_join 对 NATURAL FULL JOIN 的 using=None 迭代触发 TypeError，3 条合法查询无法生成。显式 FULL JOIN ON + COALESCE 的独立候选行值一致。
 
-代码位置：[sqlglot/transforms.py:685](../../../../../../../sqlglot/sqlglot/transforms.py)（行 685）；[sqlglot/transforms.py:706](../../../../../../../sqlglot/sqlglot/transforms.py)（行 706）；[sqlglot/generators/mysql.py:189](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 189）。
+代码位置：[sqlglot/transforms.py:685](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L685)（行 685）；[sqlglot/transforms.py:706](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L706)（行 706）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（行 189）。
 
 首次候选构造失败（即使后续成功仍保留）：
 
@@ -1346,7 +1346,7 @@ TypeError: 'NoneType' object is not iterable
 
 PG-DORIS-012 避免 NATURAL FULL JOIN 在 MySQL 兼容变换中崩溃：eliminate_full_outer_join 对 NATURAL FULL JOIN 的 using=None 迭代触发 TypeError，3 条合法查询无法生成。显式 FULL JOIN ON + COALESCE 的独立候选行值一致。
 
-代码位置：[sqlglot/transforms.py:685](../../../../../../../sqlglot/sqlglot/transforms.py)（行 685）；[sqlglot/transforms.py:706](../../../../../../../sqlglot/sqlglot/transforms.py)（行 706）；[sqlglot/generators/mysql.py:189](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 189）。
+代码位置：[sqlglot/transforms.py:685](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L685)（行 685）；[sqlglot/transforms.py:706](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L706)（行 706）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（行 189）。
 
 首次候选构造失败（即使后续成功仍保留）：
 

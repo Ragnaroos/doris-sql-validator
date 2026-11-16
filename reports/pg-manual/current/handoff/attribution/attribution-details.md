@@ -2,7 +2,7 @@
 
 ## 1. 输入与实际完成范围
 
-报告日期：2026-11-13。只按新版 pg-doris-attribute Skill 执行步骤四，不修复代码或准备数据。上一轮步骤四和五的 981 个文件已按要求删除，没有备份；原 SQL/.out/YAML、数据准备、首轮报告、步骤三索引保持不变。
+参考运行日期：2026-11-13。本文说明固定版本、数据条件和已保存对照证据，不能替代新环境中的执行。
 
 固定 34 组、1,725 条逐条重新读取 .out：源端成功 1,427 条、源端负向 298 条、源端环境/对象前提 0 条、输出读取异常 0 条。成功源查询中，241 条首轮匹配、1,186 条存在差异；本轮选择调查 204 条，982 条尚未逐条独立复核。读取全部记录、保留全部 SQL 不等于完成全量根因分析。
 
@@ -23,7 +23,7 @@
 
 完整前后核验、会话与进度在 [attribution-statistics.json](attribution-statistics.json)。核验由本轮在框架外只读执行，不是新增 Fixture Gate，没有建表、导入、清库或修改原数据。
 
-原入口：[首轮 SUMMARY](../../SUMMARY.md)、[首轮统计](../../validation-summary.json)、[步骤三根索引](../evidence-index.json)。步骤三索引仍是既有 33 组，通过 parser_failure_report_file 指向 select_distinct_on 普通失败报告；本轮直接读取第 34 组的 YAML/validation，没有改写交接原件，也没有创建额外 HANDOFF 总导航。
+原入口：[首轮 SUMMARY](../../SUMMARY.md)、[首轮统计](../../validation-summary.json)、[步骤三根索引](../evidence-index.json)。步骤三索引仍是既有 33 组，通过 parser_failure_report_file 指向 select_distinct_on 普通失败报告；第 34 组的输入和报告直接按该引用读取。
 
 ## 3. 主范围进度与阅读说明
 

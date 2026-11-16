@@ -1,8 +1,8 @@
 # PostgreSQL → Doris：SQLGlot 功能补充任务
 
-2026-11-13；仅步骤四，没有实施修复。PG-DORIS-001 等是追踪编号，标题说明实际问题。20 项包含受限修复建议与研究/限制事项；不是 20 个可直接提交的已确认通用缺陷。
+参考评估日期：2026-11-13。PG-DORIS-001 等是追踪编号，标题说明实际问题。20 项包含受限修复建议与研究/限制事项；不是 20 个可直接提交的已确认通用缺陷。
 
-目标仓库 /Users/a123/Documents/网站维护/sqlglot；社区提交 feb0e08aba28a29590596bb3f5761fbaeb0e98b9。[归因汇总](attribution-summary.md) / [逐组明细](attribution-details.md)。
+目标为相邻的 ../sqlglot checkout；评估所用社区提交 feb0e08aba28a29590596bb3f5761fbaeb0e98b9。[归因汇总](attribution-summary.md) / [逐组明细](attribution-details.md)。
 
 ## 1. 任务汇总
 
@@ -78,7 +78,7 @@ SELECT ANY_VALUE(v) FROM (SELECT ARRAY('hello', 'world') AS v) AS v;
 
 DorisGenerator 继承 array_sql 的 MySQL unsupported；多个成功源查询在到达 Doris 前即被阻断。独立 ARRAY(...) 可以执行，但后续数组索引、聚合和比较未必正确。
 
-代码位置：[sqlglot/generators/mysql.py:654](../../../../../../sqlglot/sqlglot/generators/mysql.py)（已核对行 654）；[sqlglot/generators/doris.py:26](../../../../../../sqlglot/sqlglot/generators/doris.py)（已核对行 26）。
+代码位置：[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（已核对行 654）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（已核对行 26）。
 
 建议改动：为元素列表构造器增加 Doris 实现；静态可知元素类型时保留 PG 的元素位宽。ARRAY(SELECT...) 单独处理，不把查询构造器伪装成元素列表。
 
@@ -148,7 +148,7 @@ SELECT 1 AS two UNION SELECT 2 ORDER BY 1 NULLS LAST;
 
 Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../sqlglot/sqlglot/generators/mysql.py)（已核对行 127）；[sqlglot/generator.py:3317](../../../../../../sqlglot/sqlglot/generator.py)（已核对行 3317）；[sqlglot/generators/doris.py:26](../../../../../../sqlglot/sqlglot/generators/doris.py)（已核对行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（已核对行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（已核对行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（已核对行 26）。
 
 建议改动：核对并覆盖 Doris 的能力标志，保留原排序表达式与 ASC/DESC；不得把解除这一阻断当成修好整个查询。
 
@@ -222,7 +222,7 @@ SELECT depname, empno, salary, SUM(salary) OVER (PARTITION BY depname) FROM emps
 
 未内联的 OVER w / WINDOW w AS 在本版 Doris 被拒绝；使用社区已有 eliminate_window_clause 构造的独立候选可以执行。
 
-代码位置：[sqlglot/transforms.py:1058](../../../../../../sqlglot/sqlglot/transforms.py)（已核对行 1058）；[sqlglot/generators/mysql.py:189](../../../../../../sqlglot/sqlglot/generators/mysql.py)（已核对行 189）；[sqlglot/generators/doris.py:26](../../../../../../sqlglot/sqlglot/generators/doris.py)（已核对行 26）。
+代码位置：[sqlglot/transforms.py:1058](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L1058)（已核对行 1058）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（已核对行 189）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（已核对行 26）。
 
 建议改动：复用已有作用域内联变换，按 Doris 的 preprocess 顺序接入，保留继承窗口的 partition/order/frame。
 
@@ -317,7 +317,7 @@ WITH _dsv_t1(a,b,c) AS (SELECT * FROM J1_TBL) SELECT * FROM _dsv_t1 AS t1;
 
 AS t(a,b,c) 被直接生成到 Doris 后失败。显式投影候选可行；后续 CTE 列名列表候选也已实测，可避免默认读取表 Schema。
 
-代码位置：[sqlglot/generator.py:1628](../../../../../../sqlglot/sqlglot/generator.py)（已核对行 1628）；[sqlglot/generators/doris.py:26](../../../../../../sqlglot/sqlglot/generators/doris.py)（已核对行 26）。
+代码位置：[sqlglot/generator.py:1628](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L1628)（已核对行 1628）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（已核对行 26）。
 
 建议改动：研究将基表列重命名下沉到 CTE 列别名，或在已有 Schema 时改写投影；处理命名冲突和作用域，不硬编码 J1_TBL 的列。
 
@@ -380,7 +380,7 @@ SELECT IF(JSON_EXTRACT_ISNULL('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', '
 
 JSONExtractScalar 当前生成 JSON_EXTRACT，丢失文本提取和 JSON null→SQL NULL 语义；json_extract_path_text 的附加路径也未完整生成。
 
-代码位置：[sqlglot/generators/doris.py:75](../../../../../../sqlglot/sqlglot/generators/doris.py)（已核对行 75）；[sqlglot/parsers/postgres.py:151](../../../../../../sqlglot/sqlglot/parsers/postgres.py)（已核对行 151）。
+代码位置：[sqlglot/generators/doris.py:75](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L75)（已核对行 75）；[sqlglot/parsers/postgres.py:151](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parsers/postgres.py#L151)（已核对行 151）。
 
 建议改动：为 Doris 生成适当文本提取并补 JSON null 判断；构造完整路径，区分数组下标与对象键；正确转义目标字符串。
 
@@ -457,7 +457,7 @@ SELECT CAST(JSON_CONTAINS('{"a":"b", "b":1, "c":null}', '{"a":"b"}') AS BOOLEAN)
 
 JSONB_CONTAINS 原样输出没有对应 Doris 函数；JSON_CONTAINS 加布尔类型对齐的候选已执行。PG @> 还可能解析成 ArrayContainsAll，不能仅按操作符全局替换。
 
-代码位置：[sqlglot/expressions/json.py:49](../../../../../../sqlglot/sqlglot/expressions/json.py)（已核对行 49）；[sqlglot/generators/doris.py:57](../../../../../../sqlglot/sqlglot/generators/doris.py)（已核对行 57）；[sqlglot/generators/mysql.py:654](../../../../../../sqlglot/sqlglot/generators/mysql.py)（已核对行 654）。
+代码位置：[sqlglot/expressions/json.py:49](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/expressions/json.py#L49)（已核对行 49）；[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（已核对行 57）；[sqlglot/generators/mysql.py:654](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L654)（已核对行 654）。
 
 建议改动：先处理已识别 JSONBContains AST；对 @>/<@ 仅在 JSON 类型已知时采用 JSON 规则，保留数组的不同语义。
 
@@ -527,7 +527,7 @@ SELECT CAST(187 AS INT);
 
 0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../sqlglot/sqlglot/tokenizer_core.py)（已核对行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../sqlglot/sqlglot/tokenizer_core.py)（已核对行 1051）；[sqlglot/parser.py:5877](../../../../../../sqlglot/sqlglot/parser.py)（已核对行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（已核对行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（已核对行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（已核对行 5877）。
 
 建议改动：在 PG 方言保留数值字面量的来源和类型，识别 octal 与下划线；不能改坏 B'...'、X'...' 等真正的位串。
 
@@ -595,7 +595,7 @@ SELECT CAST(CASE WHEN LOWER(TRIM('y')) IN ('true', 't', 'tr', 'tru', 'yes', 'y',
 
 PG 的 y/n/of 是合法输入；当前 Doris CAST 返回 NULL。基于 LOWER/TRIM 的合法前缀规范化候选取得相同 BOOLEAN 和行值。
 
-代码位置：[sqlglot/generator.py:4281](../../../../../../sqlglot/sqlglot/generator.py)（已核对行 4281）；[sqlglot/generators/doris.py:57](../../../../../../sqlglot/sqlglot/generators/doris.py)（已核对行 57）。
+代码位置：[sqlglot/generator.py:4281](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L4281)（已核对行 4281）；[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（已核对行 57）。
 
 建议改动：对明确文本→BOOLEAN 转换进行规范化，支持合法前缀、大小写和空白；不从返回值拼常量，不默认承担非法输入错误复刻。
 
@@ -695,7 +695,7 @@ WITH RECURSIVE t(n) AS (SELECT CAST(1 AS INT) UNION ALL SELECT CAST(n+1 AS INT) 
 
 PG 锚点 VALUES(1) 的 INT 语义没有传到 Doris 的最小宽度字面量；当前 Doris 报 TINYINT 锚点与 SMALLINT 递归列不一致。显式双端 INT 的递归候选成功。
 
-代码位置：[sqlglot/generator.py:1610](../../../../../../sqlglot/sqlglot/generator.py)（已核对行 1610）；[sqlglot/generator.py:1801](../../../../../../sqlglot/sqlglot/generator.py)（已核对行 1801）；[sqlglot/optimizer/annotate_types.py](../../../../../../sqlglot/sqlglot/optimizer/annotate_types.py)。
+代码位置：[sqlglot/generator.py:1610](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L1610)（已核对行 1610）；[sqlglot/generator.py:1801](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L1801)（已核对行 1801）；[sqlglot/optimizer/annotate_types.py](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/optimizer/annotate_types.py)。
 
 建议改动：在静态可推断的递归列中对齐类型，不全局把每个数字写成 INT；列、NULL、联合和溢出场景说明所需元数据。
 
@@ -789,7 +789,7 @@ SELECT four, CAST(ten DIV 4 AS INT) AS two, SUM(CAST(ten DIV 4 AS INT)) OVER (PA
 
 窗口查询中的整数列除法在 Doris 变成分数，改变 ORDER BY/RANGE 的分组和结果；DIV 加 INT 类型对齐候选修复了两个具体样本的行值。
 
-代码位置：[sqlglot/generator.py:4621](../../../../../../sqlglot/sqlglot/generator.py)（已核对行 4621）；[sqlglot/parsers/postgres.py](../../../../../../sqlglot/sqlglot/parsers/postgres.py)；[sqlglot/optimizer/annotate_types.py](../../../../../../sqlglot/sqlglot/optimizer/annotate_types.py)。
+代码位置：[sqlglot/generator.py:4621](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L4621)（已核对行 4621）；[sqlglot/parsers/postgres.py](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parsers/postgres.py)；[sqlglot/optimizer/annotate_types.py](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/optimizer/annotate_types.py)。
 
 建议改动：利用可靠类型信息生成整数除法和正确返回位宽，保留朝零截断；未知列类型时不得把所有 / 改成 DIV。
 
@@ -886,7 +886,7 @@ SELECT a,b,CAST(GROUPING_ID(a,b) AS INT),SUM(v),COUNT(*),MAX(v) FROM gstest1 GRO
 
 当前 GROUPING(a,b) 在 Doris 失败；GROUPING_ID(a,b) 可以执行。后续候选显式转 INT 以保留 PG grouping 返回类型。
 
-代码位置：[sqlglot/expressions/aggregate.py:144](../../../../../../sqlglot/sqlglot/expressions/aggregate.py)（已核对行 144）；[sqlglot/generators/doris.py:57](../../../../../../sqlglot/sqlglot/generators/doris.py)（已核对行 57）。
+代码位置：[sqlglot/expressions/aggregate.py:144](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/expressions/aggregate.py#L144)（已核对行 144）；[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（已核对行 57）。
 
 建议改动：为多参数 Grouping 建立 Doris 生成规则，核实位序和返回类型；不要混淆 Grouping 与 GroupingId。
 
@@ -952,7 +952,7 @@ SELECT COALESCE(s2.name,s3.name) AS name,s2.s2_n,s2.s2_2,s3.s3_n,s3.s3_2 FROM (S
 
 eliminate_full_outer_join 对 NATURAL FULL JOIN 的 using=None 迭代触发 TypeError，3 条合法查询无法生成。显式 FULL JOIN ON + COALESCE 的独立候选行值一致。
 
-代码位置：[sqlglot/transforms.py:685](../../../../../../sqlglot/sqlglot/transforms.py)（已核对行 685）；[sqlglot/transforms.py:706](../../../../../../sqlglot/sqlglot/transforms.py)（已核对行 706）；[sqlglot/generators/mysql.py:189](../../../../../../sqlglot/sqlglot/generators/mysql.py)（已核对行 189）。
+代码位置：[sqlglot/transforms.py:685](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L685)（已核对行 685）；[sqlglot/transforms.py:706](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L706)（已核对行 706）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（已核对行 189）。
 
 建议改动：Doris 不应无条件沿用 MySQL 的 FULL JOIN 模拟；对 NATURAL/USING 的公共列识别和投影有明确策略，不能仅吞掉 TypeError。
 
@@ -1041,7 +1041,7 @@ SELECT string4,two,ten FROM (SELECT string4,two,ten,ROW_NUMBER() OVER(PARTITION 
 
 2 条 .out 成功查询因 USING </> 被 Parser 拒绝；另 1 条源端本身报错，已排除。使用 ASC/DESC 的规范化源变体可实际执行。
 
-代码位置：[sqlglot/parser.py:5877](../../../../../../sqlglot/sqlglot/parser.py)（已核对行 5877）；[sqlglot/parsers/postgres.py](../../../../../../sqlglot/sqlglot/parsers/postgres.py)。
+代码位置：[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（已核对行 5877）；[sqlglot/parsers/postgres.py](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parsers/postgres.py)。
 
 建议改动：为 PG 解析内建 USING </> 并映射正确方向及默认 NULL 顺序；自定义操作符不应盲目当成 ASC/DESC。
 
@@ -1104,7 +1104,7 @@ SELECT CAST(STR_TO_DATE('January 8, 1999','%M %e, %Y') AS DATE);
 
 January 8, 1999 在 PG 为成功 DATE，普通 Doris CAST 返回 NULL；指定格式 STR_TO_DATE 的候选和闰年正常变体成功。
 
-代码位置：[sqlglot/generator.py:4281](../../../../../../sqlglot/sqlglot/generator.py)（已核对行 4281）；[sqlglot/generators/doris.py:57](../../../../../../sqlglot/sqlglot/generators/doris.py)（已核对行 57）。
+代码位置：[sqlglot/generator.py:4281](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L4281)（已核对行 4281）；[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（已核对行 57）。
 
 建议改动：对可无歧义识别的字面量格式转换，或显式保留支持限制；不能硬编码当前日期答案。
 
@@ -1149,7 +1149,7 @@ SELECT y,m,d,CAST(CONCAT(CAST(y AS STRING),'-',LPAD(CAST(m AS STRING),2,'0'),'-'
 
 原非法日期不建立修复任务。新只读变体用正常日期、闰日和 NULL 在 PG 成功，Doris 按 y/m/d 组装 DATE 的候选对齐。
 
-代码位置：[sqlglot/parsers/postgres.py:135](../../../../../../sqlglot/sqlglot/parsers/postgres.py)（已核对行 135）；[sqlglot/expressions/temporal.py:293](../../../../../../sqlglot/sqlglot/expressions/temporal.py)（已核对行 293）；[sqlglot/generators/doris.py:57](../../../../../../sqlglot/sqlglot/generators/doris.py)（已核对行 57）。
+代码位置：[sqlglot/parsers/postgres.py:135](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parsers/postgres.py#L135)（已核对行 135）；[sqlglot/expressions/temporal.py:293](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/expressions/temporal.py#L293)（已核对行 293）；[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（已核对行 57）。
 
 建议改动：研究 DateFromParts/匿名 MAKE_DATE 到 Doris 的规则，保留 NULL 和有效日期范围；不要把三参数 MAKE_DATE 直接改成两参数 MAKEDATE。
 
@@ -1203,7 +1203,7 @@ SELECT CAST('1234567890' AS MONEY)
 
 MONEY、Range/Multirange、Interval/复合类型在多组成功源查询中被原样生成成 Doris 不接受的形式。还没有证明通用无损映射。
 
-代码位置：[sqlglot/generator.py:1801](../../../../../../sqlglot/sqlglot/generator.py)（已核对行 1801）；[sqlglot/generators/doris.py:38](../../../../../../sqlglot/sqlglot/generators/doris.py)（已核对行 38）。
+代码位置：[sqlglot/generator.py:1801](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L1801)（已核对行 1801）；[sqlglot/generators/doris.py:38](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L38)（已核对行 38）。
 
 建议改动：逐类型核查可表达域和操作；不支持时给明确 unsupported，不发送显然不兼容的 CAST；不要把改报错当成已补齐能力。
 
@@ -1266,7 +1266,7 @@ SELECT AVG(CAST(a AS DECIMAL(38,16))) AS avg_32 FROM aggtest WHERE a < 100;
 
 AVG(INT) 当前返回 DOUBLE；转 DECIMAL(38,16) 对 1.5 样本行值一致，但 32.6666666666666667 仍变成 ...6666。
 
-代码位置：[sqlglot/generators/doris.py:57](../../../../../../sqlglot/sqlglot/generators/doris.py)（已核对行 57）；[sqlglot/optimizer/annotate_types.py](../../../../../../sqlglot/sqlglot/optimizer/annotate_types.py)。
+代码位置：[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（已核对行 57）；[sqlglot/optimizer/annotate_types.py](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/optimizer/annotate_types.py)。
 
 建议改动：查清 PG NUMERIC 与 Doris AVG 的精度/舍入，不把固定 Scale 当成普适修复；先补可实施策略或标注不可无损范围。
 
@@ -1334,7 +1334,7 @@ SELECT PG_INPUT_IS_VALID('asdf', 'bool');
 
 pg_input_is_valid('true','bool') 和 ('asdf','bool') 都是成功源查询，分别返回 true/false；Doris 缺少同名函数。它们不是源端负向用例。
 
-代码位置：[sqlglot/generator.py:4148](../../../../../../sqlglot/sqlglot/generator.py)（已核对行 4148）；[sqlglot/parsers/postgres.py:135](../../../../../../sqlglot/sqlglot/parsers/postgres.py)（已核对行 135）；[sqlglot/generators/doris.py:57](../../../../../../sqlglot/sqlglot/generators/doris.py)（已核对行 57）。
+代码位置：[sqlglot/generator.py:4148](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L4148)（已核对行 4148）；[sqlglot/parsers/postgres.py:135](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parsers/postgres.py#L135)（已核对行 135）；[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（已核对行 57）。
 
 建议改动：逐源类型评估合法值检测和 NULL 行为；无法保留 PG 输入规则时明确不支持，不盲目替换成 TRY_CAST IS NOT NULL。
 
@@ -1423,7 +1423,7 @@ SELECT string4,two,ten FROM (SELECT string4,two,ten,ROW_NUMBER() OVER(PARTITION 
 
 eliminate_distinct_on 把 order.pop() 移入 ROW_NUMBER 窗口，外层不再排序。规范化源变体的第一次候选行值相同但顺序不同；补外层 ORDER BY 后对齐。
 
-代码位置：[sqlglot/transforms.py:144](../../../../../../sqlglot/sqlglot/transforms.py)（已核对行 144）；[sqlglot/transforms.py:168](../../../../../../sqlglot/sqlglot/transforms.py)（已核对行 168）；[sqlglot/generators/mysql.py:189](../../../../../../sqlglot/sqlglot/generators/mysql.py)（已核对行 189）。
+代码位置：[sqlglot/transforms.py:144](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L144)（已核对行 144）；[sqlglot/transforms.py:168](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L168)（已核对行 168）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（已核对行 189）。
 
 建议改动：保留用于选择组内第一行的窗口排序，同时重建外层最终排序；处理投影未暴露排序键、Alias、NULL、LIMIT/OFFSET。
 
@@ -1490,7 +1490,7 @@ SELECT SUM(unique1) OVER (rows BETWEEN 2 preceding AND 2 following), unique1, fo
 
 部分源查询被生成器的 EXCLUDE 限制阻断；移除 NO OTHERS 的样本又被 Doris 要求 frame 必须有 ORDER BY 拒绝。
 
-代码位置：[sqlglot/generator.py:3699](../../../../../../sqlglot/sqlglot/generator.py)（已核对行 3699）；[sqlglot/generators/mysql.py:127](../../../../../../sqlglot/sqlglot/generators/mysql.py)（已核对行 127）。
+代码位置：[sqlglot/generator.py:3699](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3699)（已核对行 3699）；[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（已核对行 127）。
 
 建议改动：区分无操作 NO OTHERS、CURRENT ROW/GROUP/TIES 和目标 frame 限制；不能凭空补一个 ORDER BY 改变源语义或宣称 EXCLUDE 已支持。
 

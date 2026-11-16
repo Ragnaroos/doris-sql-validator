@@ -1,6 +1,6 @@
 # boolean：PostgreSQL → Doris 归因明细
 
-报告日期：2026-11-13。仅重做步骤四，不实施修复。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
+参考运行日期：2026-11-13。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
 
 ## 1. 输入与范围
 
@@ -60,7 +60,7 @@ SELECT CAST('y' AS BOOLEAN) AS `true`
 
 PG-DORIS-008 保留合法 PostgreSQL 布尔文本前缀：PG 的 y/n/of 是合法输入；当前 Doris CAST 返回 NULL。基于 LOWER/TRIM 的合法前缀规范化候选取得相同 BOOLEAN 和行值。
 
-代码位置：[sqlglot/generator.py:4281](../../../../../../../sqlglot/sqlglot/generator.py)（行 4281）；[sqlglot/generators/doris.py:57](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 57）。
+代码位置：[sqlglot/generator.py:4281](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L4281)（行 4281）；[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（行 57）。
 
 第一次候选：
 
@@ -147,7 +147,7 @@ SELECT CAST('n' AS BOOLEAN) AS `false`
 
 PG-DORIS-008 保留合法 PostgreSQL 布尔文本前缀：PG 的 y/n/of 是合法输入；当前 Doris CAST 返回 NULL。基于 LOWER/TRIM 的合法前缀规范化候选取得相同 BOOLEAN 和行值。
 
-代码位置：[sqlglot/generator.py:4281](../../../../../../../sqlglot/sqlglot/generator.py)（行 4281）；[sqlglot/generators/doris.py:57](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 57）。
+代码位置：[sqlglot/generator.py:4281](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L4281)（行 4281）；[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（行 57）。
 
 第一次候选：
 
@@ -234,7 +234,7 @@ SELECT CAST('of' AS BOOLEAN) AS `false`
 
 PG-DORIS-008 保留合法 PostgreSQL 布尔文本前缀：PG 的 y/n/of 是合法输入；当前 Doris CAST 返回 NULL。基于 LOWER/TRIM 的合法前缀规范化候选取得相同 BOOLEAN 和行值。
 
-代码位置：[sqlglot/generator.py:4281](../../../../../../../sqlglot/sqlglot/generator.py)（行 4281）；[sqlglot/generators/doris.py:57](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 57）。
+代码位置：[sqlglot/generator.py:4281](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L4281)（行 4281）；[sqlglot/generators/doris.py:57](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L57)（行 57）。
 
 第一次候选：
 

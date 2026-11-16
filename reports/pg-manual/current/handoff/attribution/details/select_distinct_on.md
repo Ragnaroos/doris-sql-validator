@@ -1,6 +1,6 @@
 # select_distinct_on：PostgreSQL → Doris 归因明细
 
-报告日期：2026-11-13。仅重做步骤四，不实施修复。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
+参考运行日期：2026-11-13。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
 
 ## 1. 输入与范围
 
@@ -49,11 +49,11 @@ ParseError: Invalid expression / Unexpected token. Line 3, Col: 25.
 
 PG-DORIS-013 解析 PostgreSQL ORDER BY USING 内建比较操作符：2 条 .out 成功查询因 USING </> 被 Parser 拒绝；另 1 条源端本身报错，已排除。使用 ASC/DESC 的规范化源变体可实际执行。
 
-代码位置：[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）；[sqlglot/parsers/postgres.py](../../../../../../../sqlglot/sqlglot/parsers/postgres.py)。
+代码位置：[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）；[sqlglot/parsers/postgres.py](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parsers/postgres.py)。
 
 PG-DORIS-019 DISTINCT ON 降级时保留最终 ORDER BY：eliminate_distinct_on 把 order.pop() 移入 ROW_NUMBER 窗口，外层不再排序。规范化源变体的第一次候选行值相同但顺序不同；补外层 ORDER BY 后对齐。
 
-代码位置：[sqlglot/transforms.py:144](../../../../../../../sqlglot/sqlglot/transforms.py)（行 144）；[sqlglot/transforms.py:168](../../../../../../../sqlglot/sqlglot/transforms.py)（行 168）；[sqlglot/generators/mysql.py:189](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 189）。
+代码位置：[sqlglot/transforms.py:144](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L144)（行 144）；[sqlglot/transforms.py:168](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L168)（行 168）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（行 189）。
 
 第一次候选：
 
@@ -141,11 +141,11 @@ ParseError: Invalid expression / Unexpected token. Line 3, Col: 25.
 
 PG-DORIS-013 解析 PostgreSQL ORDER BY USING 内建比较操作符：2 条 .out 成功查询因 USING </> 被 Parser 拒绝；另 1 条源端本身报错，已排除。使用 ASC/DESC 的规范化源变体可实际执行。
 
-代码位置：[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）；[sqlglot/parsers/postgres.py](../../../../../../../sqlglot/sqlglot/parsers/postgres.py)。
+代码位置：[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）；[sqlglot/parsers/postgres.py](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parsers/postgres.py)。
 
 PG-DORIS-019 DISTINCT ON 降级时保留最终 ORDER BY：eliminate_distinct_on 把 order.pop() 移入 ROW_NUMBER 窗口，外层不再排序。规范化源变体的第一次候选行值相同但顺序不同；补外层 ORDER BY 后对齐。
 
-代码位置：[sqlglot/transforms.py:144](../../../../../../../sqlglot/sqlglot/transforms.py)（行 144）；[sqlglot/transforms.py:168](../../../../../../../sqlglot/sqlglot/transforms.py)（行 168）；[sqlglot/generators/mysql.py:189](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 189）。
+代码位置：[sqlglot/transforms.py:144](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L144)（行 144）；[sqlglot/transforms.py:168](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/transforms.py#L168)（行 168）；[sqlglot/generators/mysql.py:189](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L189)（行 189）。
 
 第一次候选：
 

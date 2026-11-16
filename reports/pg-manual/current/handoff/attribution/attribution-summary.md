@@ -1,6 +1,6 @@
 # PostgreSQL → Doris：归因汇总
 
-报告日期：2026-11-13。按更新后的 pg-doris-attribute Skill 重做步骤四。上一轮步骤四、五的 981 个文件已依用户要求删除，没有备份；本轮没有执行步骤五，没有修改 SQLGlot 或框架代码。
+参考运行日期：2026-11-13。本文记录固定输入与代码版本下的差异调查，覆盖范围与限制见下文。
 
 ## 1. 工作完成情况
 
@@ -78,5 +78,5 @@ probe 实际重跑 PG、已有社区 Doris（若可生成）、独立候选及�
 
 失败证据同样保留：JSON 对象返回 TEXT 仍有空格差异；AVG 的循环小数仍不同；json-text-string 首次错误来自手写候选反斜杠转义，第二次已修正，不能算 SQLGlot 缺陷。
 
-版本、会话、前后完整数据核验与进度见 [attribution-statistics.json](attribution-statistics.json)。输入、首轮结果与步骤三索引未改；本轮没有新的步骤五报告。
+版本、会话、前后完整数据核验与进度见 [attribution-statistics.json](attribution-statistics.json)。实施修复前应重新核对实际代码版本、数据前提和任务证据。
 

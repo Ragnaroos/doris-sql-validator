@@ -1,6 +1,6 @@
 # union：PostgreSQL → Doris 归因明细
 
-报告日期：2026-11-13。仅重做步骤四，不实施修复。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
+参考运行日期：2026-11-13。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
 
 ## 1. 输入与范围
 
@@ -44,7 +44,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -115,7 +115,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -186,7 +186,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -257,7 +257,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -328,7 +328,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -399,7 +399,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -470,7 +470,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -541,7 +541,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -612,7 +612,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -683,7 +683,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -754,7 +754,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -825,7 +825,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -896,7 +896,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -967,7 +967,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -1038,7 +1038,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -1109,7 +1109,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -1180,7 +1180,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 
@@ -1264,7 +1264,7 @@ UnsupportedError: 'NULLS LAST' translation not supported with positional orderin
 
 PG-DORIS-002 启用经实测支持的 Doris 原生 NULL 排序：Doris 继承 MySQL 的 NULL_ORDERING_SUPPORTED=None，导致位置排序和部分窗口直接拒绝；只读实测支持 NULLS FIRST/LAST。
 
-代码位置：[sqlglot/generators/mysql.py:127](../../../../../../../sqlglot/sqlglot/generators/mysql.py)（行 127）；[sqlglot/generator.py:3317](../../../../../../../sqlglot/sqlglot/generator.py)（行 3317）；[sqlglot/generators/doris.py:26](../../../../../../../sqlglot/sqlglot/generators/doris.py)（行 26）。
+代码位置：[sqlglot/generators/mysql.py:127](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/mysql.py#L127)（行 127）；[sqlglot/generator.py:3317](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generator.py#L3317)（行 3317）；[sqlglot/generators/doris.py:26](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/generators/doris.py#L26)（行 26）。
 
 第一次候选：
 

@@ -40,4 +40,10 @@ reports/pg-manual/*
 /docs/FEISHU_REPLAY_EXPANSION.md
 docker/hive/jars/*.jar
 !docker/hive/jars/.gitkeep
+# Recreated locally by the quick-start import commands.
+/examples/postgres/basic/generated-*.yaml
+/cases/postgres/manual/current/generated-*.yaml
+/cases/postgres/manual/current/expanded/generated-*.yaml
+/cases/postgres/out-reader-samples/generated-*.yaml
+/cases/postgres/out-reader-samples/batch-02/generated-*.yaml
 

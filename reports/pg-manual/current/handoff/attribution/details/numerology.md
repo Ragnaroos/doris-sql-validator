@@ -1,6 +1,6 @@
 # numerology：PostgreSQL → Doris 归因明细
 
-报告日期：2026-11-13。仅重做步骤四，不实施修复。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
+参考运行日期：2026-11-13。[汇总](../attribution-summary.md) / [任务](../sqlglot-tasks.md)。
 
 ## 1. 输入与范围
 
@@ -68,7 +68,7 @@ Doris 原错误：
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -164,7 +164,7 @@ SELECT 0 AS o273
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -250,7 +250,7 @@ SELECT x'42F'
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -344,7 +344,7 @@ Doris 原错误：
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -451,7 +451,7 @@ Doris 原错误：
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -547,7 +547,7 @@ SELECT 0 AS o17777777777
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -630,7 +630,7 @@ SELECT 0 AS o20000000000
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -716,7 +716,7 @@ SELECT x'7FFFFFFF'
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -802,7 +802,7 @@ SELECT x'80000000'
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -1174,7 +1174,7 @@ Doris 原错误：
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -1281,7 +1281,7 @@ Doris 原错误：
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -1377,7 +1377,7 @@ SELECT 0 AS o777777777777777777777
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -1460,7 +1460,7 @@ SELECT 0 AS o1000000000000000000000
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -1546,7 +1546,7 @@ SELECT x'7FFFFFFFFFFFFFFF'
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -1632,7 +1632,7 @@ SELECT x'8000000000000000'
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -2082,7 +2082,7 @@ Doris 原错误：
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -2178,7 +2178,7 @@ SELECT 0 AS o2_73
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
@@ -2272,7 +2272,7 @@ Doris 原错误：
 
 PG-DORIS-007 正确区分 PG 非十进制整数与位串/字节串：0o273 被解析为数值 0 加别名，0x/0b 被当成十六进制/二进制串；18 条候选按进制转换并保留 int4/int8/numeric 范围。
 
-代码位置：[sqlglot/tokenizer_core.py:1041](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1041）；[sqlglot/tokenizer_core.py:1051](../../../../../../../sqlglot/sqlglot/tokenizer_core.py)（行 1051）；[sqlglot/parser.py:5877](../../../../../../../sqlglot/sqlglot/parser.py)（行 5877）。
+代码位置：[sqlglot/tokenizer_core.py:1041](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1041)（行 1041）；[sqlglot/tokenizer_core.py:1051](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/tokenizer_core.py#L1051)（行 1051）；[sqlglot/parser.py:5877](https://github.com/tobymao/sqlglot/blob/feb0e08aba28a29590596bb3f5761fbaeb0e98b9/sqlglot/parser.py#L5877)（行 5877）。
 
 第一次候选：
 
