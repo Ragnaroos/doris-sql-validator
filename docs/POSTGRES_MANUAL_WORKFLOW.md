@@ -4,6 +4,8 @@
 
 [快速示例](../examples/postgres/basic/README.md)提供不依赖既有本地环境的输入与准备脚本。这里的 reports/demo 是示例输出位置，可替换成自己的运行目录。
 
+下文每个步骤末尾列出产物的相对位置、主要内容和用途。除明确说明外，路径都相对于本仓库根目录；目录只在对应操作实际执行并成功保存文件后存在。CLI 按命令参数写文件，Skill 按用户指定目录组织材料，不能把推荐布局当成程序已经自动生成的文件。
+
 ## 1. 职责与执行方式
 
 | 步骤 | 工具 | 输入 | 输出 |
@@ -81,6 +83,32 @@ Doris 由用户自行启动并配置。doctor 会检查两端；只有 .out 的�
 
 Agent 应输出准备报告和实际脚本，格式由 .agents/skills/pg-doris-prepare-data/assets/ 定义。仅有 COUNT 或样本不能证明全表相同；类型映射和记录值一致也应分别说明。
 
+### 4.3 本步骤产物：数据前提与可复现的准备材料
+
+使用 4.2 的 Skill 并将输出指定为 reports/demo/data-preparation/ 时，保存以下材料：
+
+~~~text
+reports/demo/data-preparation/
+├── data-preparation.md             面向用户和归因 Agent 的数据准备说明
+│   主要内容：实际完成/未完成范围、双端库名、版本与 Session、数据阶段和对应查询；
+│             逐列类型映射、NULL/长度/精度限制、完整记录核验方法与结论、剩余问题。
+│   功能：说明哪些查询具备可比较的数据前提，避免把缺表、类型截断或阶段不同归为转换缺陷。
+├── postgres-setup.sql              实际采用的 PostgreSQL 建表、装数及必要 Session SQL
+│   主要内容：经审查的源端准备步骤；COPY 所需外部文件应同时列出路径和使用方法。
+│   功能：复现源查询看到的数据状态，不替换用户的原始 SQL/.out。
+├── doris-setup.sql                 实际采用的 Doris 建表与装数 SQL
+│   主要内容：目标类型、表模型、副本等设置及相同逻辑记录；说明与源端不同的类型域/约束。
+│   功能：复现目标准备，保留重复行和 NULL；由外部 SQL 客户端执行，不交给 run 执行。
+└── data-verification.json          可追溯的结构与数据核验明细
+    主要内容：实际核验的表/阶段、字段信息、行数、完整记录及重复次数的比较、摘要算法，
+              以及版本、Session、输入指纹和错误；不能取得的证据明确记为缺失。
+    功能：供人或 Agent 复查准备报告的依据；它不是验证器会自动读取并拦截查询的 Gate。
+~~~
+
+如果只按 4.1 用 SQL 客户端执行现成示例脚本，不会自动生成上述报告和 JSON。现成 SQL 仍位于 examples/postgres/basic/；需要核验报告时应另行开展实际核验并保存结果，不能创建空文件冒充已验证。
+
+下一步使用原始查询和参考输出生成 YAML；步骤三可通过 --setup 和 --preparation-report 引用本步骤材料。准备不完整或存在类型域限制时，后续报告和归因必须保留这些前提。
+
 ## 5. 步骤二：导入 YAML 并运行验证
 
 ~~~bash
@@ -105,6 +133,29 @@ run 退出码 1 通常表示发现了差异或失败，报告仍已生成；输�
 
 报告先给数量与匹配率，再列逐条 SQL/结果/错误。成功匹配与源端负向同类报错分开统计。首轮报告最多保存五行样本；.out 缺少的原生类型不能当成已经通过比较。详细规则见 [用户指南](USER_GUIDE.md)。
 
+### 5.1 本步骤产物：Case 输入与确定性验证报告
+
+~~~text
+examples/postgres/basic/generated-recorded.yaml    import-cases 生成的批量验证输入
+  主要内容：源方言/引擎、双端逻辑连接和库名、SQL/.out 相对路径与指纹、导入摘要/诊断；
+            每条查询的 ID、原语句位置、源 SQL 和 .out 中的出现次数。
+  功能：固定实际验证范围，可交给 cases-lint、run 和后续交接；不保存改写后的 Doris SQL。
+
+reports/demo/validation/
+├── validation.md                  run 生成的可读报告
+│   主要内容：查询总数、明确分母的成功匹配率、各类失败数量、导入诊断和源证据覆盖范围；
+│             逐条结果概览，以及失败查询的源 SQL、生成 SQL、字段/行样本和具体错误。
+│   功能：先定位哪些查询出问题、在哪个阶段失败；它记录观察结果，不自动判定根因。
+└── validation.json                同次 run 的结构化报告
+    主要内容：输入身份、实际 SQLGlot 版本/提交、运行时间、连接逻辑信息、逐 Case 源证据、
+              Doris SQL/结果、错误、比较结论、汇总，以及结果摘要和最多五行样本。
+    功能：供交接命令、只读对照、CI 或统计程序读取；不是完整大结果集导出。
+~~~
+
+import-cases 负责生成 YAML，run 负责生成两份 validation 报告；cases-lint 只输出检查信息，不生成额外文档。导入诊断保存在 YAML 和最终报告中，不单独生成 .import.json。Live Source 的 YAML 没有 recorded_output，其余用途相同。
+
+下一步将本次使用的 YAML 和对应 validation.json 一起交给 prepare-pg-review。不要只凭 MATCH 比例认定完全同义，也不要因退出码 1 而丢弃已经生成的失败报告。
+
 ## 6. 步骤三：生成引用式交接入口
 
 ~~~bash
@@ -125,6 +176,24 @@ run 退出码 1 通常表示发现了差异或失败，报告仍已生成；输�
 命令只生成 HANDOFF.md 和 evidence-index.json，引用原始 YAML、SQL/.out、首轮结果与准备材料；不复制文件、不连接数据库、不调用模型。输出目录非空时拒绝覆盖。
 
 HANDOFF.md 给出阅读顺序与逐条待分析编号；evidence-index.json 保存对应路径和文件指纹。缺少准备报告会明确列出，不能假定环境已验证。改变原件后应重新运行验证和交接，避免用新 SQL 解释旧报告。
+
+### 6.1 本步骤产物：供归因读取的原件索引
+
+~~~text
+reports/demo/review/
+├── HANDOFF.md                     prepare-pg-review 按固定模板生成的阅读入口
+│   主要内容：验证查询数、待分析查询及自动结果、建议阅读顺序、原 SQL/.out/YAML、
+│             首轮报告和准备材料的链接，以及材料缺失和证据限制说明。
+│   功能：帮助用户/Agent 找到正确原件；不包含模型已经完成的归因或修复结论。
+└── evidence-index.json            同次命令生成的机器可读引用索引
+    主要内容：case_file、report_file、source_file、recorded_output_file、setup_files、
+              preparation_report 等入口，原件 SHA-256、待分析编号、未运行编号和导入诊断。
+    功能：核对输入/报告对应关系，并为 Agent 提供查找路径；不复制原件，不备份或恢复文件。
+~~~
+
+索引内的文件路径相对于 reports/demo/review/，不是相对于仓库根目录；打开其中某个引用时应以索引所在目录解析。准备报告只有传入 --preparation-report 才会被引用，缺失时会明确标注。
+
+“待分析查询”是自动收集的候选集合，可能包含源端负向或转译先失败的查询，不代表每条都是 SQLGlot 缺陷，也不代表都要独立改写。步骤四仍需读取原 .out 分流。把这两份入口文件提供给归因 Agent，即可沿链接读取原始材料；本步骤不会生成 attribution/ 或调用 Skill。
 
 ## 7. 步骤四：分析差异并形成任务
 
@@ -165,6 +234,37 @@ demo_case_id=$(.venv/bin/python -c \
 
 工具会实际执行 PG、报告中保存的社区 Doris SQL（若可生成）、给定候选及重复执行，保存 probe-report.md、probe-evidence.json。它不构造候选、不归因；需要两端连接与对应数据。新边界通过 --source-variant 指定新的 PostgreSQL SQL 文件，源结果必须真实执行，不能借原 .out。
 
+### 7.2 本步骤产物：原因、任务与独立执行证据
+
+~~~text
+reports/demo/attribution/
+├── attribution-summary.md         Agent 按 Skill 整理的归因汇总
+│   主要内容：源成功/负向/环境/读取异常的分流数量、主范围和实际处理进度；已定位问题、
+│             代表 SQL、修复方向、未调查项和证据限制。不同统计口径分别解释。
+│   功能：先了解发现了什么、还缺什么；分组和状态不能替代具体根因。
+├── attribution-details.md         Agent 编写的逐查询归因与证据说明
+│   主要内容：源 SQL、社区输出/错误、.out 依据、代码位置、独立候选及真实执行结果；
+│             分别比较状态、字段/类型、精度、行数/值/重复次数、顺序和相关边界。
+│             源端负向默认简表说明；不能确定的原因及下一步验证单列。
+│   功能：让每个判断能追溯到查询和证据；按组拆分时可链接 details/<group>.md。
+├── sqlglot-tasks.md                Agent 基于证据整理的修复/补验证任务清单
+│   主要内容：任务编号、关联查询和成功源复现、根因、建议 Parser/AST/Generator 位置、
+│             类型/Schema/版本前提、测试与验收；Doris/框架原因和研究事项明确区分。
+│   功能：作为步骤五的任务输入，不是已实施补丁，也不是框架自动执行的调度文件。
+└── evidence/<case-id>/             每次候选及执行证据的建议归档位置
+    ├── candidate.sql              Agent/用户提供的独立 Doris 候选，不是社区默认输出
+    └── probe-01/                  probe-pg-case 的 --output-dir 指定位置
+        ├── probe-report.md        工具生成的可读分维度比较、具体错误和证据缺口
+        └── probe-evidence.json    工具保存的实际 SQL、有限范围内完整结果、原生类型、
+                                  .out 参考、重复执行和分维度比较，供进一步复核
+~~~
+
+前三份 Markdown 由调用 Skill 的 Agent 阅读代码与证据后编写；probe 的两份报告由确定性工具根据实际执行生成，工具不自动归因。candidate.sql 由调用者提供，probe 不生成它。7.1 的演示直接引用 examples/postgres/basic/constant.sql，因此不会额外复制一份 candidate.sql。
+
+多次候选应保存到不同文件/执行目录，例如 candidate-02.sql、probe-02/；失败尝试也保留。边界可放在 evidence/<case-id>/boundaries/<variant>/，保存新 source.sql、目标候选和对应 probe 报告。它们是新输入，不能借原 .out 充当执行结果。未开展对照时不创建空证据目录。
+
+下一步把 sqlglot-tasks.md、归因明细/汇总、对应首轮报告和实际证据一起提供给修复 Agent；仅需修复的明确任务进入步骤五。候选行值一致不代表全部类型、顺序和边界已通过，未调查查询不能被写成“不需要修复”。
+
 ## 8. 步骤五：修复并验证新生成的 SQL
 
 选择有证据支持的任务，再显式调用：
@@ -184,6 +284,33 @@ demo_case_id=$(.venv/bin/python -c \
 已有 YAML 中的 Case 重跑同一 YAML并写入新的回归目录。涉及 Importer Parser 修复时，从不变 SQL/.out 重新导入到新 YAML，按原语句位置对应新增 Case，单列覆盖范围变化。边界的目标 SQL 也须由修复后的 SQLGlot 生成。
 
 单元测试、类型、精度/Scale、完整有限记录与重复次数、最终顺序、相关错误边界分别验收。Doris 能力限制、框架/驱动问题和缺少数据不能强行作为 SQLGlot 任务关闭；未执行的检查不能写通过。
+
+### 8.1 本步骤产物：真实代码修改与验收记录
+
+~~~text
+../sqlglot/                         实际被修改的独立 SQLGlot checkout，不是报告输出目录
+  sqlglot/...                      对应 Parser、AST、Generator 或公共变换的代码变更
+  tests/...                        最小复现、生成规则及相关边界/其他方言回归测试
+
+reports/demo/fixes/fix-001/
+├── implementation-report.md       修复 Agent 编写的实施报告
+│   主要内容：选择了哪些任务、逐项状态、起始版本和实际 diff、修改文件/函数及原因，
+│             Schema/版本条件、实际生成 SQL、测试证据、未解决问题和交付材料位置。
+│   功能：审查“改了什么、为什么改、还有什么没完成”，不以单元测试通过代替完整验收。
+├── regression-report.md           修复 Agent 编写的回归与验收报告
+│   主要内容：修复前后输入/版本/数据/会话和比较口径、实际测试命令与结果；逐查询和边界的
+│             新生成 SQL、状态/类型/精度/行值/重复次数/顺序，新增回归、失败及缺失检查。
+│   功能：核对各任务验收条件是否满足，区分已修复、部分完成、不可实施和未验证。
+├── before/                        建议保存修复前实际执行或测试证据的位置
+├── after/                         建议保存修改后 SQLGlot 重新生成并执行的 validation.md/json
+└── evidence/                      建议保存测试日志、实际 patch/diff、对照与边界证据的位置
+~~~
+
+两份 Markdown 的内容要求由修复 Skill 模板定义；before/、after/、evidence/ 是推荐布局，具体文件路径应由执行者记录在报告中。run 和 probe 只写各自 --output-dir 指定的结果，不会自动收集整个修复目录、生成 patch 或编写实施结论。
+
+after/ 的验证报告必须来自修改后 SQLGlot 的真实生成与执行，不能放入旧的手写候选结果冒充修复回归。日志区分单元测试、其他方言/核心测试和数据库对照；未运行、缺依赖、超时或失败均明确标注。
+
+用户最后阅读 implementation-report.md 确认改动范围，再阅读 regression-report.md 判断验收与残留风险，并通过其中路径核对 diff、SQL 和原始证据。是否提交、推送或创建 PR 由用户另行决定；本指南的产物布局不意味着已经发布代码。
 
 ## 9. 产物结构
 
