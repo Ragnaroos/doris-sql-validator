@@ -12,7 +12,6 @@ from doris_sql_validator.source_provider import (
     RecordedOutputProvider,
     SourceEvidenceError,
 )
-from doris_sql_validator.sql_utils import file_sha256
 
 
 def test_hive_qtest_output_is_paired_by_normalized_sql_hash() -> None:
@@ -83,18 +82,21 @@ def test_hive_qtest_skips_non_query_prehooks_and_masked_hook_lines() -> None:
     assert evidence.result.rows == [["3"]]
 
 
-def test_recorded_provider_rejects_changed_output_artifact(tmp_path: Path) -> None:
+def test_recorded_provider_reads_current_output_without_fingerprint(tmp_path: Path) -> None:
     output = tmp_path / "sample.out"
-    original = b"original\n"
-    output.write_bytes(original)
-    spec = RecordedOutputSpec(
-        format="pg-regress",
-        file="sample.out",
-        sha256=file_sha256(original),
-    )
-    output.write_text("changed\n", encoding="utf-8")
+    sql = "SELECT 1 AS value;"
+    output.write_text(sql + "\n value\n-------\n 1\n(1 row)\n")
+    spec = RecordedOutputSpec(format="pg-regress", file="sample.out")
+    output.write_text(sql + "\n value\n-------\n 2\n(1 row)\n")
+    provider = RecordedOutputProvider(spec, base_dir=tmp_path, dialect="postgres")
+    case = CaseDefinition(id="pg-one", statement_index=1, sql=sql, output_occurrence=1)
+    assert provider.get_result(case).result.rows == [["2"]]
+    assert "sha256" not in spec.model_dump()
 
-    with pytest.raises(SourceEvidenceError, match="RECORDED_OUTPUT_STALE"):
+
+def test_recorded_provider_still_reports_missing_output(tmp_path: Path) -> None:
+    spec = RecordedOutputSpec(format="pg-regress", file="missing.out")
+    with pytest.raises(SourceEvidenceError, match="Cannot read recorded output"):
         RecordedOutputProvider(spec, base_dir=tmp_path, dialect="postgres")
 
 

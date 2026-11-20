@@ -17,6 +17,13 @@ from doris_sql_validator.models import (
 runner = CliRunner()
 
 
+def test_case_commands_require_explicit_input() -> None:
+    for command in ("cases-lint", "run"):
+        result = runner.invoke(app, [command])
+        assert result.exit_code == 2
+        assert "--path" in result.output
+
+
 def test_import_command_embeds_diagnostics_without_sidecar(tmp_path: Path) -> None:
     source = tmp_path / "queries.sql"
     output = tmp_path / "cases.yaml"

@@ -1,1 +1,0 @@
-SELECT ARRAY(ROW(1, 2), ROW(3, 4), ROW(5, 6));

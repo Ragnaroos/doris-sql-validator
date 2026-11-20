@@ -1,1 +1,0 @@
-SELECT CAST(CASE WHEN LOWER(TRIM('  YeS  ')) IN ('true','t','tr','tru','yes','y','ye','on','1') THEN 'true' WHEN LOWER(TRIM('  YeS  ')) IN ('false','f','fa','fal','fals','no','n','off','of','0') THEN 'false' ELSE '  YeS  ' END AS BOOLEAN) AS value;

@@ -163,6 +163,91 @@ def compare_results(
     )
 
 
+def describe_difference(
+    source: SourceEvidence,
+    target: QueryResult,
+    spec: ComparisonSpec,
+    comparison: ComparisonResult,
+    *,
+    explicit_output_aliases: bool,
+    limit: int = 3,
+) -> dict[str, Any] | None:
+    """Bounded counterexamples using exactly the comparator's encoding/rules."""
+    outcome = comparison.observed_outcome
+    if not source.result.success or not target.success:
+        return None
+    if outcome == "RESULT_SCHEMA_MISMATCH":
+        left, right = source.result.columns, target.columns
+        result: dict[str, Any] = {"source_column_count": len(left), "doris_column_count": len(right)}
+        compare_names = source.capabilities.column_names and (
+            spec.column_names == "strict" or
+            (spec.column_names == "explicit_alias_only" and explicit_output_aliases)
+        )
+        changes = []
+        for index in range(max(len(left), len(right))):
+            a = left[index] if index < len(left) else None
+            b = right[index] if index < len(right) else None
+            changed = a is None or b is None
+            if a is not None and b is not None:
+                changed = (compare_names and a.name.lower() != b.name.lower()) or (
+                    source.capabilities.column_types and not _compatible_type(a.canonical_type, b.canonical_type)
+                )
+            if changed:
+                changes.append({"column": index + 1,
+                    "source": a.model_dump(mode="json", exclude_none=True) if a else None,
+                    "doris": b.model_dump(mode="json", exclude_none=True) if b else None})
+        result["columns"] = changes[:limit]
+        if len(changes) > limit:
+            result["omitted_columns"] = len(changes) - limit
+        return result
+    if outcome == "ROW_COUNT_MISMATCH":
+        return {"source_row_count": len(source.result.rows), "doris_row_count": len(target.rows)}
+    if outcome != "ROW_VALUE_MISMATCH":
+        return None
+
+    left, right = _prepare_source_rows(source), _prepare_target_rows(target, source.value_encoding)
+    tolerance = spec.float_tolerance if source.value_encoding == "canonical_typed" else None
+    if spec.row_order == "ordered":
+        differences = []
+        for index in range(max(len(left), len(right))):
+            if index >= len(left) or index >= len(right) or not _value_equal(left[index], right[index], tolerance=tolerance):
+                differences.append({"row": index + 1,
+                    "source": left[index] if index < len(left) else None,
+                    "doris": right[index] if index < len(right) else None})
+        return {"row_order": "按最终排序逐行比较", "rows": differences[:limit],
+                "omitted_differences": max(0, len(differences) - limit)}
+
+    if tolerance is None:
+        source_counts = Counter(stable_key(row) for row in left)
+        target_counts = Counter(stable_key(row) for row in right)
+        source_only, target_only = source_counts - target_counts, target_counts - source_counts
+        source_values = {stable_key(row): row for row in left}
+        target_values = {stable_key(row): row for row in right}
+    else:
+        # Match the same greedy, tolerance-aware pairing as the comparator.
+        unmatched, extra = list(right), []
+        for row in left:
+            for index, candidate in enumerate(unmatched):
+                if _value_equal(row, candidate, tolerance=tolerance):
+                    unmatched.pop(index)
+                    break
+            else:
+                extra.append(row)
+        source_only = Counter(stable_key(row) for row in extra)
+        target_only = Counter(stable_key(row) for row in unmatched)
+        source_values = {stable_key(row): row for row in extra}
+        target_values = {stable_key(row): row for row in unmatched}
+
+    def examples(counts, values):
+        return [{"row": values[key], "extra_count": count} for key, count in list(counts.items())[:limit]]
+
+    return {"row_order": "忽略顺序，保留重复次数",
+            "source_only": examples(source_only, source_values),
+            "doris_only": examples(target_only, target_values),
+            "source_extra_rows": sum(source_only.values()), "doris_extra_rows": sum(target_only.values()),
+            "omitted_distinct_rows": max(0, len(source_only) - limit) + max(0, len(target_only) - limit)}
+
+
 def result_digest(rows: list[Any]) -> str:
     digest = hashlib.sha256()
     for encoded in sorted(stable_key(row) for row in rows):

@@ -53,7 +53,6 @@ class InputSpec(StrictModel):
 class RecordedOutputSpec(StrictModel):
     format: Literal["pg-regress", "hive-qtest"]
     file: str
-    sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
     driver: str | None = None
 
 
@@ -64,6 +63,9 @@ class ImportDiagnostic(StrictModel):
     disposition: Literal["skipped", "ambiguous", "error"]
     statement_type: str
     reason: str
+    case_id: str | None = None
+    sql: str | None = None
+    output_occurrence: int | None = None
 
 
 class ImportSummary(StrictModel):
@@ -197,7 +199,6 @@ class SourceEvidence(StrictModel):
         "canonical_typed", "postgres_psql_text", "hive_qtest_text"
     ] = "canonical_typed"
     artifact: str | None = None
-    artifact_sha256: str | None = Field(default=None, pattern=r"^[0-9a-f]{64}$")
     statement_index: int | None = None
 
 
@@ -240,6 +241,10 @@ class CaseRunReport(StrictModel):
     source_evidence: SourceEvidence | None = None
     target_result: QueryResult | None = None
     comparison: ComparisonResult | None = None
+    difference: dict[str, Any] | None = None
+    statement_index: int | None = None
+    line_start: int | None = None
+    line_end: int | None = None
 
 
 class SuiteReport(StrictModel):
@@ -255,3 +260,4 @@ class SuiteReport(StrictModel):
     import_diagnostics: list[ImportDiagnostic]
     recorded_output: RecordedOutputSpec | None = None
     cases: list[CaseRunReport]
+    filtered: bool = False

@@ -1,1 +1,0 @@
-SELECT LOWER('foo') LIKE LOWER(ANY(ARRAY('%A', '%O')));

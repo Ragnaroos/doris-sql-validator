@@ -1,1 +1,0 @@
-SELECT CAST(ARRAY() AS ARRAY<INT>) AS value;

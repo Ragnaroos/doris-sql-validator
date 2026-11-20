@@ -1,1 +1,0 @@
-SELECT CAST(SUM(b) AS FLOAT) AS avg_431_773 FROM aggtest;

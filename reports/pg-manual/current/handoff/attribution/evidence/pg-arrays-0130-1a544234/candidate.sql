@@ -1,1 +1,0 @@
-SELECT ARRAY(ARRAY(ARRAY(ARRAY(ARRAY(ARRAY('hello'), ARRAY('world'))))));

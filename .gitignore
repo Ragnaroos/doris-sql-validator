@@ -6,44 +6,15 @@ __pycache__/
 .pytest_cache/
 .coverage
 htmlcov/
-upstream/
-reports/*
-!reports/.gitkeep
-# Publish only the latest manual workflow evidence; keep archives locally.
-!reports/pg-manual/
-reports/pg-manual/*
-!reports/pg-manual/current/
-/cases/postgres/capability/
-/cases/upstream/
-/cases/postgres/manual/*
-!/cases/postgres/manual/current/
-# Historical assessment runners and their evidence-bound tests are local-only.
-/scripts/assess_postgres_capabilities.py
-/scripts/probe_postgres_findings.py
-/scripts/summarize_postgres_capabilities.py
-/scripts/review_postgres_attribution.py
-/scripts/postgres_rewrites.py
-/scripts/postgres_review_report.py
-/scripts/prepare_upstream_samples.py
-# Historical 109-case attribution/fix experiment; the current workflow uses Skills.
-/scripts/pg_manual_attribution_batch.py
-/tests/unit/test_postgres_attribution.py
-/tests/unit/test_postgres_review_report.py
-# Superseded designs stay readable locally; publish the current guides instead.
-/docs/DESIGN.md
-/docs/HIVE_DORIS_DEVELOPMENT.md
-/docs/FIXTURE_SNAPSHOT_DESIGN.md
-/docs/TEST_CASE_DESIGN.md
-/docs/HIVE_DORIS_TEST_CASE_PLAN.md
-/docs/POSTGRES_DORIS_CAPABILITY_TODO.md
-/docs/POSTGRES_ATTRIBUTION_PROTOCOL.md
-/docs/FEISHU_REPLAY_EXPANSION.md
+/upstream/
+/inputs/
+/cases/
+/examples/
+/reports/*
+!/reports/.gitkeep
+*.sql
+*.out
+*.q
+*.q.out
 docker/hive/jars/*.jar
 !docker/hive/jars/.gitkeep
-# Recreated locally by the quick-start import commands.
-/examples/postgres/basic/generated-*.yaml
-/cases/postgres/manual/current/generated-*.yaml
-/cases/postgres/manual/current/expanded/generated-*.yaml
-/cases/postgres/out-reader-samples/generated-*.yaml
-/cases/postgres/out-reader-samples/batch-02/generated-*.yaml
-

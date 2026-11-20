@@ -28,15 +28,14 @@ def parse_recorded_case(
     case: CaseDefinition,
     dialect: str,
     artifact: str,
-    artifact_sha256: str | None = None,
 ) -> SourceEvidence:
     if case.output_occurrence is None:
         raise RecordedOutputError(f"Case {case.id} has no output_occurrence")
     if output_format == "pg-regress":
-        return _parse_pg_regress(output_text, case, artifact, artifact_sha256)
+        return _parse_pg_regress(output_text, case, artifact)
     if output_format == "hive-qtest":
         return _parse_hive_qtest(
-            output_text, case, dialect, artifact, artifact_sha256
+            output_text, case, dialect, artifact
         )
     raise RecordedOutputError(f"Unsupported recorded output format: {output_format}")
 
@@ -45,7 +44,6 @@ def _parse_pg_regress(
     output_text: str,
     case: CaseDefinition,
     artifact: str,
-    artifact_sha256: str | None = None,
 ) -> SourceEvidence:
     occurrence = case.output_occurrence
     assert occurrence is not None
@@ -83,7 +81,6 @@ def _parse_pg_regress(
             ),
             value_encoding="postgres_psql_text",
             artifact=artifact,
-            artifact_sha256=artifact_sha256,
             statement_index=case.statement_index,
         )
     # A result must immediately follow this echo. Never search a later query
@@ -113,7 +110,6 @@ def _parse_pg_regress(
         ),
         value_encoding="postgres_psql_text",
         artifact=artifact,
-        artifact_sha256=artifact_sha256,
         statement_index=case.statement_index,
     )
 
@@ -294,7 +290,6 @@ def _parse_hive_qtest(
     case: CaseDefinition,
     dialect: str,
     artifact: str,
-    artifact_sha256: str | None = None,
 ) -> SourceEvidence:
     occurrence = case.output_occurrence
     assert occurrence is not None
@@ -346,7 +341,6 @@ def _parse_hive_qtest(
             ),
             value_encoding="hive_qtest_text",
             artifact=artifact,
-            artifact_sha256=artifact_sha256,
             statement_index=case.statement_index,
         )
 
@@ -385,6 +379,5 @@ def _parse_hive_qtest(
         ),
         value_encoding="hive_qtest_text",
         artifact=artifact,
-        artifact_sha256=artifact_sha256,
         statement_index=case.statement_index,
     )

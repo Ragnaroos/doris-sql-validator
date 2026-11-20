@@ -9,7 +9,7 @@ import subprocess
 import sqlglot
 from sqlglot.errors import ParseError
 
-from .comparison import compare_results
+from .comparison import compare_results, describe_difference
 from .execution.base import ExecutionAdapter
 from .models import (
     CaseDefinition,
@@ -18,7 +18,7 @@ from .models import (
     ComparisonSpec,
     SuiteReport,
 )
-from .source_provider import SourceEvidenceError, SourceResultProvider
+from .source_provider import RecordedOutputProvider, SourceEvidenceError, SourceResultProvider
 from .transpiler import SqlglotTranspiler
 
 
@@ -38,7 +38,12 @@ class ValidationService:
 
     def run_suite(self, cases: list[CaseDefinition]) -> SuiteReport:
         started_at = datetime.now(timezone.utc)
-        reports = [self.run_case(case) for case in cases]
+        reports = []
+        for case in cases:
+            record = self.run_case(case)
+            record.statement_index = case.statement_index
+            record.line_start, record.line_end = case.line_start, case.line_end
+            reports.append(record)
         return SuiteReport(
             started_at=started_at,
             finished_at=datetime.now(timezone.utc),
@@ -52,6 +57,7 @@ class ValidationService:
             import_diagnostics=self.case_file.import_diagnostics,
             recorded_output=self.case_file.recorded_output,
             cases=reports,
+            filtered={c.id for c in cases} != {c.id for c in self.case_file.cases},
         )
 
     def run_case(self, case: CaseDefinition) -> CaseRunReport:
@@ -63,6 +69,14 @@ class ValidationService:
                 target_dialect=self.case_file.target.dialect,
             )
         except Exception as exc:
+            # A SQLGlot parse failure does not say whether the source succeeded.
+            # Read recorded evidence only; never execute the source here.
+            evidence, evidence_error = None, None
+            if isinstance(self.source_provider, RecordedOutputProvider):
+                try:
+                    evidence = self.source_provider.get_result(case)
+                except SourceEvidenceError as lookup_error:
+                    evidence_error = str(lookup_error)
             return CaseRunReport(
                 id=case.id,
                 validation_mode=mode,
@@ -71,6 +85,8 @@ class ValidationService:
                 source_sql=case.sql.strip(),
                 failure_stage="source_parse" if isinstance(exc, ParseError) else "transpilation",
                 transpilation_error=re.sub(r"\x1b\[[0-9;]*m", "", f"{type(exc).__name__}: {exc}"),
+                source_evidence=evidence,
+                source_evidence_error=evidence_error,
             )
 
         data_assurance = (
@@ -102,14 +118,13 @@ class ValidationService:
                 str(exc),
             )
 
+        comparison_spec = ComparisonSpec(
+            row_order="ordered" if transpilation.ordered_result else "multiset"
+        )
         comparison = compare_results(
             source_evidence,
             target_result,
-            ComparisonSpec(
-                row_order=(
-                    "ordered" if transpilation.ordered_result else "multiset"
-                )
-            ),
+            comparison_spec,
             explicit_output_aliases=transpilation.explicit_output_aliases,
             data_assurance=data_assurance,
         )
@@ -123,6 +138,10 @@ class ValidationService:
             source_evidence=source_evidence,
             target_result=target_result,
             comparison=comparison,
+            difference=describe_difference(
+                source_evidence, target_result, comparison_spec, comparison,
+                explicit_output_aliases=transpilation.explicit_output_aliases,
+            ),
         )
 
     def _source_failure(

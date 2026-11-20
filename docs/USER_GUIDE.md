@@ -1,8 +1,8 @@
 # Doris SQL Validator 用户指南
 
-本文从使用者角度说明如何把 Hive 或 PostgreSQL 测试脚本转换成验证器可读取的 YAML，如何选择源数据库实时执行或 Recorded Output，以及如何运行验证和阅读报告。
+本文主验证流程要求同时提供 Hive/PostgreSQL 测试脚本及其配对的 .out/.q.out，先生成 YAML，再读取源端参考输出并执行 Doris，最后比较结果。现有 CLI 仍支持 Live Source，作为额外诊断方式单独说明，不作为主工作流缺少参考输出时的替代输入。
 
-PostgreSQL 的人工数据准备、首轮报告、证据交接、独立对照、归因和修复 Skill 完整步骤，
+PostgreSQL 的人工数据准备、首轮验证、直接归因、独立对照和修复 Skill 完整步骤，
 见 [PostgreSQL 人工连续链路](POSTGRES_MANUAL_WORKFLOW.md)。AI 相关步骤由人显式调用，CLI 不调用模型。
 报告正文默认中文、文件名使用英文，通用术语允许使用英文；不直观的状态仍解释其含义。
 
@@ -12,21 +12,20 @@ PostgreSQL 的人工数据准备、首轮报告、证据交接、独立对照、
 
 > 一条 Hive/PostgreSQL SQL 经当前社区版 SQLGlot 转成 Doris SQL 后，两端可观察到的执行行为是否一致？
 
-完整流程为：
+主验证流程为（参考输出为必需输入）：
 
 ```text
 原始输入
-  ├── Hive .q
-  ├── PostgreSQL .sql
-  ├── 普通 .sql
-  └── 上述脚本 + 可选的 .out/.q.out
+  ├── Hive QTest：.q + 对应的 .q.out，必须配对
+  └── PostgreSQL pg_regress：.sql + 对应的 .out，必须配对
         │
         ▼
 import-cases
   ├── 按语句拆分脚本
   ├── 接受只读 Query，并保留查询形状的 Parser 失败作为普通错误 Case
   ├── 跳过 DDL、DML、EXPLAIN 等非只读语句
-  └── 生成 Case YAML
+  ├── 首次尝试匹配并读取配对的 .out/.q.out，记录导入诊断
+  └── 按 --output 指定路径生成 Case YAML（工作流步骤二）
         │
         ▼
 cases-lint
@@ -35,13 +34,13 @@ cases-lint
         ▼
 run
   ├── SQLGlot：源 SQL → Doris SQL
-  ├── 取得源端证据
-  │     ├── Live Source：连接 Hive/PostgreSQL 执行源 SQL
-  │     └── Recorded Output：读取 .out，不连接源数据库
+  ├── Recorded Output：读取配对的 .out/.q.out，不连接源数据库
   ├── 连接 Doris 执行生成的 SQL
   ├── 比较执行状态、错误、结果字段和结果行
-  └── 生成 validation.md + validation.json
+  └── 生成唯一 <batch-id>-validation.json（run / summary / queries）
 ```
+
+普通 .sql 如果不带当前支持格式的参考输出，不属于以上主验证输入；可以只做 transpile，或由用户另行选择 Live Source 诊断。“必须配对”是主工作流要求；CLI 保留的 Live Source 能力不是主流程缺少参考输出时的替代。已有 .out 读取失败时不会自动回退为 Live Source。
 
 验证器的职责边界：
 
@@ -57,12 +56,12 @@ run
 
 `run` 命令只读取 Case YAML。原始脚本必须先通过 `import-cases` 转为 YAML。
 
-| 输入 | `--format` | 可附带结果文件 | 用途 |
+| 输入 | `--format` | 参考输出要求 | 用途 |
 | :--- | :--- | :--- | :--- |
-| 普通 `.sql` | `raw-sql` | 不支持 | 从普通 SQL 脚本提取只读查询 |
-| PostgreSQL pg_regress `.sql` | `pg-regress` | `.out` | 识别 psql/pg_regress 测试脚本和标准输出 |
-| Hive QTest `.q` | `hive-qtest` | `.q.out` | 识别 Hive QTest 脚本和标准输出 |
-| 已生成的 Case YAML | 不需要导入 | 由 YAML 决定 | `cases-lint` 和 `run` 的直接输入 |
+| PostgreSQL pg_regress `.sql` | `pg-regress` | 主流程必须提供配对 `.out` | 识别 psql/pg_regress 测试脚本和标准输出 |
+| Hive QTest `.q` | `hive-qtest` | 主流程必须提供配对 `.q.out` | 识别 Hive QTest 脚本和标准输出 |
+| 已生成的 Case YAML | 不需要导入 | 主流程应包含 `recorded_output` 引用 | `cases-lint` 和 `run` 的直接输入 |
+| 普通 `.sql` | `raw-sql` | 不支持 Recorded Output | 仅作补充 Live Source 输入，不属于主验证流程 |
 
 `.out/.q.out` 目前指 PostgreSQL pg_regress 或 Hive QTest 的文本输出，不是任意格式的 CSV、JSON 或日志文件。
 
@@ -74,7 +73,7 @@ INSERT INTO orders VALUES (1, 12.50);
 SELECT SUM(amount) AS total FROM orders;
 ```
 
-Importer 只把 `SELECT` 转成 Case。前两条语句不会执行，而是作为 `skipped` 诊断写入 YAML 和最终报告。因此，用户需要提前在源数据库和 Doris 中准备 `orders` 表及数据。
+Importer 只把 `SELECT` 转成 Case。前两条语句不会执行，而是作为 `skipped` 诊断写入 YAML 和最终报告的导入计数中，具体诊断留在 YAML。因此，用户需要提前在源数据库和 Doris 中准备 `orders` 表及数据。
 
 ### 2.2 单条 SQL 转译
 
@@ -90,9 +89,9 @@ Importer 只把 `SELECT` 转成 Case。前两条语句不会执行，而是作�
 
 ## 3. 验证模式
 
-运行方式不需要用户填写额外的 `mode` 字段，框架根据 YAML 中是否存在 `recorded_output` 自动决定。
+主流程使用 Recorded Output，要求导入时传入 --recorded-output。现有代码不需要用户填写额外的 mode 字段，而是根据 YAML 中是否存在 recorded_output 自动决定；下面同时说明主流程和保留的补充能力。
 
-### 3.1 Live Source：源端与 Doris 实时执行
+### 3.1 Live Source：补充诊断，源端与 Doris 实时执行
 
 适用条件：导入时没有传入 `.out/.q.out`，并且源数据库可连接。
 
@@ -109,7 +108,7 @@ Importer 只把 `SELECT` 转成 Case。前两条语句不会执行，而是作�
 - 表查询要求用户在两端自行准备可比较的数据；
 - YAML 中没有 `recorded_output`，但必须有 `source.connection_profile`。
 
-### 3.2 Recorded Output：参考输出验证
+### 3.2 Recorded Output：主流程，参考输出验证
 
 适用条件：导入时同时提供官方测试脚本及其 `.out/.q.out`。
 
@@ -137,6 +136,8 @@ PostgreSQL `.out` 读取支持默认 ASCII 横向表格，以及 `\x` / `\gx` �
 
 ### 3.3 输入组合与执行路径
 
+下表是现有 CLI 的能力说明；其中无 .out 的两行不是本指南主工作流允许的输入，也不是缺少 .out 时的自动降级策略。
+
 | 脚本包含 DDL/DML | 提供 `.out` | 实际行为 |
 | :---: | :---: | :--- |
 | 否 | 否 | 提取查询；实时执行源数据库和 Doris |
@@ -149,7 +150,7 @@ PostgreSQL `.out` 读取支持默认 ASCII 横向表格，以及 `\x` / `\gx` �
 所有命令均假设当前目录为项目根目录：
 
 ```bash
-cd doris-sql-validator
+cd /path/to/your/checkout
 ```
 
 ### 4.1 Python 运行环境安装
@@ -235,94 +236,98 @@ Hive/PostgreSQL                       Doris
   timezone/session/UDF                  timezone/session/UDF
 ```
 
-验证器不会因为输入脚本包含 `CREATE` 或 `INSERT` 就执行它们。若 Doris 表不存在，报告通常显示 `TARGET_ENVIRONMENT_ERROR`，错误类别为 `TABLE_NOT_FOUND`；若表存在但数据不同，通常显示 `ROW_COUNT_MISMATCH` 或 `ROW_VALUE_MISMATCH`。
+验证器不会因为输入脚本包含 `CREATE` 或 `INSERT` 就执行它们。若 Doris 表不存在，报告显示“Doris 环境问题”并保留表不存在的实际错误；若表存在但数据不同，通常显示“行数不匹配”或“行值或顺序不匹配”。这些结果不能单独证明 SQLGlot 有问题。
 
-可直接使用 [快速示例](../examples/postgres/basic/README.md) 提供的 PostgreSQL/Doris 准备 SQL。它们由用户在框架外用 SQL 客户端执行；只在新的专用测试库运行。官方回归语料的准备依赖与类型限制见 [样本说明](../cases/postgres/manual/current/README.md)。
+本工作目录不附带数据准备 SQL、参考输出或既有报告。用户自行提供或显式调用数据准备 Skill 生成脚本，在框架外用 SQL 客户端执行；只在授权的专用测试库运行。注意官方回归语料的多阶段数据、COPY 依赖和类型限制，具体流程见 [PostgreSQL 工作流](POSTGRES_MANUAL_WORKFLOW.md)。
 
-## 5. Case YAML 生成
+## 5. 步骤二：生成带相同前缀的 Case YAML
 
-Live Source 的 YAML 可以放入单独目录。Recorded Output 还有额外限制：`.out/.q.out` 必须在 YAML 所在目录或其子目录，不能指向目录之外；将输入、参考输出和 YAML 放在同一目录最简单。以下 `/path/to/` 需要替换为自己的输入路径，开箱即用命令见快速示例。
+本工作流必须同时提供源脚本及其配对的参考输出。YAML 的文件名为 <batch-id>-cases.yaml，保存到 reports/data-preparation/，与步骤一的三份产物使用相同前缀。实际路径由 import-cases 的 --output 指定，CLI 不自动分配批次编号，也不自动加前缀。
 
-例如，为自有 Live Source 输入创建目录：
+~~~text
+reports/data-preparation/           不创建批次或准备次数子目录
+  queries-001-data-preparation.md        步骤一：准备与实际核验证据的合并 Markdown
+  queries-001-postgres-setup.sql         步骤一：源端准备脚本
+  queries-001-doris-setup.sql            步骤一：目标准备脚本
+  queries-001-cases.yaml                 步骤二：import-cases 生成
+~~~
 
-```bash
-mkdir -p cases/generated
-```
+原 SQL/.out 保留在用户指定的位置，不复制到报告目录。YAML 用相对于自身目录的路径引用原件，允许指向其他目录；run 直接读取当前 .out，不保存或核对其内容指纹。运行前检查 YAML 引用是否为可信的用户输入，不能把任意来源的 YAML 当作可信文件读取配置。下面 /path/to/ 必须替换为实际路径。
 
-### 5.1 Hive Live Source Case 生成
+### 5.1 PostgreSQL：必须提供 .sql + .out
 
-```bash
+~~~bash
 .venv/bin/doris-sql-validator import-cases \
-  --format hive-qtest \
-  --dialect hive \
-  --source-connection-profile hive-local \
-  --source-database default \
-  --target-database dsv_validation \
-  --input /path/to/query.q \
-  --output cases/generated/hive-query-live.yaml
-```
-
-### 5.2 Hive Recorded Output Case 生成
-
-```bash
-.venv/bin/doris-sql-validator import-cases \
-  --format hive-qtest \
-  --dialect hive \
-  --target-database dsv_validation \
-  --input /path/to/query.q \
-  --recorded-output /path/to/query.q.out \
-  --qtest-driver TestMiniLlapLocalCliDriver \
-  --output /path/to/hive-query-recorded.yaml
-```
-
-`--qtest-driver` 用于记录输出所属的 Hive QTest Driver；只有对应输出确实依赖该信息时才需要填写。
-
-### 5.3 PostgreSQL Live Source Case 生成
-
-```bash
-.venv/bin/doris-sql-validator import-cases \
-  --format pg-regress \
-  --dialect postgres \
-  --source-connection-profile postgres-local \
-  --source-database dsv_validation \
-  --target-database dsv_validation \
-  --input /path/to/query.sql \
-  --output cases/generated/pg-query-live.yaml
-```
-
-### 5.4 PostgreSQL Recorded Output Case 生成
-
-```bash
-.venv/bin/doris-sql-validator import-cases \
-  --format pg-regress \
-  --dialect postgres \
-  --target-database dsv_validation \
-  --input /path/to/query.sql \
-  --recorded-output /path/to/query.out \
-  --output /path/to/pg-query-recorded.yaml
-```
-
-### 5.5 通用 SQL 文件导入
-
-普通 SQL 没有标准 Recorded Output 解析规则，只能生成 Live Source YAML：
-
-```bash
-.venv/bin/doris-sql-validator import-cases \
-  --format raw-sql \
-  --dialect postgres \
-  --source-engine postgres \
-  --source-connection-profile postgres-local \
-  --source-database dsv_validation \
+  --format pg-regress --dialect postgres \
   --target-database dsv_validation \
   --input /path/to/queries.sql \
-  --output cases/generated/queries.yaml
-```
+  --recorded-output /path/to/queries.out \
+  --output reports/data-preparation/queries-001-cases.yaml
+~~~
+
+### 5.2 Hive：必须提供 .q + .q.out
+
+~~~bash
+.venv/bin/doris-sql-validator import-cases \
+  --format hive-qtest --dialect hive \
+  --target-database dsv_validation \
+  --input /path/to/hive-queries.q \
+  --recorded-output /path/to/hive-queries.q.out \
+  --output reports/data-preparation/hive-queries-001-cases.yaml
+~~~
+
+如确有 Hive Driver 前提，可补充 --qtest-driver；这是额外环境信息，不表示参考输出文件可省略。普通 SQL 如果没有可读取的配对输出，不进入本主验证流程；当前 CLI 保留的 Live Source 是另行选择的诊断能力，不在这里用作缺少 .out 的替代步骤。
 
 ## 6. Case YAML 结构与字段说明
 
-YAML 是 Importer 的稳定输出，也是 `run` 的唯一批量输入。通常不需要用户手工补充标签、预期结果或生成后的 Doris SQL。
+YAML 是 Importer 的稳定输出，也是 `run` 的唯一批量输入。主流程要求它包含 recorded_output。通常不需要用户手工补充标签、预期结果或生成后的 Doris SQL。
 
-下面是字段结构示意，不是可直接运行的配置；真实路径、指纹和查询编号应由 Importer 生成：
+### 6.1 生成位置和实际作用
+
+~~~text
+工作流步骤二：import-cases
+  --input inputs/postgres/queries-001/queries.sql
+  --recorded-output inputs/postgres/queries-001/queries.out
+  --output reports/data-preparation/queries-001-cases.yaml
+
+输出：上述 --output 指定的 queries-001-cases.yaml，与步骤一共享 queries-001 前缀
+  保存源/目标配置、源 SQL 路径/来源指纹、参考输出路径/格式、导入诊断，以及每条查询的原文和位置。
+  cases-lint 读取它检查结构；run 读取它取得待转译的 SQL 和参考输出的查找信息。
+  不包含 DDL/DML 执行步骤，也不是 Shell 脚本或“SQL 行号到 .out 行号”的固定映射表。
+
+Recorded Output 的定位信息
+  line_start / line_end：只表示查询在源 SQL 文件中的行号，不是 .out 行号。
+  sql：实际待验证的查询原文；解析器据此查找 .out 中对应的语句回显/查询块。
+  output_occurrence：同一 SQL 在参考输出中第几次出现，用于区分重复查询。
+  recorded_output：参考输出格式和文件路径（可选 Driver）；具体定位/结果读取由相应解析器完成。
+~~~
+
+YAML 不是只有查询行号和 Case ID：它保存完整查询原文、源/目标配置、原 SQL 路径/来源指纹，以及 .out 路径与格式。源行号用于追踪；具体 .out 结果靠查询内容和出现次数定位，不记录固定输出行号。修改原 SQL/.out 后重新导入，不手工修改行号来配对。
+
+### 导入时和运行时都会匹配参考输出
+
+~~~text
+import-cases
+  读取 SQL/.out → 拆分并筛选查询 → 分配 Case ID、源行号和 output_occurrence
+  → 调用输出解析器，首次尝试定位并读取每条查询的参考结果
+  → 保存查询与 .out 引用到 YAML，保存无法配对/读取等导入诊断
+  不把完整结果或固定的 .out 行号写进 YAML；源 Parser 先失败的查询保留解析错误
+
+cases-lint
+  仅检查 YAML 结构、字段、Case ID 和统计，不读取或匹配 .out
+
+run
+  读取 YAML → 直接读取当前 .out → SQLGlot 转译各查询
+  → 对到达源证据阶段的查询再次定位/读取参考结果 → 执行 Doris 查询 → 比较并生成报告
+  SQLGlot 转译先失败不执行双端 SQL，但仍尝试只读 .out 确认源状态；
+  保留转译错误，源端负向默认不归因，源证据读取失败也记录具体原因
+~~~
+
+所以 .out 不是到 run 才首次匹配；首次匹配发生在导入阶段。导入时参考输出读取失败的查询可能不进入最终 Case 列表，必须同时查看 import_diagnostics，不能只按 accepted 数量推断覆盖范围。
+
+### 6.2 字段示例
+
+下面是字段结构示意，不是可直接运行的配置；文件保存为 reports/data-preparation/queries-001-cases.yaml。真实路径、指纹和查询编号应由 Importer 生成：
 
 ```yaml
 source:
@@ -337,13 +342,12 @@ target:
 
 input:
   format: pg-regress
-  file: assets/md5.sql
+  file: ../../inputs/postgres/queries-001/queries.sql
   sha256: 1ac70abdb09d828aa6d11120b1a14dd31a672d5c2b80545b5f1aeee245cba147
 
 recorded_output:
   format: pg-regress
-  file: assets/md5.out
-  sha256: 3d2b594f7b18203f6fad6356cffd3699ecbfd1497e184c0bea1f8eb6ccec12d7
+  file: ../../../inputs/postgres/queries-001/queries.out
 
 import_summary:
   accepted: 1
@@ -373,7 +377,7 @@ cases:
 - `source`：源 SQL 方言、实时执行引擎和数据库；
 - `target`：Doris 连接逻辑名和数据库；
 - `input`：原始脚本格式、相对路径和内容校验值；
-- `recorded_output`：存在时自动选择 Recorded Output；不存在时自动选择 Live Source；
+- `recorded_output`：主流程必须包含的参考输出格式和路径；
 - `import_summary`：接受、跳过、歧义和错误的语句数量；
 - `import_diagnostics`：未进入验证的语句及原因，例如 DDL 被跳过；
 - `cases`：实际要转译和验证的只读查询；
@@ -386,7 +390,7 @@ YAML 不保存生成的 Doris SQL。Doris SQL 取决于当前运行时加载的 
 
 Parser 无法识别但形状为 SELECT/WITH 等查询的语句可以保留为普通 Case，并在运行报告中记录 `failure_stage=source_parse`；这不表示源数据库本身执行失败。DDL/DML 仍不会执行。
 
-`input.file` 主要用于报告来源追踪，运行时不会重新读取原始 SQL，因为 Case 已经保存在 YAML 中。`recorded_output.file` 则会在每次运行时读取，通常按 YAML 所在目录解析相对路径；移动 Recorded Output YAML 时，必须同时调整或移动它引用的 `.out/.q.out`，并使文件仍处于 YAML 目录的范围内。参考输出指纹不一致时会报错，不自动换用其他文件。
+`input.file` 主要用于报告来源追踪，运行时不会重新读取原始 SQL，因为 Case 已经保存在 YAML 中。`recorded_output.file` 则会在每次运行时读取，通常按 YAML 所在目录解析相对路径；移动 Recorded Output YAML 时，必须同时调整或移动它引用的 `.out/.q.out`，使引用仍指向相同的原始参考输出。它读取路径中的当前内容，不检查文件是否被修改；找不到对应查询或结果格式无法读取时仍报错，不借用其他查询的结果。
 
 ## 7. Case YAML 校验与验证执行
 
@@ -394,14 +398,26 @@ Parser 无法识别但形状为 SELECT/WITH 等查询的语句可以保留为普
 
 ```bash
 .venv/bin/doris-sql-validator cases-lint \
-  --path cases/generated/pg-query-live.yaml
+  --path reports/data-preparation/queries-001-cases.yaml
 ```
+
+cases-lint 的意思是“检查 Case 文件是否符合格式要求”，--path 是必填的 YAML 路径，不能只运行不带参数的 cases-lint。它不会生成 YAML，也不会执行测试：
+
+~~~text
+读取已有 YAML
+  → 检查字段、数据类型、必填项、Case ID 格式与唯一性、导入统计的一致性等
+  → Recorded Output 配置存在时，检查 Case 是否有 output_occurrence
+  → 终端输出检查结果、证据模式、查询数量和导入统计
+
+不会：连接数据库、执行 SQL、转译 SQL、读取/比较 .out 结果或生成 validation 报告。
+因此 lint 通过只表示 YAML 结构可用，不代表所有源 SQL 都能转译，也不代表两端结果一致。
+~~~
 
 成功输出示例：
 
 ```text
 OK: 14 unique cases
-  evidence: live_source
+  evidence: recorded_output
   source: postgres/postgres
   target: doris/doris
   import: accepted=14, skipped=0, ambiguous=0, errors=0
@@ -411,157 +427,173 @@ OK: 14 unique cases
 
 ```bash
 .venv/bin/doris-sql-validator run \
-  --path cases/generated/pg-query-live.yaml
+  --path reports/data-preparation/queries-001-cases.yaml \
+  --output reports/validation/queries-001-validation.json
 ```
 
-默认报告位置：
+本例显式指定的报告位置：
 
 ```text
-reports/pg-query-live/validation.md
-reports/pg-query-live/validation.json
+reports/validation/queries-001-validation.json
 ```
 
-同一个 YAML 再次运行会覆盖同目录下的旧报告。
+不指定 --output 或 --stdout 时，从 YAML 文件名去掉扩展名和末尾 -cases，默认写到仓库的 reports/validation/<所得名称>-validation.json。例如 queries-001-cases.yaml 默认对应 reports/validation/queries-001-validation.json。--output 指定完整文件路径，不是目录；重复指定同一文件会覆盖它。需要保留重跑结果时使用新的文件名，不自动递增批次号。
 
-### 7.3 报告输出目录配置
+### 7.3 验证报告文件配置
 
 ```bash
 .venv/bin/doris-sql-validator run \
-  --path cases/generated/pg-query-live.yaml \
-  --output-dir reports/manual/pg-query-live
+  --path reports/data-preparation/queries-001-cases.yaml \
+  --output reports/validation/queries-001-validation-run-002.json
 ```
 
 ### 7.4 指定 Case 执行
 
 ```bash
 .venv/bin/doris-sql-validator run \
-  --path cases/generated/pg-query-live.yaml \
-  --id pg-md5-0002-5e14d477
+  --path reports/data-preparation/queries-001-cases.yaml \
+  --id '<从当前 YAML 复制实际 Case ID>' \
+  --output reports/validation/queries-001-selected-validation.json
 ```
 
 可以重复使用 `--id` 选择多条 Case。
 
 ### 7.5 进程退出状态
 
-- 所有 Case 都得到 `MATCH`：`run` 返回退出码 `0`；
+- 逐条处理和内部比较没有返回失败：退出码 `0`，可能包含双方同类报错的源端负向；实际成功匹配数以 summary 为准，不能把退出码当作成功匹配率；
 - 任一 Case 转译失败、证据不可用、执行失败或不匹配：报告仍会生成，但 `run` 返回退出码 `1`；
 - YAML 参数或 Case ID 使用错误：通常返回退出码 `2`。
 
 因此，在 Shell 或 CI 中看到退出码 `1` 时，应先打开报告；它可能表示框架成功发现了一条兼容性差异，而不是验证器自身崩溃。
 
+### 7.6 不落盘返回验证结果
+
+修复阶段只需把实际回归事实整理进任务 Markdown 时，可以直接运行：
+
+```bash
+.venv/bin/doris-sql-validator run \
+  --path reports/data-preparation/queries-001-cases.yaml \
+  --stdout
+```
+
+它仍转译、执行并比较，只将相同结构的 JSON 返回标准输出，不创建报告文件或目录，也不自动调用 Skill。可以加 --id 筛选；--stdout 与 --output 不能同时使用。正常返回报告时标准输出只有 JSON，没有路径提示；发现差异而退出 1 时 JSON 仍有效，输入/配置错误则可能只有诊断信息。
+
+精简匹配记录仍不包含目标 SQL或完整类型；需要验收这些维度时，修复 Agent 需取得修改后运行时的真实生成 SQL和类型/执行事实，不能从“匹配”反推全部通过。具体方法与报告模板见 [工作流步骤四](POSTGRES_MANUAL_WORKFLOW.md#7-步骤四修复并验证新生成的-sql)。需要独立 CI/统计导出时才另用 --output 保存文件，不是修复验收的必需材料。
+
 ## 8. 验证报告结构与结果判读
 
-每次运行生成两个报告：
-
-```text
-validation.md    面向人工阅读
-validation.json  面向程序、CI 或后续统计
-```
-
-报告不会保存全部大结果集，只保存字段摘要、行数、完整结果 Digest 和最多 5 行样本。
-
-### 8.1 汇总统计
-
-报告先展示查询总数、成功结果匹配比例和各类失败数量。例如：
+run 默认只生成一份 `<batch-id>-validation.json`，用户与后续脚本、归因 Skill 共用；--stdout 则仅返回同结构 JSON，不写文件。不再生成同内容 Markdown，也不导出完整结果、Digest 或双端前五行样本。报告文件可直接打开；每个查询对象占一行，源 SQL 里的换行用 JSON 转义保留，不能擅自压平 SQL 注释。
 
 ~~~text
-查询总数：4
-成功结果匹配：3
-SQLGlot 转译失败：0
-Doris 执行失败：1
+reports/validation/<batch-id>-validation.json
+├── run              本次运行信息：输入/YAML 路径与来源指纹、.out 路径/格式、运行时间、
+│                    SQLGlot 版本/提交、模式、双端逻辑连接与库名、共用比较规则。
+├── summary          运行总结：记录数、匹配数/明确分母的匹配率、失败分类、负向数量、
+│                    待归因/前提排查数量、导入计数和当前证据限制。
+└── queries          一条源 SELECT 一条记录；所有记录均保留 id、source_sql、result。
+                     匹配只保留这三个字段；差异才加生成 SQL、具体错误或有限反例。
+                     源端负向保留错误和已有目标表现，默认不进入主修复范围。
 ~~~
 
-成功匹配必须两端成功；源端负向报错即使内部 Outcome 为 MATCH，也不计成功匹配。各项分母和未取得源证据的情况分别说明。
+### 8.1 汇总统计与匹配率
 
-INCONCLUSIVE 表示现有证据不足以作完整语义结论，不表示验证器没有工作。表查询数据前提未经框架核验时，发现差异也不能自动归为 SQLGlot 缺陷。
+例如一个文件选出 55 条 SELECT：35 条匹配、5 条源端负向、15 条 Doris 执行失败，其 summary 中的主要字段为：
 
-### 8.2 Import diagnostics：导入诊断
+~~~json
+{
+  "total": 55,
+  "processed_queries": 55,
+  "successful_matches": 35,
+  "known_source_success": 50,
+  "negative_source_cases": 5,
+  "needs_attribution": 15,
+  "prerequisite_issues": 0,
+  "successful_match_rate": {
+    "numerator": 35,
+    "denominator": 50,
+    "value": 0.7,
+    "meaning": "成功匹配 / 已取得成功源结果；包含已读到成功 .out 的转译失败，不含源端报错或源结果未知"
+  },
+  "outcomes": {"匹配": 35, "源端负向用例": 5, "Doris 执行失败": 15},
+  "failure_counts": {"Doris 执行失败": 15}
+}
+~~~
 
-例如：
+这是字段节选，不是已执行报告。total 是本次查询记录总数，包含已保留 SQL 的导入输出读取失败；processed_queries 是进入 run 逐条处理的数目，不代表都执行了数据库 SQL。known_source_success 是实际取得成功源结果的数目，包括已从 .out 补读源成功的转译失败。分母为 0 时比例为 null，不写成 0% 或 100%。
 
-```text
-Statement 1 | skipped | create  | Expected one read-only Query, got Create
-Statement 2 | skipped | insert  | Expected one read-only Query, got Insert
-Statement 3 | skipped | explain | Expected one read-only Query, got Command
-```
+outcomes 每条只计一个主要结果，合计等于 total。failure_counts 排除匹配和源端负向，只统计需关注的失败/差异；needs_attribution 是建议进一步归因的数量，不是已确认 SQLGlot 缺陷数。prerequisite_issues 是环境、输出读取或源证据需要先排查的数量。使用 --id 时只统计本次所选范围，run.filtered 为 true，summary.import 仍是整个 YAML 的导入计数，不能混作本轮查询数。
 
-其中 DDL/DML 的 skipped 不是执行失败；parse_error 或 recorded_output 的 error 则应读取具体原因，分别排查源语法和参考输出读取。
+### 8.2 匹配与源端负向用例
 
-### 8.3 Comparison coverage：比较证据覆盖范围
+匹配记录仅保留：
 
-Live Source 通常能比较：
+~~~json
+{"id": "实际 Case ID", "source_sql": "SELECT 1 AS value", "result": "匹配"}
+~~~
 
-- 双端执行成功或失败；
-- 归一化错误类别；
-- 字段数量、字段名和 Canonical Type；
-- 类型化行值、重复行与顺序策略。
+匹配表示当前可用比较证据没有差异，不再要求后续处理；不代表没有拿到的原生类型、全部边界也已验证。summary.evidence_limits 集中说明这些限制，避免每条重复。
 
-Recorded Output 可能只有显示文本，没有数据库原生字段类型。报告会把字段类型等能力标记为不可用；不可用项会跳过，不会被当成“已经匹配”。
+源端负向是 .out 或实时源端本身报错，默认不为复刻 PostgreSQL 错误安排独立 Doris 改写。记录 result 为“源端负向用例”、action 为“默认不归因”，保留 source_error 的具体消息及已有目标状态/错误，不计成功匹配。源端缺表、权限、连接等则记“源端环境问题”，不是正常的负向语义测试。归因 Skill 仍需核对原用例意图，不能只凭一个分类标签断定源 SQL 非法。
 
-### 8.4 Case overview：Case 执行概览
+### 8.3 差异、执行错误和处理方向
 
-示例：
+非匹配记录按需要增加字段，以下错误示例为结构说明，实际消息由数据库返回：
 
-```text
-Case: hive-groupby-empty-0004-9505fead
-Query scope: Table-backed; data not verified
-SQLGlot: Generated Doris SQL
-Source evidence: Success
-Doris execution: Error: EXECUTION_ERROR
-Outcome: EXECUTION_STATUS_MISMATCH
-Semantic conclusion: Inconclusive
-```
+~~~json
+{
+  "id": "实际 Case ID",
+  "source_sql": "SELECT COUNT(*) AS n FROM orders",
+  "result": "Doris 环境问题",
+  "action": "前提排查",
+  "source_status": "成功",
+  "reason": "Doris 连接、库表或权限等前提不满足",
+  "target_sql": "SELECT COUNT(*) AS n FROM orders",
+  "doris_status": "报错",
+  "doris_error": {
+    "category": "表不存在",
+    "message": "<数据库原始错误消息>",
+    "code": "<数据库实际错误码>"
+  }
+}
+~~~
 
-常见 Outcome：
+action 的含义：
 
-| Outcome | 含义 |
-| :--- | :--- |
-| `MATCH` | 当前可用证据全部匹配 |
-| `TRANSLATION_FAILED` | SQLGlot 无法解析源 SQL 或生成 Doris SQL |
-| `SOURCE_EVIDENCE_UNAVAILABLE` | 无法取得源数据库结果或 Recorded Output |
-| `SOURCE_ENVIRONMENT_ERROR` | 源端连接、数据库、表、权限或超时问题 |
-| `TARGET_ENVIRONMENT_ERROR` | Doris 连接、数据库、表、权限或超时问题 |
-| `EXECUTION_STATUS_MISMATCH` | 一端成功、另一端执行失败 |
-| `ERROR_BEHAVIOR_MISMATCH` | 两端都失败，但归一化错误类别不同 |
-| `RESULT_SCHEMA_MISMATCH` | 返回字段数量、显式别名或 Canonical Type 不同 |
-| `ROW_COUNT_MISMATCH` | 返回行数不同 |
-| `ROW_VALUE_MISMATCH` | 行数相同，但归一化后的结果值不同 |
+- 归因：源端成功，但转译、Doris 执行或结果有差异，需要代码分析与必要对照；不是已经证明 SQLGlot 有缺陷。
+- 前提排查：先处理缺库表、权限、输出读取或证据不足；不直接列为 SQLGlot 修复任务。
+- 补查源证据：例如转译失败且 .out 读取也失败，不能据 SQLGlot Parser 报错推定源 SQL 非法。
+- 默认不归因：源端负向用例保留事实，默认不进入主修复范围。
 
-### 8.5 失败详情：环境与兼容性问题判定
+result 用中文写具体阶段：“SQLGlot 转译失败”“Doris 执行失败”“字段不匹配”“行数不匹配”“行值或顺序不匹配”等。transpilation_error、source_evidence_error、source_error、doris_error 只在有对应证据时出现，保留实际错误而非笼统的“可能语义不同”。无生成 SQL 时不伪造 target_sql。字段/行数比较提前失败后不宣称后续维度已检查。
 
-不匹配 Case 会展开：
+### 8.4 具体差异与导入异常
 
-- 原始源 SQL；
-- 当前 SQLGlot 生成的 Doris SQL；
-- 源端与 Doris 的执行状态；
-- 字段信息、行数和最多 5 行样本；
-- JSON 中保留完整结果 Digest；Markdown 优先展示可读的字段、样本与错误，不反复列摘要值；
-- 原始错误类别、错误码和错误消息；
-- 针对该失败类型的排查方向。
+difference 只保存足以定位的证据，不重复两边任意的前几行：
 
-例如源端成功，而 Doris 报：
+~~~text
+字段差异    source_column_count / doris_column_count；实际不同字段最多三项，附省略数。
+行数差异    source_row_count / doris_row_count。
+顺序比较    不同位置的实际双端值，最多三处，附省略数。
+无序比较    每侧最多三种无法配对的记录及多出的次数；忽略顺序但不丢重复行。
+~~~
 
-```text
-Error category: TABLE_NOT_FOUND
-Error message: Table orders does not exist in database dsv_validation
-```
+例如相同行数但重复次数不同，difference 可显示源端某行多一次、Doris 另一行多一次。比较仍基于完整的本次结果，报告只截取反例；不是只拿这三条比较。有限反例不能代替后续归因的完整有限结果、原生类型和边界验证。
 
-应先在 Doris 外部创建并装载 `orders`，然后重新运行。它不是 SQLGlot 转换失败。
+普通 DDL/DML 的跳过只在 summary.import 计数，不在报告逐条展开；YAML 仍保存完整导入诊断。导入阶段未能读取 .out 且保存了原 SELECT 的记录，会写入 queries，标明原因和源位置；不悄悄当作已验证或从总数中消失。Parser 拒绝的只读 SELECT 会保留为普通失败 Case，Recorded Output 的 run 仍尝试从 .out 补读源状态，不连接源库、不执行失败 SQL。全部无法导入或输入无效时，命令直接报错，未进入 run 便不会产生验证报告。
 
-如果源端与 Doris 都成功、字段一致，但行值不同：
+### 8.5 证据限制与后续归因
 
-```text
-Outcome: ROW_VALUE_MISMATCH
-source_sample: ...
-doris_sample: ...
-```
+Recorded Output 通常只有显示文本，可能缺原生类型，或不能区分 NULL/空字符串等；Live Source 可取得更多类型化证据。共用规则在 run.comparison_rules、限制在 summary.evidence_limits，一次说明而不逐条复制。
 
-应依次检查：
+表查询不匹配时仍需依次核对数据阶段、表/类型映射、Session、UDF、输出读取、驱动表示、生成 SQL 和数据库行为。缺表应在框架外准备后重跑；两边都有表但数据不同，也可能只表现为行数/行值差异，框架不能单凭结果推断究竟缺了哪些基表记录。
 
-1. 两端是否真的是相同 Schema 和数据状态；
-2. 时区、Collation、Session 参数和 UDF 是否一致；
-3. 生成的 Doris SQL 是否丢失或错误改写了语义；
-4. 两个数据库本身是否对同一表达式采用不同语义。
+归因 Skill 直接读取本批各阶段验证 JSON，再沿 run 中的路径读取 YAML、原 SQL/.out；准备材料的精确路径由调用者提供。步骤三只生成批次汇总和每条非匹配、非源端负向 SELECT 的 Markdown，执行事实与原因写入 Case；共同修复方案、独立 PR 边界、依赖及验收集中在汇总的 task 条目，Case 链接任务并保留例外。匹配及默认排除的负向不另建文档，前提阻断和研究事项明确下一步，不冒充可实施任务。后续提供汇总路径和选定 task-id，不由用户先选 Case，不另生成任务文件或执行目录。
+
+probe-pg-case 接受 --candidate-sql 文本（- 表示标准输入）及可选 --source-variant-sql，在内存核对输入并执行只读对照，比较完整有限结果后向终端返回类型、行数、错误、最多三行样本与具体差异反例，不创建 SQL/Markdown/JSON 文件。Agent 将必要事实整理入本 Case 文档，不复制大结果或整个返回值。匹配与源端负向记录没有历史生成 SQL，工具不会重新生成来冒充旧输出；新边界必须真实执行 PG，不能借用原 .out。具体指令和两类 Markdown 的字段见工作流第 6 节。
+
+同一实际数据阶段的多条候选优先使用 probe-pg-batch --candidates-json -，从标准输入一次传 JSON 数组，每项包含 case_id、candidate_sql 和可选 source_variant_sql。同阶段材料只读取一次，每请求仍独立安全检查、连接执行、比较和重复执行，不缓存查询结果。一条失败保留错误并继续；不同阶段分开调用。默认返回逐条 JSON 事实与有解释统计，--output-format markdown 向终端返回可整合入现有报告的中文事实片段，不生成新文件。完成调用不代表执行成功、全部等价或根因已定位；AI 仍负责代码归因、修复范围与限制，共同依据可复用但逐条例外不能省略。
+
+步骤四显式调用修复 Skill，从明确选定的 task 出发确认 PR 范围，读取全部关联 Case 及其阶段输入，按任务实施而非逐 Case 修改。只生成 reports/fixes/<batch-id>-<fix-batch>-summary.md 和 reports/fixes/tasks/<batch-id>/<fix-batch>/<task-id>.md，分开报告任务验收与完整 Case 结果，保留其他任务尚未解决的差异；不覆盖归因事实，不另存独立实施/回归报告、日志、patch 或执行 JSON。代码/测试留在授权的 SQLGlot checkout；运行结果来自修改后 SQLGlot 重新生成并执行的 SQL，而不是仅重跑手写候选。提交/推送/创建 PR 需另行授权。
 
 ## 9. 结果比较规则
 
@@ -591,28 +623,28 @@ doris_sample: ...
 
 `LIMIT` 没有稳定 `ORDER BY` 时，不同引擎可能合法地返回不同记录，不适合据此直接判断 SQLGlot 语义错误。
 
-## 10. 可运行示例与样本路径
+## 10. 自备输入的操作路径
 
-推荐从 [examples/postgres/basic/README.md](../examples/postgres/basic/README.md) 开始。目录同时包含常量 SQL/.out、表查询 SQL/.out、双端 DDL/INSERT 和逐步命令，不要求维护者的本地数据库已存在。
+以下 inputs/postgres/queries-001/ 是一次上传批次的示例位置，不是仓库内置样本。自行提供配对的 queries.sql、queries.out，并在框架外准备两端所需的表和数据。queries 来自输入文件名，不是预设名称；用户原文件不要求改名。再次上传或重新准备时用下一个编号，例如 queries-002。三份准备产物直接放在 reports/data-preparation/，用相同批次前缀归组，不建立子目录、不另生成核验 JSON，详见 [工作流第 2、4 节](POSTGRES_MANUAL_WORKFLOW.md#2-输入与目录约定)。
 
-按示例完成 Doris 数据准备后：
+完成 Doris 数据准备后：
 
 ~~~bash
 .venv/bin/doris-sql-validator import-cases \
   --format pg-regress --dialect postgres \
-  --input examples/postgres/basic/queries.sql \
-  --recorded-output examples/postgres/basic/expected.out \
+  --input inputs/postgres/queries-001/queries.sql \
+  --recorded-output inputs/postgres/queries-001/queries.out \
   --source-database dsv_demo --target-database dsv_demo \
-  --output examples/postgres/basic/generated-recorded.yaml
+  --output reports/data-preparation/queries-001-cases.yaml
 
 .venv/bin/doris-sql-validator run \
-  --path examples/postgres/basic/generated-recorded.yaml \
-  --output-dir reports/demo/recorded
+  --path reports/data-preparation/queries-001-cases.yaml \
+  --output reports/validation/queries-001-validation.json
 ~~~
 
-不传 --recorded-output 则为 Live Source，需要两端已准备数据。仅导入和 lint 不连接数据库；run 会执行目标查询。使用不同输出目录保留多次运行，不覆盖仓库附带的参考报告。
+本指南主流程必须传 --recorded-output。现有 CLI 不传时仍会选择 Live Source，但这属于用户额外选择的诊断方式，不是主流程。仅导入和 lint 不连接数据库；run 会执行目标查询。使用不同 --output 文件名保留多次运行；报告和生成的 YAML 都是本地运行产物，默认不提交。
 
-更大范围的 [官方回归样本](../cases/postgres/manual/current/README.md) 含多阶段数据和外部对象依赖，不保证全部 SQL 可在空库直接执行。学习后续人工归因与修复，见 [PostgreSQL 工作流](POSTGRES_MANUAL_WORKFLOW.md)。
+自行取得的官方回归文件可能含多阶段数据和外部对象依赖，不保证全部 SQL 可在空库直接执行。学习后续人工归因与修复，见 [PostgreSQL 工作流](POSTGRES_MANUAL_WORKFLOW.md)。
 
 ## 11. 功能范围与限制
 
@@ -625,7 +657,7 @@ doris_sample: ...
 - 单条只转译；
 - 常量查询与表查询；
 - 执行状态、错误、Schema 和结果数据比较；
-- Markdown 与 JSON 报告。
+- 唯一精简 <batch-id>-validation.json，以及人工调用阶段独立保存的对照证据。
 
 当前不负责：
 

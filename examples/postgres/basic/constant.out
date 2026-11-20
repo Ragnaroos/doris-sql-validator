@@ -1,5 +1,0 @@
-SELECT 1 AS value;
- value
--------
-     1
-(1 row)

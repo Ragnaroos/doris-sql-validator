@@ -1,6 +1,6 @@
 interface:
   display_name: "PostgreSQL 转 Doris 不匹配归因"
-  short_description: "读取验证证据，执行独立只读对照，生成中文归因报告和 SQLGlot 修复任务"
-  default_prompt: "使用 $pg-doris-attribute，以每条 SQL 对应的 .out 为源证据，优先分析源端成功查询的 Doris 转换不足，负向用例默认只说明不逐条改写，输出中文归因和 SQLGlot 修复任务，不修改代码。"
+  short_description: "读取首轮证据并执行只读对照，按独立 PR 边界生成 SQLGlot 修复任务和中文归因报告"
+  default_prompt: "使用 $pg-doris-attribute，读取本批全部阶段证据，按 Case 保存归因、按独立 PR 边界在汇总中形成可实施 task，待补证事项分列，负向默认排除，不修改代码或创建 PR。"
 policy:
   allow_implicit_invocation: false

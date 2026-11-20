@@ -1,1 +1,0 @@
-SELECT a,b,GROUPING_ID(a,b),SUM(v),COUNT(*),MAX(v) FROM gstest1 GROUP BY ROLLUP(a,b);

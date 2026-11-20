@@ -1,1 +1,0 @@
-SELECT AVG(CAST(four AS DECIMAL(38,16))) AS avg_1 FROM onek;

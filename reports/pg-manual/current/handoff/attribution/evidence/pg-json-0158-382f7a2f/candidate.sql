@@ -1,1 +1,0 @@
-SELECT IF(JSON_EXTRACT_ISNULL('{"f2":{"f3":1},"f4":{"f5":null,"f6":"stringy"}}', '$.f4.f5'), NULL, JSON_EXTRACT_STRING('{"f2":{"f3":1},"f4":{"f5":null,"f6":"stringy"}}', '$.f4.f5')) IS NULL AS expect_true;

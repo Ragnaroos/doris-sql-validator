@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 import hashlib
+import json
 from pathlib import Path
 
 import sqlglot
+from sqlglot.errors import SqlglotError
 import typer
 from dotenv import load_dotenv
 
@@ -15,9 +17,8 @@ from .case_loader import (
 from .execution import create_adapter
 from .importing import ImportOptions, import_case_file
 from .models import CaseDefinition
-from .reporting import write_reports
-from .handoff import prepare_pg_review
-from .pg_probe import probe_postgres_case
+from .reporting import build_validation_report, write_reports
+from .pg_probe import probe_postgres_case, probe_postgres_cases, render_probe_batch_markdown, summarize_probe
 from .service import ValidationService
 from .source_provider import (
     LiveSourceResultProvider,
@@ -28,7 +29,6 @@ from .transpiler import SqlglotTranspiler
 
 
 PROJECT_DIR = Path(__file__).resolve().parents[2]
-DEFAULT_CASE_FILE = PROJECT_DIR / "cases/hive/candidates/hive-doris-mvp.yaml"
 app = typer.Typer(no_args_is_help=True, help="Multi-source SQL → Doris validator")
 
 
@@ -39,7 +39,7 @@ def main() -> None:
 
 @app.command("cases-lint")
 def cases_lint(
-    path: Path = typer.Option(DEFAULT_CASE_FILE, exists=True, readable=True),
+    path: Path = typer.Option(..., exists=True, readable=True),
 ) -> None:
     try:
         loaded = load_case_file(path)
@@ -149,10 +149,13 @@ def import_cases_command(
 
 @app.command("run")
 def run_suite(
-    path: Path = typer.Option(DEFAULT_CASE_FILE, exists=True, readable=True),
+    path: Path = typer.Option(..., exists=True, readable=True),
     ids: list[str] = typer.Option([], "--id", "--case-id"),
-    output_dir: Path | None = typer.Option(None),
+    output: Path | None = typer.Option(None, "--output", dir_okay=False, help="验证 JSON 的完整路径"),
+    stdout: bool = typer.Option(False, "--stdout", help="仅向标准输出返回验证 JSON，不写报告文件；不能与 --output 同用"),
 ) -> None:
+    if stdout and output is not None:
+        raise typer.BadParameter("--stdout 与 --output 不能同时使用")
     loaded = load_case_file(path)
     definition = loaded.definition
     cases = definition.cases
@@ -163,6 +166,18 @@ def run_suite(
         if missing:
             typer.echo(f"Unknown case IDs: {', '.join(sorted(missing))}", err=True)
             raise typer.Exit(2)
+
+    output_path = None
+    if not stdout:
+        batch = loaded.path.stem.removesuffix("-cases")
+        output_path = output or PROJECT_DIR / "reports" / "validation" / f"{batch}-validation.json"
+        input_paths = [loaded.path]
+        if definition.input.file:
+            input_paths.append(loaded.base_dir / definition.input.file)
+        if definition.recorded_output:
+            input_paths.append(loaded.base_dir / definition.recorded_output.file)
+        if output_path.resolve() in {input_path.resolve() for input_path in input_paths}:
+            raise typer.BadParameter("验证报告不能覆盖 YAML、源 SQL 或 .out", param_hint="--output")
 
     target = create_adapter(definition.target.engine)
     provider = None
@@ -193,52 +208,71 @@ def run_suite(
         target,
         source_provider=provider,
     ).run_suite(cases)
-    resolved_output_dir = output_dir or PROJECT_DIR / "reports" / path.stem
-    json_path, markdown_path = write_reports(report, resolved_output_dir, case_file_path=loaded.path)
-    typer.echo(f"JSON: {json_path}")
-    typer.echo(f"Markdown: {markdown_path}")
+    if stdout:
+        typer.echo(json.dumps(build_validation_report(report, case_file_path=loaded.path), ensure_ascii=False, default=str))
+    else:
+        assert output_path is not None
+        json_path = write_reports(report, output_path, case_file_path=loaded.path)
+        typer.echo(f"JSON: {json_path}")
+    # Queries rejected during output lookup are still present in the compact
+    # report; a fully matched accepted subset must not hide those failures.
+    import_output_failures = not report.filtered and any(
+        diagnostic.statement_type == "recorded_output"
+        and diagnostic.case_id
+        and diagnostic.sql
+        for diagnostic in report.import_diagnostics
+    )
     if any(
         case.status != "COMPLETED"
         or case.comparison is None
         or case.comparison.observed_outcome != "MATCH"
         for case in report.cases
-    ):
+    ) or import_output_failures:
         raise typer.Exit(1)
-
-
-@app.command("prepare-pg-review")
-def prepare_pg_review_command(
-    path: Path = typer.Option(..., exists=True, readable=True, help="首轮使用的 PostgreSQL Case YAML"),
-    report: Path = typer.Option(..., exists=True, readable=True, help="首轮 validation.json"),
-    setup: list[Path] = typer.Option(..., exists=True, readable=True, help="建表、装数和数据依赖文件，可多次指定"),
-    output_dir: Path = typer.Option(..., help="新的人工交接目录，非空时拒绝覆盖"),
-    preparation_report: Path | None = typer.Option(None, exists=True, readable=True, help="外部数据准备 Skill 的报告，可选"),
-) -> None:
-    """离线生成原文件引用索引；不复制、不执行 SQL、不调用 AI。"""
-    try:
-        result = prepare_pg_review(path, report, output_dir, setup_files=setup, preparation_report=preparation_report)
-    except (ValueError, OSError) as exc:
-        typer.echo(str(exc), err=True)
-        raise typer.Exit(2) from exc
-    typer.echo(f"人工归因交接说明：{result}")
 
 
 @app.command("probe-pg-case")
 def probe_pg_case_command(
     path: Path = typer.Option(..., exists=True, readable=True, help="当前评估使用的 PostgreSQL YAML"),
-    report: Path = typer.Option(..., exists=True, readable=True, help="对应的首轮 validation.json"),
+    report: Path = typer.Option(..., exists=True, readable=True, help="对应的首轮 <batch-id>-validation.json"),
     case_id: str = typer.Option(..., help="YAML 和首轮报告中已有的查询编号"),
-    candidate: Path = typer.Option(..., exists=True, readable=True, help="人或 Agent 编写的单条只读 Doris 候选 SQL"),
-    output_dir: Path = typer.Option(..., help="新的对照证据目录"),
-    source_variant: Path | None = typer.Option(None, exists=True, readable=True, help="可选：明确提供一条 PostgreSQL 边界变体，不覆盖原 SQL"),
+    candidate_sql: str = typer.Option(..., help="单条只读 Doris 候选 SQL；传 - 从标准输入读取"),
+    source_variant_sql: str | None = typer.Option(None, help="可选：明确提供 PostgreSQL 边界变体 SQL 文本，不借用原 .out"),
 ) -> None:
-    """显式执行 PG/社区 Doris/独立 Doris 对照；不生成改写、不作最终归因。"""
+    """只读对照，事实返回终端供归因 Skill 写入 Case Markdown，不生成文件。"""
     try:
-        result = probe_postgres_case(path, report, case_id, candidate, output_dir, source_variant=source_variant)
-    except (ValueError, OSError) as exc:
+        if candidate_sql == "-":
+            candidate_sql = typer.get_text_stream("stdin").read()
+        result = probe_postgres_case(path, report, case_id, candidate_sql, source_variant_sql=source_variant_sql)
+    except (ValueError, OSError, SourceEvidenceError, SqlglotError) as exc:
         typer.echo(str(exc), err=True)
         raise typer.Exit(2) from exc
-    typer.echo(f"只读对照报告：{result}")
+    typer.echo(json.dumps(summarize_probe(result), ensure_ascii=False, indent=2))
+
+
+@app.command("probe-pg-batch")
+def probe_pg_batch_command(
+    path: Path = typer.Option(..., exists=True, readable=True, help="同一实际数据阶段的 PostgreSQL YAML"),
+    report: Path = typer.Option(..., exists=True, readable=True, help="该阶段的首轮验证 JSON"),
+    candidates_json: str = typer.Option(..., help="候选请求 JSON 数组；传 - 从标准输入读取，不要求候选文件"),
+    output_format: str = typer.Option("json", help="终端格式：json 或 markdown；均不写文件"),
+) -> None:
+    """同阶段批量只读对照；逐条安全检查和保留错误，不调用 AI 或生成文件。"""
+    if output_format not in {"json", "markdown"}:
+        raise typer.BadParameter("--output-format 只能是 json 或 markdown")
+    try:
+        if candidates_json == "-":
+            candidates_json = typer.get_text_stream("stdin").read()
+        batch = probe_postgres_cases(path, report, json.loads(candidates_json))
+    except (ValueError, OSError, SourceEvidenceError, SqlglotError) as exc:
+        typer.echo(str(exc), err=True)
+        raise typer.Exit(2) from exc
+    if output_format == "markdown":
+        typer.echo(render_probe_batch_markdown(batch), nl=False)
+    else:
+        typer.echo(json.dumps(batch, ensure_ascii=False, indent=2, default=str))
+    if any(attempt["处理状态"] != "已完成" for attempt in batch["逐条请求"]):
+        raise typer.Exit(1)
 
 
 if __name__ == "__main__":

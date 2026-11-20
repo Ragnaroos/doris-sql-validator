@@ -1,1 +1,0 @@
-SELECT ROW(1, 1.1) = ANY(ARRAY(ROW(7, 7.7), ROW(1, 1.1), ROW(0, 0.0)));

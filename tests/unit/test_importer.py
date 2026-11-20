@@ -56,14 +56,13 @@ def test_parser_failure_is_retained_for_normal_validation(tmp_path, recorded):
     report = ValidationService(definition, NeverExecute(), source_provider=NeverExecute()).run_suite(definition.cases)
     assert all(c.status == "TRANSLATION_FAILED" and c.failure_stage == "source_parse" for c in report.cases)
     assert all(c.target_result is None and c.comparison is None for c in report.cases)
-    json_path, md_path = write_reports(report, tmp_path / "validation", case_file_path=path)
+    json_path = write_reports(report, tmp_path / "validation/report.json", case_file_path=path)
     payload = json.loads(json_path.read_text())
     assert payload["summary"]["total"] == 2
-    assert payload["summary"]["translation_failed"] == 2
-    assert payload["summary"]["doris_execution_failed"] == 0
-    assert "源 SQL 解析（SQLGlot Parser）" in md_path.read_text()
-    assert "Unexpected token" in md_path.read_text()
-    assert sorted(p.name for p in md_path.parent.iterdir()) == ["validation.json", "validation.md"]
+    assert payload["summary"]["outcomes"]["SQLGlot 转译失败"] == 2
+    assert payload["queries"][0]["failure_stage"] == "source_parse"
+    assert "Unexpected token" in json_path.read_text()
+    assert sorted(p.name for p in json_path.parent.iterdir()) == ["report.json"]
 
 
 def test_unsafe_ast_is_not_retained_as_parser_failure(tmp_path):
@@ -71,6 +70,45 @@ def test_unsafe_ast_is_not_retained_as_parser_failure(tmp_path):
     source.write_text("WITH x AS (DELETE FROM t RETURNING *) SELECT * FROM x; SELECT 1;")
     definition = import_case_file(source, tmp_path / "cases.yaml", _options())
     assert [c.sql for c in definition.cases] == ["SELECT 1;"]
+
+
+@pytest.mark.parametrize("source_error", [False, True])
+def test_parser_failure_reads_out_for_source_classification_without_executing_sql(tmp_path, source_error):
+    from doris_sql_validator.case_loader import write_case_file
+    from doris_sql_validator.reporting import load_validation_report, write_reports
+    from doris_sql_validator.service import ValidationService
+
+    sql = "SELECT DISTINCT ON (a) a FROM t ORDER BY a USING <;"
+    source, output = tmp_path / "source.sql", tmp_path / "source.out"
+    source.write_text(sql)
+    output.write_text(sql + ("\nERROR: invalid argument\n" if source_error else "\n a\n---\n 1\n(1 row)\n"))
+    path = tmp_path / "cases.yaml"
+    definition = import_case_file(source, path, _options(recorded_output=output))
+    write_case_file(definition, path)
+    provider = RecordedOutputProvider(definition.recorded_output, base_dir=tmp_path, dialect="postgres")
+
+    class NeverExecute:
+        def execute_select(self, *args, **kwargs):
+            pytest.fail("transpilation failure must never execute SQL")
+
+    report = ValidationService(definition, NeverExecute(), source_provider=provider).run_suite(definition.cases)
+    document = load_validation_report(write_reports(report, tmp_path / "validation/report.json", case_file_path=path))
+    query = document["queries"][0]
+    assert "Unexpected token" in query["transpilation_error"]
+    assert report.cases[0].target_result is None
+    assert report.cases[0].source_evidence.result.success is not source_error
+    if source_error:
+        assert query["result"] == "源端负向用例"
+        assert query["action"] == "默认不归因"
+        assert query["source_error"]["message"]
+        assert document["summary"]["negative_source_cases"] == 1
+        assert document["summary"]["needs_attribution"] == 0
+    else:
+        assert query["result"] == "SQLGlot 转译失败"
+        assert query["action"] == "归因"
+        assert document["summary"]["known_source_success"] == 1
+        assert document["summary"]["needs_attribution"] == 1
+        assert document["summary"]["successful_match_rate"]["denominator"] == 1
 
 
 def test_raw_import_accepts_only_read_only_queries(tmp_path: Path) -> None:
@@ -140,22 +178,31 @@ def test_pg_recorded_import_and_provider(tmp_path: Path) -> None:
     assert evidence.result.success is True
     assert evidence.result.rows == [["1"]]
     assert evidence.capabilities.row_values == "display_text"
-    assert evidence.artifact_sha256 == case_file.recorded_output.sha256
+    assert "sha256" not in case_file.recorded_output.model_dump()
+    assert "artifact_sha256" not in evidence.model_dump()
 
 
-def test_recorded_output_must_live_with_case_artifacts(tmp_path: Path) -> None:
-    source = tmp_path / "source.sql"
-    output = tmp_path / "source.out"
-    case_dir = tmp_path / "generated"
+def test_recorded_output_can_remain_outside_generated_yaml_directory(tmp_path: Path) -> None:
+    input_dir = tmp_path / "inputs" / "postgres"
+    input_dir.mkdir(parents=True)
+    source = input_dir / "queries.sql"
+    output = input_dir / "queries.out"
+    case_dir = tmp_path / "reports" / "data-preparation"
     source.write_text("SELECT 1;", encoding="utf-8")
     output.write_text("SELECT 1;\n ?column?\n----------\n        1\n(1 row)\n")
 
-    with pytest.raises(ValueError, match="Recorded Output must be stored"):
-        import_case_file(
-            source,
-            case_dir / "cases.yaml",
-            _options(recorded_output=output),
-        )
+    original = output.read_bytes()
+    definition = import_case_file(source, case_dir / "queries-001-cases.yaml", _options(recorded_output=output))
+    assert (case_dir / definition.recorded_output.file).resolve() == output.resolve()
+    assert definition.recorded_output.file.startswith("../")
+    provider = RecordedOutputProvider(definition.recorded_output, base_dir=case_dir, dialect="postgres")
+    assert provider.get_result(definition.cases[0]).result.rows == [["1"]]
+    assert output.read_bytes() == original
+    assert set(input_dir.iterdir()) == {source, output}
+
+    output.write_text("SELECT 1;\n ?column?\n----------\n        2\n(1 row)\n", encoding="utf-8")
+    current = RecordedOutputProvider(definition.recorded_output, base_dir=case_dir, dialect="postgres")
+    assert current.get_result(definition.cases[0]).result.rows == [["2"]]
 
 
 def test_pg_occurrences_use_echo_identity_not_ast_identity(tmp_path: Path) -> None:

@@ -1,1 +1,0 @@
-SELECT string4, ten, two FROM (SELECT string4 AS string4, ten AS ten, two AS two, ROW_NUMBER() OVER (PARTITION BY string4, ten ORDER BY string4 ASC NULLS LAST, ten DESC NULLS FIRST, two ASC NULLS LAST) AS _row_number FROM onek) AS _t WHERE _row_number = 1;

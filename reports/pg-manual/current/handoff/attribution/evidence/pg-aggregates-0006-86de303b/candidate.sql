@@ -1,1 +1,0 @@
-SELECT AVG(CAST(a AS DECIMAL(38,16))) AS avg_32 FROM aggtest WHERE a < 100;

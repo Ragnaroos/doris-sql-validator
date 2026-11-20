@@ -134,7 +134,6 @@ def import_case_file(
                 else "hive-qtest"
             ),
             file=output_ref_path or options.recorded_output.name,
-            sha256=file_sha256(content),
             driver=options.qtest_driver,
         )
         validated: list[CaseDefinition] = []
@@ -151,7 +150,6 @@ def import_case_file(
                     case=case,
                     dialect=options.dialect,
                     artifact=recorded_spec.file,
-                    artifact_sha256=recorded_spec.sha256,
                 )
             except RecordedOutputError as exc:
                 diagnostics.append(
@@ -162,6 +160,9 @@ def import_case_file(
                         disposition="error",
                         statement_type="recorded_output",
                         reason=str(exc),
+                        case_id=case.id,
+                        sql=case.sql,
+                        output_occurrence=case.output_occurrence,
                     )
                 )
             else:
@@ -382,10 +383,6 @@ def _relative_path(path: Path, base: Path) -> str:
 
 
 def _recorded_output_path(path: Path, base: Path) -> str:
-    resolved_base = base.resolve()
-    if not path.is_relative_to(resolved_base):
-        raise ValueError(
-            "Recorded Output must be stored in the Case YAML directory or one of "
-            f"its subdirectories: output={path}, case_directory={resolved_base}"
-        )
-    return path.relative_to(resolved_base).as_posix()
+    # The caller explicitly supplies the reference output. Keep the original
+    # file in place even when generated YAML lives in a reports directory.
+    return _relative_path(path.resolve(), base.resolve())

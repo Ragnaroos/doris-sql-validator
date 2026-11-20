@@ -67,7 +67,7 @@ def _case_file(*, recorded: bool = False, table_case: bool = False) -> CaseFile:
         input=InputSpec(format="manual"),
         recorded_output=(
             RecordedOutputSpec(
-                format="hive-qtest", file="expected.out", sha256="a" * 64
+                format="hive-qtest", file="expected.out"
             )
             if recorded
             else None
@@ -154,7 +154,6 @@ def test_recorded_output_mode_is_inferred_and_needs_no_live_adapter() -> None:
                     rows=[[1]],
                 ),
                 artifact="expected.out",
-                artifact_sha256="a" * 64,
             )
 
     report = ValidationService(

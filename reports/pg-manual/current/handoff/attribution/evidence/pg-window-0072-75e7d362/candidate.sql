@@ -1,1 +1,0 @@
-SELECT FIRST_VALUE(unique1) OVER w, NTH_VALUE(unique1, 2) OVER w AS nth_2, LAST_VALUE(unique1) OVER w, unique1, four FROM tenk1 WHERE unique1 < 10 WINDOW w AS (ORDER BY four NULLS LAST range BETWEEN CURRENT ROW AND UNBOUNDED following);
