@@ -48,4 +48,6 @@ git ls-files .env '.venv/*' 'inputs/*' 'cases/*' 'examples/*' 'reports/*'
 git diff --cached --stat
 ~~~
 
-SQL/输出清单应为空，reports 仅有占位文件。测试临时生成的最小 SQL 不属于发布输入。提交、推送或创建 PR 需维护者明确决定，不属于验证、归因或修复命令的默认动作。
+SQL/输出清单应为空，reports 仅有占位文件。测试临时生成的最小 SQL 不属于发布输入。这里的排除规则针对验证框架仓库；SQLGlot fork 的转换代码及相关回归测试按该仓库规范提交，不把本地工作流报告夹带进去。
+
+修复 Skill 仅在人明确授权时向指定 fork/实验分支 commit/push，不更新 main、不推社区 upstream、不强推；按独立行为修复及相关测试拆分，不按执行轮次打包无关任务。同一 task 可有后续修复 commit，保存代码不等于整份输入验收完成。发布本验证框架自身的改动，以及创建社区 Issue/PR，仍需各自明确授权。
