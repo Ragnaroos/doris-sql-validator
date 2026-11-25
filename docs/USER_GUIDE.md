@@ -238,7 +238,7 @@ Hive/PostgreSQL                       Doris
 
 验证器不会因为输入脚本包含 `CREATE` 或 `INSERT` 就执行它们。若 Doris 表不存在，报告显示“Doris 环境问题”并保留表不存在的实际错误；若表存在但数据不同，通常显示“行数不匹配”或“行值或顺序不匹配”。这些结果不能单独证明 SQLGlot 有问题。
 
-本工作目录不附带数据准备 SQL、参考输出或既有报告。用户自行提供或显式调用数据准备 Skill 生成脚本，在框架外用 SQL 客户端执行；只在授权的专用测试库运行。注意官方回归语料的多阶段数据、COPY 依赖和类型限制，具体流程见 [PostgreSQL 工作流](POSTGRES_MANUAL_WORKFLOW.md)。
+本仓库不附带数据准备 SQL 或参考输出；已公开的 `aggregates-001` 历史报告仅供阅读，入口见 [README](../README.md#已公开的示例报告)，不替代用户本次的数据准备。用户自行提供或显式调用数据准备 Skill 生成脚本，在框架外用 SQL 客户端执行；只在授权的专用测试库运行。注意官方回归语料的多阶段数据、COPY 依赖和类型限制，具体流程见 [PostgreSQL 工作流](POSTGRES_MANUAL_WORKFLOW.md)。
 
 ## 5. 步骤二：生成带相同前缀的 Case YAML
 
@@ -650,7 +650,7 @@ task-id 是跨轮问题编号，fix-001/fix-002 是执行轮次，commit 是实�
   --output reports/validation/queries-001-validation.json
 ~~~
 
-本指南主流程必须传 --recorded-output。现有 CLI 不传时仍会选择 Live Source，但这属于用户额外选择的诊断方式，不是主流程。仅导入和 lint 不连接数据库；run 会执行目标查询。使用不同 --output 文件名保留多次运行；报告和生成的 YAML 都是本地运行产物，默认不提交。
+本指南主流程必须传 --recorded-output。现有 CLI 不传时仍会选择 Live Source，但这属于用户额外选择的诊断方式，不是主流程。仅导入和 lint 不连接数据库；run 会执行目标查询。使用不同 --output 文件名保留多次运行；报告和生成的 YAML 都是本地运行产物，默认不提交。公开报告须明确授权并检查敏感信息，当前例外见 [发布约定](PUBLISHING.md#公开报告的例外)；Case YAML 仍不公开。
 
 自行取得的官方回归文件可能含多阶段数据和外部对象依赖，不保证全部 SQL 可在空库直接执行。学习后续人工归因与修复，见 [PostgreSQL 工作流](POSTGRES_MANUAL_WORKFLOW.md)。
 

@@ -2,7 +2,7 @@
 
 将 PostgreSQL/Hive 的只读查询交给社区 SQLGlot 转成 Doris SQL，再比较源端证据与 Doris 的执行结果。
 
-本工作目录只保留可复用的框架、Skill、报告模板和使用文档，不附带测试 SQL、参考输出、Case YAML、数据文件或已执行报告。用户自行提供输入，运行后按指定目录生成产物。
+本仓库提供可复用的框架、Skill、报告模板和使用文档，并公开一批 `aggregates-001` 历史报告供阅读；不附带原始测试 SQL、参考输出、Case YAML 或数据文件。用户自行提供输入，运行后按指定目录生成产物。
 
 支持两种验证方式：
 
@@ -22,6 +22,15 @@ CLI 不调用模型、不执行 DDL/DML、不建表装数，也不自动修复 S
 - [PostgreSQL 完整工作流](docs/POSTGRES_MANUAL_WORKFLOW.md)：数据准备、验证、直接归因、修复与回归，逐步说明产物内容和位置。
 - [用户指南](docs/USER_GUIDE.md)：输入格式、YAML、连接配置、比较规则和报告解读。
 - [发布约定](docs/PUBLISHING.md)：源码与运行数据的边界、提交前检查。
+
+## 已公开的示例报告
+
+- [数据准备报告](reports/data-preparation/aggregates-001-data-preparation.md)：数据阶段、类型映射、核验记录和限制。
+- [验证 JSON](reports/validation/)：43 个数据阶段的首轮查询记录、比较结果与错误。
+- [归因汇总](reports/attribution/aggregates-001-attribution-summary.md)：问题分类、修复任务索引及关联的逐查询报告。
+- [fix-020 修复汇总](reports/fixes/aggregates-001-fix-020-summary.md)：该轮修复与验收情况；其他轮次见 [修复报告目录](reports/fixes/)。
+
+这些是既有运行的历史证据，不是重新执行或全部问题已解决的声明。公开版本仅将维护者个人绝对路径替换为相对路径，SQL、结果、错误、统计和历史结论保持不变。报告中的输入、YAML、装数 SQL 和本地 checkout 引用不代表这些文件随仓库提供；复现仍需自行准备相应输入、数据库和依赖。
 
 ## 安装
 

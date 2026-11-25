@@ -1,0 +1,85 @@
+{
+  "run": {
+    "started_at": "2026-11-18T10:03:58.187165+00:00",
+    "finished_at": "2026-11-18T10:03:58.371039+00:00",
+    "sqlglot_version": "30.25.1.dev6",
+    "sqlglot_commit": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+    "validation_mode": "recorded_output",
+    "source": {
+      "dialect": "postgres",
+      "engine": "postgres",
+      "connection_profile": "postgres-local",
+      "database": "dsv_wf_agg001_s15"
+    },
+    "target": {
+      "dialect": "doris",
+      "engine": "doris",
+      "connection_profile": "doris-local",
+      "database": "dsv_wf_agg001_s15"
+    },
+    "input": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.sql",
+      "sha256": "9943917f6e4bb149cb89ad834997343370a0a7e6324ffe6723404b9cd60d0a62"
+    },
+    "filtered": false,
+    "comparison_rules": {
+      "row_order": "最终有 ORDER BY 时逐行，否则忽略顺序但保留重复次数",
+      "column_names": "仅识别到全部输出均为显式 Alias 时比较名称",
+      "column_types": "仅源证据提供字段类型时比较",
+      "typed_float_tolerance": 1e-12,
+      "recorded_values": "按源输出显示文本比较，不自动套用数值容差"
+    },
+    "case_file": {
+      "path": "reports/data-preparation/aggregates-001-stage-15-cases.yaml",
+      "sha256": "f24bee0c5d2e02435c2b3721369f6cfa4b649d98bf9b85dadf68640b5eb3f2be"
+    },
+    "recorded_output": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.out"
+    }
+  },
+  "summary": {
+    "total": 6,
+    "processed_queries": 6,
+    "successful_matches": 3,
+    "known_source_success": 5,
+    "negative_source_cases": 1,
+    "needs_attribution": 2,
+    "prerequisite_issues": 0,
+    "successful_match_rate": {
+      "numerator": 3,
+      "denominator": 5,
+      "value": 0.6,
+      "meaning": "成功匹配 / 已取得成功源结果；包含已读到成功 .out 的转译失败，不含源端报错或源结果未知"
+    },
+    "outcomes": {
+      "Doris 执行失败": 2,
+      "匹配": 3,
+      "源端负向用例": 1
+    },
+    "failure_counts": {
+      "Doris 执行失败": 2
+    },
+    "import": {
+      "accepted": 6,
+      "skipped": 0,
+      "ambiguous": 0,
+      "errors": 0
+    },
+    "evidence_limits": [
+      "只记录观测差异，不自动确定 SQLGlot/Doris/框架的最终责任。",
+      "基表、数据阶段和 Session 由外部准备；本报告不证明数据相同。",
+      "差异最多保存三个字段或每侧三种记录反例，不保存全量结果或重复的前五行样本。",
+      ".out 通常缺少原生类型，并可能混淆 NULL/空字符串或复杂类型显示；匹配不代表这些维度已验证。"
+    ]
+  },
+  "queries": [
+    {"id": "pg-aggregates-0260-77fdae46", "source_sql": "select f1 from t1 left join t2 using (f1) group by f1;", "result": "匹配"},
+    {"id": "pg-aggregates-0261-bef17f5f", "source_sql": "select f1 from t1 left join t2 using (f1) group by t1.f1;", "result": "匹配"},
+    {"id": "pg-aggregates-0262-b3de9dee", "source_sql": "select t1.f1 from t1 left join t2 using (f1) group by t1.f1;", "result": "匹配"},
+    {"id": "pg-aggregates-0263-ad10ec76", "source_sql": "select t1.f1 from t1 left join t2 using (f1) group by f1;", "result": "源端负向用例", "action": "默认不归因", "source_status": "报错", "reason": "源端本身报错，不计成功匹配，默认不安排独立改写", "source_location": {"statement": 263, "lines": [665, 666]}, "source_error": {"category": "执行失败，需阅读具体错误", "message": "column \"t1.f1\" must appear in the GROUP BY clause or be used in an aggregate function", "code": "column \"t1.f1\" must appear in the GROUP BY clause or be used in an aggregate function"}, "doris_status": "成功"},
+    {"id": "pg-aggregates-0264-e3b16e8d", "source_sql": "select f1, count(*) from\nt1 x(x0,x1) left join (t1 left join t2 using(f1)) on (x0 = 0)\ngroup by f1;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 264, "lines": [668, 671]}, "target_sql": "SELECT f1, COUNT(*) FROM t1 AS x(x0, x1) LEFT JOIN (t1 LEFT JOIN t2 USING (f1)) ON (x0 = 0) GROUP BY f1", "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, 'errCode = 2, detailMessage = \\nDo not implemented(line 1, pos 28)\\n\\n== SQL ==\\nSELECT f1, COUNT(*) FROM t1 AS x(x0, x1) LEFT JOIN (t1 LEFT JOIN t2 USING (f1)) ON (x0 = 0) GROUP BY f1\\n----------------------------^^^\\n')", "code": "1105"}},
+    {"id": "pg-aggregates-0265-6c4951ae", "source_sql": "select f2, count(*) from\nt1 x(x0,x1) left join (t1 left join t2 using(f2)) on (x0 = 0)\ngroup by f2;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 265, "lines": [673, 676]}, "target_sql": "SELECT f2, COUNT(*) FROM t1 AS x(x0, x1) LEFT JOIN (t1 LEFT JOIN t2 USING (f2)) ON (x0 = 0) GROUP BY f2", "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, 'errCode = 2, detailMessage = \\nDo not implemented(line 1, pos 28)\\n\\n== SQL ==\\nSELECT f2, COUNT(*) FROM t1 AS x(x0, x1) LEFT JOIN (t1 LEFT JOIN t2 USING (f2)) ON (x0 = 0) GROUP BY f2\\n----------------------------^^^\\n')", "code": "1105"}}
+  ]
+}

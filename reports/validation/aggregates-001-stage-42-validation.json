@@ -1,0 +1,86 @@
+{
+  "run": {
+    "started_at": "2026-11-18T10:04:01.064447+00:00",
+    "finished_at": "2026-11-18T10:04:01.146048+00:00",
+    "sqlglot_version": "30.25.1.dev6",
+    "sqlglot_commit": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+    "validation_mode": "recorded_output",
+    "source": {
+      "dialect": "postgres",
+      "engine": "postgres",
+      "connection_profile": "postgres-local",
+      "database": "dsv_wf_agg001_s42"
+    },
+    "target": {
+      "dialect": "doris",
+      "engine": "doris",
+      "connection_profile": "doris-local",
+      "database": "dsv_wf_agg001_s42"
+    },
+    "input": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.sql",
+      "sha256": "9943917f6e4bb149cb89ad834997343370a0a7e6324ffe6723404b9cd60d0a62"
+    },
+    "filtered": false,
+    "comparison_rules": {
+      "row_order": "最终有 ORDER BY 时逐行，否则忽略顺序但保留重复次数",
+      "column_names": "仅识别到全部输出均为显式 Alias 时比较名称",
+      "column_types": "仅源证据提供字段类型时比较",
+      "typed_float_tolerance": 1e-12,
+      "recorded_values": "按源输出显示文本比较，不自动套用数值容差"
+    },
+    "case_file": {
+      "path": "reports/data-preparation/aggregates-001-stage-42-cases.yaml",
+      "sha256": "a6f1f5f47721548bbb017e6700c90b534f298b5478def0483b7380d3a78f0caa"
+    },
+    "recorded_output": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.out"
+    }
+  },
+  "summary": {
+    "total": 6,
+    "processed_queries": 6,
+    "successful_matches": 1,
+    "known_source_success": 6,
+    "negative_source_cases": 0,
+    "needs_attribution": 5,
+    "prerequisite_issues": 0,
+    "successful_match_rate": {
+      "numerator": 1,
+      "denominator": 6,
+      "value": 0.16666666666666666,
+      "meaning": "成功匹配 / 已取得成功源结果；包含已读到成功 .out 的转译失败，不含源端报错或源结果未知"
+    },
+    "outcomes": {
+      "Doris 执行失败": 2,
+      "SQLGlot 转译失败": 3,
+      "匹配": 1
+    },
+    "failure_counts": {
+      "Doris 执行失败": 2,
+      "SQLGlot 转译失败": 3
+    },
+    "import": {
+      "accepted": 6,
+      "skipped": 2,
+      "ambiguous": 0,
+      "errors": 0
+    },
+    "evidence_limits": [
+      "只记录观测差异，不自动确定 SQLGlot/Doris/框架的最终责任。",
+      "基表、数据阶段和 Session 由外部准备；本报告不证明数据相同。",
+      "差异最多保存三个字段或每侧三种记录反例，不保存全量结果或重复的前五行样本。",
+      ".out 通常缺少原生类型，并可能混淆 NULL/空字符串或复杂类型显示；匹配不代表这些维度已验证。"
+    ]
+  },
+  "queries": [
+    {"id": "pg-aggregates-0548-bcd73bfc", "source_sql": "SELECT dense_rank(x) WITHIN GROUP (ORDER BY x) FROM (VALUES (1),(1),(2),(2),(3),(3)) v(x) GROUP BY (x) ORDER BY 1;", "result": "SQLGlot 转译失败", "action": "归因", "source_status": "成功", "reason": "SQLGlot 解析或生成失败", "source_location": {"statement": 548, "lines": [1658, 1659]}, "transpilation_error": "UnsupportedError: 'NULLS LAST' translation not supported with positional ordering", "failure_stage": "transpilation"},
+    {"id": "pg-aggregates-0549-9bc0dfb2", "source_sql": "SELECT min(x ORDER BY y) FROM (VALUES(1, NULL)) AS d(x,y);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 549, "lines": [1662, 1665]}, "target_sql": "SELECT MIN(x ORDER BY CASE WHEN y IS NULL THEN 1 ELSE 0 END, y) FROM (SELECT 1 AS x, NULL AS y) AS d", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'MIN' which has 3 arity. Candidate functions are: [MIN(Expression)]\")", "code": "1105"}},
+    {"id": "pg-aggregates-0550-cff4ea50", "source_sql": "SELECT min(x ORDER BY y) FROM (VALUES(1, 2)) AS d(x,y);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 550, "lines": [1666, 1666]}, "target_sql": "SELECT MIN(x ORDER BY CASE WHEN y IS NULL THEN 1 ELSE 0 END, y) FROM (SELECT 1 AS x, 2 AS y) AS d", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'MIN' which has 3 arity. Candidate functions are: [MIN(Expression)]\")", "code": "1105"}},
+    {"id": "pg-aggregates-0551-f476de2c", "source_sql": "select v||'a', case v||'a' when 'aa' then 1 else 0 end, count(*)\n  from unnest(array['a','b']) u(v)\n group by v||'a' order by 1;", "result": "SQLGlot 转译失败", "action": "归因", "source_status": "成功", "reason": "SQLGlot 解析或生成失败", "source_location": {"statement": 551, "lines": [1668, 1671]}, "transpilation_error": "UnsupportedError: Arrays are not supported by MySQL\n\n'NULLS LAST' translation not supported with positional ordering", "failure_stage": "transpilation"},
+    {"id": "pg-aggregates-0552-7ea82af2", "source_sql": "select v||'a', case when v||'a' = 'aa' then 1 else 0 end, count(*)\n  from unnest(array['a','b']) u(v)\n group by v||'a' order by 1;", "result": "SQLGlot 转译失败", "action": "归因", "source_status": "成功", "reason": "SQLGlot 解析或生成失败", "source_location": {"statement": 552, "lines": [1672, 1674]}, "transpilation_error": "UnsupportedError: Arrays are not supported by MySQL\n\n'NULLS LAST' translation not supported with positional ordering", "failure_stage": "transpilation"},
+    {"id": "pg-aggregates-0555-9ced9568", "source_sql": "select unique1, count(*), sum(twothousand) from tenk1\ngroup by unique1\nhaving sum(fivethous) > 4975\norder by sum(twothousand);", "result": "匹配"}
+  ]
+}

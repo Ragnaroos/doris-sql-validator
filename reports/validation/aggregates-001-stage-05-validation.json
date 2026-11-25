@@ -1,0 +1,79 @@
+{
+  "run": {
+    "started_at": "2026-11-18T10:03:57.138802+00:00",
+    "finished_at": "2026-11-18T10:03:57.185404+00:00",
+    "sqlglot_version": "30.25.1.dev6",
+    "sqlglot_commit": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+    "validation_mode": "recorded_output",
+    "source": {
+      "dialect": "postgres",
+      "engine": "postgres",
+      "connection_profile": "postgres-local",
+      "database": "dsv_wf_agg001_s05"
+    },
+    "target": {
+      "dialect": "doris",
+      "engine": "doris",
+      "connection_profile": "doris-local",
+      "database": "dsv_wf_agg001_s05"
+    },
+    "input": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.sql",
+      "sha256": "9943917f6e4bb149cb89ad834997343370a0a7e6324ffe6723404b9cd60d0a62"
+    },
+    "filtered": false,
+    "comparison_rules": {
+      "row_order": "最终有 ORDER BY 时逐行，否则忽略顺序但保留重复次数",
+      "column_names": "仅识别到全部输出均为显式 Alias 时比较名称",
+      "column_types": "仅源证据提供字段类型时比较",
+      "typed_float_tolerance": 1e-12,
+      "recorded_values": "按源输出显示文本比较，不自动套用数值容差"
+    },
+    "case_file": {
+      "path": "reports/data-preparation/aggregates-001-stage-05-cases.yaml",
+      "sha256": "e31c605695199f0333ae6c14564203f579a41c8d952d82bf79c35f404d76fa70"
+    },
+    "recorded_output": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.out"
+    }
+  },
+  "summary": {
+    "total": 2,
+    "processed_queries": 2,
+    "successful_matches": 0,
+    "known_source_success": 2,
+    "negative_source_cases": 0,
+    "needs_attribution": 2,
+    "prerequisite_issues": 0,
+    "successful_match_rate": {
+      "numerator": 0,
+      "denominator": 2,
+      "value": 0.0,
+      "meaning": "成功匹配 / 已取得成功源结果；包含已读到成功 .out 的转译失败，不含源端报错或源结果未知"
+    },
+    "outcomes": {
+      "Doris 执行失败": 2
+    },
+    "failure_counts": {
+      "Doris 执行失败": 2
+    },
+    "import": {
+      "accepted": 2,
+      "skipped": 0,
+      "ambiguous": 0,
+      "errors": 0
+    },
+    "evidence_limits": [
+      "只记录观测差异，不自动确定 SQLGlot/Doris/框架的最终责任。",
+      "基表、数据阶段和 Session 由外部准备；本报告不证明数据相同。",
+      "差异最多保存三个字段或每侧三种记录反例，不保存全量结果或重复的前五行样本。",
+      ".out 通常缺少原生类型，并可能混淆 NULL/空字符串或复杂类型显示；匹配不代表这些维度已验证。"
+    ]
+  },
+  "queries": [
+    {"id": "pg-aggregates-0143-5a8265a3", "source_sql": "SELECT\n  -- boolean and transitions\n  -- null because strict\n  booland_statefunc(NULL, NULL)  IS NULL AS \"t\",\n  booland_statefunc(TRUE, NULL)  IS NULL AS \"t\",\n  booland_statefunc(FALSE, NULL) IS NULL AS \"t\",\n  booland_statefunc(NULL, TRUE)  IS NULL AS \"t\",\n  booland_statefunc(NULL, FALSE) IS NULL AS \"t\",\n  -- and actual computations\n  booland_statefunc(TRUE, TRUE) AS \"t\",\n  NOT booland_statefunc(TRUE, FALSE) AS \"t\",\n  NOT booland_statefunc(FALSE, TRUE) AS \"t\",\n  NOT booland_statefunc(FALSE, FALSE) AS \"t\";", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 143, "lines": [330, 347]}, "target_sql": "SELECT BOOLAND_STATEFUNC(NULL, NULL) /* boolean and transitions */ /* null because strict */ IS NULL AS `t`, BOOLAND_STATEFUNC(TRUE, NULL) IS NULL AS `t`, BOOLAND_STATEFUNC(FALSE, NULL) IS NULL AS `t`, BOOLAND_STATEFUNC(NULL, TRUE) IS NULL AS `t`, BOOLAND_STATEFUNC(NULL, FALSE) IS NULL AS `t`, BOOLAND_STATEFUNC(TRUE, TRUE) AS `t` /* and actual computations */, NOT BOOLAND_STATEFUNC(TRUE, FALSE) AS `t`, NOT BOOLAND_STATEFUNC(FALSE, TRUE) AS `t`, NOT BOOLAND_STATEFUNC(FALSE, FALSE) AS `t`", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'BOOLAND_STATEFUNC'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0144-32971c70", "source_sql": "SELECT\n  -- boolean or transitions\n  -- null because strict\n  boolor_statefunc(NULL, NULL)  IS NULL AS \"t\",\n  boolor_statefunc(TRUE, NULL)  IS NULL AS \"t\",\n  boolor_statefunc(FALSE, NULL) IS NULL AS \"t\",\n  boolor_statefunc(NULL, TRUE)  IS NULL AS \"t\",\n  boolor_statefunc(NULL, FALSE) IS NULL AS \"t\",\n  -- actual computations\n  boolor_statefunc(TRUE, TRUE) AS \"t\",\n  boolor_statefunc(TRUE, FALSE) AS \"t\",\n  boolor_statefunc(FALSE, TRUE) AS \"t\",\n  NOT boolor_statefunc(FALSE, FALSE) AS \"t\";", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 144, "lines": [349, 361]}, "target_sql": "SELECT BOOLOR_STATEFUNC(NULL, NULL) /* boolean or transitions */ /* null because strict */ IS NULL AS `t`, BOOLOR_STATEFUNC(TRUE, NULL) IS NULL AS `t`, BOOLOR_STATEFUNC(FALSE, NULL) IS NULL AS `t`, BOOLOR_STATEFUNC(NULL, TRUE) IS NULL AS `t`, BOOLOR_STATEFUNC(NULL, FALSE) IS NULL AS `t`, BOOLOR_STATEFUNC(TRUE, TRUE) AS `t` /* actual computations */, BOOLOR_STATEFUNC(TRUE, FALSE) AS `t`, BOOLOR_STATEFUNC(FALSE, TRUE) AS `t`, NOT BOOLOR_STATEFUNC(FALSE, FALSE) AS `t`", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'BOOLOR_STATEFUNC'\")", "code": "1105"}}
+  ]
+}

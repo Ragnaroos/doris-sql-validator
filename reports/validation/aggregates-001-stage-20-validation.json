@@ -1,0 +1,81 @@
+{
+  "run": {
+    "started_at": "2026-11-18T13:25:48.857513+00:00",
+    "finished_at": "2026-11-18T13:25:48.888155+00:00",
+    "sqlglot_version": "30.25.1.dev6",
+    "sqlglot_commit": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+    "validation_mode": "recorded_output",
+    "source": {
+      "dialect": "postgres",
+      "engine": "postgres",
+      "connection_profile": "postgres-local",
+      "database": "dsv_wf_agg001_s20"
+    },
+    "target": {
+      "dialect": "doris",
+      "engine": "doris",
+      "connection_profile": "doris-local",
+      "database": "dsv_wf_agg001_s20"
+    },
+    "input": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.sql",
+      "sha256": "9943917f6e4bb149cb89ad834997343370a0a7e6324ffe6723404b9cd60d0a62"
+    },
+    "filtered": false,
+    "comparison_rules": {
+      "row_order": "最终有 ORDER BY 时逐行，否则忽略顺序但保留重复次数",
+      "column_names": "仅识别到全部输出均为显式 Alias 时比较名称",
+      "column_types": "仅源证据提供字段类型时比较",
+      "typed_float_tolerance": 1e-12,
+      "recorded_values": "按源输出显示文本比较，不自动套用数值容差"
+    },
+    "case_file": {
+      "path": "reports/data-preparation/aggregates-001-stage-20-cases.yaml",
+      "sha256": "8e480df82da564ead0ccfb83edf334c714eca3843251b7eedc90430ccbde5de8"
+    },
+    "recorded_output": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.out"
+    }
+  },
+  "summary": {
+    "total": 2,
+    "processed_queries": 2,
+    "successful_matches": 0,
+    "known_source_success": 2,
+    "negative_source_cases": 0,
+    "needs_attribution": 2,
+    "prerequisite_issues": 0,
+    "successful_match_rate": {
+      "numerator": 0,
+      "denominator": 2,
+      "value": 0.0,
+      "meaning": "成功匹配 / 已取得成功源结果；包含已读到成功 .out 的转译失败，不含源端报错或源结果未知"
+    },
+    "outcomes": {
+      "Doris 执行失败": 1,
+      "行值或顺序不匹配": 1
+    },
+    "failure_counts": {
+      "Doris 执行失败": 1,
+      "行值或顺序不匹配": 1
+    },
+    "import": {
+      "accepted": 2,
+      "skipped": 0,
+      "ambiguous": 0,
+      "errors": 0
+    },
+    "evidence_limits": [
+      "只记录观测差异，不自动确定 SQLGlot/Doris/框架的最终责任。",
+      "基表、数据阶段和 Session 由外部准备；本报告不证明数据相同。",
+      "差异最多保存三个字段或每侧三种记录反例，不保存全量结果或重复的前五行样本。",
+      ".out 通常缺少原生类型，并可能混淆 NULL/空字符串或复杂类型显示；匹配不代表这些维度已验证。"
+    ]
+  },
+  "queries": [
+    {"id": "pg-aggregates-0314-ad9e3ab0", "source_sql": "select * from agg_view1;", "result": "行值或顺序不匹配", "action": "归因", "source_status": "成功", "reason": "返回记录值、重复次数或要求的顺序不同", "source_location": {"statement": 314, "lines": [875, 875]}, "target_sql": "SELECT * FROM agg_view1", "doris_status": "成功", "difference": {"row_order": "忽略顺序，保留重复次数", "source_only": [{"row": ["{\"(3,1,baz)\",\"(2,2,bar)\",\"(1,3,foo)\",\"(0,,)\"}"], "extra_count": 1}], "doris_only": [{"row": ["[{\"a\":3, \"b\":1, \"c\":\"baz\"}, {\"a\":2, \"b\":2, \"c\":\"bar\"}, {\"a\":1, \"b\":3, \"c\":\"foo\"}, {\"a\":0, \"b\":null, \"c\":null}]"], "extra_count": 1}], "source_extra_rows": 1, "doris_extra_rows": 1, "omitted_distinct_rows": 0}},
+    {"id": "pg-aggregates-0315-e95cf6b4", "source_sql": "select pg_get_viewdef('agg_view1'::regclass);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 315, "lines": [876, 876]}, "target_sql": "SELECT PG_GET_VIEWDEF(CAST('agg_view1' AS REGCLASS))", "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, \"errCode = 2, detailMessage = \\nmismatched input 'REGCLASS' expecting {'AGG_STATE', 'ALL', 'ARRAY', 'BIGINT', 'BITMAP', 'BOOLEAN', CHAR, 'DATE', 'DATETIME', 'DATETIMEV2', 'DATEV2', 'DATETIMEV1', 'DATEV1', 'DECIMAL', 'DECIMALV2', 'DECIMALV3', 'DOUBLE', 'FLOAT', 'HLL', 'INT', 'INTEGER', 'IPV4', 'IPV6', 'JSON', 'JSONB', 'LARGEINT', 'MAP', 'QUANTILE_STATE', 'SIGNED', 'SMALLINT', 'STRING', 'STRUCT', 'TEXT', 'TIME', 'TIMESTAMPTZ', 'TINYINT', 'UNSIGNED', 'VARBINARY', 'VARCHAR', 'VARIANT'}(line 1, pos 42)\\n\")", "code": "1105"}}
+  ]
+}

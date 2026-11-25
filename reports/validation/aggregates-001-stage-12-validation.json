@@ -1,0 +1,78 @@
+{
+  "run": {
+    "started_at": "2026-11-18T10:03:58.029973+00:00",
+    "finished_at": "2026-11-18T10:03:58.083353+00:00",
+    "sqlglot_version": "30.25.1.dev6",
+    "sqlglot_commit": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+    "validation_mode": "recorded_output",
+    "source": {
+      "dialect": "postgres",
+      "engine": "postgres",
+      "connection_profile": "postgres-local",
+      "database": "dsv_wf_agg001_s12"
+    },
+    "target": {
+      "dialect": "doris",
+      "engine": "doris",
+      "connection_profile": "doris-local",
+      "database": "dsv_wf_agg001_s12"
+    },
+    "input": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.sql",
+      "sha256": "9943917f6e4bb149cb89ad834997343370a0a7e6324ffe6723404b9cd60d0a62"
+    },
+    "filtered": false,
+    "comparison_rules": {
+      "row_order": "最终有 ORDER BY 时逐行，否则忽略顺序但保留重复次数",
+      "column_names": "仅识别到全部输出均为显式 Alias 时比较名称",
+      "column_types": "仅源证据提供字段类型时比较",
+      "typed_float_tolerance": 1e-12,
+      "recorded_values": "按源输出显示文本比较，不自动套用数值容差"
+    },
+    "case_file": {
+      "path": "reports/data-preparation/aggregates-001-stage-12-cases.yaml",
+      "sha256": "ac10c4b85b0cc613adad7f962f82c83df5f26409920eab17c3cf16216b05f6b6"
+    },
+    "recorded_output": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.out"
+    }
+  },
+  "summary": {
+    "total": 3,
+    "processed_queries": 3,
+    "successful_matches": 0,
+    "known_source_success": 0,
+    "negative_source_cases": 3,
+    "needs_attribution": 0,
+    "prerequisite_issues": 0,
+    "successful_match_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null,
+      "meaning": "成功匹配 / 已取得成功源结果；包含已读到成功 .out 的转译失败，不含源端报错或源结果未知"
+    },
+    "outcomes": {
+      "源端负向用例": 3
+    },
+    "failure_counts": {},
+    "import": {
+      "accepted": 3,
+      "skipped": 0,
+      "ambiguous": 0,
+      "errors": 0
+    },
+    "evidence_limits": [
+      "只记录观测差异，不自动确定 SQLGlot/Doris/框架的最终责任。",
+      "基表、数据阶段和 Session 由外部准备；本报告不证明数据相同。",
+      "差异最多保存三个字段或每侧三种记录反例，不保存全量结果或重复的前五行样本。",
+      ".out 通常缺少原生类型，并可能混淆 NULL/空字符串或复杂类型显示；匹配不代表这些维度已验证。"
+    ]
+  },
+  "queries": [
+    {"id": "pg-aggregates-0206-0722f79c", "source_sql": "select max(min(unique1)) from tenk1;", "result": "源端负向用例", "action": "默认不归因", "source_status": "报错", "reason": "源端本身报错，不计成功匹配，默认不安排独立改写", "source_location": {"statement": 206, "lines": [516, 517]}, "source_error": {"category": "函数不存在或调用形式不受支持", "message": "aggregate function calls cannot be nested", "code": "aggregate function calls cannot be nested"}, "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, 'errCode = 2, detailMessage = aggregate function cannot contain aggregate parameters')", "code": "1105"}},
+    {"id": "pg-aggregates-0207-abd84bc2", "source_sql": "select (select max(min(unique1)) from int8_tbl) from tenk1;", "result": "源端负向用例", "action": "默认不归因", "source_status": "报错", "reason": "源端本身报错，不计成功匹配，默认不安排独立改写", "source_location": {"statement": 207, "lines": [518, 518]}, "source_error": {"category": "函数不存在或调用形式不受支持", "message": "aggregate function calls cannot be nested", "code": "aggregate function calls cannot be nested"}, "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, 'errCode = 2, detailMessage = aggregate function cannot contain aggregate parameters')", "code": "1105"}},
+    {"id": "pg-aggregates-0208-9be30dac", "source_sql": "select avg((select avg(a1.col1 order by (select avg(a2.col2) from tenk1 a3))\n            from tenk1 a1(col1)))\nfrom tenk1 a2(col2);", "result": "源端负向用例", "action": "默认不归因", "source_status": "报错", "reason": "源端本身报错，不计成功匹配，默认不安排独立改写", "source_location": {"statement": 208, "lines": [519, 521]}, "source_error": {"category": "函数不存在或调用形式不受支持", "message": "aggregate function calls cannot be nested", "code": "aggregate function calls cannot be nested"}, "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, 'errCode = 2, detailMessage = \\nDo not implemented(line 1, pos 192)\\n\\n== SQL ==\\nSELECT AVG((SELECT AVG(a1.col1 ORDER BY CASE WHEN (SELECT AVG(a2.col2) FROM tenk1 AS a3) IS NULL THEN 1 ELSE 0 END, (SELECT AVG(a2.col2) FROM tenk1 AS a3)) FROM tenk1 AS a1(col1))) FROM tenk1 AS a2(col2)\\n------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------^^^\\n')", "code": "1105"}}
+  ]
+}

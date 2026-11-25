@@ -1,0 +1,104 @@
+{
+  "run": {
+    "started_at": "2026-11-18T10:03:58.464845+00:00",
+    "finished_at": "2026-11-18T10:03:58.713593+00:00",
+    "sqlglot_version": "30.25.1.dev6",
+    "sqlglot_commit": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+    "validation_mode": "recorded_output",
+    "source": {
+      "dialect": "postgres",
+      "engine": "postgres",
+      "connection_profile": "postgres-local",
+      "database": "dsv_wf_agg001_s17"
+    },
+    "target": {
+      "dialect": "doris",
+      "engine": "doris",
+      "connection_profile": "doris-local",
+      "database": "dsv_wf_agg001_s17"
+    },
+    "input": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.sql",
+      "sha256": "9943917f6e4bb149cb89ad834997343370a0a7e6324ffe6723404b9cd60d0a62"
+    },
+    "filtered": false,
+    "comparison_rules": {
+      "row_order": "最终有 ORDER BY 时逐行，否则忽略顺序但保留重复次数",
+      "column_names": "仅识别到全部输出均为显式 Alias 时比较名称",
+      "column_types": "仅源证据提供字段类型时比较",
+      "typed_float_tolerance": 1e-12,
+      "recorded_values": "按源输出显示文本比较，不自动套用数值容差"
+    },
+    "case_file": {
+      "path": "reports/data-preparation/aggregates-001-stage-17-cases.yaml",
+      "sha256": "c4452ebf80f01193510ef591c849dd551e05d2a42d48bb05fac5de0f6825abd2"
+    },
+    "recorded_output": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.out"
+    }
+  },
+  "summary": {
+    "total": 23,
+    "processed_queries": 23,
+    "successful_matches": 0,
+    "known_source_success": 23,
+    "negative_source_cases": 0,
+    "needs_attribution": 23,
+    "prerequisite_issues": 0,
+    "successful_match_rate": {
+      "numerator": 0,
+      "denominator": 23,
+      "value": 0.0,
+      "meaning": "成功匹配 / 已取得成功源结果；包含已读到成功 .out 的转译失败，不含源端报错或源结果未知"
+    },
+    "outcomes": {
+      "Doris 执行失败": 15,
+      "SQLGlot 转译失败": 7,
+      "行值或顺序不匹配": 1
+    },
+    "failure_counts": {
+      "Doris 执行失败": 15,
+      "SQLGlot 转译失败": 7,
+      "行值或顺序不匹配": 1
+    },
+    "import": {
+      "accepted": 23,
+      "skipped": 8,
+      "ambiguous": 0,
+      "errors": 6
+    },
+    "evidence_limits": [
+      "只记录观测差异，不自动确定 SQLGlot/Doris/框架的最终责任。",
+      "基表、数据阶段和 Session 由外部准备；本报告不证明数据相同。",
+      "差异最多保存三个字段或每侧三种记录反例，不保存全量结果或重复的前五行样本。",
+      ".out 通常缺少原生类型，并可能混淆 NULL/空字符串或复杂类型显示；匹配不代表这些维度已验证。"
+    ]
+  },
+  "queries": [
+    {"id": "pg-aggregates-0276-0f1f5154", "source_sql": "select array_agg(distinct val)\nfrom (select null as val from generate_series(1, 2));", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 276, "lines": [740, 742]}, "target_sql": "SELECT COLLECT_LIST(DISTINCT val) FROM (SELECT NULL AS val FROM GENERATE_SERIES(1, 2))", "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, \"errCode = 2, detailMessage = \\nmismatched input ',' expecting EQ(line 1, pos 81)\\n\")", "code": "1105"}},
+    {"id": "pg-aggregates-0283-9ca01715", "source_sql": "select array_agg(a order by b)\n  from (values (1,4),(2,3),(3,1),(4,2)) v(a,b);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 283, "lines": [769, 774]}, "target_sql": "SELECT COLLECT_LIST(a ORDER BY CASE WHEN b IS NULL THEN 1 ELSE 0 END, b) FROM (SELECT 1 AS a, 4 AS b UNION ALL SELECT 2, 3 UNION ALL SELECT 3, 1 UNION ALL SELECT 4, 2) AS v", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'COLLECT_LIST' which has 3 arity. Candidate functions are: [COLLECT_LIST(Expression, Expression), COLLECT_LIST(Expression)]\")", "code": "1105"}},
+    {"id": "pg-aggregates-0284-628b13e2", "source_sql": "select array_agg(a order by a)\n  from (values (1,4),(2,3),(3,1),(4,2)) v(a,b);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 284, "lines": [775, 776]}, "target_sql": "SELECT COLLECT_LIST(a ORDER BY CASE WHEN a IS NULL THEN 1 ELSE 0 END, a) FROM (SELECT 1 AS a, 4 AS b UNION ALL SELECT 2, 3 UNION ALL SELECT 3, 1 UNION ALL SELECT 4, 2) AS v", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'COLLECT_LIST' which has 3 arity. Candidate functions are: [COLLECT_LIST(Expression, Expression), COLLECT_LIST(Expression)]\")", "code": "1105"}},
+    {"id": "pg-aggregates-0285-ee2a7bc2", "source_sql": "select array_agg(a order by a desc)\n  from (values (1,4),(2,3),(3,1),(4,2)) v(a,b);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 285, "lines": [777, 778]}, "target_sql": "SELECT COLLECT_LIST(a ORDER BY CASE WHEN a IS NULL THEN 1 ELSE 0 END DESC, a DESC) FROM (SELECT 1 AS a, 4 AS b UNION ALL SELECT 2, 3 UNION ALL SELECT 3, 1 UNION ALL SELECT 4, 2) AS v", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'COLLECT_LIST' which has 3 arity. Candidate functions are: [COLLECT_LIST(Expression, Expression), COLLECT_LIST(Expression)]\")", "code": "1105"}},
+    {"id": "pg-aggregates-0286-c689f198", "source_sql": "select array_agg(b order by a desc)\n  from (values (1,4),(2,3),(3,1),(4,2)) v(a,b);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 286, "lines": [779, 780]}, "target_sql": "SELECT COLLECT_LIST(b ORDER BY CASE WHEN a IS NULL THEN 1 ELSE 0 END DESC, a DESC) FROM (SELECT 1 AS a, 4 AS b UNION ALL SELECT 2, 3 UNION ALL SELECT 3, 1 UNION ALL SELECT 4, 2) AS v", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'COLLECT_LIST' which has 3 arity. Candidate functions are: [COLLECT_LIST(Expression, Expression), COLLECT_LIST(Expression)]\")", "code": "1105"}},
+    {"id": "pg-aggregates-0287-a6b4ea06", "source_sql": "select array_agg(distinct a)\n  from (values (1),(2),(1),(3),(null),(2)) v(a);", "result": "行值或顺序不匹配", "action": "归因", "source_status": "成功", "reason": "返回记录值、重复次数或要求的顺序不同", "source_location": {"statement": 287, "lines": [782, 783]}, "target_sql": "SELECT COLLECT_LIST(DISTINCT a) FROM (SELECT 1 AS a UNION ALL SELECT 2 UNION ALL SELECT 1 UNION ALL SELECT 3 UNION ALL SELECT NULL UNION ALL SELECT 2) AS v", "doris_status": "成功", "difference": {"row_order": "忽略顺序，保留重复次数", "source_only": [{"row": ["{1,2,3,NULL}"], "extra_count": 1}], "doris_only": [{"row": ["[1, 2, 3]"], "extra_count": 1}], "source_extra_rows": 1, "doris_extra_rows": 1, "omitted_distinct_rows": 0}},
+    {"id": "pg-aggregates-0288-1528b423", "source_sql": "select array_agg(distinct a order by a)\n  from (values (1),(2),(1),(3),(null),(2)) v(a);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 288, "lines": [784, 785]}, "target_sql": "SELECT COLLECT_LIST(DISTINCT a ORDER BY CASE WHEN a IS NULL THEN 1 ELSE 0 END, a) FROM (SELECT 1 AS a UNION ALL SELECT 2 UNION ALL SELECT 1 UNION ALL SELECT 3 UNION ALL SELECT NULL UNION ALL SELECT 2) AS v", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'COLLECT_LIST' which has 4 arity. Candidate functions are: [COLLECT_LIST(Expression, Expression), COLLECT_LIST(Expression)]\")", "code": "1105"}},
+    {"id": "pg-aggregates-0289-64071a98", "source_sql": "select array_agg(distinct a order by a desc)\n  from (values (1),(2),(1),(3),(null),(2)) v(a);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 289, "lines": [786, 787]}, "target_sql": "SELECT COLLECT_LIST(DISTINCT a ORDER BY CASE WHEN a IS NULL THEN 1 ELSE 0 END DESC, a DESC) FROM (SELECT 1 AS a UNION ALL SELECT 2 UNION ALL SELECT 1 UNION ALL SELECT 3 UNION ALL SELECT NULL UNION ALL SELECT 2) AS v", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'COLLECT_LIST' which has 4 arity. Candidate functions are: [COLLECT_LIST(Expression, Expression), COLLECT_LIST(Expression)]\")", "code": "1105"}},
+    {"id": "pg-aggregates-0290-2bc98abf", "source_sql": "select array_agg(distinct a order by a desc nulls last)\n  from (values (1),(2),(1),(3),(null),(2)) v(a);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 290, "lines": [788, 789]}, "target_sql": "SELECT COLLECT_LIST(DISTINCT a ORDER BY a DESC) FROM (SELECT 1 AS a UNION ALL SELECT 2 UNION ALL SELECT 1 UNION ALL SELECT 3 UNION ALL SELECT NULL UNION ALL SELECT 2) AS v", "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, \"errCode = 2, detailMessage = collect_list doesn't support order by expression\")", "code": "1105"}},
+    {"id": "pg-aggregates-0291-40c04ecb", "source_sql": "select aggfstr(a,b,c)\n  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 291, "lines": [791, 794]}, "target_sql": "SELECT AGGFSTR(a, b, c) FROM (SELECT 1 AS a, 3 AS b, 'foo' AS c UNION ALL SELECT 0, NULL, NULL UNION ALL SELECT 2, 2, 'bar' UNION ALL SELECT 3, 1, 'baz') AS v", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'AGGFSTR'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0292-68d79c0b", "source_sql": "select aggfns(a,b,c)\n  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 292, "lines": [795, 796]}, "target_sql": "SELECT AGGFNS(a, b, c) FROM (SELECT 1 AS a, 3 AS b, 'foo' AS c UNION ALL SELECT 0, NULL, NULL UNION ALL SELECT 2, 2, 'bar' UNION ALL SELECT 3, 1, 'baz') AS v", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'AGGFNS'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0293-3e365a0a", "source_sql": "select aggfstr(distinct a,b,c)\n  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),\n       generate_series(1,3) i;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 293, "lines": [798, 800]}, "target_sql": "SELECT AGGFSTR(DISTINCT a, b, c) FROM (SELECT 1 AS a, 3 AS b, 'foo' AS c UNION ALL SELECT 0, NULL, NULL UNION ALL SELECT 2, 2, 'bar' UNION ALL SELECT 3, 1, 'baz') AS v, GENERATE_SERIES(1, 3) AS i", "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, \"errCode = 2, detailMessage = \\nmismatched input ',' expecting EQ(line 1, pos 186)\\n\")", "code": "1105"}},
+    {"id": "pg-aggregates-0294-5412623b", "source_sql": "select aggfns(distinct a,b,c)\n  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),\n       generate_series(1,3) i;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 294, "lines": [801, 803]}, "target_sql": "SELECT AGGFNS(DISTINCT a, b, c) FROM (SELECT 1 AS a, 3 AS b, 'foo' AS c UNION ALL SELECT 0, NULL, NULL UNION ALL SELECT 2, 2, 'bar' UNION ALL SELECT 3, 1, 'baz') AS v, GENERATE_SERIES(1, 3) AS i", "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, \"errCode = 2, detailMessage = \\nmismatched input ',' expecting EQ(line 1, pos 185)\\n\")", "code": "1105"}},
+    {"id": "pg-aggregates-0295-bf759c5f", "source_sql": "select aggfstr(distinct a,b,c order by b)\n  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),\n       generate_series(1,3) i;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 295, "lines": [805, 807]}, "target_sql": "SELECT AGGFSTR(DISTINCT a, b, c ORDER BY CASE WHEN b IS NULL THEN 1 ELSE 0 END, b) FROM (SELECT 1 AS a, 3 AS b, 'foo' AS c UNION ALL SELECT 0, NULL, NULL UNION ALL SELECT 2, 2, 'bar' UNION ALL SELECT 3, 1, 'baz') AS v, GENERATE_SERIES(1, 3) AS i", "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, \"errCode = 2, detailMessage = \\nmismatched input ',' expecting EQ(line 1, pos 236)\\n\")", "code": "1105"}},
+    {"id": "pg-aggregates-0296-a77bafc5", "source_sql": "select aggfns(distinct a,b,c order by b)\n  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),\n       generate_series(1,3) i;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 296, "lines": [808, 810]}, "target_sql": "SELECT AGGFNS(DISTINCT a, b, c ORDER BY CASE WHEN b IS NULL THEN 1 ELSE 0 END, b) FROM (SELECT 1 AS a, 3 AS b, 'foo' AS c UNION ALL SELECT 0, NULL, NULL UNION ALL SELECT 2, 2, 'bar' UNION ALL SELECT 3, 1, 'baz') AS v, GENERATE_SERIES(1, 3) AS i", "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, \"errCode = 2, detailMessage = \\nmismatched input ',' expecting EQ(line 1, pos 235)\\n\")", "code": "1105"}},
+    {"id": "pg-aggregates-0297-ce288841", "source_sql": "select aggfns(distinct a,a,c order by c using ~<~,a)\n  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),\n       generate_series(1,2) i;", "result": "SQLGlot 转译失败", "action": "归因", "source_status": "成功", "reason": "源 SQL 解析失败", "source_location": {"statement": 297, "lines": [812, 816]}, "transpilation_error": "ParseError: Expecting ). Line 1, Col: 45.\n  select aggfns(distinct a,a,c order by c using ~<~,a)\n  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),\n       generate_\n\nInvalid expression / Unexpected token. Line 1, Col: 45.\n  select aggfns(distinct a,a,c order by c using ~<~,a)\n  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),\n       generate_", "failure_stage": "source_parse"},
+    {"id": "pg-aggregates-0298-261e1b98", "source_sql": "select aggfns(distinct a,a,c order by c using ~<~)\n  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),\n       generate_series(1,2) i;", "result": "SQLGlot 转译失败", "action": "归因", "source_status": "成功", "reason": "源 SQL 解析失败", "source_location": {"statement": 298, "lines": [817, 819]}, "transpilation_error": "ParseError: Expecting ). Line 1, Col: 45.\n  select aggfns(distinct a,a,c order by c using ~<~)\n  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),\n       generate_se\n\nInvalid expression / Unexpected token. Line 1, Col: 45.\n  select aggfns(distinct a,a,c order by c using ~<~)\n  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),\n       generate_se", "failure_stage": "source_parse"},
+    {"id": "pg-aggregates-0299-d52780a5", "source_sql": "select aggfns(distinct a,a,c order by a)\n  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),\n       generate_series(1,2) i;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 299, "lines": [820, 822]}, "target_sql": "SELECT AGGFNS(DISTINCT a, a, c ORDER BY CASE WHEN a IS NULL THEN 1 ELSE 0 END, a) FROM (SELECT 1 AS a, 3 AS b, 'foo' AS c UNION ALL SELECT 0, NULL, NULL UNION ALL SELECT 2, 2, 'bar' UNION ALL SELECT 3, 1, 'baz') AS v, GENERATE_SERIES(1, 2) AS i", "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, \"errCode = 2, detailMessage = \\nmismatched input ',' expecting EQ(line 1, pos 235)\\n\")", "code": "1105"}},
+    {"id": "pg-aggregates-0300-a22a64cf", "source_sql": "select aggfns(distinct a,b,c order by a,c using ~<~,b)\n  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),\n       generate_series(1,2) i;", "result": "SQLGlot 转译失败", "action": "归因", "source_status": "成功", "reason": "源 SQL 解析失败", "source_location": {"statement": 300, "lines": [823, 825]}, "transpilation_error": "ParseError: Expecting ). Line 1, Col: 47.\n  select aggfns(distinct a,b,c order by a,c using ~<~,b)\n  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),\n       generate_\n\nInvalid expression / Unexpected token. Line 1, Col: 47.\n  select aggfns(distinct a,b,c order by a,c using ~<~,b)\n  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),\n       generate_", "failure_stage": "source_parse"},
+    {"id": "pg-aggregates-0301-8e89d955", "source_sql": "select array_agg(distinct r order by r using <, r using *<)\n  from (values (row(-0.0::float8)), (row(0.0::float8))) v(r),\n       generate_series(1,2) i;", "result": "SQLGlot 转译失败", "action": "归因", "source_status": "成功", "reason": "源 SQL 解析失败", "source_location": {"statement": 301, "lines": [827, 830]}, "transpilation_error": "ParseError: Expecting ). Line 1, Col: 44.\n  select array_agg(distinct r order by r using <, r using *<)\n  from (values (row(-0.0::float8)), (row(0.0::float8))) v(r),\n       generate_series\n\nInvalid expression / Unexpected token. Line 1, Col: 44.\n  select array_agg(distinct r order by r using <, r using *<)\n  from (values (row(-0.0::float8)), (row(0.0::float8))) v(r),\n       generate_series", "failure_stage": "source_parse"},
+    {"id": "pg-aggregates-0303-8e89d955", "source_sql": "select array_agg(distinct r order by r using <, r using *<)\n  from (values (row(-0.0::float8)), (row(0.0::float8))) v(r),\n       generate_series(1,2) i;", "result": "SQLGlot 转译失败", "action": "归因", "source_status": "成功", "reason": "源 SQL 解析失败", "source_location": {"statement": 303, "lines": [834, 836]}, "transpilation_error": "ParseError: Expecting ). Line 1, Col: 44.\n  select array_agg(distinct r order by r using <, r using *<)\n  from (values (row(-0.0::float8)), (row(0.0::float8))) v(r),\n       generate_series\n\nInvalid expression / Unexpected token. Line 1, Col: 44.\n  select array_agg(distinct r order by r using <, r using *<)\n  from (values (row(-0.0::float8)), (row(0.0::float8))) v(r),\n       generate_series", "failure_stage": "source_parse"},
+    {"id": "pg-aggregates-0304-1e9d5cdf", "source_sql": "select array_agg(r order by r using <, r using *<)\n  from (values (row(-0.0::float8)), (row(0.0::float8))) v(r);", "result": "SQLGlot 转译失败", "action": "归因", "source_status": "成功", "reason": "源 SQL 解析失败", "source_location": {"statement": 304, "lines": [838, 840]}, "transpilation_error": "ParseError: Expecting ). Line 1, Col: 35.\n  select array_agg(r order by r using <, r using *<)\n  from (values (row(-0.0::float8)), (row(0.0::float8))) v(r);\n\nInvalid expression / Unexpected token. Line 1, Col: 35.\n  select array_agg(r order by r using <, r using *<)\n  from (values (row(-0.0::float8)), (row(0.0::float8))) v(r);", "failure_stage": "source_parse"},
+    {"id": "pg-aggregates-0306-e70870c4", "source_sql": "select\n    string_agg(distinct 'a', ','),\n    sum((\n        select sum(1)\n        from (values(1)) b(id)\n        where a.id = b.id\n)) from unnest(array[1]) a(id);", "result": "SQLGlot 转译失败", "action": "归因", "source_status": "成功", "reason": "SQLGlot 解析或生成失败", "source_location": {"statement": 306, "lines": [844, 851]}, "transpilation_error": "UnsupportedError: Arrays are not supported by MySQL", "failure_stage": "transpilation"}
+  ]
+}

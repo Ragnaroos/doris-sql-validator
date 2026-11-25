@@ -1,0 +1,103 @@
+{
+  "run": {
+    "started_at": "2026-11-18T09:57:37.148070+00:00",
+    "finished_at": "2026-11-18T09:57:37.759728+00:00",
+    "sqlglot_version": "30.25.1.dev6",
+    "sqlglot_commit": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+    "validation_mode": "recorded_output",
+    "source": {
+      "dialect": "postgres",
+      "engine": "postgres",
+      "connection_profile": "postgres-local",
+      "database": "dsv_wf_agg001_s03"
+    },
+    "target": {
+      "dialect": "doris",
+      "engine": "doris",
+      "connection_profile": "doris-local",
+      "database": "dsv_wf_agg001_s03"
+    },
+    "input": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.sql",
+      "sha256": "9943917f6e4bb149cb89ad834997343370a0a7e6324ffe6723404b9cd60d0a62"
+    },
+    "filtered": false,
+    "comparison_rules": {
+      "row_order": "最终有 ORDER BY 时逐行，否则忽略顺序但保留重复次数",
+      "column_names": "仅识别到全部输出均为显式 Alias 时比较名称",
+      "column_types": "仅源证据提供字段类型时比较",
+      "typed_float_tolerance": 1e-12,
+      "recorded_values": "按源输出显示文本比较，不自动套用数值容差"
+    },
+    "case_file": {
+      "path": "reports/data-preparation/aggregates-001-stage-03-cases.yaml",
+      "sha256": "6fd4dbbc9bbc3b49c3ecafeedbf6e041699714648ef1793f8e067c4c4f405c01"
+    },
+    "recorded_output": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.out"
+    }
+  },
+  "summary": {
+    "total": 20,
+    "processed_queries": 20,
+    "successful_matches": 6,
+    "known_source_success": 19,
+    "negative_source_cases": 1,
+    "needs_attribution": 13,
+    "prerequisite_issues": 0,
+    "successful_match_rate": {
+      "numerator": 6,
+      "denominator": 19,
+      "value": 0.3157894736842105,
+      "meaning": "成功匹配 / 已取得成功源结果；包含已读到成功 .out 的转译失败，不含源端报错或源结果未知"
+    },
+    "outcomes": {
+      "Doris 执行失败": 9,
+      "SQLGlot 转译失败": 3,
+      "匹配": 6,
+      "源端负向用例": 1,
+      "行值或顺序不匹配": 1
+    },
+    "failure_counts": {
+      "Doris 执行失败": 9,
+      "SQLGlot 转译失败": 3,
+      "行值或顺序不匹配": 1
+    },
+    "import": {
+      "accepted": 20,
+      "skipped": 2,
+      "ambiguous": 0,
+      "errors": 0
+    },
+    "evidence_limits": [
+      "只记录观测差异，不自动确定 SQLGlot/Doris/框架的最终责任。",
+      "基表、数据阶段和 Session 由外部准备；本报告不证明数据相同。",
+      "差异最多保存三个字段或每侧三种记录反例，不保存全量结果或重复的前五行样本。",
+      ".out 通常缺少原生类型，并可能混淆 NULL/空字符串或复杂类型显示；匹配不代表这些维度已验证。"
+    ]
+  },
+  "queries": [
+    {"id": "pg-aggregates-0117-9b55812f", "source_sql": "SELECT count(four) AS cnt_1000 FROM onek;", "result": "匹配"},
+    {"id": "pg-aggregates-0118-40e0ad0b", "source_sql": "SELECT count(DISTINCT four) AS cnt_4 FROM onek;", "result": "匹配"},
+    {"id": "pg-aggregates-0119-4f6e720a", "source_sql": "select ten, count(*), sum(four) from onek\ngroup by ten order by ten;", "result": "匹配"},
+    {"id": "pg-aggregates-0120-da2d61d9", "source_sql": "select ten, count(four), sum(DISTINCT four) from onek\ngroup by ten order by ten;", "result": "匹配"},
+    {"id": "pg-aggregates-0121-6b24fa4d", "source_sql": "SELECT newavg(four) AS avg_1 FROM onek;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 121, "lines": [218, 219]}, "target_sql": "SELECT NEWAVG(four) AS avg_1 FROM onek", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'NEWAVG'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0122-4ead625a", "source_sql": "SELECT newsum(four) AS sum_1500 FROM onek;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 122, "lines": [220, 220]}, "target_sql": "SELECT NEWSUM(four) AS sum_1500 FROM onek", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'NEWSUM'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0123-3d80ad43", "source_sql": "SELECT newcnt(four) AS cnt_1000 FROM onek;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 123, "lines": [221, 221]}, "target_sql": "SELECT NEWCNT(four) AS cnt_1000 FROM onek", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'NEWCNT'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0124-8a698015", "source_sql": "SELECT newcnt(*) AS cnt_1000 FROM onek;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 124, "lines": [222, 222]}, "target_sql": "SELECT NEWCNT(*) AS cnt_1000 FROM onek", "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, \"errCode = 2, detailMessage = \\n'*' can only be used in conjunction with COUNT or JSON_OBJECT: NEWCNT(line 1, pos 7)\\n\\n== SQL ==\\nSELECT NEWCNT(*) AS cnt_1000 FROM onek\\n-------^^^\\n\")", "code": "1105"}},
+    {"id": "pg-aggregates-0125-f5fb1ddf", "source_sql": "SELECT oldcnt(*) AS cnt_1000 FROM onek;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 125, "lines": [223, 223]}, "target_sql": "SELECT OLDCNT(*) AS cnt_1000 FROM onek", "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, \"errCode = 2, detailMessage = \\n'*' can only be used in conjunction with COUNT or JSON_OBJECT: OLDCNT(line 1, pos 7)\\n\\n== SQL ==\\nSELECT OLDCNT(*) AS cnt_1000 FROM onek\\n-------^^^\\n\")", "code": "1105"}},
+    {"id": "pg-aggregates-0126-43383f4c", "source_sql": "SELECT sum2(q1,q2) FROM int8_tbl;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 126, "lines": [224, 224]}, "target_sql": "SELECT SUM2(q1, q2) FROM int8_tbl", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'SUM2'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0127-07b331c1", "source_sql": "SELECT sum(q1+q2), sum(q1)+sum(q2) FROM int8_tbl;", "result": "匹配"},
+    {"id": "pg-aggregates-0128-e4b82d83", "source_sql": "SELECT sum(q1-q2), sum(q2-q1), sum(q1)-sum(q2) FROM int8_tbl;", "result": "匹配"},
+    {"id": "pg-aggregates-0129-89f16cca", "source_sql": "SELECT sum(q1*2000), sum(-q1*2000), 2000*sum(q1) FROM int8_tbl;", "result": "行值或顺序不匹配", "action": "归因", "source_status": "成功", "reason": "返回记录值、重复次数或要求的顺序不同", "source_location": {"statement": 129, "lines": [229, 229]}, "target_sql": "SELECT SUM(q1 * 2000), SUM(-q1 * 2000), 2000 * SUM(q1) FROM int8_tbl", "doris_status": "成功", "difference": {"row_order": "忽略顺序，保留重复次数", "source_only": [{"row": ["27407340740741226000", "-27407340740741226000", "27407340740741226000"], "extra_count": 1}], "doris_only": [{"row": ["8960596667031674384", "-8960596667031674384", "8960596667031674384"], "extra_count": 1}], "source_extra_rows": 1, "doris_extra_rows": 1, "omitted_distinct_rows": 0}},
+    {"id": "pg-aggregates-0130-3caf0694", "source_sql": "select ten, sum(distinct four) from onek a\ngroup by ten\nhaving exists (select 1 from onek b where sum(distinct a.four) = b.four);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 130, "lines": [231, 236]}, "target_sql": "SELECT ten, SUM(DISTINCT four) FROM onek AS a GROUP BY ten HAVING EXISTS(SELECT 1 FROM onek AS b WHERE SUM(DISTINCT a.four) = b.four)", "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, \"errCode = 2, detailMessage = Unknown column 'four' in 'a' in FILTER clause(line 1, pos 116)\")", "code": "1105"}},
+    {"id": "pg-aggregates-0131-f1cdbd0d", "source_sql": "select ten, sum(distinct four) from onek a\ngroup by ten\nhaving exists (select 1 from onek b\n               where sum(distinct a.four + b.four) = b.four);", "result": "源端负向用例", "action": "默认不归因", "source_status": "报错", "reason": "源端本身报错，不计成功匹配，默认不安排独立改写", "source_location": {"statement": 131, "lines": [238, 242]}, "source_error": {"category": "函数不存在或调用形式不受支持", "message": "aggregate functions are not allowed in WHERE", "code": "aggregate functions are not allowed in WHERE"}, "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, \"errCode = 2, detailMessage = Unknown column 'four' in 'a' in FILTER clause(line 1, pos 116)\")", "code": "1105"}},
+    {"id": "pg-aggregates-0132-8462e8e9", "source_sql": "select\n  (select max((select i.unique2 from tenk1 i where i.unique1 = o.unique1)))\nfrom tenk1 o;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 132, "lines": [244, 248]}, "target_sql": "SELECT (SELECT MAX((SELECT i.unique2 FROM tenk1 AS i WHERE i.unique1 = o.unique1))) FROM tenk1 AS o", "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, \"errCode = 2, detailMessage = Unknown column 'unique1' in 'o' in FILTER clause(line 1, pos 71)\")", "code": "1105"}},
+    {"id": "pg-aggregates-0134-429eb1f7", "source_sql": "select s1, s2, sm\nfrom generate_series(1, 3) s1,\n     lateral (select s2, sum(s1 + s2) sm\n              from generate_series(1, 3) s2 group by s2) ss\norder by 1, 2;", "result": "SQLGlot 转译失败", "action": "归因", "source_status": "成功", "reason": "SQLGlot 解析或生成失败", "source_location": {"statement": 134, "lines": [258, 262]}, "transpilation_error": "UnsupportedError: 'NULLS LAST' translation not supported with positional ordering\n\n'NULLS LAST' translation not supported with positional ordering", "failure_stage": "transpilation"},
+    {"id": "pg-aggregates-0136-4243166e", "source_sql": "select array(select sum(x+y) s\n            from generate_series(1,3) y group by y order by s)\n  from generate_series(1,3) x;", "result": "SQLGlot 转译失败", "action": "归因", "source_status": "成功", "reason": "SQLGlot 解析或生成失败", "source_location": {"statement": 136, "lines": [268, 270]}, "transpilation_error": "UnsupportedError: Arrays are not supported by MySQL", "failure_stage": "transpilation"},
+    {"id": "pg-aggregates-0137-2237979d", "source_sql": "select two + four as g, (select f1 from int4_tbl where f1 = (two + four))\nfrom tenk1 t1\ngroup by two + four order by 1;", "result": "SQLGlot 转译失败", "action": "归因", "source_status": "成功", "reason": "SQLGlot 解析或生成失败", "source_location": {"statement": 137, "lines": [272, 276]}, "transpilation_error": "UnsupportedError: 'NULLS LAST' translation not supported with positional ordering", "failure_stage": "transpilation"},
+    {"id": "pg-aggregates-0138-e2be6583", "source_sql": "select q1, (select q1) as ss  -- q1 is actually a COALESCE expression here\nfrom int8_tbl i81 full outer join int8_tbl i82 using (q1)\ngroup by q1 order by q1;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 138, "lines": [278, 280]}, "target_sql": "SELECT q1, (SELECT q1) AS ss /* q1 is actually a COALESCE expression here */ FROM int8_tbl AS i81 LEFT OUTER JOIN int8_tbl AS i82 USING (q1) GROUP BY q1 UNION ALL SELECT q1, (SELECT q1) AS ss /* q1 is actually a COALESCE expression here */ FROM int8_tbl AS i81 RIGHT OUTER JOIN int8_tbl AS i82 USING (q1) WHERE NOT EXISTS(SELECT 1 FROM int8_tbl AS i81 WHERE i81.q1 = i82.q1) GROUP BY q1 ORDER BY CASE WHEN q1 IS NULL THEN 1 ELSE 0 END, q1", "doris_status": "报错", "doris_error": {"category": "执行失败，需阅读具体错误", "message": "(1105, \"errCode = 2, detailMessage = Input slot(s) not in child's output: q1#4 in plan: LogicalOneRowRelation ( projects=[q1#4] )\\nchild output is: []\\nplan tree:\\nLogicalOneRowRelation ( projects=[q1#4] )\")", "code": "1105"}}
+  ]
+}

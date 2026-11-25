@@ -1,0 +1,89 @@
+{
+  "run": {
+    "started_at": "2026-11-18T09:57:36.873824+00:00",
+    "finished_at": "2026-11-18T09:57:37.114227+00:00",
+    "sqlglot_version": "30.25.1.dev6",
+    "sqlglot_commit": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+    "validation_mode": "recorded_output",
+    "source": {
+      "dialect": "postgres",
+      "engine": "postgres",
+      "connection_profile": "postgres-local",
+      "database": "dsv_wf_agg001_s02"
+    },
+    "target": {
+      "dialect": "doris",
+      "engine": "doris",
+      "connection_profile": "doris-local",
+      "database": "dsv_wf_agg001_s02"
+    },
+    "input": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.sql",
+      "sha256": "9943917f6e4bb149cb89ad834997343370a0a7e6324ffe6723404b9cd60d0a62"
+    },
+    "filtered": false,
+    "comparison_rules": {
+      "row_order": "最终有 ORDER BY 时逐行，否则忽略顺序但保留重复次数",
+      "column_names": "仅识别到全部输出均为显式 Alias 时比较名称",
+      "column_types": "仅源证据提供字段类型时比较",
+      "typed_float_tolerance": 1e-12,
+      "recorded_values": "按源输出显示文本比较，不自动套用数值容差"
+    },
+    "case_file": {
+      "path": "reports/data-preparation/aggregates-001-stage-02-cases.yaml",
+      "sha256": "12bcdb7debf11626ccf231ebe171401a0a03987612e153a355dd4c6815ed27c8"
+    },
+    "recorded_output": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.out"
+    }
+  },
+  "summary": {
+    "total": 12,
+    "processed_queries": 12,
+    "successful_matches": 0,
+    "known_source_success": 12,
+    "negative_source_cases": 0,
+    "needs_attribution": 12,
+    "prerequisite_issues": 0,
+    "successful_match_rate": {
+      "numerator": 0,
+      "denominator": 12,
+      "value": 0.0,
+      "meaning": "成功匹配 / 已取得成功源结果；包含已读到成功 .out 的转译失败，不含源端报错或源结果未知"
+    },
+    "outcomes": {
+      "Doris 执行失败": 12
+    },
+    "failure_counts": {
+      "Doris 执行失败": 12
+    },
+    "import": {
+      "accepted": 12,
+      "skipped": 0,
+      "ambiguous": 0,
+      "errors": 0
+    },
+    "evidence_limits": [
+      "只记录观测差异，不自动确定 SQLGlot/Doris/框架的最终责任。",
+      "基表、数据阶段和 Session 由外部准备；本报告不证明数据相同。",
+      "差异最多保存三个字段或每侧三种记录反例，不保存全量结果或重复的前五行样本。",
+      ".out 通常缺少原生类型，并可能混淆 NULL/空字符串或复杂类型显示；匹配不代表这些维度已验证。"
+    ]
+  },
+  "queries": [
+    {"id": "pg-aggregates-0104-6106ddbe", "source_sql": "SELECT count(*), sum(x), regr_sxx(y,x), sum(y),regr_syy(y,x), regr_sxy(y,x)\nFROM regr_test WHERE x IN (10,20,30,80);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 104, "lines": [187, 188]}, "target_sql": "SELECT COUNT(*), SUM(x), REGR_SXX(y, x), SUM(y), REGR_SYY(y, x), REGR_SXY(y, x) FROM regr_test WHERE x IN (10, 20, 30, 80)", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'REGR_SXX'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0105-de9d85b5", "source_sql": "SELECT count(*), sum(x), regr_sxx(y,x), sum(y),regr_syy(y,x), regr_sxy(y,x)\nFROM regr_test;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 105, "lines": [189, 190]}, "target_sql": "SELECT COUNT(*), SUM(x), REGR_SXX(y, x), SUM(y), REGR_SYY(y, x), REGR_SXY(y, x) FROM regr_test", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'REGR_SXX'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0106-3a4b5ac2", "source_sql": "SELECT float8_accum('{4,140,2900}'::float8[], 100);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 106, "lines": [191, 191]}, "target_sql": "SELECT FLOAT8_ACCUM(CAST('{4,140,2900}' AS ARRAY<DOUBLE>), 100)", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT8_ACCUM'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0107-38a6d915", "source_sql": "SELECT float8_regr_accum('{4,140,2900,1290,83075,15050,100,0}'::float8[], 200, 100);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 107, "lines": [192, 192]}, "target_sql": "SELECT FLOAT8_REGR_ACCUM(CAST('{4,140,2900,1290,83075,15050,100,0}' AS ARRAY<DOUBLE>), 200, 100)", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT8_REGR_ACCUM'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0108-9eefe369", "source_sql": "SELECT count(*), sum(x), regr_sxx(y,x), sum(y),regr_syy(y,x), regr_sxy(y,x)\nFROM regr_test WHERE x IN (10,20,30);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 108, "lines": [193, 194]}, "target_sql": "SELECT COUNT(*), SUM(x), REGR_SXX(y, x), SUM(y), REGR_SYY(y, x), REGR_SXY(y, x) FROM regr_test WHERE x IN (10, 20, 30)", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'REGR_SXX'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0109-1472d5a7", "source_sql": "SELECT count(*), sum(x), regr_sxx(y,x), sum(y),regr_syy(y,x), regr_sxy(y,x)\nFROM regr_test WHERE x IN (80,100);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 109, "lines": [195, 196]}, "target_sql": "SELECT COUNT(*), SUM(x), REGR_SXX(y, x), SUM(y), REGR_SYY(y, x), REGR_SXY(y, x) FROM regr_test WHERE x IN (80, 100)", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'REGR_SXX'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0110-2e0b20b6", "source_sql": "SELECT float8_combine('{3,60,200}'::float8[], '{0,0,0}'::float8[]);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 110, "lines": [197, 197]}, "target_sql": "SELECT FLOAT8_COMBINE(CAST('{3,60,200}' AS ARRAY<DOUBLE>), CAST('{0,0,0}' AS ARRAY<DOUBLE>))", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT8_COMBINE'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0111-4b466106", "source_sql": "SELECT float8_combine('{0,0,0}'::float8[], '{2,180,200}'::float8[]);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 111, "lines": [198, 198]}, "target_sql": "SELECT FLOAT8_COMBINE(CAST('{0,0,0}' AS ARRAY<DOUBLE>), CAST('{2,180,200}' AS ARRAY<DOUBLE>))", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT8_COMBINE'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0112-6c1a5662", "source_sql": "SELECT float8_combine('{3,60,200}'::float8[], '{2,180,200}'::float8[]);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 112, "lines": [199, 199]}, "target_sql": "SELECT FLOAT8_COMBINE(CAST('{3,60,200}' AS ARRAY<DOUBLE>), CAST('{2,180,200}' AS ARRAY<DOUBLE>))", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT8_COMBINE'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0113-1a65bedb", "source_sql": "SELECT float8_regr_combine('{3,60,200,750,20000,2000,1,NaN}'::float8[],\n                           '{0,0,0,0,0,0,0,0}'::float8[]);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 113, "lines": [200, 201]}, "target_sql": "SELECT FLOAT8_REGR_COMBINE(CAST('{3,60,200,750,20000,2000,1,NaN}' AS ARRAY<DOUBLE>), CAST('{0,0,0,0,0,0,0,0}' AS ARRAY<DOUBLE>))", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT8_REGR_COMBINE'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0114-d556fd00", "source_sql": "SELECT float8_regr_combine('{0,0,0,0,0,0,0,0}'::float8[],\n                           '{2,180,200,740,57800,-3400,NaN,1}'::float8[]);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 114, "lines": [202, 203]}, "target_sql": "SELECT FLOAT8_REGR_COMBINE(CAST('{0,0,0,0,0,0,0,0}' AS ARRAY<DOUBLE>), CAST('{2,180,200,740,57800,-3400,NaN,1}' AS ARRAY<DOUBLE>))", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT8_REGR_COMBINE'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0115-561bfb29", "source_sql": "SELECT float8_regr_combine('{3,60,200,750,20000,2000,7,8}'::float8[],\n                           '{2,180,200,740,57800,-3400,7,9}'::float8[]);", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 115, "lines": [204, 205]}, "target_sql": "SELECT FLOAT8_REGR_COMBINE(CAST('{3,60,200,750,20000,2000,7,8}' AS ARRAY<DOUBLE>), CAST('{2,180,200,740,57800,-3400,7,9}' AS ARRAY<DOUBLE>))", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'FLOAT8_REGR_COMBINE'\")", "code": "1105"}}
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "run": {
+    "started_at": "2026-11-18T10:04:00.897791+00:00",
+    "finished_at": "2026-11-18T10:04:01.025718+00:00",
+    "sqlglot_version": "30.25.1.dev6",
+    "sqlglot_commit": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+    "validation_mode": "recorded_output",
+    "source": {
+      "dialect": "postgres",
+      "engine": "postgres",
+      "connection_profile": "postgres-local",
+      "database": "dsv_wf_agg001_s41"
+    },
+    "target": {
+      "dialect": "doris",
+      "engine": "doris",
+      "connection_profile": "doris-local",
+      "database": "dsv_wf_agg001_s41"
+    },
+    "input": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.sql",
+      "sha256": "9943917f6e4bb149cb89ad834997343370a0a7e6324ffe6723404b9cd60d0a62"
+    },
+    "filtered": false,
+    "comparison_rules": {
+      "row_order": "最终有 ORDER BY 时逐行，否则忽略顺序但保留重复次数",
+      "column_names": "仅识别到全部输出均为显式 Alias 时比较名称",
+      "column_types": "仅源证据提供字段类型时比较",
+      "typed_float_tolerance": 1e-12,
+      "recorded_values": "按源输出显示文本比较，不自动套用数值容差"
+    },
+    "case_file": {
+      "path": "reports/data-preparation/aggregates-001-stage-41-cases.yaml",
+      "sha256": "95a8c112c1580bd1648a95ed907da70e60c5c0495931ecc37af27d25cd2425d4"
+    },
+    "recorded_output": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.out"
+    }
+  },
+  "summary": {
+    "total": 2,
+    "processed_queries": 2,
+    "successful_matches": 0,
+    "known_source_success": 2,
+    "negative_source_cases": 0,
+    "needs_attribution": 2,
+    "prerequisite_issues": 0,
+    "successful_match_rate": {
+      "numerator": 0,
+      "denominator": 2,
+      "value": 0.0,
+      "meaning": "成功匹配 / 已取得成功源结果；包含已读到成功 .out 的转译失败，不含源端报错或源结果未知"
+    },
+    "outcomes": {
+      "Doris 执行失败": 1,
+      "行值或顺序不匹配": 1
+    },
+    "failure_counts": {
+      "Doris 执行失败": 1,
+      "行值或顺序不匹配": 1
+    },
+    "import": {
+      "accepted": 2,
+      "skipped": 1,
+      "ambiguous": 0,
+      "errors": 0
+    },
+    "evidence_limits": [
+      "只记录观测差异，不自动确定 SQLGlot/Doris/框架的最终责任。",
+      "基表、数据阶段和 Session 由外部准备；本报告不证明数据相同。",
+      "差异最多保存三个字段或每侧三种记录反例，不保存全量结果或重复的前五行样本。",
+      ".out 通常缺少原生类型，并可能混淆 NULL/空字符串或复杂类型显示；匹配不代表这些维度已验证。"
+    ]
+  },
+  "queries": [
+    {"id": "pg-aggregates-0544-3a307492", "source_sql": "SELECT variance(unique1::int4), sum(unique1::int8), regr_count(unique1::float8, unique1::float8)\nFROM (SELECT * FROM tenk1\n      UNION ALL SELECT * FROM tenk1\n      UNION ALL SELECT * FROM tenk1\n      UNION ALL SELECT * FROM tenk1) u;", "result": "Doris 执行失败", "action": "归因", "source_status": "成功", "reason": "源端成功，但生成的 Doris SQL 执行报错；具体错误见 doris_error", "source_location": {"statement": 544, "lines": [1635, 1639]}, "target_sql": "SELECT VAR_SAMP(CAST(unique1 AS INT)), SUM(CAST(unique1 AS BIGINT)), REGR_COUNT(CAST(unique1 AS DOUBLE), CAST(unique1 AS DOUBLE)) FROM (SELECT * FROM tenk1 UNION ALL SELECT * FROM tenk1 UNION ALL SELECT * FROM tenk1 UNION ALL SELECT * FROM tenk1) AS u", "doris_status": "报错", "doris_error": {"category": "函数不存在或调用形式不受支持", "message": "(1105, \"errCode = 2, detailMessage = Can not found function 'REGR_COUNT'\")", "code": "1105"}},
+    {"id": "pg-aggregates-0546-739e31be", "source_sql": "SELECT variance(unique1::int8), avg(unique1::numeric)\nFROM (SELECT * FROM tenk1\n      UNION ALL SELECT * FROM tenk1\n      UNION ALL SELECT * FROM tenk1\n      UNION ALL SELECT * FROM tenk1) u;", "result": "行值或顺序不匹配", "action": "归因", "source_status": "成功", "reason": "返回记录值、重复次数或要求的顺序不同", "source_location": {"statement": 546, "lines": [1650, 1654]}, "target_sql": "SELECT VAR_SAMP(CAST(unique1 AS BIGINT)), AVG(CAST(unique1 AS DECIMAL)) FROM (SELECT * FROM tenk1 UNION ALL SELECT * FROM tenk1 UNION ALL SELECT * FROM tenk1 UNION ALL SELECT * FROM tenk1) AS u", "doris_status": "成功", "difference": {"row_order": "忽略顺序，保留重复次数", "source_only": [{"row": ["8333541.588539713493", "4999.5000000000000000"], "extra_count": 1}], "doris_only": [{"row": ["8333541.58853971", "4999.500000000"], "extra_count": 1}], "source_extra_rows": 1, "doris_extra_rows": 1, "omitted_distinct_rows": 0}}
+  ]
+}

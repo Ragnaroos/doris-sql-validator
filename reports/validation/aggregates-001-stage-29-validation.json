@@ -1,0 +1,79 @@
+{
+  "run": {
+    "started_at": "2026-11-18T10:03:59.547269+00:00",
+    "finished_at": "2026-11-18T10:03:59.582880+00:00",
+    "sqlglot_version": "30.25.1.dev6",
+    "sqlglot_commit": "feb0e08aba28a29590596bb3f5761fbaeb0e98b9",
+    "validation_mode": "recorded_output",
+    "source": {
+      "dialect": "postgres",
+      "engine": "postgres",
+      "connection_profile": "postgres-local",
+      "database": "dsv_wf_agg001_s29"
+    },
+    "target": {
+      "dialect": "doris",
+      "engine": "doris",
+      "connection_profile": "doris-local",
+      "database": "dsv_wf_agg001_s29"
+    },
+    "input": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.sql",
+      "sha256": "9943917f6e4bb149cb89ad834997343370a0a7e6324ffe6723404b9cd60d0a62"
+    },
+    "filtered": false,
+    "comparison_rules": {
+      "row_order": "最终有 ORDER BY 时逐行，否则忽略顺序但保留重复次数",
+      "column_names": "仅识别到全部输出均为显式 Alias 时比较名称",
+      "column_types": "仅源证据提供字段类型时比较",
+      "typed_float_tolerance": 1e-12,
+      "recorded_values": "按源输出显示文本比较，不自动套用数值容差"
+    },
+    "case_file": {
+      "path": "reports/data-preparation/aggregates-001-stage-29-cases.yaml",
+      "sha256": "eca99a6ae009db5257a21ac70b55fc3696302945885bea739550761bc47b45eb"
+    },
+    "recorded_output": {
+      "format": "pg-regress",
+      "file": "../doris-sql-validator/cases/postgres/manual/current/assets/aggregates.out"
+    }
+  },
+  "summary": {
+    "total": 2,
+    "processed_queries": 2,
+    "successful_matches": 0,
+    "known_source_success": 2,
+    "negative_source_cases": 0,
+    "needs_attribution": 0,
+    "prerequisite_issues": 2,
+    "successful_match_rate": {
+      "numerator": 0,
+      "denominator": 2,
+      "value": 0.0,
+      "meaning": "成功匹配 / 已取得成功源结果；包含已读到成功 .out 的转译失败，不含源端报错或源结果未知"
+    },
+    "outcomes": {
+      "Doris 环境问题": 2
+    },
+    "failure_counts": {
+      "Doris 环境问题": 2
+    },
+    "import": {
+      "accepted": 2,
+      "skipped": 0,
+      "ambiguous": 0,
+      "errors": 0
+    },
+    "evidence_limits": [
+      "只记录观测差异，不自动确定 SQLGlot/Doris/框架的最终责任。",
+      "基表、数据阶段和 Session 由外部准备；本报告不证明数据相同。",
+      "差异最多保存三个字段或每侧三种记录反例，不保存全量结果或重复的前五行样本。",
+      ".out 通常缺少原生类型，并可能混淆 NULL/空字符串或复杂类型显示；匹配不代表这些维度已验证。"
+    ]
+  },
+  "queries": [
+    {"id": "pg-aggregates-0353-87cb7e26", "source_sql": "select min(v) from bytea_test_table;", "result": "Doris 环境问题", "action": "前提排查", "source_status": "成功", "reason": "Doris 连接、库表或权限等前提不满足", "source_location": {"statement": 353, "lines": [953, 953]}, "target_sql": "SELECT MIN(v) FROM bytea_test_table", "doris_status": "报错", "doris_error": {"category": "表不存在", "message": "(1105, 'errCode = 2, detailMessage = Table [bytea_test_table] does not exist in database [dsv_wf_agg001_s29].(line 1, pos 19)')", "code": "1105"}},
+    {"id": "pg-aggregates-0354-1159bcab", "source_sql": "select max(v) from bytea_test_table;", "result": "Doris 环境问题", "action": "前提排查", "source_status": "成功", "reason": "Doris 连接、库表或权限等前提不满足", "source_location": {"statement": 354, "lines": [954, 954]}, "target_sql": "SELECT MAX(v) FROM bytea_test_table", "doris_status": "报错", "doris_error": {"category": "表不存在", "message": "(1105, 'errCode = 2, detailMessage = Table [bytea_test_table] does not exist in database [dsv_wf_agg001_s29].(line 1, pos 19)')", "code": "1105"}}
+  ]
+}
